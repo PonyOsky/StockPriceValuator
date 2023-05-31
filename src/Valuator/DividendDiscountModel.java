@@ -12,7 +12,7 @@ import java.util.List;
  * @author ondre
  */
 public class DividendDiscountModel {
-    private CentralObject central;
+    private final CentralObject central;
     List<Double> YDiv;
     List<Double> GrowthDiv;
     

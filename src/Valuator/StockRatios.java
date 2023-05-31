@@ -9,8 +9,8 @@ package Valuator;
  * @author ondre
  */
 public class StockRatios {
-    private AdditionalCalculates addons;
-    private CentralObject central;
+    private final AdditionalCalculates addons;
+    private final CentralObject central;
     
     
     public StockRatios(CentralObject central, AdditionalCalculates addons){

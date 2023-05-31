@@ -9,7 +9,7 @@ package Valuator;
  * @author ondre
  */
 public class AdditionalCalculates {
-    private CentralObject central;
+    private final CentralObject central;
     
     public AdditionalCalculates(CentralObject central){
         this.central = central;

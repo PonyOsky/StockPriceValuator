@@ -9,7 +9,7 @@ package Valuator;
  * @author ondre
  */
 public class GrahamsFormulas {
-    private CentralObject central;
+    private final CentralObject central;
     
     public GrahamsFormulas(CentralObject central){
         this.central = central;

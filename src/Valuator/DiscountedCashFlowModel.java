@@ -12,7 +12,7 @@ import java.util.List;
  * @author ondre
  */
 public class DiscountedCashFlowModel {
-    private CentralObject central;
+    private final CentralObject central;
     List<Double> fcfGR;
     List<Double> ffcf;
     List<Double> dffcf;

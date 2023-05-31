@@ -8,8 +8,8 @@ package Valuator;
  * @author ondre
  */
 public class State {
-    private String name;
-    private double growth;
+    private final String name;
+    private final double growth;
 
     public State(String name, double growth) {
         this.name = name;
