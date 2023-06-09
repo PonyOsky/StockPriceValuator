@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Valuator;
 
 import java.util.ArrayList;
@@ -25,8 +21,7 @@ public class DividendDiscountModel {
     public void calcYDiv(){
         YDiv = new ArrayList<>();
         for(int i = 0; i < central.getDividends().size(); i++){
-            double a = central.getDividends().get(i) * 4;
-            YDiv.add(a);
+            YDiv.add(central.getDividends().get(i) * 4);
         }
     }
 
@@ -37,10 +32,7 @@ public class DividendDiscountModel {
         GrowthDiv = new ArrayList<>();
         GrowthDiv.add(0.0);
         for(int b = 1; b < YDiv.size(); b++){
-            double c = YDiv.get(b) - YDiv.get(b-1);
-            c = c/YDiv.get(b-1);
-            c = c*100;
-            GrowthDiv.add(c);
+            GrowthDiv.add((YDiv.get(b) - YDiv.get(b-1))/YDiv.get(b-1)*100);
         }
     }
 
