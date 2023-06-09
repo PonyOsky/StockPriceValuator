@@ -74,18 +74,9 @@ public class GrahamsFormulas {
      * @return
      */
     public double grahamReversed(){
-        if(central.getEarningsPerShare() == 0) {
+        if(central.getEarningsPerShare() == 0 || central.getGrowthRate() == 0 || central.getAAACurrentYield() == 0) {
             return 0;
-        } else {
-            if(central.getGrowthRate() == 0) {
-                return 0;
-            } else {
-                if (central.getAAACurrentYield() == 0) {
-                    return 0;
-                } else {
-                    return (central.getEarningsPerShare() * ((1 * central.getGrowthRate()) + 7) * 4.4) / central.getAAACurrentYield();
-                }
-            }
         }
+        return (central.getEarningsPerShare() * ((1 * central.getGrowthRate()) + 7) * 4.4) / central.getAAACurrentYield();
     }
 }

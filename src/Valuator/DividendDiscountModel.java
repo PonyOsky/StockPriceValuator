@@ -51,27 +51,13 @@ public class DividendDiscountModel {
     public List<Double> getGrowthDiv(){
         return GrowthDiv;
     }
-    public double getDiscDDM(double aveGrow){
-        if(aveGrow<=6.5){
-            if(aveGrow<=5.5){
-                if(aveGrow<=5.3){
-                    if(aveGrow<=5.1){
-                        if(aveGrow<=4.9){
-                        return 8;
-                        }else{
-                        return 9;}
-                    }else{
-                    return 10;
-                    }
-                }else{
-                return 11;
-                }
-            }else{
-            return 12;
-            }
-        }else{
-        return 13;
-        }
+    public double getDiscDDM(final double aveGrow){
+        if(aveGrow > 6.5) return 13;
+        if(aveGrow > 5.5) return 12;
+        if(aveGrow > 5.3) return 11;
+        if(aveGrow > 5.1) return 10;
+        if(aveGrow > 4.9) return 9;
+        return 8;
     }
     /**
      *
