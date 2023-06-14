@@ -36,14 +36,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         UseGraham = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         BorderTwo = new javax.swing.JPanel();
-        Navigation = new javax.swing.JPanel();
-        AplicationName = new javax.swing.JLabel();
-        ShowInputs = new javax.swing.JButton();
-        ShowSum = new javax.swing.JButton();
-        ShowRatios = new javax.swing.JButton();
-        ShowDCF = new javax.swing.JButton();
-        ShowDDM = new javax.swing.JButton();
-        ShowGraham = new javax.swing.JButton();
+        Menu = new javax.swing.JPanel();
         Content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,60 +123,20 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         getContentPane().add(Calculation, java.awt.BorderLayout.PAGE_END);
 
-        Navigation.setBackground(new java.awt.Color(51, 51, 255));
-        Navigation.setLayout(new java.awt.GridLayout(7, 1));
+        Menu.setBackground(new java.awt.Color(51, 255, 51));
 
-        AplicationName.setBackground(new java.awt.Color(0, 0, 255));
-        AplicationName.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        AplicationName.setForeground(new java.awt.Color(255, 255, 255));
-        AplicationName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AplicationName.setText("Stock Price Valuator");
-        AplicationName.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Navigation.add(AplicationName);
+        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
+        Menu.setLayout(MenuLayout);
+        MenuLayout.setHorizontalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 861, Short.MAX_VALUE)
+        );
+        MenuLayout.setVerticalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
-        ShowInputs.setBackground(new java.awt.Color(0, 102, 255));
-        ShowInputs.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ShowInputs.setForeground(new java.awt.Color(255, 255, 255));
-        ShowInputs.setText("Inputs values");
-        ShowInputs.setToolTipText("Click for insert values");
-        Navigation.add(ShowInputs);
-
-        ShowSum.setBackground(new java.awt.Color(51, 102, 255));
-        ShowSum.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ShowSum.setForeground(new java.awt.Color(255, 255, 255));
-        ShowSum.setText("Summary valuation");
-        ShowSum.setToolTipText("Show summary valuation");
-        Navigation.add(ShowSum);
-
-        ShowRatios.setBackground(new java.awt.Color(51, 102, 255));
-        ShowRatios.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ShowRatios.setForeground(new java.awt.Color(255, 255, 255));
-        ShowRatios.setText("Ratios");
-        ShowRatios.setToolTipText("Show stock ratios");
-        Navigation.add(ShowRatios);
-
-        ShowDCF.setBackground(new java.awt.Color(51, 102, 255));
-        ShowDCF.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ShowDCF.setForeground(new java.awt.Color(255, 255, 255));
-        ShowDCF.setText("DCF");
-        ShowDCF.setToolTipText("Show Discounted Cash Flow model");
-        Navigation.add(ShowDCF);
-
-        ShowDDM.setBackground(new java.awt.Color(51, 102, 255));
-        ShowDDM.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ShowDDM.setForeground(new java.awt.Color(255, 255, 255));
-        ShowDDM.setText("DDM");
-        ShowDDM.setToolTipText("Show Dividend Discount Model");
-        Navigation.add(ShowDDM);
-
-        ShowGraham.setBackground(new java.awt.Color(51, 102, 255));
-        ShowGraham.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ShowGraham.setForeground(new java.awt.Color(255, 255, 255));
-        ShowGraham.setText("Grahams formulas");
-        ShowGraham.setToolTipText("Show Grahams formula and Grahams reversed formula");
-        Navigation.add(ShowGraham);
-
-        getContentPane().add(Navigation, java.awt.BorderLayout.LINE_START);
+        getContentPane().add(Menu, java.awt.BorderLayout.PAGE_START);
 
         Content.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -191,11 +144,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGap(0, 861, Short.MAX_VALUE)
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 356, Short.MAX_VALUE)
+            .addGap(0, 256, Short.MAX_VALUE)
         );
 
         getContentPane().add(Content, java.awt.BorderLayout.CENTER);
@@ -237,19 +190,12 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AplicationName;
     private javax.swing.JPanel BorderOne;
     private javax.swing.JPanel BorderTwo;
     private javax.swing.JButton Calculate;
     private javax.swing.JPanel Calculation;
     private javax.swing.JPanel Content;
-    private javax.swing.JPanel Navigation;
-    private javax.swing.JButton ShowDCF;
-    private javax.swing.JButton ShowDDM;
-    private javax.swing.JButton ShowGraham;
-    private javax.swing.JButton ShowInputs;
-    private javax.swing.JButton ShowRatios;
-    private javax.swing.JButton ShowSum;
+    private javax.swing.JPanel Menu;
     private javax.swing.JCheckBox UseDCF;
     private javax.swing.JCheckBox UseDDM;
     private javax.swing.JCheckBox UseGraham;
