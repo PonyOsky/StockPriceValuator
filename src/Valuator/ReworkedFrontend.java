@@ -32,18 +32,28 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         BorderOne = new javax.swing.JPanel();
         UseDDM = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
-        Calculate = new javax.swing.JButton();
         UseGraham = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         BorderTwo = new javax.swing.JPanel();
         Menu = new javax.swing.JPanel();
-        Content = new javax.swing.JPanel();
+        MenuColumn = new javax.swing.JPanel();
+        ShowHideBut = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        CorpChoice = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        CorpDivChoice = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        BankChoice = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        NonProfitChoice = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        HidingMenu = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 600));
-        getContentPane().setLayout(new java.awt.BorderLayout());
 
-        Calculation.setBackground(new java.awt.Color(0, 153, 255));
+        Calculation.setBackground(new java.awt.Color(0, 20, 255));
         Calculation.setForeground(new java.awt.Color(0, 102, 255));
         Calculation.setLayout(new java.awt.GridLayout(3, 4));
 
@@ -59,7 +69,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         UseRatios.setToolTipText("Enable / Disable Ratios");
         Calculation.add(UseRatios);
 
-        BorderOne.setBackground(new java.awt.Color(51, 153, 255));
+        BorderOne.setBackground(new java.awt.Color(0, 20, 255));
 
         javax.swing.GroupLayout BorderOneLayout = new javax.swing.GroupLayout(BorderOne);
         BorderOne.setLayout(BorderOneLayout);
@@ -85,16 +95,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jCheckBox5.setText("Feature 1");
         Calculation.add(jCheckBox5);
 
-        Calculate.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Calculate.setText("Calculate");
-        Calculate.setToolTipText("Click for calculation");
-        Calculate.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
-        Calculate.setBorderPainted(false);
-        Calculate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Calculate.setDoubleBuffered(true);
-        Calculate.setMaximumSize(new java.awt.Dimension(89, 20));
-        Calculation.add(Calculate);
-
         UseGraham.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         UseGraham.setForeground(new java.awt.Color(255, 255, 255));
         UseGraham.setText("Grahams formulas");
@@ -106,7 +106,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jCheckBox6.setText("Feature 2");
         Calculation.add(jCheckBox6);
 
-        BorderTwo.setBackground(new java.awt.Color(0, 153, 255));
+        BorderTwo.setBackground(new java.awt.Color(0, 20, 255));
 
         javax.swing.GroupLayout BorderTwoLayout = new javax.swing.GroupLayout(BorderTwo);
         BorderTwo.setLayout(BorderTwoLayout);
@@ -123,35 +123,159 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         getContentPane().add(Calculation, java.awt.BorderLayout.PAGE_END);
 
-        Menu.setBackground(new java.awt.Color(51, 255, 51));
+        Menu.setBackground(new java.awt.Color(102, 204, 255));
+        Menu.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
-        Menu.setLayout(MenuLayout);
-        MenuLayout.setHorizontalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 861, Short.MAX_VALUE)
+        MenuColumn.setBackground(new java.awt.Color(0, 255, 246));
+        MenuColumn.setLayout(new java.awt.GridLayout(6, 1));
+
+        ShowHideBut.setBackground(new java.awt.Color(0, 255, 246));
+        ShowHideBut.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/menu-edit.png"))); // NOI18N
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout ShowHideButLayout = new javax.swing.GroupLayout(ShowHideBut);
+        ShowHideBut.setLayout(ShowHideButLayout);
+        ShowHideButLayout.setHorizontalGroup(
+            ShowHideButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShowHideButLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        MenuLayout.setVerticalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        ShowHideButLayout.setVerticalGroup(
+            ShowHideButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowHideButLayout.createSequentialGroup()
+                .addGap(0, 30, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
-        getContentPane().add(Menu, java.awt.BorderLayout.PAGE_START);
+        MenuColumn.add(ShowHideBut);
 
-        Content.setBackground(new java.awt.Color(255, 255, 255));
+        CorpChoice.setBackground(new java.awt.Color(0, 255, 246));
+        CorpChoice.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
-        Content.setLayout(ContentLayout);
-        ContentLayout.setHorizontalGroup(
-            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 861, Short.MAX_VALUE)
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/corp-edit.png"))); // NOI18N
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout CorpChoiceLayout = new javax.swing.GroupLayout(CorpChoice);
+        CorpChoice.setLayout(CorpChoiceLayout);
+        CorpChoiceLayout.setHorizontalGroup(
+            CorpChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CorpChoiceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        ContentLayout.setVerticalGroup(
-            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 256, Short.MAX_VALUE)
+        CorpChoiceLayout.setVerticalGroup(
+            CorpChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CorpChoiceLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
         );
 
-        getContentPane().add(Content, java.awt.BorderLayout.CENTER);
+        MenuColumn.add(CorpChoice);
+
+        CorpDivChoice.setBackground(new java.awt.Color(0, 255, 246));
+        CorpDivChoice.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dividends-edit.png"))); // NOI18N
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout CorpDivChoiceLayout = new javax.swing.GroupLayout(CorpDivChoice);
+        CorpDivChoice.setLayout(CorpDivChoiceLayout);
+        CorpDivChoiceLayout.setHorizontalGroup(
+            CorpDivChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CorpDivChoiceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        CorpDivChoiceLayout.setVerticalGroup(
+            CorpDivChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CorpDivChoiceLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
+        );
+
+        MenuColumn.add(CorpDivChoice);
+
+        BankChoice.setBackground(new java.awt.Color(0, 255, 246));
+        BankChoice.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bank-edit.png"))); // NOI18N
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout BankChoiceLayout = new javax.swing.GroupLayout(BankChoice);
+        BankChoice.setLayout(BankChoiceLayout);
+        BankChoiceLayout.setHorizontalGroup(
+            BankChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BankChoiceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        BankChoiceLayout.setVerticalGroup(
+            BankChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BankChoiceLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addContainerGap())
+        );
+
+        MenuColumn.add(BankChoice);
+
+        NonProfitChoice.setBackground(new java.awt.Color(0, 255, 246));
+        NonProfitChoice.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/solidarity-edit.png"))); // NOI18N
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout NonProfitChoiceLayout = new javax.swing.GroupLayout(NonProfitChoice);
+        NonProfitChoice.setLayout(NonProfitChoiceLayout);
+        NonProfitChoiceLayout.setHorizontalGroup(
+            NonProfitChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NonProfitChoiceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+        NonProfitChoiceLayout.setVerticalGroup(
+            NonProfitChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NonProfitChoiceLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap())
+        );
+
+        MenuColumn.add(NonProfitChoice);
+
+        Menu.add(MenuColumn, java.awt.BorderLayout.LINE_START);
+
+        HidingMenu.setBackground(new java.awt.Color(0, 231, 255));
+        HidingMenu.setLayout(new java.awt.GridLayout(5, 1));
+        Menu.add(HidingMenu, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(Menu, java.awt.BorderLayout.LINE_START);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 811, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 372, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +284,9 @@ public class ReworkedFrontend extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        //řeší problém se škálováním ikon
+        System.setProperty("sun.java2d.uiScale", "1");
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -190,17 +317,28 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BankChoice;
     private javax.swing.JPanel BorderOne;
     private javax.swing.JPanel BorderTwo;
-    private javax.swing.JButton Calculate;
     private javax.swing.JPanel Calculation;
-    private javax.swing.JPanel Content;
+    private javax.swing.JPanel CorpChoice;
+    private javax.swing.JPanel CorpDivChoice;
+    private javax.swing.JPanel HidingMenu;
     private javax.swing.JPanel Menu;
+    private javax.swing.JPanel MenuColumn;
+    private javax.swing.JPanel NonProfitChoice;
+    private javax.swing.JPanel ShowHideBut;
     private javax.swing.JCheckBox UseDCF;
     private javax.swing.JCheckBox UseDDM;
     private javax.swing.JCheckBox UseGraham;
     private javax.swing.JCheckBox UseRatios;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
