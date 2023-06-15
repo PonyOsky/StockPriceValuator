@@ -5,7 +5,13 @@
 package Valuator;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -26,6 +32,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     
     private final Color lightDarkColor;
     private final Color darkLightColor;
+    private boolean hidden = true;
     
     public ReworkedFrontend() {
         lightDarkColor = new Color(0, 231, 255);
@@ -54,7 +61,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         Menu = new javax.swing.JPanel();
         MenuColumn = new javax.swing.JPanel();
         ShowHideBut = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        changingLabel = new javax.swing.JLabel();
         CorpChoice = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         CorpDivChoice = new javax.swing.JPanel();
@@ -159,20 +166,20 @@ public class ReworkedFrontend extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/menu-edit.png"))); // NOI18N
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        changingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        changingLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/menu-edit.png"))); // NOI18N
+        changingLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        changingLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout ShowHideButLayout = new javax.swing.GroupLayout(ShowHideBut);
         ShowHideBut.setLayout(ShowHideButLayout);
         ShowHideButLayout.setHorizontalGroup(
             ShowHideButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(changingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         ShowHideButLayout.setVerticalGroup(
             ShowHideButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(changingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
 
         MenuColumn.add(ShowHideBut);
@@ -203,7 +210,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         CorpChoiceLayout.setVerticalGroup(
             CorpChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
 
         MenuColumn.add(CorpChoice);
@@ -234,7 +241,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         CorpDivChoiceLayout.setVerticalGroup(
             CorpDivChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
 
         MenuColumn.add(CorpDivChoice);
@@ -266,7 +273,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         BankChoiceLayout.setVerticalGroup(
             BankChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
 
         MenuColumn.add(BankChoice);
@@ -297,7 +304,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         NonProfitChoiceLayout.setVerticalGroup(
             NonProfitChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
 
         MenuColumn.add(NonProfitChoice);
@@ -332,6 +339,40 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         hover.setBackground(rand);
     }
     
+    /*public void clickMenu(JPanel selected){
+        ArrayList<JPanel> options = new ArrayList<>();
+        options.add(ShowHideBut);
+        options.add(CorpChoice);
+        options.add(CorpDivChoice);
+        options.add(BankChoice);
+        options.add(NonProfitChoice);
+        for(JPanel i : options){
+            if(i == selected){
+                selected.setBackground(lightDarkColor);
+            }else{
+                i.setBackground(new Color(0, 255, 246));
+            }
+        }
+    }*/
+    
+    public void showHideMenu(JPanel showingMenu, boolean hidden){
+        if(!hidden){
+            showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
+            changeIcon(changingLabel, "/Icons/menu-edit.png");
+        }else{
+            showingMenu.setPreferredSize(new Dimension(280, MenuColumn.getHeight()));
+            changeIcon(changingLabel, "/Icons/close-edit.png");
+        }
+    }
+    
+    public void changeIcon(JLabel target, String resourceRoute){
+        ImageIcon icon = new ImageIcon(getClass().getResource(resourceRoute));
+        target.setIcon(icon);
+        target.setSize(50, 50);
+        target.setVerticalAlignment(SwingConstants.CENTER);
+        target.setHorizontalAlignment(SwingConstants.CENTER);
+    }
+    
     private void ShowHideButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowHideButMouseEntered
         changeColor(ShowHideBut, lightDarkColor);
     }//GEN-LAST:event_ShowHideButMouseEntered
@@ -341,7 +382,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_ShowHideButMouseExited
 
     private void ShowHideButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowHideButMouseClicked
-        changeColor(ShowHideBut, lightDarkColor);
+        //clickMenu(ShowHideBut);
+        if(hidden) {
+            showHideMenu(HidingMenu, hidden);
+            SwingUtilities.updateComponentTreeUI(this);
+            hidden = false;
+        }else{
+            showHideMenu(HidingMenu, hidden);
+            SwingUtilities.updateComponentTreeUI(this);
+            hidden = true;
+        }
+        
     }//GEN-LAST:event_ShowHideButMouseClicked
 
     private void CorpChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpChoiceMouseEntered
@@ -353,7 +404,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CorpChoiceMouseExited
 
     private void CorpChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpChoiceMouseClicked
-        changeColor(CorpChoice, lightDarkColor);
+        //clickMenu(CorpChoice);
     }//GEN-LAST:event_CorpChoiceMouseClicked
 
     private void CorpDivChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpDivChoiceMouseEntered
@@ -365,7 +416,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CorpDivChoiceMouseExited
 
     private void CorpDivChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpDivChoiceMouseClicked
-        changeColor(CorpDivChoice, lightDarkColor);
+        //clickMenu(CorpDivChoice);
     }//GEN-LAST:event_CorpDivChoiceMouseClicked
 
     private void BankChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BankChoiceMouseEntered
@@ -377,7 +428,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_BankChoiceMouseExited
 
     private void BankChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BankChoiceMouseClicked
-        changeColor(BankChoice, lightDarkColor);
+        //clickMenu(BankChoice);
     }//GEN-LAST:event_BankChoiceMouseClicked
 
     private void NonProfitChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NonProfitChoiceMouseEntered
@@ -389,7 +440,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_NonProfitChoiceMouseExited
 
     private void NonProfitChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NonProfitChoiceMouseClicked
-        changeColor(NonProfitChoice, lightDarkColor);
+        //clickMenu(NonProfitChoice);
     }//GEN-LAST:event_NonProfitChoiceMouseClicked
 
     /**
@@ -444,9 +495,9 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JCheckBox UseDDM;
     private javax.swing.JCheckBox UseGraham;
     private javax.swing.JCheckBox UseRatios;
+    private javax.swing.JLabel changingLabel;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
