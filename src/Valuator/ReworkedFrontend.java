@@ -30,14 +30,25 @@ public class ReworkedFrontend extends javax.swing.JFrame {
      * Creates new form ReworkedFrontend
      */
     
+    private final Color lightColor;
     private final Color lightDarkColor;
     private final Color darkLightColor;
+    private final Color darkColor;
+    private ArrayList<String> activeChoices;
     private boolean hidden = true;
     
     public ReworkedFrontend() {
+        initComponents();
+        ShowHideBut.setName("ShowHideButton");
+        CorpChoice.setName("CorpChoiceButton");
+        CorpDivChoice.setName("CorpDibChoiceButton");
+        BankChoice.setName("BankChoiceButton");
+        NonProfitChoice.setName("NonProfitableChoiceButton");
+        activeChoices = new ArrayList();
+        lightColor = new Color(0, 255, 246);
         lightDarkColor = new Color(0, 231, 255);
         darkLightColor = new Color(0, 20, 255);
-        initComponents();
+        darkColor = new Color(0, 20, 255);
     }
 
     /**
@@ -336,33 +347,20 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void changeColor(JPanel hover, Color rand){
-        hover.setBackground(rand);
+        if(hover != null) {
+            hover.setBackground(rand);
+        }
     }
     
-    /*public void clickMenu(JPanel selected){
-        ArrayList<JPanel> options = new ArrayList<>();
-        options.add(ShowHideBut);
-        options.add(CorpChoice);
-        options.add(CorpDivChoice);
-        options.add(BankChoice);
-        options.add(NonProfitChoice);
-        for(JPanel i : options){
-            if(i == selected){
-                selected.setBackground(lightDarkColor);
-            }else{
-                i.setBackground(new Color(0, 255, 246));
-            }
-        }
-    }*/
-    
-    public void showHideMenu(JPanel showingMenu, boolean hidden){
-        if(!hidden){
+    public void showHideMenu(JPanel showingMenu, boolean hid){
+        if(!hid){
             showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
             changeIcon(changingLabel, "/Icons/menu-edit.png");
         }else{
             showingMenu.setPreferredSize(new Dimension(280, MenuColumn.getHeight()));
             changeIcon(changingLabel, "/Icons/close-edit.png");
         }
+        hidden = !hid;
     }
     
     public void changeIcon(JLabel target, String resourceRoute){
@@ -373,26 +371,44 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         target.setHorizontalAlignment(SwingConstants.CENTER);
     }
     
+    public void clickUnclick(JPanel target){
+        if(target != null){
+            if(!activeChoices.contains(target.getName())){
+                target.setBackground(lightDarkColor);
+                activeChoices.add(target.getName());
+                System.out.print("přidávám hodnotu " + target.getName());
+            }else{
+                target.setBackground(lightColor);
+                activeChoices.remove(target.getName());
+            }
+        }
+    }
+    
+    public void exiting(JPanel target){
+        if(target != null){
+            System.out.print("kontroluji hodnotu "+target.getName());
+            if(!activeChoices.contains(target.getName())){
+                target.setBackground(lightColor);
+            }
+        }
+    }
+    
     private void ShowHideButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowHideButMouseEntered
         changeColor(ShowHideBut, lightDarkColor);
     }//GEN-LAST:event_ShowHideButMouseEntered
 
     private void ShowHideButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowHideButMouseExited
-        changeColor(ShowHideBut, new Color(0, 255, 246));
+        exiting(ShowHideBut);
     }//GEN-LAST:event_ShowHideButMouseExited
 
     private void ShowHideButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowHideButMouseClicked
-        //clickMenu(ShowHideBut);
+        clickUnclick(ShowHideBut);
         if(hidden) {
             showHideMenu(HidingMenu, hidden);
-            SwingUtilities.updateComponentTreeUI(this);
-            hidden = false;
         }else{
             showHideMenu(HidingMenu, hidden);
-            SwingUtilities.updateComponentTreeUI(this);
-            hidden = true;
         }
-        
+        SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_ShowHideButMouseClicked
 
     private void CorpChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpChoiceMouseEntered
@@ -400,11 +416,12 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CorpChoiceMouseEntered
 
     private void CorpChoiceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpChoiceMouseExited
-        changeColor(CorpChoice, new Color(0, 255, 246));
+        exiting(CorpChoice);
     }//GEN-LAST:event_CorpChoiceMouseExited
 
     private void CorpChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpChoiceMouseClicked
-        //clickMenu(CorpChoice);
+        clickUnclick(CorpChoice);
+        System.out.print("predavam hodnotu " + CorpChoice.getName());
     }//GEN-LAST:event_CorpChoiceMouseClicked
 
     private void CorpDivChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpDivChoiceMouseEntered
@@ -412,11 +429,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CorpDivChoiceMouseEntered
 
     private void CorpDivChoiceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpDivChoiceMouseExited
-        changeColor(CorpDivChoice, new Color(0, 255, 246));
+        exiting(CorpDivChoice);
     }//GEN-LAST:event_CorpDivChoiceMouseExited
 
     private void CorpDivChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorpDivChoiceMouseClicked
-        //clickMenu(CorpDivChoice);
+        clickUnclick(CorpDivChoice);
     }//GEN-LAST:event_CorpDivChoiceMouseClicked
 
     private void BankChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BankChoiceMouseEntered
@@ -424,11 +441,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_BankChoiceMouseEntered
 
     private void BankChoiceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BankChoiceMouseExited
-        changeColor(BankChoice, new Color(0, 255, 246));
+        exiting(BankChoice);
     }//GEN-LAST:event_BankChoiceMouseExited
 
     private void BankChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BankChoiceMouseClicked
-        //clickMenu(BankChoice);
+        clickUnclick(BankChoice);
     }//GEN-LAST:event_BankChoiceMouseClicked
 
     private void NonProfitChoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NonProfitChoiceMouseEntered
@@ -436,11 +453,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_NonProfitChoiceMouseEntered
 
     private void NonProfitChoiceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NonProfitChoiceMouseExited
-        changeColor(NonProfitChoice, new Color(0, 255, 246));
+        exiting(NonProfitChoice);
     }//GEN-LAST:event_NonProfitChoiceMouseExited
 
     private void NonProfitChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NonProfitChoiceMouseClicked
-        //clickMenu(NonProfitChoice);
+        clickUnclick(NonProfitChoice);
     }//GEN-LAST:event_NonProfitChoiceMouseClicked
 
     /**
