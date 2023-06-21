@@ -120,11 +120,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         UseDCF.setText("DCF");
         UseDCF.setToolTipText("Enable / Disable Discounted Cash Flow Model");
         UseDCF.setPreferredSize(new java.awt.Dimension(56, 21));
-        UseDCF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UseDCFActionPerformed(evt);
-            }
-        });
         Calculation.add(UseDCF);
 
         UseRatios.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -607,12 +602,22 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     * @param hover
+     * @param rand
+     */
     public void changeColor(JPanel hover, Color rand){
         if(hover != null) {
             hover.setBackground(rand);
         }
     }
     
+    /**
+     *
+     * @param showingMenu
+     * @param hid
+     */
     public void showHideMenu(JPanel showingMenu, boolean hid){
         if(!hid){
             showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
@@ -624,6 +629,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         hidden = !hid;
     }
     
+    /**
+     *
+     * @param target
+     * @param resourceRoute
+     */
     public void changeIcon(JLabel target, String resourceRoute){
         ImageIcon icon = new ImageIcon(getClass().getResource(resourceRoute));
         target.setIcon(icon);
@@ -632,6 +642,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         target.setHorizontalAlignment(SwingConstants.CENTER);
     }
     
+    /**
+     *
+     * @param target
+     */
     public void clickUnclick(JPanel target){
         if(target != null){
             if(!activeChoices.contains(target.getName())){
@@ -644,6 +658,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
+    /**
+     *
+     * @param target
+     */
     public void exiting(JPanel target){
         if(target != null){
             if(!activeChoices.contains(target.getName())){
@@ -652,6 +670,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
+    /**
+     *
+     * @param target
+     */
     public void hidemenuClick(JPanel target){
         if(target != null){
             if(target == hideChosen){
@@ -665,6 +687,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
+    /**
+     *
+     * @param target
+     */
     public void hidemenuExiting(JPanel target){
         if(target != null){
             if(target != hideChosen){
@@ -739,10 +765,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private void NonProfitChoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NonProfitChoiceMouseClicked
         clickUnclick(NonProfitChoice);
     }//GEN-LAST:event_NonProfitChoiceMouseClicked
-
-    private void UseDCFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UseDCFActionPerformed
-        // MISS CLICK!!!!!!!!!!!!!!!!
-    }//GEN-LAST:event_UseDCFActionPerformed
 
     private void OutSummaryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseEntered
         changeColor(OutSummary, darkLightColor);
