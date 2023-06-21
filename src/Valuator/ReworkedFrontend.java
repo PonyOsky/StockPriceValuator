@@ -40,6 +40,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     
     public ReworkedFrontend() {
         initComponents();
+        HidingMenu.setVisible(false);
         ShowHideBut.setName("ShowHideButton");
         CorpChoice.setName("CorpChoiceButton");
         CorpDivChoice.setName("CorpDibChoiceButton");
@@ -681,6 +682,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_ShowHideButMouseExited
 
     private void ShowHideButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowHideButMouseClicked
+        HidingMenu.setVisible(true);
         clickUnclick(ShowHideBut);
         if(hidden) {
             showHideMenu(HidingMenu, hidden);
