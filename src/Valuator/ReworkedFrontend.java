@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -41,7 +42,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     
     public ReworkedFrontend() {
         initComponents();
-        setTitle("Stock price valuator 2.0");
+        setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
+        setTitle("Stock price valuator");
         HidingMenuInputs.setVisible(false);
         CalcBut.setName("ShowHideButton");
         ResultBut.setName("CorpChoiceButton");
@@ -210,7 +212,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         CalcBut.setLayout(CalcButLayout);
         CalcButLayout.setHorizontalGroup(
             CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(calcLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(calcLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         CalcButLayout.setVerticalGroup(
             CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,11 +342,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         InModel.setLayout(InModelLayout);
         InModelLayout.setHorizontalGroup(
             InModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
         );
         InModelLayout.setVerticalGroup(
             InModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InModel);
@@ -371,11 +373,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         InRatio.setLayout(InRatioLayout);
         InRatioLayout.setHorizontalGroup(
             InRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
         );
         InRatioLayout.setVerticalGroup(
             InRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InRatio);
@@ -402,11 +404,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         OutSummary.setLayout(OutSummaryLayout);
         OutSummaryLayout.setHorizontalGroup(
             OutSummaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
         );
         OutSummaryLayout.setVerticalGroup(
             OutSummaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(OutSummary);
@@ -433,11 +435,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         OutRatio.setLayout(OutRatioLayout);
         OutRatioLayout.setHorizontalGroup(
             OutRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
         );
         OutRatioLayout.setVerticalGroup(
             OutRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(OutRatio);
@@ -464,11 +466,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         OutDCF.setLayout(OutDCFLayout);
         OutDCFLayout.setHorizontalGroup(
             OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
         );
         OutDCFLayout.setVerticalGroup(
             OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(OutDCF);
@@ -495,11 +497,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         OutDDM.setLayout(OutDDMLayout);
         OutDDMLayout.setHorizontalGroup(
             OutDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
         );
         OutDDMLayout.setVerticalGroup(
             OutDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(OutDDM);
@@ -530,7 +532,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutGrahamLayout.setVerticalGroup(
             OutGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(OutGraham);
@@ -550,9 +552,9 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         WelcomePanelLayout.setHorizontalGroup(
             WelcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WelcomePanelLayout.createSequentialGroup()
-                .addContainerGap(1261, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(1107, 1107, 1107))
         );
         WelcomePanelLayout.setVerticalGroup(
             WelcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,7 +588,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     public void showHideMenu(JPanel showingMenu, boolean hid){
         if(!hid){
             showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
-            changeIcon(calcLabel, "/Icons/menu-edit.png");
+            changeIcon(calcLabel, "/Icons/calc.png");
         }else{
             showingMenu.setPreferredSize(new Dimension(280, MenuColumn.getHeight()));
             changeIcon(calcLabel, "/Icons/close-edit.png");
@@ -692,7 +694,14 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_ResultButMouseExited
 
     private void ResultButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseClicked
-        clickUnclick(ResultBut);
+        HidingMenuInputs.setVisible(true);
+        clickUnclick(CalcBut);
+        if(hiddenOutputs) {
+            showHideMenu(HidingMenuInputs, hiddenOutputs);
+        }else{
+            showHideMenu(HidingMenuInputs, hiddenOutputs);
+        }
+        SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_ResultButMouseClicked
 
     private void SettingButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseEntered
@@ -877,4 +886,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel setttingLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void setIconImage(String iconsaccountingico) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
