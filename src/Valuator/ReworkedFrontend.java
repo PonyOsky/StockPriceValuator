@@ -68,7 +68,9 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         CleanBut = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         SaveBut = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         CalcBut = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         MenuColumn = new javax.swing.JPanel();
         InputBut = new javax.swing.JPanel();
@@ -113,58 +115,105 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 600));
+        setMaximumSize(null);
+        setPreferredSize(new java.awt.Dimension(900, 600));
 
-        Calculation.setBackground(new java.awt.Color(0, 20, 255));
-        Calculation.setForeground(new java.awt.Color(0, 102, 255));
-        Calculation.setMaximumSize(new java.awt.Dimension(940, 100));
-        Calculation.setPreferredSize(new java.awt.Dimension(940, 100));
+        Calculation.setBackground(new java.awt.Color(0, 231, 255));
+        Calculation.setForeground(new java.awt.Color(0, 231, 255));
+        Calculation.setMaximumSize(new java.awt.Dimension(900, 80));
+        Calculation.setPreferredSize(new java.awt.Dimension(900, 80));
 
         CleanBut.setBackground(new java.awt.Color(0, 231, 255));
+        CleanBut.setMaximumSize(new java.awt.Dimension(300, 80));
+        CleanBut.setPreferredSize(new java.awt.Dimension(300, 80));
+        CleanBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CleanButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CleanButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CleanButMouseExited(evt);
+            }
+        });
 
-        jLabel10.setText("jLabel10");
+        jLabel10.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Clear values");
 
         javax.swing.GroupLayout CleanButLayout = new javax.swing.GroupLayout(CleanBut);
         CleanBut.setLayout(CleanButLayout);
         CleanButLayout.setHorizontalGroup(
             CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CleanButLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
         );
         CleanButLayout.setVerticalGroup(
             CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CleanButLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel10)
-                .addContainerGap(48, Short.MAX_VALUE))
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
         SaveBut.setBackground(new java.awt.Color(0, 231, 255));
+        SaveBut.setMaximumSize(new java.awt.Dimension(300, 80));
+        SaveBut.setPreferredSize(new java.awt.Dimension(300, 80));
+        SaveBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SaveButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SaveButMouseExited(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Save valuation");
 
         javax.swing.GroupLayout SaveButLayout = new javax.swing.GroupLayout(SaveBut);
         SaveBut.setLayout(SaveButLayout);
         SaveButLayout.setHorizontalGroup(
             SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         SaveButLayout.setVerticalGroup(
             SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
         CalcBut.setBackground(new java.awt.Color(0, 231, 255));
+        CalcBut.setMaximumSize(new java.awt.Dimension(300, 80));
+        CalcBut.setPreferredSize(new java.awt.Dimension(300, 80));
+        CalcBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CalcButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CalcButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CalcButMouseExited(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Calculate value");
 
         javax.swing.GroupLayout CalcButLayout = new javax.swing.GroupLayout(CalcBut);
         CalcBut.setLayout(CalcButLayout);
         CalcButLayout.setHorizontalGroup(
             CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         CalcButLayout.setVerticalGroup(
             CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout CalculationLayout = new javax.swing.GroupLayout(Calculation);
@@ -172,13 +221,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         CalculationLayout.setHorizontalGroup(
             CalculationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CalculationLayout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(CleanBut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(SaveBut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(CalcBut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addComponent(CleanBut, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SaveBut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CalcBut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CalculationLayout.setVerticalGroup(
             CalculationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,7 +398,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         LocalizatorInLayout.setVerticalGroup(
             LocalizatorInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(LocalizatorIn);
@@ -538,7 +585,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         InNAVLayout.setVerticalGroup(
             InNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InNAV);
@@ -566,7 +613,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         LocalizatorOutLayout.setVerticalGroup(
             LocalizatorOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(LocalizatorOut);
@@ -600,7 +647,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutSummaryLayout.setVerticalGroup(
             OutSummaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutSummary);
@@ -631,7 +678,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutRatioLayout.setVerticalGroup(
             OutRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutRatio);
@@ -665,7 +712,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutDCFLayout.setVerticalGroup(
             OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         jLabel5.getAccessibleContext().setAccessibleName("DCF Valuation");
@@ -698,7 +745,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutDDMLayout.setVerticalGroup(
             OutDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutDDM);
@@ -729,7 +776,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutGrahamLayout.setVerticalGroup(
             OutGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutGraham);
@@ -760,7 +807,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutNAVLayout.setVerticalGroup(
             OutNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutNAV);
@@ -799,7 +846,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         WelcomePanelLayout.setHorizontalGroup(
             WelcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WelcomePanelLayout.createSequentialGroup()
-                .addContainerGap(609, Short.MAX_VALUE)
+                .addContainerGap(559, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(1107, 1107, 1107))
         );
@@ -808,7 +855,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
             .addGroup(WelcomePanelLayout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
 
         getContentPane().add(WelcomePanel, java.awt.BorderLayout.CENTER);
@@ -1114,6 +1161,42 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         exiting(OutNAV, lightDarkColor);
     }//GEN-LAST:event_OutNAVMouseExited
 
+    private void CleanButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CleanButMouseClicked
+
+    private void CleanButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseEntered
+        changeColor(CleanBut, darkLightColor);
+    }//GEN-LAST:event_CleanButMouseEntered
+
+    private void CleanButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseExited
+        exiting(CleanBut, lightDarkColor);
+    }//GEN-LAST:event_CleanButMouseExited
+
+    private void SaveButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaveButMouseClicked
+
+    private void SaveButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseEntered
+        changeColor(SaveBut, darkLightColor);
+    }//GEN-LAST:event_SaveButMouseEntered
+
+    private void SaveButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseExited
+        exiting(SaveBut, lightDarkColor);
+    }//GEN-LAST:event_SaveButMouseExited
+
+    private void CalcButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CalcButMouseClicked
+
+    private void CalcButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseEntered
+        changeColor(CalcBut, darkLightColor);
+    }//GEN-LAST:event_CalcButMouseEntered
+
+    private void CalcButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseExited
+        exiting(CalcBut, lightDarkColor);
+    }//GEN-LAST:event_CalcButMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -1182,6 +1265,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel helpLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
