@@ -51,7 +51,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         activeChoices = new ArrayList();
         lightColor = new Color(0, 255, 246);
         lightDarkColor = new Color(0, 231, 255);
-        darkLightColor = new Color(0, 20, 255);
+        darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
     }
 
@@ -509,6 +509,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.add(LocalizatorOut);
 
         OutSummary.setBackground(new java.awt.Color(0, 231, 255));
+        OutSummary.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutSummaryMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OutSummaryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OutSummaryMouseExited(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -532,6 +543,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.add(OutSummary);
 
         OutRatio.setBackground(new java.awt.Color(0, 231, 255));
+        OutRatio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutRatioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OutRatioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OutRatioMouseExited(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -552,6 +574,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.add(OutRatio);
 
         OutDCF.setBackground(new java.awt.Color(0, 231, 255));
+        OutDCF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutDCFMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OutDCFMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OutDCFMouseExited(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -577,6 +610,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.add(OutDCF);
 
         OutDDM.setBackground(new java.awt.Color(0, 231, 255));
+        OutDDM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutDDMMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OutDDMMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OutDDMMouseExited(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -597,6 +641,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.add(OutDDM);
 
         OutGraham.setBackground(new java.awt.Color(0, 231, 255));
+        OutGraham.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutGrahamMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OutGrahamMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OutGrahamMouseExited(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -617,6 +672,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.add(OutGraham);
 
         OutNAV.setBackground(new java.awt.Color(0, 231, 255));
+        OutNAV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutNAVMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OutNAVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OutNAVMouseExited(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -688,35 +754,38 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
     /**
      *
+     * @param target
      * @param hover
      * @param rand
      */
-    public void changeColor(JPanel hover, Color rand){
-        if(hover != null) {
-            hover.setBackground(rand);
+    public void changeColor(JPanel target, Color rand){
+        if(target != null) {
+            target.setBackground(rand);
         }
     }
     
     /**
      *
      * @param showingMenu
-     * @param bg
+     * @param target
      * @param hid
      * @param icon
      * @param route
      * @return 
      */
-    public boolean showHideMenu(JPanel showingMenu, JPanel bg, boolean hid, JLabel icon, String route){
-        if(showingMenu != null && bg != null && icon != null && route != null){
+    public boolean showHideMenu(JPanel showingMenu, JPanel target, boolean hid, JLabel icon, String route){
+        if(showingMenu != null && target != null && icon != null && route != null){
             if(!hid){
                 showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
                 Menu.setPreferredSize(new Dimension(50, 400));
-                bg.setBackground(lightColor);
+                target.setBackground(lightColor);
+                activeChoices.add(target.getName());
                 changeIcon(icon, route);
             }else{
                 showingMenu.setPreferredSize(new Dimension(270, MenuColumn.getHeight()));
                 Menu.setPreferredSize(new Dimension(320, 400));
-                bg.setBackground(lightDarkColor);
+                target.setBackground(lightDarkColor);
+                activeChoices.remove(target.getName());
                 changeIcon(icon, route);
             }
             return !hid;
@@ -740,11 +809,24 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     /**
      *
      * @param target
+     * @param change
      */
-    public void exiting(JPanel target){
+    public void exiting(JPanel target, Color change){
         if(target != null){
             if(!activeChoices.contains(target.getName())){
-                target.setBackground(lightColor);
+                target.setBackground(change);
+            }
+        }
+    }
+    
+    public void clickUnclick(JPanel target){
+        if(target != null){
+            if(!activeChoices.contains(target.getName())){
+                target.setBackground(darkLightColor);
+                activeChoices.add(target.getName());
+            }else{
+                target.setBackground(lightDarkColor);
+                activeChoices.remove(target.getName());
             }
         }
     }
@@ -754,7 +836,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CalcButMouseEntered
 
     private void CalcButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseExited
-        exiting(CalcBut);
+        exiting(CalcBut, lightColor);
     }//GEN-LAST:event_CalcButMouseExited
 
     private void CalcButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseClicked
@@ -772,7 +854,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_ResultButMouseEntered
 
     private void ResultButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseExited
-        exiting(ResultBut);
+        exiting(ResultBut, lightColor);
     }//GEN-LAST:event_ResultButMouseExited
 
     private void ResultButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseClicked
@@ -790,7 +872,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingButMouseEntered
 
     private void SettingButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseExited
-        exiting(SettingBut);
+        exiting(SettingBut, lightColor);
     }//GEN-LAST:event_SettingButMouseExited
 
     private void SettingButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseClicked
@@ -802,7 +884,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_HelpButMouseEntered
 
     private void HelpButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseExited
-        exiting(HelpBut);
+        exiting(HelpBut, lightColor);
     }//GEN-LAST:event_HelpButMouseExited
 
     private void HelpButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseClicked
@@ -814,11 +896,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InDCFMouseClicked
 
     private void InDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseEntered
-        // TODO add your handling code here:
+        changeColor(InDCF, darkLightColor);
     }//GEN-LAST:event_InDCFMouseEntered
 
     private void InDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseExited
-        // TODO add your handling code here:
+        exiting(InDCF, lightDarkColor);
     }//GEN-LAST:event_InDCFMouseExited
 
     private void InRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseClicked
@@ -826,11 +908,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InRatioMouseClicked
 
     private void InRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseEntered
-        // TODO add your handling code here:
+    changeColor(InRatio, darkLightColor);
     }//GEN-LAST:event_InRatioMouseEntered
 
     private void InRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseExited
-        // TODO add your handling code here:
+        exiting(InRatio, lightDarkColor);
     }//GEN-LAST:event_InRatioMouseExited
 
     private void InDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseClicked
@@ -838,11 +920,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InDDMMouseClicked
 
     private void InDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseEntered
-        // TODO add your handling code here:
+    changeColor(InDDM, darkLightColor);
     }//GEN-LAST:event_InDDMMouseEntered
 
     private void InDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseExited
-        // TODO add your handling code here:
+        exiting(InDDM, lightDarkColor);
     }//GEN-LAST:event_InDDMMouseExited
 
     private void InGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseClicked
@@ -850,11 +932,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InGrahamMouseClicked
 
     private void InGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseEntered
-        // TODO add your handling code here:
+    changeColor(InGraham, darkLightColor);
     }//GEN-LAST:event_InGrahamMouseEntered
 
     private void InGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseExited
-        // TODO add your handling code here:
+        exiting(InGraham, lightDarkColor);
     }//GEN-LAST:event_InGrahamMouseExited
 
     private void InfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseClicked
@@ -862,11 +944,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InfoMouseClicked
 
     private void InfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseEntered
-        // TODO add your handling code here:
+    changeColor(Info, darkLightColor);
     }//GEN-LAST:event_InfoMouseEntered
 
     private void InfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseExited
-        // TODO add your handling code here:
+        exiting(Info, lightDarkColor);
     }//GEN-LAST:event_InfoMouseExited
 
     private void InNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseClicked
@@ -874,12 +956,84 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InNAVMouseClicked
 
     private void InNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseEntered
-        // TODO add your handling code here:
+    changeColor(InNAV, darkLightColor);
     }//GEN-LAST:event_InNAVMouseEntered
 
     private void InNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseExited
-        // TODO add your handling code here:
+        exiting(InNAV, lightDarkColor);
     }//GEN-LAST:event_InNAVMouseExited
+
+    private void OutSummaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OutSummaryMouseClicked
+
+    private void OutSummaryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseEntered
+    changeColor(OutSummary, darkLightColor);
+    }//GEN-LAST:event_OutSummaryMouseEntered
+
+    private void OutSummaryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseExited
+        exiting(OutSummary, lightDarkColor);
+    }//GEN-LAST:event_OutSummaryMouseExited
+
+    private void OutRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OutRatioMouseClicked
+
+    private void OutRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseEntered
+    changeColor(OutRatio, darkLightColor);
+    }//GEN-LAST:event_OutRatioMouseEntered
+
+    private void OutRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseExited
+        exiting(OutRatio, lightDarkColor);
+    }//GEN-LAST:event_OutRatioMouseExited
+
+    private void OutDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OutDCFMouseClicked
+
+    private void OutDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseEntered
+    changeColor(OutDCF, darkLightColor);
+    }//GEN-LAST:event_OutDCFMouseEntered
+
+    private void OutDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseExited
+        exiting(OutDCF, lightDarkColor);
+    }//GEN-LAST:event_OutDCFMouseExited
+
+    private void OutDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OutDDMMouseClicked
+
+    private void OutDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseEntered
+    changeColor(OutDDM, darkLightColor);
+    }//GEN-LAST:event_OutDDMMouseEntered
+
+    private void OutDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseExited
+        exiting(OutDDM, lightDarkColor);
+    }//GEN-LAST:event_OutDDMMouseExited
+
+    private void OutGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OutGrahamMouseClicked
+
+    private void OutGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseEntered
+    changeColor(OutGraham, darkLightColor);
+    }//GEN-LAST:event_OutGrahamMouseEntered
+
+    private void OutGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseExited
+        exiting(OutGraham, lightDarkColor);
+    }//GEN-LAST:event_OutGrahamMouseExited
+
+    private void OutNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OutNAVMouseClicked
+
+    private void OutNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseEntered
+    changeColor(OutNAV, darkLightColor);
+    }//GEN-LAST:event_OutNAVMouseEntered
+
+    private void OutNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseExited
+        exiting(OutNAV, lightDarkColor);
+    }//GEN-LAST:event_OutNAVMouseExited
 
     /**
      * @param args the command line arguments
