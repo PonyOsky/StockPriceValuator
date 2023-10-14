@@ -35,6 +35,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private final Color darkLightColor;
     private final Color darkColor;
     private ArrayList<JPanel> activeChoices;
+    public ArrayList<JPanel> cleaningChoices;
     private boolean hiddenInputs = true;
     private boolean hiddenOutputs = true;
     private boolean hiddenCleaning = true;
@@ -47,6 +48,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuOutputs.setVisible(false);
         HidingMenuCleaning.setVisible(false);
         activeChoices = new ArrayList();
+        cleaningChoices = new ArrayList();
         lightColor = new Color(0, 255, 246);
         lightDarkColor = new Color(0, 231, 255);
         darkLightColor = new Color(0, 158, 255);
@@ -1478,8 +1480,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
      */
     public void exiting(JPanel target, Color change){
         if(target != null){
-            if(!activeChoices.contains(target)){
-                target.setBackground(change);
+            if(!cleaningChoices.contains(target)){
+                if(!activeChoices.contains(target)){
+                    target.setBackground(change);
+                }
             }
         }
     }
@@ -1518,6 +1522,22 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         activeChoices.remove(but);
         changeIcon(icon, route);
         return hide;
+    }
+    
+    /**
+     *
+     * @param choice
+     */
+    public void chooseCleaning(JPanel choice){
+        if(choice != null){
+            if(cleaningChoices.contains(choice)){
+                cleaningChoices.remove(choice);
+                choice.setBackground(lightDarkColor);
+            }else{
+                cleaningChoices.add(choice);
+                choice.setBackground(darkLightColor);
+            }
+        }
     }
     
     private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
@@ -1791,7 +1811,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CalcButMouseExited
 
     private void CleanAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanAllMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanAll);
     }//GEN-LAST:event_CleanAllMouseClicked
 
     private void CleanAllMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanAllMouseEntered
@@ -1803,7 +1823,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanAllMouseExited
 
     private void CleanInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanInfoMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanInfo);
     }//GEN-LAST:event_CleanInfoMouseClicked
 
     private void CleanInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanInfoMouseEntered
@@ -1815,7 +1835,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanInfoMouseExited
 
     private void CleanRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanRatio);
     }//GEN-LAST:event_CleanRatioMouseClicked
 
     private void CleanRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseEntered
@@ -1827,7 +1847,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanRatioMouseExited
 
     private void CleanDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanDCF);
     }//GEN-LAST:event_CleanDCFMouseClicked
 
     private void CleanDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseEntered
@@ -1839,7 +1859,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanDCFMouseExited
 
     private void CleanDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanDDM);
     }//GEN-LAST:event_CleanDDMMouseClicked
 
     private void CleanDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseEntered
@@ -1851,7 +1871,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanDDMMouseExited
 
     private void CleanGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanGraham);
     }//GEN-LAST:event_CleanGrahamMouseClicked
 
     private void CleanGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseEntered
@@ -1863,7 +1883,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanGrahamMouseExited
 
     private void CleanNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanNAVMouseClicked
-        // TODO add your handling code here:
+        chooseCleaning(CleanNAV);
     }//GEN-LAST:event_CleanNAVMouseClicked
 
     private void CleanNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanNAVMouseEntered
