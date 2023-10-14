@@ -37,6 +37,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private ArrayList<String> activeChoices;
     private boolean hiddenInputs = true;
     private boolean hiddenOutputs = true;
+    private boolean hiddenCleaning = true;
     
     public ReworkedFrontend() {
         initComponents();
@@ -44,6 +45,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         setTitle("Stock price valuator");
         HidingMenuInputs.setVisible(false);
         HidingMenuOutputs.setVisible(false);
+        //HidingMenuCleaning.setVisible(false);
         InputBut.setName("Inputs");
         ResultBut.setName("Outputs");
         SettingBut.setName("Options");
@@ -64,21 +66,22 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Calculation = new javax.swing.JPanel();
-        CleanBut = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        LibraryBut = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        SaveBut = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        CalcBut = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         MenuColumn = new javax.swing.JPanel();
         InputBut = new javax.swing.JPanel();
         calcLabel = new javax.swing.JLabel();
+        CleanBut = new javax.swing.JPanel();
+        cleanLabel = new javax.swing.JLabel();
         ResultBut = new javax.swing.JPanel();
         resultLabel = new javax.swing.JLabel();
+        SaveBut = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        LibraryBut = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        CalcBut = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        Space0 = new javax.swing.JPanel();
+        Space1 = new javax.swing.JPanel();
         SettingBut = new javax.swing.JPanel();
         setttingLabel = new javax.swing.JLabel();
         HelpBut = new javax.swing.JPanel();
@@ -137,149 +140,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         setMaximumSize(null);
         setPreferredSize(new java.awt.Dimension(900, 600));
 
-        Calculation.setBackground(new java.awt.Color(0, 231, 255));
-        Calculation.setForeground(new java.awt.Color(0, 231, 255));
-        Calculation.setMaximumSize(new java.awt.Dimension(900, 80));
-        Calculation.setPreferredSize(new java.awt.Dimension(900, 80));
-        Calculation.setLayout(new java.awt.GridLayout(1, 4));
-
-        CleanBut.setBackground(new java.awt.Color(0, 231, 255));
-        CleanBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanBut.setMaximumSize(new java.awt.Dimension(300, 80));
-        CleanBut.setPreferredSize(new java.awt.Dimension(300, 80));
-        CleanBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanButMouseExited(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Clear values");
-        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout CleanButLayout = new javax.swing.GroupLayout(CleanBut);
-        CleanBut.setLayout(CleanButLayout);
-        CleanButLayout.setHorizontalGroup(
-            CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        CleanButLayout.setVerticalGroup(
-            CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        Calculation.add(CleanBut);
-
-        LibraryBut.setBackground(new java.awt.Color(0, 231, 255));
-        LibraryBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LibraryBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LibraryButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LibraryButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LibraryButMouseExited(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Library");
-
-        javax.swing.GroupLayout LibraryButLayout = new javax.swing.GroupLayout(LibraryBut);
-        LibraryBut.setLayout(LibraryButLayout);
-        LibraryButLayout.setHorizontalGroup(
-            LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        LibraryButLayout.setVerticalGroup(
-            LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        Calculation.add(LibraryBut);
-
-        SaveBut.setBackground(new java.awt.Color(0, 231, 255));
-        SaveBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SaveBut.setMaximumSize(new java.awt.Dimension(225, 80));
-        SaveBut.setPreferredSize(new java.awt.Dimension(300, 80));
-        SaveBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SaveButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SaveButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SaveButMouseExited(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Save valuation");
-
-        javax.swing.GroupLayout SaveButLayout = new javax.swing.GroupLayout(SaveBut);
-        SaveBut.setLayout(SaveButLayout);
-        SaveButLayout.setHorizontalGroup(
-            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        SaveButLayout.setVerticalGroup(
-            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        Calculation.add(SaveBut);
-
-        CalcBut.setBackground(new java.awt.Color(0, 231, 255));
-        CalcBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcBut.setMaximumSize(new java.awt.Dimension(300, 80));
-        CalcBut.setPreferredSize(new java.awt.Dimension(300, 80));
-        CalcBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcButMouseExited(evt);
-            }
-        });
-
-        jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Calculate value");
-
-        javax.swing.GroupLayout CalcButLayout = new javax.swing.GroupLayout(CalcBut);
-        CalcBut.setLayout(CalcButLayout);
-        CalcButLayout.setHorizontalGroup(
-            CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        CalcButLayout.setVerticalGroup(
-            CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        Calculation.add(CalcBut);
-
-        getContentPane().add(Calculation, java.awt.BorderLayout.PAGE_END);
-
         Menu.setBackground(new java.awt.Color(0, 231, 255));
         Menu.setMaximumSize(new java.awt.Dimension(50, 400));
         Menu.setPreferredSize(new java.awt.Dimension(50, 400));
@@ -287,7 +147,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         MenuColumn.setBackground(new java.awt.Color(0, 255, 246));
         MenuColumn.setMaximumSize(new java.awt.Dimension(50, 400));
         MenuColumn.setPreferredSize(new java.awt.Dimension(50, 400));
-        MenuColumn.setLayout(new java.awt.GridLayout(6, 1));
+        MenuColumn.setLayout(new java.awt.GridLayout(10, 1));
 
         InputBut.setBackground(new java.awt.Color(0, 255, 246));
         InputBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -305,7 +165,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         });
 
         calcLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        calcLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/calc.png"))); // NOI18N
+        calcLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/inputs.png"))); // NOI18N
         calcLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         calcLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
@@ -321,6 +181,36 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
 
         MenuColumn.add(InputBut);
+
+        CleanBut.setBackground(new java.awt.Color(0, 255, 246));
+        CleanBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CleanBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CleanButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CleanButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CleanButMouseExited(evt);
+            }
+        });
+
+        cleanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cleanLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/rubber.png"))); // NOI18N
+
+        javax.swing.GroupLayout CleanButLayout = new javax.swing.GroupLayout(CleanBut);
+        CleanBut.setLayout(CleanButLayout);
+        CleanButLayout.setHorizontalGroup(
+            CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cleanLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        CleanButLayout.setVerticalGroup(
+            CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cleanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(CleanBut);
 
         ResultBut.setBackground(new java.awt.Color(0, 255, 246));
         ResultBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -354,6 +244,126 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         MenuColumn.add(ResultBut);
 
+        SaveBut.setBackground(new java.awt.Color(0, 255, 246));
+        SaveBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SaveBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SaveButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SaveButMouseExited(evt);
+            }
+        });
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/save.png"))); // NOI18N
+
+        javax.swing.GroupLayout SaveButLayout = new javax.swing.GroupLayout(SaveBut);
+        SaveBut.setLayout(SaveButLayout);
+        SaveButLayout.setHorizontalGroup(
+            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        SaveButLayout.setVerticalGroup(
+            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(SaveBut);
+
+        LibraryBut.setBackground(new java.awt.Color(0, 255, 246));
+        LibraryBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LibraryBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LibraryButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LibraryButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LibraryButMouseExited(evt);
+            }
+        });
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/library.png"))); // NOI18N
+
+        javax.swing.GroupLayout LibraryButLayout = new javax.swing.GroupLayout(LibraryBut);
+        LibraryBut.setLayout(LibraryButLayout);
+        LibraryButLayout.setHorizontalGroup(
+            LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        LibraryButLayout.setVerticalGroup(
+            LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(LibraryBut);
+
+        CalcBut.setBackground(new java.awt.Color(0, 255, 246));
+        CalcBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CalcBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CalcButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CalcButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CalcButMouseExited(evt);
+            }
+        });
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/calc.png"))); // NOI18N
+
+        javax.swing.GroupLayout CalcButLayout = new javax.swing.GroupLayout(CalcBut);
+        CalcBut.setLayout(CalcButLayout);
+        CalcButLayout.setHorizontalGroup(
+            CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CalcButLayout.setVerticalGroup(
+            CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(CalcBut);
+
+        Space0.setBackground(new java.awt.Color(0, 255, 246));
+
+        javax.swing.GroupLayout Space0Layout = new javax.swing.GroupLayout(Space0);
+        Space0.setLayout(Space0Layout);
+        Space0Layout.setHorizontalGroup(
+            Space0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        Space0Layout.setVerticalGroup(
+            Space0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(Space0);
+
+        Space1.setBackground(new java.awt.Color(0, 255, 246));
+
+        javax.swing.GroupLayout Space1Layout = new javax.swing.GroupLayout(Space1);
+        Space1.setLayout(Space1Layout);
+        Space1Layout.setHorizontalGroup(
+            Space1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        Space1Layout.setVerticalGroup(
+            Space1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(Space1);
+
         SettingBut.setBackground(new java.awt.Color(0, 255, 246));
         SettingBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SettingBut.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -370,7 +380,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         });
 
         setttingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        setttingLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/set.png"))); // NOI18N
+        setttingLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/settings.png"))); // NOI18N
         setttingLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout SettingButLayout = new javax.swing.GroupLayout(SettingBut);
@@ -768,8 +778,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
             OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
         );
-
-        jLabel5.getAccessibleContext().setAccessibleName("DCF Valuation");
 
         HidingMenuOutputs.add(OutDCF);
 
@@ -1201,6 +1209,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
+    /**
+     *
+     * @param target
+     */
     public void clickUnclick(JPanel target){
         if(target != null){
             if(!activeChoices.contains(target.getName())){
@@ -1211,6 +1223,24 @@ public class ReworkedFrontend extends javax.swing.JFrame {
                 activeChoices.remove(target.getName());
             }
         }
+    }
+    
+    /**
+     *
+     * @param hide
+     * @param menu
+     * @param but
+     * @param color
+     * @param icon
+     * @param route
+     */
+    public void hideMenus(boolean hide, JPanel menu, JPanel but, Color color, JLabel icon, String route){
+        hide = true;
+        menu.setVisible(false);
+        menu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
+        but.setBackground(color);
+        activeChoices.remove(but.getName());
+        changeIcon(icon, route);
     }
     
     private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
@@ -1438,11 +1468,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanButMouseClicked
 
     private void CleanButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseEntered
-        changeColor(CleanBut, darkLightColor);
+        changeColor(CleanBut, lightDarkColor);
     }//GEN-LAST:event_CleanButMouseEntered
 
     private void CleanButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseExited
-        exiting(CleanBut, lightDarkColor);
+        exiting(CleanBut, lightColor);
     }//GEN-LAST:event_CleanButMouseExited
 
     private void SaveButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseClicked
@@ -1450,36 +1480,36 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveButMouseClicked
 
     private void SaveButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseEntered
-        changeColor(SaveBut, darkLightColor);
+        changeColor(SaveBut, lightDarkColor);
     }//GEN-LAST:event_SaveButMouseEntered
 
     private void SaveButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseExited
-        exiting(SaveBut, lightDarkColor);
+        exiting(SaveBut, lightColor);
     }//GEN-LAST:event_SaveButMouseExited
-
-    private void CalcButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CalcButMouseClicked
-
-    private void CalcButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseEntered
-        changeColor(CalcBut, darkLightColor);
-    }//GEN-LAST:event_CalcButMouseEntered
-
-    private void CalcButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseExited
-        exiting(CalcBut, lightDarkColor);
-    }//GEN-LAST:event_CalcButMouseExited
 
     private void LibraryButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_LibraryButMouseClicked
 
     private void LibraryButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseEntered
-        changeColor(LibraryBut, darkLightColor);
+        changeColor(LibraryBut, lightDarkColor);
     }//GEN-LAST:event_LibraryButMouseEntered
 
     private void LibraryButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseExited
-        exiting(LibraryBut, lightDarkColor);
+        exiting(LibraryBut, lightColor);
     }//GEN-LAST:event_LibraryButMouseExited
+
+    private void CalcButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CalcButMouseClicked
+
+    private void CalcButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseEntered
+        changeColor(CalcBut, lightDarkColor);
+    }//GEN-LAST:event_CalcButMouseEntered
+
+    private void CalcButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseExited
+        exiting(CalcBut, lightColor);
+    }//GEN-LAST:event_CalcButMouseExited
 
     /**
      * @param args the command line arguments
@@ -1519,7 +1549,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CalcBut;
-    private javax.swing.JPanel Calculation;
     private javax.swing.JPanel Clean;
     private javax.swing.JPanel CleanBut;
     private javax.swing.JPanel DCFIn;
@@ -1561,15 +1590,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel SaveBut;
     private javax.swing.JPanel SettingBut;
     private javax.swing.JPanel Settings;
+    private javax.swing.JPanel Space0;
+    private javax.swing.JPanel Space1;
     private javax.swing.JPanel SummaryOut;
     private javax.swing.JPanel WelcomePanel;
     private javax.swing.JLabel calcLabel;
+    private javax.swing.JLabel cleanLabel;
     private javax.swing.JLabel helpLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
