@@ -277,6 +277,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel69 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPanel34 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel70 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         jPanel35 = new javax.swing.JPanel();
         RatioOut = new javax.swing.JPanel();
         DCFOut = new javax.swing.JPanel();
@@ -291,7 +295,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(null);
         setMinimumSize(new java.awt.Dimension(900, 600));
-        setPreferredSize(new java.awt.Dimension(900, 600));
 
         Menu.setBackground(new java.awt.Color(0, 231, 255));
         Menu.setMaximumSize(new java.awt.Dimension(50, 600));
@@ -2035,14 +2038,12 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         Dividends.setRowHeight(40);
         Dividends.setRowMargin(1);
         Dividends.setShowGrid(true);
-        Dividends.setShowHorizontalLines(true);
-        Dividends.setShowVerticalLines(true);
         Dividends.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(Dividends);
 
         jPanel11.add(jScrollPane1);
 
-        jPanel12.setLayout(new java.awt.GridLayout());
+        jPanel12.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
         jPanel19.setLayout(new java.awt.GridLayout(6, 2));
@@ -2231,7 +2232,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2282,11 +2283,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 374, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 67, Short.MAX_VALUE)
         );
 
         jPanel29.add(jPanel30);
@@ -2308,7 +2309,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2338,17 +2339,25 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel32.add(jPanel33, java.awt.BorderLayout.PAGE_START);
 
         jPanel34.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel34.setLayout(new java.awt.GridLayout(1, 4));
 
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 868, Short.MAX_VALUE)
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 54, Short.MAX_VALUE)
-        );
+        jLabel68.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel68.setText("Average");
+        jPanel34.add(jLabel68);
+
+        jTextField2.setText("jTextField2");
+        jPanel34.add(jTextField2);
+
+        jLabel70.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel70.setText("jLabel70");
+        jPanel34.add(jLabel70);
+
+        jTextField3.setText("jTextField3");
+        jPanel34.add(jTextField3);
 
         jPanel32.add(jPanel34, java.awt.BorderLayout.PAGE_END);
 
@@ -2356,11 +2365,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 868, Short.MAX_VALUE)
+            .addGap(0, 842, Short.MAX_VALUE)
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 348, Short.MAX_VALUE)
         );
 
         jPanel32.add(jPanel35, java.awt.BorderLayout.CENTER);
@@ -3185,8 +3194,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -3227,6 +3238,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel setttingLabel;
     // End of variables declaration//GEN-END:variables
