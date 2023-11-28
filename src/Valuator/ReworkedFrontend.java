@@ -24,7 +24,7 @@ import javax.swing.SwingUtilities;
  * rgb(0, 20, 255)
  * 
  */
-public class ReworkedFrontend extends javax.swing.JFrame {
+public final class ReworkedFrontend extends javax.swing.JFrame {
 
     /**
      * Creates new form ReworkedFrontend
@@ -36,6 +36,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private final Color darkColor;
     private ArrayList<JPanel> activeChoices;
     public ArrayList<JPanel> cleaningChoices;
+    private ArrayList<JPanel> views;
     private boolean hiddenInputs = true;
     private boolean hiddenOutputs = true;
     private boolean hiddenCleaning = true;
@@ -49,10 +50,32 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuCleaning.setVisible(false);
         activeChoices = new ArrayList();
         cleaningChoices = new ArrayList();
+        views = new ArrayList();
         lightColor = new Color(0, 255, 246);
         lightDarkColor = new Color(0, 231, 255);
         darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
+        ViewsInit();
+    }
+    
+    public void ViewsInit(){
+        views.add(WelcomePanel);
+        views.add(InfoIn);
+        views.add(RatioIn);
+        views.add(DCFIn);
+        views.add(DDMIn);
+        views.add(GrahamIn);
+        views.add(NAVIn);
+        views.add(SummaryOut);
+        views.add(RatioOut);
+        views.add(DCFOut);
+        views.add(DDMOut);
+        views.add(GrahamOut);
+        views.add(NAVOut);
+        views.add(Settings);
+        views.add(Help);
+        views.add(Save);
+        views.add(Library);
     }
 
     /**
@@ -2926,11 +2949,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         GM.setBackground(new java.awt.Color(70, 73, 75));
         GM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         GM.setForeground(new java.awt.Color(204, 204, 204));
-        GM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GMActionPerformed(evt);
-            }
-        });
         jPanel52.add(GM);
 
         jLabel90.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4108,6 +4126,20 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
+    public void OpenView(JPanel opening){
+        if(opening != null && Menu != null){
+            for(JPanel target : views){
+                if(target == opening){
+                    target.setVisible(true);
+                    target.setPreferredSize(new Dimension(900, Menu.getHeight()));
+                }else{
+                    target.setVisible(false);
+                    target.setPreferredSize(new Dimension(0,0));
+                }
+            }
+        }
+    }
+    
     private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
         changeColor(InputBut, lightDarkColor);
     }//GEN-LAST:event_InputButMouseEntered
@@ -4465,10 +4497,6 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private void CleanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_CleanMouseClicked
-
-    private void GMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GMActionPerformed
 
     /**
      * @param args the command line arguments
