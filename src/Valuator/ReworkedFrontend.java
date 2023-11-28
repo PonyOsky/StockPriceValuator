@@ -363,13 +363,126 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel108 = new javax.swing.JLabel();
         InventoryTime = new javax.swing.JTextField();
         DCFOut = new javax.swing.JPanel();
+        jPanel53 = new javax.swing.JPanel();
+        jLabel87 = new javax.swing.JLabel();
+        jPanel54 = new javax.swing.JPanel();
+        jLabel97 = new javax.swing.JLabel();
+        ActPriceDCF = new javax.swing.JTextField();
+        jLabel98 = new javax.swing.JLabel();
+        PriceDCF = new javax.swing.JTextField();
+        jLabel99 = new javax.swing.JLabel();
+        PillowDCF = new javax.swing.JTextField();
+        jLabel100 = new javax.swing.JLabel();
+        PriceDCFMoS = new javax.swing.JTextField();
+        jPanel55 = new javax.swing.JPanel();
+        jPanel56 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        LastFCF = new javax.swing.JTable();
+        jPanel58 = new javax.swing.JPanel();
+        jLabel116 = new javax.swing.JLabel();
+        GRDCF = new javax.swing.JTextField();
+        jLabel117 = new javax.swing.JLabel();
+        AvGRDCF = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        FutureFCF = new javax.swing.JTable();
+        jPanel57 = new javax.swing.JPanel();
+        jLabel109 = new javax.swing.JLabel();
+        StateDCF = new javax.swing.JTextField();
+        jLabel110 = new javax.swing.JLabel();
+        WACCDCF1 = new javax.swing.JTextField();
+        jLabel111 = new javax.swing.JLabel();
+        CashDCF = new javax.swing.JTextField();
+        jLabel112 = new javax.swing.JLabel();
+        SumFCFDCF = new javax.swing.JTextField();
+        jLabel113 = new javax.swing.JLabel();
+        DebtDCF = new javax.swing.JTextField();
+        jLabel114 = new javax.swing.JLabel();
+        EVDCF = new javax.swing.JTextField();
+        jLabel115 = new javax.swing.JLabel();
+        SharesDCF = new javax.swing.JTextField();
         DDMOut = new javax.swing.JPanel();
+        jPanel59 = new javax.swing.JPanel();
+        jLabel120 = new javax.swing.JLabel();
+        jPanel60 = new javax.swing.JPanel();
+        jLabel121 = new javax.swing.JLabel();
+        ActPriceDDM = new javax.swing.JTextField();
+        jLabel122 = new javax.swing.JLabel();
+        PriceDDM = new javax.swing.JTextField();
+        jLabel123 = new javax.swing.JLabel();
+        PillowDDM = new javax.swing.JTextField();
+        jLabel124 = new javax.swing.JLabel();
+        PriceDDMMoS = new javax.swing.JTextField();
+        jPanel61 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        DividendsPrediction = new javax.swing.JTable();
+        jPanel62 = new javax.swing.JPanel();
+        jLabel125 = new javax.swing.JLabel();
+        AvGRDDM = new javax.swing.JTextField();
+        jLabel126 = new javax.swing.JLabel();
+        WACCDDM1 = new javax.swing.JTextField();
+        jPanel63 = new javax.swing.JPanel();
+        jPanel64 = new javax.swing.JPanel();
+        jPanel65 = new javax.swing.JPanel();
+        jPanel66 = new javax.swing.JPanel();
+        jPanel67 = new javax.swing.JPanel();
+        jPanel68 = new javax.swing.JPanel();
+        jPanel69 = new javax.swing.JPanel();
+        jPanel70 = new javax.swing.JPanel();
+        jPanel71 = new javax.swing.JPanel();
         GrahamOut = new javax.swing.JPanel();
+        jPanel72 = new javax.swing.JPanel();
+        jLabel127 = new javax.swing.JLabel();
+        jPanel73 = new javax.swing.JPanel();
+        jLabel138 = new javax.swing.JLabel();
+        ActPriceGraham = new javax.swing.JTextField();
+        jLabel140 = new javax.swing.JLabel();
+        PillowGraham = new javax.swing.JTextField();
+        jPanel74 = new javax.swing.JPanel();
+        jPanel75 = new javax.swing.JPanel();
+        jLabel156 = new javax.swing.JLabel();
+        jPanel76 = new javax.swing.JPanel();
+        jLabel157 = new javax.swing.JLabel();
+        jPanel77 = new javax.swing.JPanel();
+        jLabel158 = new javax.swing.JLabel();
+        jLabel139 = new javax.swing.JLabel();
+        EPSGraham = new javax.swing.JTextField();
+        EPSGrahamRev = new javax.swing.JTextField();
+        jLabel143 = new javax.swing.JLabel();
+        jLabel144 = new javax.swing.JLabel();
+        jLabel145 = new javax.swing.JLabel();
+        jLabel146 = new javax.swing.JLabel();
+        GRGraham = new javax.swing.JTextField();
+        GRGrahamRev = new javax.swing.JTextField();
+        jLabel147 = new javax.swing.JLabel();
+        jLabel148 = new javax.swing.JLabel();
+        jLabel149 = new javax.swing.JLabel();
+        jLabel150 = new javax.swing.JLabel();
+        jLabel151 = new javax.swing.JLabel();
+        jLabel152 = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
+        YGraham = new javax.swing.JTextField();
+        YGrahamRev = new javax.swing.JTextField();
+        jLabel154 = new javax.swing.JLabel();
+        EndGraham = new javax.swing.JTextField();
+        EndGrahamRev = new javax.swing.JTextField();
+        jLabel155 = new javax.swing.JLabel();
+        EndGrahamMoS = new javax.swing.JTextField();
+        EndGrahamRevMoS = new javax.swing.JTextField();
         NAVOut = new javax.swing.JPanel();
+        jPanel78 = new javax.swing.JPanel();
+        jLabel159 = new javax.swing.JLabel();
         Settings = new javax.swing.JPanel();
+        jPanel79 = new javax.swing.JPanel();
+        jLabel160 = new javax.swing.JLabel();
         Help = new javax.swing.JPanel();
+        jPanel80 = new javax.swing.JPanel();
+        jLabel161 = new javax.swing.JLabel();
         Save = new javax.swing.JPanel();
+        jPanel82 = new javax.swing.JPanel();
+        jLabel163 = new javax.swing.JLabel();
         Library = new javax.swing.JPanel();
+        jPanel81 = new javax.swing.JPanel();
+        jLabel162 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(null);
@@ -1481,7 +1594,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel28.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         InfoIn.add(jLabel28);
 
-        CorpNameField.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        CorpNameField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CorpNameField.setForeground(new java.awt.Color(204, 204, 204));
         CorpNameField.setBorder(null);
         InfoIn.add(CorpNameField);
@@ -1492,7 +1605,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel29.setText("Corporation sticker:");
         InfoIn.add(jLabel29);
 
-        CorpStickerField.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        CorpStickerField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CorpStickerField.setForeground(new java.awt.Color(204, 204, 204));
         CorpStickerField.setBorder(null);
         InfoIn.add(CorpStickerField);
@@ -1503,7 +1616,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel30.setText("Stock exchange:");
         InfoIn.add(jLabel30);
 
-        StockExchField.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        StockExchField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         StockExchField.setForeground(new java.awt.Color(204, 204, 204));
         StockExchField.setBorder(null);
         InfoIn.add(StockExchField);
@@ -1514,7 +1627,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel44.setText("Actual Price:");
         InfoIn.add(jLabel44);
 
-        ActPrice.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        ActPrice.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ActPrice.setForeground(new java.awt.Color(204, 204, 204));
         ActPrice.setBorder(null);
         InfoIn.add(ActPrice);
@@ -1525,7 +1638,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel31.setText("Notes:");
         InfoIn.add(jLabel31);
 
-        NotesField.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        NotesField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         NotesField.setForeground(new java.awt.Color(204, 204, 204));
         NotesField.setBorder(null);
         InfoIn.add(NotesField);
@@ -1571,6 +1684,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel35.setText("Actual Stock Price");
         jPanel2.add(jLabel35);
 
+        ActPriceInn.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ActPriceInn.setForeground(new java.awt.Color(204, 204, 204));
         ActPriceInn.setBorder(null);
         jPanel2.add(ActPriceInn);
@@ -1581,6 +1695,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel36.setText("Total Revenue");
         jPanel2.add(jLabel36);
 
+        TRevenue.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TRevenue.setForeground(new java.awt.Color(204, 204, 204));
         TRevenue.setBorder(null);
         jPanel2.add(TRevenue);
@@ -1591,6 +1706,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel37.setText("Cost of Revenue");
         jPanel2.add(jLabel37);
 
+        CofRevenue.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CofRevenue.setForeground(new java.awt.Color(204, 204, 204));
         CofRevenue.setBorder(null);
         jPanel2.add(CofRevenue);
@@ -1601,6 +1717,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel38.setText("Operating expense ");
         jPanel2.add(jLabel38);
 
+        OpExpense.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         OpExpense.setForeground(new java.awt.Color(204, 204, 204));
         OpExpense.setBorder(null);
         jPanel2.add(OpExpense);
@@ -1611,6 +1728,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel39.setText("Other Income Expense");
         jPanel2.add(jLabel39);
 
+        OthIncome.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         OthIncome.setForeground(new java.awt.Color(204, 204, 204));
         OthIncome.setBorder(null);
         jPanel2.add(OthIncome);
@@ -1621,6 +1739,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel40.setText("Net Income");
         jPanel2.add(jLabel40);
 
+        NIncome.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         NIncome.setForeground(new java.awt.Color(204, 204, 204));
         NIncome.setBorder(null);
         jPanel2.add(NIncome);
@@ -1631,6 +1750,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel41.setText("EBIT");
         jPanel2.add(jLabel41);
 
+        EBIT.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EBIT.setForeground(new java.awt.Color(204, 204, 204));
         EBIT.setBorder(null);
         jPanel2.add(EBIT);
@@ -1683,6 +1803,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel134.setText("Common Stock Dividend Paid");
         jPanel2.add(jLabel134);
 
+        ComDiv.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ComDiv.setForeground(new java.awt.Color(204, 204, 204));
         ComDiv.setBorder(null);
         jPanel2.add(ComDiv);
@@ -1735,6 +1856,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel118.setText("Taxes");
         jPanel2.add(jLabel118);
 
+        Taxes.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Taxes.setForeground(new java.awt.Color(204, 204, 204));
         Taxes.setBorder(null);
         jPanel2.add(Taxes);
@@ -1745,6 +1867,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel119.setText("Interest Expense");
         jPanel2.add(jLabel119);
 
+        IntExp.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         IntExp.setForeground(new java.awt.Color(204, 204, 204));
         IntExp.setBorder(null);
         jPanel2.add(IntExp);
@@ -1760,6 +1883,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel135.setText("Total Assets");
         jPanel3.add(jLabel135);
 
+        TAssets.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TAssets.setForeground(new java.awt.Color(204, 204, 204));
         TAssets.setBorder(null);
         jPanel3.add(TAssets);
@@ -1770,6 +1894,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel128.setText("Current Assets");
         jPanel3.add(jLabel128);
 
+        CurAssets.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CurAssets.setForeground(new java.awt.Color(204, 204, 204));
         CurAssets.setBorder(null);
         jPanel3.add(CurAssets);
@@ -1780,6 +1905,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel142.setText("Receivable");
         jPanel3.add(jLabel142);
 
+        Receivable.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Receivable.setForeground(new java.awt.Color(204, 204, 204));
         Receivable.setBorder(null);
         jPanel3.add(Receivable);
@@ -1790,6 +1916,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel137.setText("Inventory");
         jPanel3.add(jLabel137);
 
+        Inv.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Inv.setForeground(new java.awt.Color(204, 204, 204));
         Inv.setBorder(null);
         jPanel3.add(Inv);
@@ -1800,6 +1927,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel132.setText("Total Liabilities Net Minority Interest");
         jPanel3.add(jLabel132);
 
+        TLiabilities.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TLiabilities.setForeground(new java.awt.Color(204, 204, 204));
         TLiabilities.setBorder(null);
         jPanel3.add(TLiabilities);
@@ -1810,6 +1938,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel129.setText("Current Liabilities");
         jPanel3.add(jLabel129);
 
+        CurLiabilities.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CurLiabilities.setForeground(new java.awt.Color(204, 204, 204));
         CurLiabilities.setBorder(null);
         jPanel3.add(CurLiabilities);
@@ -1820,6 +1949,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel136.setText("Total Equity Gross Minority Interest");
         jPanel3.add(jLabel136);
 
+        TEGMI.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TEGMI.setForeground(new java.awt.Color(204, 204, 204));
         TEGMI.setBorder(null);
         jPanel3.add(TEGMI);
@@ -1830,6 +1960,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel133.setText("Shareholders Equity");
         jPanel3.add(jLabel133);
 
+        SHEquity.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         SHEquity.setForeground(new java.awt.Color(204, 204, 204));
         SHEquity.setBorder(null);
         jPanel3.add(SHEquity);
@@ -1840,6 +1971,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel141.setText("Capital Lease Obligations");
         jPanel3.add(jLabel141);
 
+        CapLO.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CapLO.setForeground(new java.awt.Color(204, 204, 204));
         CapLO.setBorder(null);
         jPanel3.add(CapLO);
@@ -1850,6 +1982,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel131.setText("Tangible Book Value");
         jPanel3.add(jLabel131);
 
+        TanBookVal.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TanBookVal.setForeground(new java.awt.Color(204, 204, 204));
         TanBookVal.setBorder(null);
         jPanel3.add(TanBookVal);
@@ -1860,6 +1993,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel130.setText("Ordinary Shares Number");
         jPanel3.add(jLabel130);
 
+        OrShNum.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         OrShNum.setForeground(new java.awt.Color(204, 204, 204));
         OrShNum.setBorder(null);
         jPanel3.add(OrShNum);
@@ -1965,6 +2099,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel46.setText("Growth rate (next 5y) [ % ]");
         jPanel17.add(jLabel46);
 
+        GR.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         GR.setForeground(new java.awt.Color(204, 204, 204));
         GR.setBorder(null);
         jPanel17.add(GR);
@@ -1975,6 +2110,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel47.setText("Discount Rate [ % ]");
         jPanel17.add(jLabel47);
 
+        WACCDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         WACCDCF.setForeground(new java.awt.Color(204, 204, 204));
         WACCDCF.setBorder(null);
         jPanel17.add(WACCDCF);
@@ -1985,6 +2121,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel48.setText("Actual Free Cash Flow");
         jPanel17.add(jLabel48);
 
+        ActFCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ActFCF.setForeground(new java.awt.Color(204, 204, 204));
         ActFCF.setBorder(null);
         jPanel17.add(ActFCF);
@@ -1995,6 +2132,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel49.setText("Total Debt");
         jPanel17.add(jLabel49);
 
+        Debt.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Debt.setForeground(new java.awt.Color(204, 204, 204));
         Debt.setBorder(null);
         jPanel17.add(Debt);
@@ -2005,6 +2143,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel50.setText("Shares Outstanding");
         jPanel17.add(jLabel50);
 
+        Shares.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Shares.setForeground(new java.awt.Color(204, 204, 204));
         Shares.setBorder(null);
         jPanel17.add(Shares);
@@ -2015,6 +2154,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel51.setText("Cash & Cash Equivalents");
         jPanel17.add(jLabel51);
 
+        CandC.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CandC.setForeground(new java.awt.Color(204, 204, 204));
         CandC.setBorder(null);
         jPanel17.add(CandC);
@@ -2025,6 +2165,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel52.setText("States Perpentual Growth Rate");
         jPanel17.add(jLabel52);
 
+        State.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         State.setForeground(new java.awt.Color(204, 204, 204));
         State.setBorder(null);
         jPanel17.add(State);
@@ -2035,6 +2176,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel53.setText("Margin of Safety [ % ]");
         jPanel17.add(jLabel53);
 
+        Pillow.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Pillow.setForeground(new java.awt.Color(204, 204, 204));
         Pillow.setBorder(null);
         jPanel17.add(Pillow);
@@ -2051,7 +2193,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
         );
 
         DCFIn.add(jPanel14, java.awt.BorderLayout.CENTER);
@@ -2133,6 +2275,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel58.setText("Discount Rate");
         jPanel19.add(jLabel58);
 
+        WACCDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         WACCDDM.setForeground(new java.awt.Color(204, 204, 204));
         WACCDDM.setBorder(null);
         jPanel19.add(WACCDDM);
@@ -2252,6 +2395,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel60.setText("EPS (TTM)");
         jPanel26.add(jLabel60);
 
+        EPS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EPS.setForeground(new java.awt.Color(204, 204, 204));
         EPS.setBorder(null);
         jPanel26.add(EPS);
@@ -2262,6 +2406,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel61.setText("Growth rate (next 5y) [ % ]");
         jPanel26.add(jLabel61);
 
+        GR1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         GR1.setForeground(new java.awt.Color(204, 204, 204));
         GR1.setBorder(null);
         jPanel26.add(GR1);
@@ -2272,6 +2417,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel62.setText("AAA current yield");
         jPanel26.add(jLabel62);
 
+        jComboBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select State>" }));
         jComboBox1.setBorder(null);
@@ -2311,7 +2457,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
+            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2329,6 +2475,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel64.setText("Total Assets");
         jPanel29.add(jLabel64);
 
+        TotalAssets.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TotalAssets.setForeground(new java.awt.Color(204, 204, 204));
         TotalAssets.setToolTipText("");
         TotalAssets.setBorder(null);
@@ -2340,6 +2487,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel65.setText("Total Liabilities");
         jPanel29.add(jLabel65);
 
+        TotalLiab.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TotalLiab.setForeground(new java.awt.Color(204, 204, 204));
         TotalLiab.setToolTipText("");
         TotalLiab.setBorder(null);
@@ -2351,6 +2499,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel66.setText("Total number of outstanding share");
         jPanel29.add(jLabel66);
 
+        SharesOut.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         SharesOut.setForeground(new java.awt.Color(204, 204, 204));
         SharesOut.setToolTipText("");
         SharesOut.setBorder(null);
@@ -2362,11 +2511,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 405, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel29.add(jPanel30);
@@ -2388,7 +2537,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
+            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2402,6 +2551,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel33.setBackground(new java.awt.Color(0, 51, 255));
         jPanel33.setLayout(new java.awt.GridLayout(1, 2));
 
+        SumSticker.setEditable(false);
         SumSticker.setBackground(new java.awt.Color(0, 51, 255));
         SumSticker.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         SumSticker.setForeground(new java.awt.Color(255, 255, 255));
@@ -2409,6 +2559,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         SumSticker.setText("Sticker");
         jPanel33.add(SumSticker);
 
+        ActPriceAns.setEditable(false);
         ActPriceAns.setBackground(new java.awt.Color(0, 51, 255));
         ActPriceAns.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         ActPriceAns.setForeground(new java.awt.Color(255, 255, 255));
@@ -2426,6 +2577,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel68.setText("Average price:");
         jPanel34.add(jLabel68);
+
+        IdealPrice.setEditable(false);
+        IdealPrice.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        IdealPrice.setForeground(new java.awt.Color(204, 204, 204));
         jPanel34.add(IdealPrice);
 
         jLabel70.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -2433,6 +2588,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel70.setText("Averige price with margin:");
         jPanel34.add(jLabel70);
+
+        IdealPriceMoS.setEditable(false);
+        IdealPriceMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        IdealPriceMoS.setForeground(new java.awt.Color(204, 204, 204));
         jPanel34.add(IdealPriceMoS);
 
         jLabel69.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -2440,6 +2599,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel69.setText("Difference:");
         jPanel34.add(jLabel69);
+
+        Diff.setEditable(false);
+        Diff.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Diff.setForeground(new java.awt.Color(204, 204, 204));
         jPanel34.add(Diff);
 
         jLabel71.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -2447,6 +2610,10 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel71.setText("Margin of Safety:");
         jPanel34.add(jLabel71);
+
+        PillowAns.setEditable(false);
+        PillowAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PillowAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel34.add(PillowAns);
 
         jPanel32.add(jPanel34, java.awt.BorderLayout.PAGE_END);
@@ -2484,13 +2651,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel35.add(jLabel75);
 
         jPanel36.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel36.setLayout(new java.awt.GridLayout());
+        jPanel36.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel76.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(51, 51, 51));
         jLabel76.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel76.setText("Price:");
         jPanel36.add(jLabel76);
+
+        DCFAns.setEditable(false);
+        DCFAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DCFAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel36.add(DCFAns);
 
         jPanel35.add(jPanel36);
@@ -2503,102 +2674,138 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel77.setText("Price:");
         jPanel37.add(jLabel77);
+
+        DDMAns.setEditable(false);
+        DDMAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DDMAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel37.add(DDMAns);
 
         jPanel35.add(jPanel37);
 
         jPanel38.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel38.setLayout(new java.awt.GridLayout());
+        jPanel38.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel78.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(51, 51, 51));
         jLabel78.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel78.setText("Price:");
         jPanel38.add(jLabel78);
+
+        GrahamAns.setEditable(false);
+        GrahamAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GrahamAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel38.add(GrahamAns);
 
         jPanel35.add(jPanel38);
 
         jPanel39.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel39.setLayout(new java.awt.GridLayout());
+        jPanel39.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel79.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(51, 51, 51));
         jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel79.setText("Price:");
         jPanel39.add(jLabel79);
+
+        GrahamRevAns.setEditable(false);
+        GrahamRevAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GrahamRevAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel39.add(GrahamRevAns);
 
         jPanel35.add(jPanel39);
 
         jPanel40.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel40.setLayout(new java.awt.GridLayout());
+        jPanel40.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel80.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(51, 51, 51));
         jLabel80.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel80.setText("Price:");
         jPanel40.add(jLabel80);
+
+        NAVAns.setEditable(false);
+        NAVAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        NAVAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel40.add(NAVAns);
 
         jPanel35.add(jPanel40);
 
         jPanel41.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel41.setLayout(new java.awt.GridLayout());
+        jPanel41.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel81.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(51, 51, 51));
         jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel81.setText("Price with MoS:");
         jPanel41.add(jLabel81);
+
+        DCFMoSAns.setEditable(false);
+        DCFMoSAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DCFMoSAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel41.add(DCFMoSAns);
 
         jPanel35.add(jPanel41);
 
         jPanel42.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel42.setLayout(new java.awt.GridLayout());
+        jPanel42.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel82.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(51, 51, 51));
         jLabel82.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel82.setText("Price with MoS:");
         jPanel42.add(jLabel82);
+
+        DDMMoSAns.setEditable(false);
+        DDMMoSAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DDMMoSAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel42.add(DDMMoSAns);
 
         jPanel35.add(jPanel42);
 
         jPanel43.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel43.setLayout(new java.awt.GridLayout());
+        jPanel43.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel83.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(51, 51, 51));
         jLabel83.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel83.setText("Price with MoS:");
         jPanel43.add(jLabel83);
+
+        GrahamMoSAns.setEditable(false);
+        GrahamMoSAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GrahamMoSAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel43.add(GrahamMoSAns);
 
         jPanel35.add(jPanel43);
 
         jPanel44.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel44.setLayout(new java.awt.GridLayout());
+        jPanel44.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel84.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(51, 51, 51));
         jLabel84.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel84.setText("Price with MoS:");
         jPanel44.add(jLabel84);
+
+        GrahamRevMoSAns.setEditable(false);
+        GrahamRevMoSAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GrahamRevMoSAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel44.add(GrahamRevMoSAns);
 
         jPanel35.add(jPanel44);
 
         jPanel45.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel45.setLayout(new java.awt.GridLayout());
+        jPanel45.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel85.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(51, 51, 51));
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel85.setText("Price with MoS:");
         jPanel45.add(jLabel85);
+
+        NAVMoSAns.setEditable(false);
+        NAVMoSAns.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        NAVMoSAns.setForeground(new java.awt.Color(204, 204, 204));
         jPanel45.add(NAVMoSAns);
 
         jPanel35.add(jPanel45);
@@ -2609,11 +2816,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel46);
@@ -2624,11 +2831,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel47);
@@ -2639,11 +2846,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel48.setLayout(jPanel48Layout);
         jPanel48Layout.setHorizontalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel48);
@@ -2654,11 +2861,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel49);
@@ -2669,11 +2876,11 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel50);
@@ -2698,7 +2905,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
         jPanel51.setLayout(jPanel51Layout);
         jPanel51Layout.setHorizontalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
+            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2717,6 +2924,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         GM.setEditable(false);
         GM.setBackground(new java.awt.Color(70, 73, 75));
+        GM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GM.setForeground(new java.awt.Color(204, 204, 204));
         GM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GMActionPerformed(evt);
@@ -2731,6 +2940,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         OM.setEditable(false);
         OM.setBackground(new java.awt.Color(70, 73, 75));
+        OM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        OM.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(OM);
 
         jLabel91.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2740,6 +2951,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         EPSRatio.setEditable(false);
         EPSRatio.setBackground(new java.awt.Color(70, 73, 75));
+        EPSRatio.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EPSRatio.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(EPSRatio);
 
         jLabel92.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2749,6 +2962,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         PpE.setEditable(false);
         PpE.setBackground(new java.awt.Color(70, 73, 75));
+        PpE.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PpE.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(PpE);
 
         jLabel93.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2758,6 +2973,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         CLiq.setEditable(false);
         CLiq.setBackground(new java.awt.Color(70, 73, 75));
+        CLiq.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        CLiq.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(CLiq);
 
         jLabel94.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2767,6 +2984,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         PpB.setEditable(false);
         PpB.setBackground(new java.awt.Color(70, 73, 75));
+        PpB.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PpB.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(PpB);
 
         jLabel95.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2776,6 +2995,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         DpE.setEditable(false);
         DpE.setBackground(new java.awt.Color(70, 73, 75));
+        DpE.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DpE.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(DpE);
 
         jLabel96.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2785,6 +3006,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         PayOut.setEditable(false);
         PayOut.setBackground(new java.awt.Color(70, 73, 75));
+        PayOut.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PayOut.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(PayOut);
 
         jLabel101.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2794,6 +3017,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         ROA.setEditable(false);
         ROA.setBackground(new java.awt.Color(70, 73, 75));
+        ROA.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ROA.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(ROA);
 
         jLabel102.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2803,6 +3028,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         ROE.setEditable(false);
         ROE.setBackground(new java.awt.Color(70, 73, 75));
+        ROE.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ROE.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(ROE);
 
         jLabel103.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2812,6 +3039,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         ROS.setEditable(false);
         ROS.setBackground(new java.awt.Color(70, 73, 75));
+        ROS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ROS.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(ROS);
 
         jLabel104.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2821,6 +3050,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         RN.setEditable(false);
         RN.setBackground(new java.awt.Color(70, 73, 75));
+        RN.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        RN.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(RN);
 
         jLabel105.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2830,6 +3061,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         Indebtedness.setEditable(false);
         Indebtedness.setBackground(new java.awt.Color(70, 73, 75));
+        Indebtedness.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Indebtedness.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(Indebtedness);
 
         jLabel106.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2839,6 +3072,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         ReceivablesTime.setEditable(false);
         ReceivablesTime.setBackground(new java.awt.Color(70, 73, 75));
+        ReceivablesTime.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ReceivablesTime.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(ReceivablesTime);
 
         jLabel107.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2848,6 +3083,8 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         LiabilitiesTime.setEditable(false);
         LiabilitiesTime.setBackground(new java.awt.Color(70, 73, 75));
+        LiabilitiesTime.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        LiabilitiesTime.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(LiabilitiesTime);
 
         jLabel108.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2857,115 +3094,894 @@ public class ReworkedFrontend extends javax.swing.JFrame {
 
         InventoryTime.setEditable(false);
         InventoryTime.setBackground(new java.awt.Color(70, 73, 75));
+        InventoryTime.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        InventoryTime.setForeground(new java.awt.Color(204, 204, 204));
         jPanel52.add(InventoryTime);
 
         RatioOut.add(jPanel52, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(RatioOut, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout DCFOutLayout = new javax.swing.GroupLayout(DCFOut);
-        DCFOut.setLayout(DCFOutLayout);
-        DCFOutLayout.setHorizontalGroup(
-            DCFOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        DCFOut.setLayout(new java.awt.BorderLayout());
+
+        jPanel53.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel87.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel87.setText("Calculated Discounted Cash Flow Model");
+
+        javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
+        jPanel53.setLayout(jPanel53Layout);
+        jPanel53Layout.setHorizontalGroup(
+            jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        DCFOutLayout.setVerticalGroup(
-            DCFOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel53Layout.setVerticalGroup(
+            jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        DCFOut.add(jPanel53, java.awt.BorderLayout.PAGE_START);
+
+        jPanel54.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel54.setLayout(new java.awt.GridLayout(2, 4));
+
+        jLabel97.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel97.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel97.setText("Actual stock price:");
+        jPanel54.add(jLabel97);
+
+        ActPriceDCF.setEditable(false);
+        ActPriceDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ActPriceDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel54.add(ActPriceDCF);
+
+        jLabel98.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel98.setText("DCF Price:");
+        jPanel54.add(jLabel98);
+
+        PriceDCF.setEditable(false);
+        PriceDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PriceDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel54.add(PriceDCF);
+
+        jLabel99.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel99.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel99.setText("Margin of Safety:");
+        jPanel54.add(jLabel99);
+
+        PillowDCF.setEditable(false);
+        PillowDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PillowDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel54.add(PillowDCF);
+
+        jLabel100.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel100.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel100.setText("DCF Price with MoS:");
+        jPanel54.add(jLabel100);
+
+        PriceDCFMoS.setEditable(false);
+        PriceDCFMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PriceDCFMoS.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel54.add(PriceDCFMoS);
+
+        DCFOut.add(jPanel54, java.awt.BorderLayout.PAGE_END);
+
+        jPanel55.setLayout(new java.awt.GridLayout(2, 1));
+
+        jPanel56.setLayout(new java.awt.GridLayout(3, 1));
+
+        LastFCF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Free Cash Flow", null, null, null, null, null, null, null, null},
+                {"Growth Rate in %", null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Year", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(LastFCF);
+
+        jPanel56.add(jScrollPane5);
+
+        jPanel58.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel58.setLayout(new java.awt.GridLayout(1, 4));
+
+        jLabel116.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel116.setText("Growth Rate (next 5 Years)");
+        jPanel58.add(jLabel116);
+
+        GRDCF.setEditable(false);
+        GRDCF.setBackground(new java.awt.Color(70, 73, 75));
+        GRDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GRDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel58.add(GRDCF);
+
+        jLabel117.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel117.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel117.setText("Average Growth Rate");
+        jPanel58.add(jLabel117);
+
+        AvGRDCF.setEditable(false);
+        AvGRDCF.setBackground(new java.awt.Color(70, 73, 75));
+        AvGRDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        AvGRDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel58.add(AvGRDCF);
+
+        jPanel56.add(jPanel58);
+
+        FutureFCF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Year", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "TV"},
+                {"Future FCF", null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {"Discounted FFCF", null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "PoFFCF", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(FutureFCF);
+
+        jPanel56.add(jScrollPane6);
+
+        jPanel55.add(jPanel56);
+
+        jPanel57.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel57.setLayout(new java.awt.GridLayout(4, 4));
+
+        jLabel109.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel109.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel109.setText("Perpentual Growth Rate");
+        jPanel57.add(jLabel109);
+
+        StateDCF.setEditable(false);
+        StateDCF.setBackground(new java.awt.Color(70, 73, 75));
+        StateDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        StateDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(StateDCF);
+
+        jLabel110.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel110.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel110.setText("Discount Rate");
+        jPanel57.add(jLabel110);
+
+        WACCDCF1.setEditable(false);
+        WACCDCF1.setBackground(new java.awt.Color(70, 73, 75));
+        WACCDCF1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        WACCDCF1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(WACCDCF1);
+
+        jLabel111.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel111.setText("Cahs & Cash Equivalents");
+        jPanel57.add(jLabel111);
+
+        CashDCF.setEditable(false);
+        CashDCF.setBackground(new java.awt.Color(70, 73, 75));
+        CashDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        CashDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(CashDCF);
+
+        jLabel112.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel112.setText("Sum of FCF");
+        jPanel57.add(jLabel112);
+
+        SumFCFDCF.setEditable(false);
+        SumFCFDCF.setBackground(new java.awt.Color(70, 73, 75));
+        SumFCFDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        SumFCFDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(SumFCFDCF);
+
+        jLabel113.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel113.setText("Total Debt");
+        jPanel57.add(jLabel113);
+
+        DebtDCF.setEditable(false);
+        DebtDCF.setBackground(new java.awt.Color(70, 73, 75));
+        DebtDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DebtDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(DebtDCF);
+
+        jLabel114.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel114.setText("Equity Value");
+        jPanel57.add(jLabel114);
+
+        EVDCF.setEditable(false);
+        EVDCF.setBackground(new java.awt.Color(70, 73, 75));
+        EVDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EVDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(EVDCF);
+
+        jLabel115.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel115.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel115.setText("Shares Outstanding");
+        jPanel57.add(jLabel115);
+
+        SharesDCF.setEditable(false);
+        SharesDCF.setBackground(new java.awt.Color(70, 73, 75));
+        SharesDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        SharesDCF.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel57.add(SharesDCF);
+
+        jPanel55.add(jPanel57);
+
+        DCFOut.add(jPanel55, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(DCFOut, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout DDMOutLayout = new javax.swing.GroupLayout(DDMOut);
-        DDMOut.setLayout(DDMOutLayout);
-        DDMOutLayout.setHorizontalGroup(
-            DDMOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DDMOut.setLayout(new java.awt.BorderLayout());
+
+        jPanel59.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel120.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel120.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel120.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel120.setText("Calculated Dividend Discount Model");
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
+        DDMOut.add(jPanel59, java.awt.BorderLayout.PAGE_START);
+
+        jPanel60.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel60.setLayout(new java.awt.GridLayout(2, 4));
+
+        jLabel121.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel121.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel121.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel121.setText("Actual stock price:");
+        jPanel60.add(jLabel121);
+
+        ActPriceDDM.setEditable(false);
+        ActPriceDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ActPriceDDM.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel60.add(ActPriceDDM);
+
+        jLabel122.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel122.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel122.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel122.setText("DDM Price:");
+        jPanel60.add(jLabel122);
+
+        PriceDDM.setEditable(false);
+        PriceDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PriceDDM.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel60.add(PriceDDM);
+
+        jLabel123.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel123.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel123.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel123.setText("Margin of Safety:");
+        jPanel60.add(jLabel123);
+
+        PillowDDM.setEditable(false);
+        PillowDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PillowDDM.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel60.add(PillowDDM);
+
+        jLabel124.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel124.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel124.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel124.setText("DDM Price with MoS:");
+        jPanel60.add(jLabel124);
+
+        PriceDDMMoS.setEditable(false);
+        PriceDDMMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PriceDDMMoS.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel60.add(PriceDDMMoS);
+
+        DDMOut.add(jPanel60, java.awt.BorderLayout.PAGE_END);
+
+        jPanel61.setLayout(new java.awt.GridLayout(2, 1));
+
+        DividendsPrediction.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Divident Payout", null, null, null, null, null},
+                {"Yearly Dividends", null, null, null, null, null},
+                {"Growth Rate in %", null, null, null, null, null}
+            },
+            new String [] {
+                "Year", "2018", "2019", "2020", "2021", "2022"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(DividendsPrediction);
+
+        jPanel61.add(jScrollPane4);
+
+        jPanel62.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel62.setLayout(new java.awt.GridLayout(4, 4));
+
+        jLabel125.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel125.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel125.setText("Average Growth Rate");
+        jPanel62.add(jLabel125);
+
+        AvGRDDM.setEditable(false);
+        AvGRDDM.setBackground(new java.awt.Color(70, 73, 75));
+        AvGRDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        AvGRDDM.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel62.add(AvGRDDM);
+
+        jLabel126.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel126.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel126.setText("WACC / Discount rate");
+        jPanel62.add(jLabel126);
+
+        WACCDDM1.setEditable(false);
+        WACCDDM1.setBackground(new java.awt.Color(70, 73, 75));
+        WACCDDM1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        WACCDDM1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel62.add(WACCDDM1);
+
+        jPanel63.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
+        jPanel63.setLayout(jPanel63Layout);
+        jPanel63Layout.setHorizontalGroup(
+            jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        DDMOutLayout.setVerticalGroup(
-            DDMOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel63Layout.setVerticalGroup(
+            jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jPanel62.add(jPanel63);
+
+        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
+        jPanel64.setLayout(jPanel64Layout);
+        jPanel64Layout.setHorizontalGroup(
+            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel64Layout.setVerticalGroup(
+            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel64);
+
+        jPanel65.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
+        jPanel65.setLayout(jPanel65Layout);
+        jPanel65Layout.setHorizontalGroup(
+            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel65Layout.setVerticalGroup(
+            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel65);
+
+        jPanel66.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel66Layout = new javax.swing.GroupLayout(jPanel66);
+        jPanel66.setLayout(jPanel66Layout);
+        jPanel66Layout.setHorizontalGroup(
+            jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel66Layout.setVerticalGroup(
+            jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel66);
+
+        jPanel67.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
+        jPanel67.setLayout(jPanel67Layout);
+        jPanel67Layout.setHorizontalGroup(
+            jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel67Layout.setVerticalGroup(
+            jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel67);
+
+        jPanel68.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel68Layout = new javax.swing.GroupLayout(jPanel68);
+        jPanel68.setLayout(jPanel68Layout);
+        jPanel68Layout.setHorizontalGroup(
+            jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel68Layout.setVerticalGroup(
+            jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel68);
+
+        jPanel69.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
+        jPanel69.setLayout(jPanel69Layout);
+        jPanel69Layout.setHorizontalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel69Layout.setVerticalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel69);
+
+        jPanel70.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
+        jPanel70.setLayout(jPanel70Layout);
+        jPanel70Layout.setHorizontalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel70Layout.setVerticalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel70);
+
+        jPanel71.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel71Layout = new javax.swing.GroupLayout(jPanel71);
+        jPanel71.setLayout(jPanel71Layout);
+        jPanel71Layout.setHorizontalGroup(
+            jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel71Layout.setVerticalGroup(
+            jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel62.add(jPanel71);
+
+        jPanel61.add(jPanel62);
+
+        DDMOut.add(jPanel61, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(DDMOut, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout GrahamOutLayout = new javax.swing.GroupLayout(GrahamOut);
-        GrahamOut.setLayout(GrahamOutLayout);
-        GrahamOutLayout.setHorizontalGroup(
-            GrahamOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        GrahamOut.setForeground(new java.awt.Color(204, 204, 204));
+        GrahamOut.setLayout(new java.awt.BorderLayout());
+
+        jPanel72.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel127.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel127.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel127.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel127.setText("Calculated Grahams Formulas");
+
+        javax.swing.GroupLayout jPanel72Layout = new javax.swing.GroupLayout(jPanel72);
+        jPanel72.setLayout(jPanel72Layout);
+        jPanel72Layout.setHorizontalGroup(
+            jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        GrahamOutLayout.setVerticalGroup(
-            GrahamOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel72Layout.setVerticalGroup(
+            jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        GrahamOut.add(jPanel72, java.awt.BorderLayout.PAGE_START);
+
+        jPanel73.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel73.setLayout(new java.awt.GridLayout(2, 4));
+
+        jLabel138.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel138.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel138.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel138.setText("Actual stock price:");
+        jPanel73.add(jLabel138);
+
+        ActPriceGraham.setEditable(false);
+        ActPriceGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ActPriceGraham.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel73.add(ActPriceGraham);
+
+        jLabel140.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel140.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel140.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel140.setText("Margin of Safety:");
+        jPanel73.add(jLabel140);
+
+        PillowGraham.setEditable(false);
+        PillowGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PillowGraham.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel73.add(PillowGraham);
+
+        GrahamOut.add(jPanel73, java.awt.BorderLayout.PAGE_END);
+
+        jPanel74.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel74.setLayout(new java.awt.GridLayout(9, 3));
+
+        jPanel75.setBackground(new java.awt.Color(102, 255, 255));
+
+        jLabel156.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel156.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel156.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel156.setText("Partition");
+
+        javax.swing.GroupLayout jPanel75Layout = new javax.swing.GroupLayout(jPanel75);
+        jPanel75.setLayout(jPanel75Layout);
+        jPanel75Layout.setHorizontalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel75Layout.setVerticalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel156, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel74.add(jPanel75);
+
+        jPanel76.setBackground(new java.awt.Color(102, 255, 255));
+
+        jLabel157.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel157.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel157.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel157.setText("Grahams Formula");
+
+        javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
+        jPanel76.setLayout(jPanel76Layout);
+        jPanel76Layout.setHorizontalGroup(
+            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel157, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel76Layout.setVerticalGroup(
+            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel157, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel74.add(jPanel76);
+
+        jPanel77.setBackground(new java.awt.Color(102, 255, 255));
+
+        jLabel158.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel158.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel158.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel158.setText("Grahams Reversed Formula");
+
+        javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
+        jPanel77.setLayout(jPanel77Layout);
+        jPanel77Layout.setHorizontalGroup(
+            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel77Layout.setVerticalGroup(
+            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel158, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel74.add(jPanel77);
+
+        jLabel139.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel139.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel139.setText("EPS");
+        jPanel74.add(jLabel139);
+
+        EPSGraham.setEditable(false);
+        EPSGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EPSGraham.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(EPSGraham);
+
+        EPSGrahamRev.setEditable(false);
+        EPSGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EPSGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(EPSGrahamRev);
+
+        jLabel143.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel143.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel143.setText("P/E ratio");
+        jPanel74.add(jLabel143);
+
+        jLabel144.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel144.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel144.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel144.setText("8.50");
+        jPanel74.add(jLabel144);
+
+        jLabel145.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel145.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel145.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel145.setText("7.00");
+        jPanel74.add(jLabel145);
+
+        jLabel146.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel146.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel146.setText("Growth rate (next 5 years)");
+        jPanel74.add(jLabel146);
+
+        GRGraham.setEditable(false);
+        GRGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GRGraham.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(GRGraham);
+
+        GRGrahamRev.setEditable(false);
+        GRGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GRGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(GRGrahamRev);
+
+        jLabel147.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel147.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel147.setText("Multiplier for Growth rate");
+        jPanel74.add(jLabel147);
+
+        jLabel148.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel148.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel148.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel148.setText("2.00");
+        jPanel74.add(jLabel148);
+
+        jLabel149.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel149.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel149.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel149.setText("1.00");
+        jPanel74.add(jLabel149);
+
+        jLabel150.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel150.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel150.setText("Average yeald");
+        jPanel74.add(jLabel150);
+
+        jLabel151.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel151.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel151.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel151.setText("4.40");
+        jPanel74.add(jLabel151);
+
+        jLabel152.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel152.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel152.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel152.setText("4.40");
+        jPanel74.add(jLabel152);
+
+        jLabel153.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel153.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel153.setText("AAA Current Yield (Y)");
+        jPanel74.add(jLabel153);
+
+        YGraham.setEditable(false);
+        YGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        YGraham.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(YGraham);
+
+        YGrahamRev.setEditable(false);
+        YGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        YGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(YGrahamRev);
+
+        jLabel154.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel154.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel154.setText("Instrinsic value");
+        jPanel74.add(jLabel154);
+
+        EndGraham.setEditable(false);
+        EndGraham.setBackground(new java.awt.Color(204, 255, 204));
+        EndGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EndGraham.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(EndGraham);
+
+        EndGrahamRev.setEditable(false);
+        EndGrahamRev.setBackground(new java.awt.Color(204, 255, 204));
+        EndGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EndGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(EndGrahamRev);
+
+        jLabel155.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel155.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel155.setText("Instrinsic value with MoS");
+        jPanel74.add(jLabel155);
+
+        EndGrahamMoS.setEditable(false);
+        EndGrahamMoS.setBackground(new java.awt.Color(255, 255, 204));
+        EndGrahamMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EndGrahamMoS.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(EndGrahamMoS);
+
+        EndGrahamRevMoS.setEditable(false);
+        EndGrahamRevMoS.setBackground(new java.awt.Color(255, 255, 204));
+        EndGrahamRevMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EndGrahamRevMoS.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel74.add(EndGrahamRevMoS);
+
+        GrahamOut.add(jPanel74, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(GrahamOut, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout NAVOutLayout = new javax.swing.GroupLayout(NAVOut);
-        NAVOut.setLayout(NAVOutLayout);
-        NAVOutLayout.setHorizontalGroup(
-            NAVOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        NAVOut.setLayout(new java.awt.BorderLayout());
+
+        jPanel78.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel159.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel159.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel159.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel159.setText("Calculated Net Assets Value");
+
+        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
+        jPanel78.setLayout(jPanel78Layout);
+        jPanel78Layout.setHorizontalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        NAVOutLayout.setVerticalGroup(
-            NAVOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel78Layout.setVerticalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        NAVOut.add(jPanel78, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(NAVOut, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout SettingsLayout = new javax.swing.GroupLayout(Settings);
-        Settings.setLayout(SettingsLayout);
-        SettingsLayout.setHorizontalGroup(
-            SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        Settings.setLayout(new java.awt.BorderLayout());
+
+        jPanel79.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel160.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel160.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel160.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel160.setText("Settings");
+
+        javax.swing.GroupLayout jPanel79Layout = new javax.swing.GroupLayout(jPanel79);
+        jPanel79.setLayout(jPanel79Layout);
+        jPanel79Layout.setHorizontalGroup(
+            jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        SettingsLayout.setVerticalGroup(
-            SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel79Layout.setVerticalGroup(
+            jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        Settings.add(jPanel79, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(Settings, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout HelpLayout = new javax.swing.GroupLayout(Help);
-        Help.setLayout(HelpLayout);
-        HelpLayout.setHorizontalGroup(
-            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        Help.setLayout(new java.awt.BorderLayout());
+
+        jPanel80.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel161.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel161.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel161.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel161.setText("Help and FAQ");
+
+        javax.swing.GroupLayout jPanel80Layout = new javax.swing.GroupLayout(jPanel80);
+        jPanel80.setLayout(jPanel80Layout);
+        jPanel80Layout.setHorizontalGroup(
+            jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        HelpLayout.setVerticalGroup(
-            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel80Layout.setVerticalGroup(
+            jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        Help.add(jPanel80, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(Help, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout SaveLayout = new javax.swing.GroupLayout(Save);
-        Save.setLayout(SaveLayout);
-        SaveLayout.setHorizontalGroup(
-            SaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        Save.setLayout(new java.awt.BorderLayout());
+
+        jPanel82.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel163.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel163.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel163.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel163.setText("Saving works! Yay!");
+
+        javax.swing.GroupLayout jPanel82Layout = new javax.swing.GroupLayout(jPanel82);
+        jPanel82.setLayout(jPanel82Layout);
+        jPanel82Layout.setHorizontalGroup(
+            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        SaveLayout.setVerticalGroup(
-            SaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel82Layout.setVerticalGroup(
+            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        Save.add(jPanel82, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(Save, java.awt.BorderLayout.PAGE_START);
 
         Library.setPreferredSize(new java.awt.Dimension(0, 0));
+        Library.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout LibraryLayout = new javax.swing.GroupLayout(Library);
-        Library.setLayout(LibraryLayout);
-        LibraryLayout.setHorizontalGroup(
-            LibraryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1493, Short.MAX_VALUE)
+        jPanel81.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel162.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel162.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel162.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel162.setText("Saved Valuations");
+
+        javax.swing.GroupLayout jPanel81Layout = new javax.swing.GroupLayout(jPanel81);
+        jPanel81.setLayout(jPanel81Layout);
+        jPanel81Layout.setHorizontalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        LibraryLayout.setVerticalGroup(
-            LibraryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel81Layout.setVerticalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        Library.add(jPanel81, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(Library, java.awt.BorderLayout.PAGE_START);
 
@@ -3494,11 +4510,17 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField ActFCF;
     private javax.swing.JTextField ActPrice;
     private javax.swing.JTextField ActPriceAns;
+    private javax.swing.JTextField ActPriceDCF;
+    private javax.swing.JTextField ActPriceDDM;
+    private javax.swing.JTextField ActPriceGraham;
     private javax.swing.JTextField ActPriceInn;
+    private javax.swing.JTextField AvGRDCF;
+    private javax.swing.JTextField AvGRDDM;
     private javax.swing.JTextField CLiq;
     private javax.swing.JPanel CalcBut;
     private javax.swing.JTextField CandC;
     private javax.swing.JTextField CapLO;
+    private javax.swing.JTextField CashDCF;
     private javax.swing.JPanel Clean;
     private javax.swing.JPanel CleanAll;
     private javax.swing.JPanel CleanBut;
@@ -3523,16 +4545,29 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField DDMMoSAns;
     private javax.swing.JPanel DDMOut;
     private javax.swing.JTextField Debt;
+    private javax.swing.JTextField DebtDCF;
     private javax.swing.JTextField Diff;
     private javax.swing.JTable Dividends;
+    private javax.swing.JTable DividendsPrediction;
     private javax.swing.JTextField DpE;
     private javax.swing.JTextField EBIT;
     private javax.swing.JTextField EPS;
+    private javax.swing.JTextField EPSGraham;
+    private javax.swing.JTextField EPSGrahamRev;
     private javax.swing.JTextField EPSRatio;
+    private javax.swing.JTextField EVDCF;
+    private javax.swing.JTextField EndGraham;
+    private javax.swing.JTextField EndGrahamMoS;
+    private javax.swing.JTextField EndGrahamRev;
+    private javax.swing.JTextField EndGrahamRevMoS;
     private javax.swing.JTable FCF;
+    private javax.swing.JTable FutureFCF;
     private javax.swing.JTextField GM;
     private javax.swing.JTextField GR;
     private javax.swing.JTextField GR1;
+    private javax.swing.JTextField GRDCF;
+    private javax.swing.JTextField GRGraham;
+    private javax.swing.JTextField GRGrahamRev;
     private javax.swing.JTextField GrahamAns;
     private javax.swing.JPanel GrahamIn;
     private javax.swing.JTextField GrahamMoSAns;
@@ -3558,6 +4593,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField IntExp;
     private javax.swing.JTextField Inv;
     private javax.swing.JTextField InventoryTime;
+    private javax.swing.JTable LastFCF;
     private javax.swing.JTextField LiabilitiesTime;
     private javax.swing.JPanel Library;
     private javax.swing.JPanel LibraryBut;
@@ -3585,8 +4621,15 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField PayOut;
     private javax.swing.JTextField Pillow;
     private javax.swing.JTextField PillowAns;
+    private javax.swing.JTextField PillowDCF;
+    private javax.swing.JTextField PillowDDM;
+    private javax.swing.JTextField PillowGraham;
     private javax.swing.JTextField PpB;
     private javax.swing.JTextField PpE;
+    private javax.swing.JTextField PriceDCF;
+    private javax.swing.JTextField PriceDCFMoS;
+    private javax.swing.JTextField PriceDDM;
+    private javax.swing.JTextField PriceDDMMoS;
     private javax.swing.JTextField RN;
     private javax.swing.JTextField ROA;
     private javax.swing.JTextField ROE;
@@ -3602,11 +4645,14 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel SettingBut;
     private javax.swing.JPanel Settings;
     private javax.swing.JTextField Shares;
+    private javax.swing.JTextField SharesDCF;
     private javax.swing.JTextField SharesOut;
     private javax.swing.JPanel Space0;
     private javax.swing.JPanel Space1;
     private javax.swing.JTextField State;
+    private javax.swing.JTextField StateDCF;
     private javax.swing.JTextField StockExchField;
+    private javax.swing.JTextField SumFCFDCF;
     private javax.swing.JTextField SumSticker;
     private javax.swing.JPanel SummaryOut;
     private javax.swing.JTextField TAssets;
@@ -3618,14 +4664,19 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField TotalAssets;
     private javax.swing.JTextField TotalLiab;
     private javax.swing.JTextField WACCDCF;
+    private javax.swing.JTextField WACCDCF1;
     private javax.swing.JTextField WACCDDM;
+    private javax.swing.JTextField WACCDDM1;
     private javax.swing.JPanel WelcomePanel;
+    private javax.swing.JTextField YGraham;
+    private javax.swing.JTextField YGrahamRev;
     private javax.swing.JLabel calcLabel;
     private javax.swing.JLabel cleanLabel;
     private javax.swing.JLabel helpLabel;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
@@ -3634,10 +4685,27 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel125;
+    private javax.swing.JLabel jLabel126;
+    private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
@@ -3649,11 +4717,35 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
+    private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel156;
+    private javax.swing.JLabel jLabel157;
+    private javax.swing.JLabel jLabel158;
+    private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel160;
+    private javax.swing.JLabel jLabel161;
+    private javax.swing.JLabel jLabel162;
+    private javax.swing.JLabel jLabel163;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -3731,6 +4823,7 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
@@ -3741,6 +4834,9 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3789,12 +4885,45 @@ public class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
+    private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel68;
+    private javax.swing.JPanel jPanel69;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel70;
+    private javax.swing.JPanel jPanel71;
+    private javax.swing.JPanel jPanel72;
+    private javax.swing.JPanel jPanel73;
+    private javax.swing.JPanel jPanel74;
+    private javax.swing.JPanel jPanel75;
+    private javax.swing.JPanel jPanel76;
+    private javax.swing.JPanel jPanel77;
+    private javax.swing.JPanel jPanel78;
+    private javax.swing.JPanel jPanel79;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel80;
+    private javax.swing.JPanel jPanel81;
+    private javax.swing.JPanel jPanel82;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel setttingLabel;
     // End of variables declaration//GEN-END:variables
