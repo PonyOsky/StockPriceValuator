@@ -40,6 +40,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private boolean hiddenInputs = true;
     private boolean hiddenOutputs = true;
     private boolean hiddenCleaning = true;
+    private JPanel actShowing;
+    private JPanel actMenuItem;
     
     public ReworkedFrontend() {
         initComponents();
@@ -4004,9 +4006,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      */
     public void exiting(JPanel target, Color change){
         if(target != null){
-            if(!cleaningChoices.contains(target)){
-                if(!activeChoices.contains(target)){
-                    target.setBackground(change);
+            if(target != actShowing && target != actMenuItem){
+                if(!cleaningChoices.contains(target)){
+                    if(!activeChoices.contains(target)){
+                        target.setBackground(change);
+                    }
                 }
             }
         }
@@ -4077,6 +4081,39 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
+    /**
+     *
+     * @param opening
+     * @param type
+     */
+    public void ShowingViewBackground(JPanel opening, int type){
+        if(opening != null){
+            if(opening != actShowing){
+                switch (type) {
+                    case 0:
+                        if(actShowing != null){
+                            actShowing.setBackground(lightDarkColor);
+                        }
+                        actShowing = opening;
+                        opening.setBackground(darkLightColor);
+                        break;
+                    case 1:
+                        if(actMenuItem != null){
+                            actMenuItem.setBackground(lightColor);
+                        }
+                        actMenuItem = opening;
+                        opening.setBackground(lightDarkColor);
+                        break;
+                    default:
+                }
+            }
+        }
+    }
+    
+    public void SetItemUnactive(){
+        actMenuItem.setBackground(lightColor);
+    }
+    
     private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
         changeColor(InputBut, lightDarkColor);
     }//GEN-LAST:event_InputButMouseEntered
@@ -4096,6 +4133,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }else{
             hiddenInputs = showHideMenu(HidingMenuInputs, InputBut, hiddenInputs, calcLabel, "/Icons/inputs.png");
         }
+        SetItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_InputButMouseClicked
 
@@ -4118,6 +4156,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }else{
             hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/result.png");
         }
+        SetItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_ResultButMouseClicked
 
@@ -4131,6 +4170,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void SettingButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseClicked
         OpenView(Settings);
+        ShowingViewBackground(SettingBut, 1);
     }//GEN-LAST:event_SettingButMouseClicked
 
     private void HelpButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseEntered
@@ -4143,6 +4183,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void HelpButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseClicked
         OpenView(Help);
+        ShowingViewBackground(HelpBut, 1);
     }//GEN-LAST:event_HelpButMouseClicked
 
     private void InDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseClicked
@@ -4159,6 +4200,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void InRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseClicked
         OpenView(RatioIn);
+        ShowingViewBackground(InRatio, 0);
     }//GEN-LAST:event_InRatioMouseClicked
 
     private void InRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseEntered
@@ -4171,6 +4213,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void InDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseClicked
         OpenView(DDMIn);
+        ShowingViewBackground(InDDM, 0);
     }//GEN-LAST:event_InDDMMouseClicked
 
     private void InDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseEntered
@@ -4183,6 +4226,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void InGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseClicked
         OpenView(GrahamIn);
+        ShowingViewBackground(InGraham, 0);
     }//GEN-LAST:event_InGrahamMouseClicked
 
     private void InGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseEntered
@@ -4195,6 +4239,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void InfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseClicked
         OpenView(InfoIn);
+        ShowingViewBackground(Info, 0);
     }//GEN-LAST:event_InfoMouseClicked
 
     private void InfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseEntered
@@ -4207,6 +4252,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void InNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseClicked
         OpenView(NAVIn);
+        ShowingViewBackground(InNAV, 0);
     }//GEN-LAST:event_InNAVMouseClicked
 
     private void InNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseEntered
@@ -4219,6 +4265,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void OutSummaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseClicked
         OpenView(SummaryOut);
+        ShowingViewBackground(OutSummary, 0);
     }//GEN-LAST:event_OutSummaryMouseClicked
 
     private void OutSummaryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseEntered
@@ -4231,6 +4278,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void OutRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseClicked
         OpenView(RatioOut);
+        ShowingViewBackground(OutRatio, 0);
     }//GEN-LAST:event_OutRatioMouseClicked
 
     private void OutRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseEntered
@@ -4243,6 +4291,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void OutDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseClicked
         OpenView(DCFOut);
+        ShowingViewBackground(OutDCF, 0);
     }//GEN-LAST:event_OutDCFMouseClicked
 
     private void OutDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseEntered
@@ -4255,6 +4304,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void OutDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseClicked
         OpenView(DDMOut);
+        ShowingViewBackground(OutDDM, 0);
     }//GEN-LAST:event_OutDDMMouseClicked
 
     private void OutDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseEntered
@@ -4267,6 +4317,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void OutGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseClicked
         OpenView(GrahamOut);
+        ShowingViewBackground(OutGraham, 0);
     }//GEN-LAST:event_OutGrahamMouseClicked
 
     private void OutGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseEntered
@@ -4279,6 +4330,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void OutNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseClicked
         OpenView(NAVOut);
+        ShowingViewBackground(OutNAV, 0);
     }//GEN-LAST:event_OutNAVMouseClicked
 
     private void OutNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseEntered
@@ -4300,6 +4352,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }else{
             hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/rubber.png");
         }
+        SetItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_CleanButMouseClicked
 
@@ -4313,6 +4366,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void SaveButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseClicked
         OpenView(Save);
+        ShowingViewBackground(SaveBut, 1);
     }//GEN-LAST:event_SaveButMouseClicked
 
     private void SaveButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseEntered
@@ -4325,6 +4379,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void LibraryButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseClicked
         OpenView(Library);
+        ShowingViewBackground(LibraryBut, 1);
     }//GEN-LAST:event_LibraryButMouseClicked
 
     private void LibraryButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseEntered
