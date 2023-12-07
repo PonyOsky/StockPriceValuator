@@ -8,20 +8,20 @@ import java.util.List;
  * @author ondre
  */
 public class DividendDiscountModel {
-    private final CentralObject central;
+    private final Controller controller;
     List<Double> YDiv;
     List<Double> GrowthDiv;
     
-    public DividendDiscountModel(CentralObject central){
-        this.central = central;
+    public DividendDiscountModel(Controller controller){
+        this.controller = controller;
     }
     /**
      *
      */
     public void calcYDiv(){
         YDiv = new ArrayList<>();
-        for(int i = 0; i < central.getDividends().size(); i++){
-            YDiv.add(central.getDividends().get(i) * 4);
+        for(int i = 0; i < controller.getDividends().size(); i++){
+            YDiv.add(controller.getDividends().get(i) * 4);
         }
     }
 
@@ -86,7 +86,7 @@ public class DividendDiscountModel {
      */
     public double controlDDM(){
         double ans = getDDMPrice();
-        double a = (ans - central.getActualPrice()) / central.getActualPrice();
+        double a = (ans - controller.getActualPrice()) / controller.getActualPrice();
         if(a >=-0.6){
             if(a <=0.6){
                 return ans;
@@ -107,7 +107,7 @@ public class DividendDiscountModel {
         if(a == 0){
             return a;
         }else{
-            return a - (a * central.getMarginOfSafety());
+            return a - (a * controller.getMarginOfSafety());
         }
     }
 }

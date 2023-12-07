@@ -5,37 +5,37 @@ package Valuator;
  * @author ondre
  */
 public class AdditionalCalculates {
-    private final CentralObject central;
+    private final Controller controller;
     
-    public AdditionalCalculates(CentralObject central){
-        this.central = central;
+    public AdditionalCalculates(Controller controller){
+        this.controller = controller;
     }
     /**
      *
      * @return
      */
     public double calcEbit(){
-        return central.getTaxes() + central.getInterestExpense() + central.getNetIncome();
+        return controller.getTaxes() + controller.getInterestExpense() + controller.getNetIncome();
     }
     /**
      *
      * @return
      */
     public double calcGrossProfit(){
-        return central.getTotalRevenue() - central.getCostOfRevenue();
+        return controller.getTotalRevenue() - controller.getCostOfRevenue();
     }
     /**
      *
      * @return
      */
     public double calcOperatingIncome(){
-        return calcGrossProfit() - central.getOperatingExpense();
+        return calcGrossProfit() - controller.getOperatingExpense();
     }
     /**
      *
      * @return
      */
     public double calcTotalExpenses(){
-        return central.getCostOfRevenue() + central.getOperatingExpense() + central.getOtherIncomeExpense();
+        return controller.getCostOfRevenue() + controller.getOperatingExpense() + controller.getOtherIncomeExpense();
     }
 }

@@ -6,11 +6,11 @@ package Valuator;
  */
 public class StockRatios {
     private final AdditionalCalculates addons;
-    private final CentralObject central;
+    private final Controller controller;
     
     
-    public StockRatios(CentralObject central, AdditionalCalculates addons){
-        this.central = central;
+    public StockRatios(Controller controller, AdditionalCalculates addons){
+        this.controller = controller;
         this.addons = addons;
     }
     /**
@@ -18,7 +18,7 @@ public class StockRatios {
      * @return
      */
     public double grossMargin(){
-        return addons.calcGrossProfit() / central.getTotalRevenue() * 100;
+        return addons.calcGrossProfit() / controller.getTotalRevenue() * 100;
     }
 
     /**
@@ -26,7 +26,7 @@ public class StockRatios {
      * @return
      */
     public double operationMargin(){
-        return addons.calcOperatingIncome() / central.getTotalRevenue() * 100;
+        return addons.calcOperatingIncome() / controller.getTotalRevenue() * 100;
     }
 
     /**
@@ -34,10 +34,10 @@ public class StockRatios {
      * @return
      */
     public double earningsPerShare(){
-        if(central.getNetIncome() == 0 || central.getOrdinarySharesNumber() == 0){
+        if(controller.getNetIncome() == 0 || controller.getOrdinarySharesNumber() == 0){
             return 0;
         }else{
-            return central.getNetIncome() / central.getOrdinarySharesNumber();
+            return controller.getNetIncome() / controller.getOrdinarySharesNumber();
         }
     }
 
@@ -46,7 +46,7 @@ public class StockRatios {
      * @return
      */
     public double pricePerEarnings(){
-        return central.getActualPrice() / central.getEarningsPerShare();
+        return controller.getActualPrice() / controller.getEarningsPerShare();
     }
 
     /**
@@ -54,7 +54,7 @@ public class StockRatios {
      * @return
      */
     public double currentLiquidity(){
-        return central.getCurrentAssets() / central.getCurrentLiabilities();
+        return controller.getCurrentAssets() / controller.getCurrentLiabilities();
     }
 
     /**
@@ -62,7 +62,7 @@ public class StockRatios {
      * @return
      */
     public double pricePerBook(){
-        return central.getActualPrice() / (central.getTangiableBookValue() / central.getOrdinarySharesNumber());
+        return controller.getActualPrice() / (controller.getTangiableBookValue() / controller.getOrdinarySharesNumber());
     }
 
     /**
@@ -70,7 +70,7 @@ public class StockRatios {
      * @return
      */
     public double debtPerEquity(){
-        return central.getTotalLiabilities() / central.getShareHoldersEquity();
+        return controller.getTotalLiabilities() / controller.getShareHoldersEquity();
     }
 
     /**
@@ -78,7 +78,7 @@ public class StockRatios {
      * @return
      */
     public double payoutRatio(){
-        return (central.getCommonStockDividendPaid() / central.getNetIncome()) * 100;
+        return (controller.getCommonStockDividendPaid() / controller.getNetIncome()) * 100;
     }
 
     /**
@@ -86,7 +86,7 @@ public class StockRatios {
      * @return
      */
     public double roa(){
-        return (central.getEBIT() / central.getTotalAssets()) * 100;
+        return (controller.getEBIT() / controller.getTotalAssets()) * 100;
     }
 
     /**
@@ -94,7 +94,7 @@ public class StockRatios {
      * @return
      */
     public double roe(){
-        return (central.getEBIT() / central.getTEGMI()) * 100;
+        return (controller.getEBIT() / controller.getTEGMI()) * 100;
     }
 
     /**
@@ -102,7 +102,7 @@ public class StockRatios {
      * @return
      */
     public double ros(){
-        return (central.getEBIT() / central.getTotalRevenue()) * 100;
+        return (controller.getEBIT() / controller.getTotalRevenue()) * 100;
     }
 
     /**
@@ -110,7 +110,7 @@ public class StockRatios {
      * @return
      */
     public double rn(){
-        return (central.getEBIT() / addons.calcTotalExpenses()) * 100;
+        return (controller.getEBIT() / addons.calcTotalExpenses()) * 100;
     }
 
     /**
@@ -118,7 +118,7 @@ public class StockRatios {
      * @return
      */
     public double indebtedness(){
-        return ((central.getTotalLiabilities() + central.getCapitalLeaseObligations()) / central.getTotalAssets()) * 100;
+        return ((controller.getTotalLiabilities() + controller.getCapitalLeaseObligations()) / controller.getTotalAssets()) * 100;
     }
 
     /**
@@ -126,7 +126,7 @@ public class StockRatios {
      * @return
      */
     public double recTime(){
-        return (central.getReceivable() / central.getTotalRevenue()) / 360;
+        return (controller.getReceivable() / controller.getTotalRevenue()) / 360;
     }
 
     /**
@@ -134,7 +134,7 @@ public class StockRatios {
      * @return
      */
     public double liabTime(){
-        return (central.getTotalLiabilities() / central.getTotalRevenue()) / 360;
+        return (controller.getTotalLiabilities() / controller.getTotalRevenue()) / 360;
     }
 
     /**
@@ -142,6 +142,6 @@ public class StockRatios {
      * @return
      */
     public double invTime(){
-        return (central.getInventory() / central.getTotalRevenue()) / 360;
+        return (controller.getInventory() / controller.getTotalRevenue()) / 360;
     }
 }

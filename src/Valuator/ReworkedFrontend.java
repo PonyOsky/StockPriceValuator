@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
@@ -4945,6 +4947,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
 
+    
+    
     private void setIconImage(String iconsaccountingico) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
