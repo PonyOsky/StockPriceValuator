@@ -39,7 +39,7 @@ public class Controller {
      * @return s***************************************/
     public List<Double> getFreeCashFlow(){
         fcf = new ArrayList<>();
-        for(int coun = 0; coun < frontend.FCF2.getColumnCount(); coun++){
+        for(int coun = 0; coun < frontend..getColumnCount(); coun++){
             if(FCF.getValueAt(0,coun) == null){
                 fcf.add(null);
             }else{

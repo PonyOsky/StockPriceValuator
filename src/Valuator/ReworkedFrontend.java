@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -344,7 +345,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         GR1 = new javax.swing.JTextField();
         jLabel62 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Y = new javax.swing.JComboBox<>();
         jPanel27 = new javax.swing.JPanel();
         DCFOut = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
@@ -2851,11 +2852,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jLabel62.setText("AAA current yield");
         jPanel26.add(jLabel62);
 
-        jComboBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select State>" }));
-        jComboBox1.setBorder(null);
-        jPanel26.add(jComboBox1);
+        Y.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Y.setForeground(new java.awt.Color(204, 204, 204));
+        Y.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select State>" }));
+        Y.setBorder(null);
+        jPanel26.add(Y);
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -4697,12 +4698,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField WACCDDM;
     private javax.swing.JTextField WACCDDM1;
     private javax.swing.JPanel WelcomePanel;
+    private javax.swing.JComboBox<String> Y;
     private javax.swing.JTextField YGraham;
     private javax.swing.JTextField YGrahamRev;
     private javax.swing.JLabel calcLabel;
     private javax.swing.JLabel cleanLabel;
     private javax.swing.JLabel helpLabel;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -4946,8 +4947,46 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewNAVVal;
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
-
+ 
+    public JTable getFCF(){
+        return FCF2;
+    }
     
+    public JTable getDividends(){
+        return Dividends;
+    }
+    
+    public JTable getDividendsPrediction(){
+        return DividendsPrediction;
+    }
+    
+    public JTextField getGrahamAns(){
+        return GrahamAns;
+    }
+    
+    public JTextField getGR(){
+        return GR1;
+    }
+    
+    public JComboBox getY(){
+        return Y;
+    }
+    
+    public JTextField getWACC(){
+        return WACCDDM;
+    }
+    
+    public JTextField getActFCF(){
+        return ActFCF2;
+    }
+    
+    public JTextField getDebt(){
+        return Debt2;
+    }
+    
+    public JTextField getShares(){
+        return Shares2;
+    }
     
     private void setIconImage(String iconsaccountingico) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

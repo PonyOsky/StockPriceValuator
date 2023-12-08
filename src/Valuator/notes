@@ -1,5 +1,43 @@
+/---Getters only---/
+FCF <- table
+Dividends <-
+GR <- textfield
+Y
+WACC
+ActFCF
+Debt
+Shares
+CandC
+Pillow
+Inv
+Receivable
+CapLO
+TEGMI
+EBIT
+EPS
+ActPriceInn
+ActPrice
+ComDiv
+TAssets
+TLiabilities
+SHEquity
+TanBookVal
+CurLiabilities
+CurAssets
+OrShNum
+NIncome
+Taxes
+IntExp
+TRevenue
+OthIncome
+CofRevenue
+OpExpense <-
+
+/---Getter + Setter---/
+DividendsPrediction <- table
+
 /---Setters only---/
-GrahamAns
+GrahamAns <- textfield
 GrahamRevAns
 GrahamMoSAns
 GrahamRevMoSAns
@@ -61,4 +99,4 @@ RN
 Indebtedness
 ReceivablesTime
 LiabilitiesTime
-InventoryTime
+InventoryTime <-
