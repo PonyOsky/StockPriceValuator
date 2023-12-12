@@ -4948,324 +4948,772 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
  
+    /**
+     *
+     * @return
+     */
     public JTable getFCF(){
         return FCF2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTable getDividends(){
         return Dividends;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTable getDividendsPrediction(){
         return DividendsPrediction;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamAns(){
         return GrahamAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGR(){
         return GR1;
     }
     
-    public JComboBox getY(){
-        return Y;
-    }
+    /**
+     *
+     * @return
+     */
+    /*public JComboBox getY(){
+        return Y.get;
+    }*/
     
+    /**
+     *
+     * @return
+     */
     public JTextField getWACC(){
         return WACCDDM;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActFCF(){
         return ActFCF2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDebt(){
         return Debt2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getShares(){
         return Shares2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getCandC(){
         return CandC2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPillow(){
         return Pillow2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getInv(){
         return Inv2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getReceivable(){
         return Receivable2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getCapLO(){
         return CapLO2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getTEGMI(){
         return TEGMI2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEBIT(){
         return EBIT2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEPS(){
         return EPS;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceInn(){
         return ActPriceInn2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActPrice(){
         return ActPrice;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getComDiv(){
         return ComDiv2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getTAssets(){
         return TAssets2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getTLiabilities(){
         return TLiabilities2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getSHEquity(){
         return SHEquity2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getTanBookVal(){
         return TanBookVal2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getCurLiabilities(){
         return CurLiabilities2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getCurAssets(){
         return CurAssets2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getOrShNum(){
         return OrShNum2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getNIncome(){
         return NIncome2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getTaxes(){
         return Taxes2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getIntExp(){
         return IntExp2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getTRevenue(){
         return TRevenue2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getOthIncome(){
         return OthIncome2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getCofRevenue(){
         return CofRevenue2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getOpExpense(){
         return OpExpense2;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamRevAns(){
         return GrahamRevAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamMosAns(){
         return GrahamMoSAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamRevMosAns(){
         return GrahamRevMoSAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDDMMosAns(){
         return DDMMoSAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDDMAns(){
         return DDMAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDCFMosAns(){
         return DCFMoSAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDCFAns(){
         return DCFAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getIdealPrice(){
         return IdealPrice;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getIdealPriceMoS(){
         return IdealPriceMoS;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDiff(){
         return Diff;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceAns(){
         return ActPriceAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceDDM(){
         return ActPriceDDM;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceGraham(){
         return ActPriceGraham;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceDCF(){
         return ActPriceDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowAns(){
         return PillowAns;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowDDM(){
         return PillowDDM;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowGraham(){
         return PillowGraham;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPilloqDCF(){
         return PillowDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEPSGraham(){
         return EPSGraham;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEPSGrahamRev(){
         return EPSGrahamRev;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGRGRaham(){
         return GRGraham;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGRGRahamRev(){
         return GRGrahamRev;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getYGraham(){
         return YGraham;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getYGrahamRev(){
         return YGrahamRev;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGraham(){
         return EndGraham;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGrahamRev(){
         return EndGrahamRev;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGrahamMoS(){
         return EndGrahamMoS;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGrahamRevMoS(){
         return EndGrahamRevMoS;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getAvGRDDM(){
         return AvGRDDM;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getWACCDDM(){
         return WACCDDM1;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDDMMoS(){
         return PriceDDMMoS;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDDM(){
         return PriceDDM;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTable getLastFCF(){
         return LastFCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getGRDCF(){
         return GRDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getAvGRDCF(){
         return AvGRDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTable getFutureFCF(){
         return FutureFCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getStateDCF(){
         return StateDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getWACCDCF(){
         return WACCDCF1;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getCashDCF(){
         return CashDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getDebtDCF(){
         return DebtDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getSharesDCF(){
         return SharesDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getSumFCFDCF(){
         return SumFCFDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getEVDCF(){
         return EVDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDCF(){
         return PriceDCF;
     }
     
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDCFMoS(){
         return PriceDCFMoS;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getGM(){
+        return GM;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getOM(){
+        return OM;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getEPSRatio(){
+        return EPSRatio;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getPpE(){
+        return PpE;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getCLiq(){
+        return CLiq;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getPpB(){
+        return PpB;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getDpE(){
+        return DpE;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getPayOut(){
+        return PayOut;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getROA(){
+        return ROA;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getROE(){
+        return ROE;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getROS(){
+        return ROS;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getRN(){
+        return RN;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getIndebtedness(){
+        return Indebtedness;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getReceivablesTime(){
+        return ReceivablesTime;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getLiabilitiesTime(){
+        return LiabilitiesTime;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public JTextField getInventoryTime(){
+        return InventoryTime;
     }
     
     private void setIconImage(String iconsaccountingico) {
