@@ -3139,7 +3139,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3210,7 +3210,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3225,7 +3225,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3240,7 +3240,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3255,7 +3255,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3270,7 +3270,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3557,7 +3557,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3750,7 +3750,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3770,7 +3770,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4986,6 +4986,286 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     
     public JTextField getShares(){
         return Shares2;
+    }
+    
+    public JTextField getCandC(){
+        return CandC2;
+    }
+    
+    public JTextField getPillow(){
+        return Pillow2;
+    }
+    
+    public JTextField getInv(){
+        return Inv2;
+    }
+    
+    public JTextField getReceivable(){
+        return Receivable2;
+    }
+    
+    public JTextField getCapLO(){
+        return CapLO2;
+    }
+    
+    public JTextField getTEGMI(){
+        return TEGMI2;
+    }
+    
+    public JTextField getEBIT(){
+        return EBIT2;
+    }
+    
+    public JTextField getEPS(){
+        return EPS;
+    }
+    
+    public JTextField getActPriceInn(){
+        return ActPriceInn2;
+    }
+    
+    public JTextField getActPrice(){
+        return ActPrice;
+    }
+    
+    public JTextField getComDiv(){
+        return ComDiv2;
+    }
+    
+    public JTextField getTAssets(){
+        return TAssets2;
+    }
+    
+    public JTextField getTLiabilities(){
+        return TLiabilities2;
+    }
+    
+    public JTextField getSHEquity(){
+        return SHEquity2;
+    }
+    
+    public JTextField getTanBookVal(){
+        return TanBookVal2;
+    }
+    
+    public JTextField getCurLiabilities(){
+        return CurLiabilities2;
+    }
+    
+    public JTextField getCurAssets(){
+        return CurAssets2;
+    }
+    
+    public JTextField getOrShNum(){
+        return OrShNum2;
+    }
+    
+    public JTextField getNIncome(){
+        return NIncome2;
+    }
+    
+    public JTextField getTaxes(){
+        return Taxes2;
+    }
+    
+    public JTextField getIntExp(){
+        return IntExp2;
+    }
+    
+    public JTextField getTRevenue(){
+        return TRevenue2;
+    }
+    
+    public JTextField getOthIncome(){
+        return OthIncome2;
+    }
+    
+    public JTextField getCofRevenue(){
+        return CofRevenue2;
+    }
+    
+    public JTextField getOpExpense(){
+        return OpExpense2;
+    }
+    
+    public JTextField getGrahamRevAns(){
+        return GrahamRevAns;
+    }
+    
+    public JTextField getGrahamMosAns(){
+        return GrahamMoSAns;
+    }
+    
+    public JTextField getGrahamRevMosAns(){
+        return GrahamRevMoSAns;
+    }
+    
+    public JTextField getDDMMosAns(){
+        return DDMMoSAns;
+    }
+    
+    public JTextField getDDMAns(){
+        return DDMAns;
+    }
+    
+    public JTextField getDCFMosAns(){
+        return DCFMoSAns;
+    }
+    
+    public JTextField getDCFAns(){
+        return DCFAns;
+    }
+    
+    public JTextField getIdealPrice(){
+        return IdealPrice;
+    }
+    
+    public JTextField getIdealPriceMoS(){
+        return IdealPriceMoS;
+    }
+    
+    public JTextField getDiff(){
+        return Diff;
+    }
+    
+    public JTextField getActPriceAns(){
+        return ActPriceAns;
+    }
+    
+    public JTextField getActPriceDDM(){
+        return ActPriceDDM;
+    }
+    
+    public JTextField getActPriceGraham(){
+        return ActPriceGraham;
+    }
+    
+    public JTextField getActPriceDCF(){
+        return ActPriceDCF;
+    }
+    
+    public JTextField getPillowAns(){
+        return PillowAns;
+    }
+    
+    public JTextField getPillowDDM(){
+        return PillowDDM;
+    }
+    
+    public JTextField getPillowGraham(){
+        return PillowGraham;
+    }
+    
+    public JTextField getPilloqDCF(){
+        return PillowDCF;
+    }
+    
+    public JTextField getEPSGraham(){
+        return EPSGraham;
+    }
+    
+    public JTextField getEPSGrahamRev(){
+        return EPSGrahamRev;
+    }
+    
+    public JTextField getGRGRaham(){
+        return GRGraham;
+    }
+    
+    public JTextField getGRGRahamRev(){
+        return GRGrahamRev;
+    }
+    
+    public JTextField getYGraham(){
+        return YGraham;
+    }
+    
+    public JTextField getYGrahamRev(){
+        return YGrahamRev;
+    }
+    
+    public JTextField getEndGraham(){
+        return EndGraham;
+    }
+    
+    public JTextField getEndGrahamRev(){
+        return EndGrahamRev;
+    }
+    
+    public JTextField getEndGrahamMoS(){
+        return EndGrahamMoS;
+    }
+    
+    public JTextField getEndGrahamRevMoS(){
+        return EndGrahamRevMoS;
+    }
+    
+    public JTextField getAvGRDDM(){
+        return AvGRDDM;
+    }
+    
+    public JTextField getWACCDDM(){
+        return WACCDDM1;
+    }
+    
+    public JTextField getPriceDDMMoS(){
+        return PriceDDMMoS;
+    }
+    
+    public JTextField getPriceDDM(){
+        return PriceDDM;
+    }
+    
+    public JTable getLastFCF(){
+        return LastFCF;
+    }
+    
+    public JTextField getGRDCF(){
+        return GRDCF;
+    }
+    
+    public JTextField getAvGRDCF(){
+        return AvGRDCF;
+    }
+    
+    public JTable getFutureFCF(){
+        return FutureFCF;
+    }
+    
+    public JTextField getStateDCF(){
+        return StateDCF;
+    }
+    
+    public JTextField getWACCDCF(){
+        return WACCDCF1;
+    }
+    
+    public JTextField getCashDCF(){
+        return CashDCF;
+    }
+    
+    public JTextField getDebtDCF(){
+        return DebtDCF;
+    }
+    
+    public JTextField getSharesDCF(){
+        return SharesDCF;
+    }
+    
+    public JTextField getSumFCFDCF(){
+        return SumFCFDCF;
+    }
+    
+    public JTextField getEVDCF(){
+        return EVDCF;
+    }
+    
+    public JTextField getPriceDCF(){
+        return PriceDCF;
+    }
+    
+    public JTextField getPriceDCFMoS(){
+        return PriceDCFMoS;
     }
     
     private void setIconImage(String iconsaccountingico) {
