@@ -5240,7 +5240,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getGrahamMosAns(){
+    public JTextField getGrahamMoSAns(){
         return GrahamMoSAns;
     }
     
@@ -5248,7 +5248,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getGrahamRevMosAns(){
+    public JTextField getGrahamRevMoSAns(){
         return GrahamRevMoSAns;
     }
     
@@ -5256,7 +5256,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getDDMMosAns(){
+    public JTextField getDDMMoSAns(){
         return DDMMoSAns;
     }
     
@@ -5272,7 +5272,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getDCFMosAns(){
+    public JTextField getDCFMoSAns(){
         return DCFMoSAns;
     }
     
@@ -5368,7 +5368,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getPilloqDCF(){
+    public JTextField getPillowDCF(){
         return PillowDCF;
     }
     
@@ -5392,7 +5392,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getGRGRaham(){
+    public JTextField getGRGraham(){
         return GRGraham;
     }
     
@@ -5400,7 +5400,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getGRGRahamRev(){
+    public JTextField getGRGrahamRev(){
         return GRGrahamRev;
     }
     
