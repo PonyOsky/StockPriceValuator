@@ -45,11 +45,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private boolean hiddenCleaning = true;
     private JPanel actShowing;
     private JPanel actMenuItem;
+    public Controller controller;
     
     public ReworkedFrontend() {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
+        controller = new Controller(this);
         HidingMenuInputs.setVisible(false);
         HidingMenuOutputs.setVisible(false);
         HidingMenuCleaning.setVisible(false);
