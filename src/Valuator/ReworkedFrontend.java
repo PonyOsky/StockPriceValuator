@@ -347,7 +347,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         GR1 = new javax.swing.JTextField();
         jLabel62 = new javax.swing.JLabel();
-        Y = new javax.swing.JComboBox<>();
+        Y = new javax.swing.JTextField();
         jPanel27 = new javax.swing.JPanel();
         DCFOut = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
@@ -1657,7 +1657,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel95.setLayout(jPanel95Layout);
         jPanel95Layout.setHorizontalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
         );
         jPanel95Layout.setVerticalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1678,7 +1678,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel96.setLayout(jPanel96Layout);
         jPanel96Layout.setHorizontalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
         );
         jPanel96Layout.setVerticalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1710,7 +1710,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel97.setLayout(jPanel97Layout);
         jPanel97Layout.setHorizontalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
         );
         jPanel97Layout.setVerticalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1731,7 +1731,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel98.setLayout(jPanel98Layout);
         jPanel98Layout.setHorizontalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
         );
         jPanel98Layout.setVerticalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1908,7 +1908,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel72.setLayout(jPanel72Layout);
         jPanel72Layout.setHorizontalGroup(
             jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel72Layout.setVerticalGroup(
             jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1958,7 +1958,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel75.setLayout(jPanel75Layout);
         jPanel75Layout.setHorizontalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1978,7 +1978,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel76.setLayout(jPanel76Layout);
         jPanel76Layout.setHorizontalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel157, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(jLabel157, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1998,7 +1998,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel77.setLayout(jPanel77Layout);
         jPanel77Layout.setHorizontalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2154,7 +2154,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2433,7 +2433,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2448,7 +2448,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2463,7 +2463,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel48.setLayout(jPanel48Layout);
         jPanel48Layout.setHorizontalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2478,7 +2478,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2493,7 +2493,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2521,7 +2521,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel80.setLayout(jPanel80Layout);
         jPanel80Layout.setHorizontalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel80Layout.setVerticalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2545,7 +2545,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel59.setLayout(jPanel59Layout);
         jPanel59Layout.setHorizontalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2665,7 +2665,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel63.setLayout(jPanel63Layout);
         jPanel63Layout.setHorizontalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2680,7 +2680,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel64.setLayout(jPanel64Layout);
         jPanel64Layout.setHorizontalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2695,7 +2695,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel65.setLayout(jPanel65Layout);
         jPanel65Layout.setHorizontalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2710,7 +2710,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel66.setLayout(jPanel66Layout);
         jPanel66Layout.setHorizontalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel66Layout.setVerticalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2725,7 +2725,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel67.setLayout(jPanel67Layout);
         jPanel67Layout.setHorizontalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel67Layout.setVerticalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2740,7 +2740,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel68.setLayout(jPanel68Layout);
         jPanel68Layout.setHorizontalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2755,7 +2755,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel69.setLayout(jPanel69Layout);
         jPanel69Layout.setHorizontalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2770,7 +2770,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel70.setLayout(jPanel70Layout);
         jPanel70Layout.setHorizontalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2785,7 +2785,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel71.setLayout(jPanel71Layout);
         jPanel71Layout.setHorizontalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel71Layout.setVerticalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2813,7 +2813,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2856,7 +2856,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         Y.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Y.setForeground(new java.awt.Color(204, 204, 204));
-        Y.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select State>" }));
         Y.setBorder(null);
         jPanel26.add(Y);
 
@@ -2866,7 +2865,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
+            .addGap(0, 339, Short.MAX_VALUE)
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2892,7 +2891,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel53.setLayout(jPanel53Layout);
         jPanel53Layout.setHorizontalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3141,7 +3140,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3212,7 +3211,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3227,7 +3226,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3242,7 +3241,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3257,7 +3256,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3272,7 +3271,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3303,7 +3302,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel81.setLayout(jPanel81Layout);
         jPanel81Layout.setHorizontalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3327,7 +3326,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel79.setLayout(jPanel79Layout);
         jPanel79Layout.setHorizontalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel79Layout.setVerticalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3352,7 +3351,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel51.setLayout(jPanel51Layout);
         jPanel51Layout.setHorizontalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3559,7 +3558,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3725,7 +3724,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel78.setLayout(jPanel78Layout);
         jPanel78Layout.setHorizontalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel78Layout.setVerticalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3752,7 +3751,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 931, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3772,7 +3771,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 931, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3853,7 +3852,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel82.setLayout(jPanel82Layout);
         jPanel82Layout.setHorizontalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel82Layout.setVerticalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3879,7 +3878,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 1833, Short.MAX_VALUE)
+            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 1863, Short.MAX_VALUE)
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3933,7 +3932,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
+            .addGap(0, 931, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4700,7 +4699,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField WACCDDM;
     private javax.swing.JTextField WACCDDM1;
     private javax.swing.JPanel WelcomePanel;
-    private javax.swing.JComboBox<String> Y;
+    private javax.swing.JTextField Y;
     private javax.swing.JTextField YGraham;
     private javax.swing.JTextField YGrahamRev;
     private javax.swing.JLabel calcLabel;
@@ -4989,14 +4988,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public JTextField getGR(){
         return GR1;
     }
-    
+
     /**
      *
      * @return
      */
-    /*public JComboBox getY(){
-        return Y.get;
-    }*/
+    public JTextField getYInn(){
+        return Y;
+    }
     
     /**
      *

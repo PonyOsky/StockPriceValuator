@@ -78,13 +78,9 @@ public class Controller {
      *
      * @return
      */
-    /*public double getAAACurrentYield(){
-        if(Y.getText() == null){
-            return 0;
-        }else{
-            return Double.parseDouble(Y.getText());
-        }
-    }*/
+    public double getAAACurrentYield(){
+        return Double.parseDouble(frontend.getYInn().getText());
+    }
 
     /**
      *
