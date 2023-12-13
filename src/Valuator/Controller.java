@@ -73,6 +73,18 @@ public class Controller {
             return Double.parseDouble(frontend.getGR().getText());
         }
     }
+    
+    /**
+     *
+     * @return
+     */
+    public double getGrowthRateDCF(){
+        if(frontend.getGRDCF().getText() == null){
+            return 0;
+        }else{
+            return Double.parseDouble(frontend.getGRDCF().getText());
+        }
+    }
 
     /**
      *
@@ -86,8 +98,16 @@ public class Controller {
      *
      * @return
      */
-    public double getDiscountRate(){
-        return Double.parseDouble(frontend.getWACC().getText())/100;
+    public double getDiscountRateDDM(){
+        return Double.parseDouble(frontend.getWACCDDMInn().getText())/100;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public double getDiscountRateDCF(){
+        return Double.parseDouble(frontend.getWACCDCFInn().getText())/100;
     }
 
     /**
@@ -406,7 +426,7 @@ public class Controller {
         }
         DivPredModel.fireTableDataChanged();
         frontend.getAvGRDDM().setText(String.valueOf(decfor.format(ddm.getAveGrowDDM())));
-        frontend.getWACCDDM().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
+        frontend.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
         frontend.getPriceDDMMoS().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
         frontend.getPriceDDM().setText(String.valueOf(decfor.format(ddm.controlDDM())));
         //DCF List
@@ -425,7 +445,7 @@ public class Controller {
             frontend.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF().get(count)), 2, count+1);
         }
         frontend.getStateDCF().setText(String.valueOf(getStateGrowthRate()));
-        frontend.getWACCDCF().setText(String.valueOf(getDiscountRate()*100));
+        frontend.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF()*100));
         frontend.getCashDCF().setText(String.valueOf(getCash()));
         frontend.getDebtDCF().setText(String.valueOf(getTotalDebt()));
         frontend.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
@@ -452,5 +472,131 @@ public class Controller {
         frontend.getLiabilitiesTime().setText(String.valueOf(decfor.format(ratios.liabTime())));
         frontend.getInventoryTime().setText(String.valueOf(formatter.format(ratios.invTime())));
     }
-
+    
+    /**
+     *
+     * @param choices
+     */
+    public void clean(ArrayList choices){
+        if(choices == null || choices.isEmpty()){
+            if(choices.contains("CleanAll")){
+                frontend.getCorpName().setText("");
+                frontend.getSticker().setText("");
+                frontend.getStockExchange().setText("");
+                frontend.getPillow().setText("");
+                frontend.getActPrice().setText("");
+                frontend.getNotes().setText("");
+                frontend.getTaxes().setText("");
+                frontend.getIntExp().setText("");
+                frontend.getEBIT().setText("");
+                frontend.getTRevenue().setText("");
+                frontend.getNIncome().setText("");
+                frontend.getActPriceInn().setText("");
+                frontend.getCurAssets().setText("");
+                frontend.getOrShNum().setText("");
+                frontend.getTanBookVal().setText("");
+                frontend.getTLiabilities().setText("");
+                frontend.getComDiv().setText("");
+                frontend.getTAssets().setText("");
+                frontend.getTEGMI().setText("");
+                frontend.getInv().setText("");
+                frontend.getOpExpense().setText("");
+                frontend.getCofRevenue().setText("");
+                frontend.getOthIncome().setText("");
+                frontend.getReceivable().setText("");
+                frontend.getCurLiabilities().setText("");
+                frontend.getCapLO().setText("");
+                frontend.getSHEquity().setText("");
+                frontend.getGRDCF().setText("");
+                frontend.getWACCDCFInn().setText("");
+                frontend.getActFCF().setText("");
+                frontend.getDebt().setText("");
+                frontend.getShares().setText("");
+                frontend.getCandC().setText("");
+                frontend.getStateInn().setText("");
+                for(int count = 0; count < 8; count++){
+                    frontend.getFCF().setValueAt(null, 0, count);
+                }
+                fcf.clear();
+                frontend.getWACCDDMInn().setText("");
+                divis.clear();
+                for(int count = 0; count < 5; count++){
+                    frontend.getDividends().setValueAt(null, 0, count);
+                }
+                frontend.getEPS().setText("");
+                frontend.getGR().setText("");
+                frontend.getYInn().setText("");
+                frontend.getAssets().setText("");
+                frontend.getLiabilities().setText("");
+                frontend.getSharesNAV().setText("");
+            }
+            
+            if(choices.contains("CleanInfo")){
+                frontend.getCorpName().setText("");
+                frontend.getSticker().setText("");
+                frontend.getStockExchange().setText("");
+                frontend.getPillow().setText("");
+                frontend.getActPrice().setText("");
+                frontend.getNotes().setText("");
+            }
+            
+            if(choices.contains("CleanRatio")){
+                frontend.getTaxes().setText("");
+                frontend.getIntExp().setText("");
+                frontend.getEBIT().setText("");
+                frontend.getTRevenue().setText("");
+                frontend.getNIncome().setText("");
+                frontend.getActPriceInn().setText("");
+                frontend.getCurAssets().setText("");
+                frontend.getOrShNum().setText("");
+                frontend.getTanBookVal().setText("");
+                frontend.getTLiabilities().setText("");
+                frontend.getComDiv().setText("");
+                frontend.getTAssets().setText("");
+                frontend.getTEGMI().setText("");
+                frontend.getInv().setText("");
+                frontend.getOpExpense().setText("");
+                frontend.getCofRevenue().setText("");
+                frontend.getOthIncome().setText("");
+                frontend.getReceivable().setText("");
+                frontend.getCurLiabilities().setText("");
+                frontend.getCapLO().setText("");
+                frontend.getSHEquity().setText("");
+            }
+            
+            if(choices.contains("CleanDCF")){
+                frontend.getGRDCF().setText("");
+                frontend.getWACCDCFInn().setText("");
+                frontend.getActFCF().setText("");
+                frontend.getDebt().setText("");
+                frontend.getShares().setText("");
+                frontend.getCandC().setText("");
+                frontend.getStateInn().setText("");
+                for(int count = 0; count < 8; count++){
+                    frontend.getFCF().setValueAt(null, 0, count);
+                }
+                fcf.clear();
+            }
+            
+            if(choices.contains("CleanDDM")){
+                frontend.getWACCDDMInn().setText("");
+                divis.clear();
+                for(int count = 0; count < 5; count++){
+                    frontend.getDividends().setValueAt(null, 0, count);
+                }
+            }
+            
+            if(choices.contains("CleanGraham")){
+                frontend.getEPS().setText("");
+                frontend.getGR().setText("");
+                frontend.getYInn().setText("");
+            }
+            
+            if(choices.contains("CleanNAV")){
+                frontend.getAssets().setText("");
+                frontend.getLiabilities().setText("");
+                frontend.getSharesNAV().setText("");
+            }
+        }
+    }
 }

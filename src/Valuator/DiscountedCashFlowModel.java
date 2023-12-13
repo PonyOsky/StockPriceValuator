@@ -71,7 +71,7 @@ public class DiscountedCashFlowModel {
      */
     public List<Double> getFFCF() {
         ffcf.add(controller.getActualFreeCashFlow());
-        double d = 1 + (controller.getGrowthRate() / 100);
+        double d = 1 + (controller.getGrowthRateDCF() / 100);
         double y = ffcf.get(0);
         double e = y * d;
         if (y < 0) {
@@ -98,7 +98,7 @@ public class DiscountedCashFlowModel {
      */
     public List<Double> getDFFCF() {
         int h = 1;
-        double i = 1 + controller.getDiscountRate();
+        double i = 1 + controller.getDiscountRateDCF();
         for (int j = 0; j < ffcf.size(); j++) {
             dffcf.add(ffcf.get(j) / Math.pow(i, h));
             h++;
@@ -111,7 +111,7 @@ public class DiscountedCashFlowModel {
      * @return
      */
     public double termFCF() {
-        double term = ffcf.get(11) * (1 + (controller.getStateGrowthRate() / 100)) / (controller.getDiscountRate() - (controller.getStateGrowthRate() / 100));
+        double term = ffcf.get(11) * (1 + (controller.getStateGrowthRate() / 100)) / (controller.getDiscountRateDCF() - (controller.getStateGrowthRate() / 100));
         ffcf.add(12, term);
         return term;
     }
@@ -121,7 +121,7 @@ public class DiscountedCashFlowModel {
      * @return
      */
     public double termDCFC() {
-        double val = termFCF() / Math.pow((1 + controller.getDiscountRate()), 13);
+        double val = termFCF() / Math.pow((1 + controller.getDiscountRateDCF()), 13);
         dffcf.add(val);
         return val;
     }
