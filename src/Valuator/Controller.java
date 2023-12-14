@@ -599,4 +599,24 @@ public class Controller {
             }
         }
     }
+    
+    public void calculation(ArrayList choices){
+        if(choices != null){
+            if(choices.contains("CalcRatio")){
+                
+            }
+            if(choices.contains("CalcDCF")){
+                
+            }
+            if(choices.contains("CalcDDM")){
+                
+            }
+            if(choices.contains("CalcGraham")){
+                
+            }
+            if(choices.contains("CalcNAV")){
+                
+            }
+        }
+    }
 }
