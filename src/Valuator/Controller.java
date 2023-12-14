@@ -29,6 +29,7 @@ public class Controller {
     DiscountedCashFlowModel dcf = new DiscountedCashFlowModel(this);
     GrahamsFormulas graham = new GrahamsFormulas(this);
     private ReworkedFrontend frontend;
+    private double value;
         
     public Controller(ReworkedFrontend f) {
         decfor.setRoundingMode(RoundingMode.DOWN);
@@ -355,105 +356,27 @@ public class Controller {
     public double getStateGrowthRate(){
         return s;
     }
-    /****************************************Make Valuation*********************************************
-     * @return*/
-    public double makeValue(){
-        if(ddm.controlDDM() <= 0){
-            return (dcf.price() + graham.grahamsSummary())/2;
-        }else{
-            return (dcf.price() + ddm.controlDDM() + graham.grahamsSummary())/3;
-        }
+    /****************************************Make Valuation**********************************************/
+    public void makeValue(){
+        value = (dcf.price() + ddm.controlDDM() + graham.grahamsSummary() + nav.getValue())/4;
     }
     /**
      *
+     * @param value
      * @return
      */
-    public double makeValueMoS(){
-        return makeValue() - (makeValue() * getMarginOfSafety());
+    public double makeValueMoS(double value){
+        return value - (value * getMarginOfSafety());
     }
     /**
      *
+     * @param value
      * @return
      */
-    public double difference(){
-        return ((makeValue() - getActualPrice()) / getActualPrice())* 100;
+    public double difference(double value){
+        return ((value - getActualPrice()) / getActualPrice())* 100;
     }
     /****************************************Setting answers and values**********************************************************/
-    public void setAnswers(){
-        DefaultTableModel DivPredModel = (DefaultTableModel) frontend.getDividendsPrediction().getModel();
-        //Answer
-        frontend.getGrahamAns().setText(String.valueOf(decfor.format(graham.graham())));
-        frontend.getGrahamRevAns().setText(String.valueOf(decfor.format(graham.grahamReversed())));
-        frontend.getGrahamMoSAns().setText(String.valueOf(decfor.format(graham.grahamMoS())));
-        frontend.getGrahamRevMoSAns().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
-        frontend.getDDMMoSAns().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
-        frontend.getDDMAns().setText(String.valueOf(decfor.format(ddm.controlDDM())));
-        frontend.getDCFMoSAns().setText(String.valueOf(decfor.format(dcf.priceMoS())));
-        frontend.getDCFAns().setText(String.valueOf(decfor.format(dcf.price())));
-        frontend.getIdealPrice().setText(String.valueOf(decfor.format(makeValue())));
-        frontend.getIdealPriceMoS().setText(String.valueOf(decfor.format(makeValueMoS())));
-        frontend.getDiff().setText(String.valueOf(decfor.format(difference())));
-        //Actual Prices
-        frontend.getActPriceAns().setText(String.valueOf(getActualPrice()));
-        frontend.getActPriceDDM().setText(String.valueOf(getActualPrice()));
-        frontend.getActPriceGraham().setText(String.valueOf(getActualPrice()));
-        frontend.getActPriceDCF().setText(String.valueOf(getActualPrice()));
-        //Pillows
-        frontend.getPillowAns().setText(String.valueOf(getMarginOfSafety()*100));
-        frontend.getPillowDDM().setText(String.valueOf(getMarginOfSafety()*100));
-        frontend.getPillowGraham().setText(String.valueOf(getMarginOfSafety()*100));
-        frontend.getPillowDCF().setText(String.valueOf(getMarginOfSafety()*100));
-        //Graham List
-        frontend.getEPSGraham().setText(String.valueOf(decfor.format((Double)getEarningsPerShare())));
-        frontend.getEPSGrahamRev().setText(String.valueOf(decfor.format((Double)getEarningsPerShare())));
-        frontend.getGRGraham().setText(String.valueOf(decfor.format(getGrowthRate())));
-        frontend.getGRGrahamRev().setText(String.valueOf(decfor.format(getGrowthRate())));
-        frontend.getYGraham().setText(String.valueOf(decfor.format(getAAACurrentYield())));
-        frontend.getYGrahamRev().setText(String.valueOf(decfor.format(getAAACurrentYield())));
-        frontend.getEndGraham().setText(String.valueOf(decfor.format(graham.graham())));
-        frontend.getEndGrahamRev().setText(String.valueOf(decfor.format(graham.grahamReversed())));
-        frontend.getEndGrahamMoS().setText(String.valueOf(decfor.format(graham.grahamMoS())));
-        frontend.getEndGrahamRevMoS().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
-        //DDM List
-        for(int count = 0; count < getDividends().size(); count++){
-            frontend.getDividendsPrediction().setValueAt(getDividends().get(count), 0,count+1);
-        }
-        for(int count = 0; count < ddm.getYDiv().size(); count++){
-            frontend.getDividendsPrediction().setValueAt(ddm.getYDiv().get(count), 1,count+1);
-        }
-        for(int count = 0; count < ddm.getGrowthDiv().size(); count++){
-            frontend.getDividendsPrediction().setValueAt(ddm.getGrowthDiv().get(count), 2,count+1);
-        }
-        DivPredModel.fireTableDataChanged();
-        frontend.getAvGRDDM().setText(String.valueOf(decfor.format(ddm.getAveGrowDDM())));
-        frontend.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
-        frontend.getPriceDDMMoS().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
-        frontend.getPriceDDM().setText(String.valueOf(decfor.format(ddm.controlDDM())));
-        //DCF List
-        for(int count = 0; count < getFreeCashFlow().size(); count++){
-            frontend.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0,count+1);
-        }
-        for(int count = 0; count < dcf.getFCFGR().size(); count++){
-            frontend.getLastFCF().setValueAt(dcf.getFCFGR().get(count), 1,count+1);
-        }
-        frontend.getGRDCF().setText(String.valueOf(decfor.format(getGrowthRate())));
-        frontend.getAvGRDCF().setText(String.valueOf(decfor.format(dcf.aveGR())));
-        for(int count = 0; count < 13; count++){
-            frontend.getFutureFCF().setValueAt(decfor.format(dcf.getFFCF().get(count)), 1, count+1);
-        }
-        for(int count = 0; count < 13; count++){
-            frontend.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF().get(count)), 2, count+1);
-        }
-        frontend.getStateDCF().setText(String.valueOf(getStateGrowthRate()));
-        frontend.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF()*100));
-        frontend.getCashDCF().setText(String.valueOf(getCash()));
-        frontend.getDebtDCF().setText(String.valueOf(getTotalDebt()));
-        frontend.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
-        frontend.getSumFCFDCF().setText(String.valueOf(decfor.format(dcf.sumOfDFCF())));
-        frontend.getEVDCF().setText(String.valueOf(decfor.format(dcf.equityDCF())));
-        frontend.getPriceDCF().setText(String.valueOf(decfor.format(dcf.price())));
-        frontend.getPriceDCFMoS().setText(String.valueOf(decfor.format(dcf.priceMoS())));
-    }
     public void setRatioAns(){
         frontend.getGM().setText(String.valueOf(decfor.format(ratios.grossMargin())));
         frontend.getOM().setText(String.valueOf(decfor.format(ratios.operationMargin())));
@@ -603,20 +526,87 @@ public class Controller {
     public void calculation(ArrayList choices){
         if(choices != null){
             if(choices.contains("CalcRatio")){
-                
+                setRatioAns();
             }
             if(choices.contains("CalcDCF")){
-                
+                frontend.getDCFMoSAns().setText(String.valueOf(decfor.format(dcf.priceMoS())));
+                frontend.getDCFAns().setText(String.valueOf(decfor.format(dcf.price())));
+                for(int count = 0; count < getFreeCashFlow().size(); count++){
+                    frontend.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0,count+1);
+                }
+                for(int count = 0; count < dcf.getFCFGR().size(); count++){
+                    frontend.getLastFCF().setValueAt(dcf.getFCFGR().get(count), 1,count+1);
+                }
+                frontend.getGRDCF().setText(String.valueOf(decfor.format(getGrowthRate())));
+                frontend.getAvGRDCF().setText(String.valueOf(decfor.format(dcf.aveGR())));
+                for(int count = 0; count < 13; count++){
+                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getFFCF().get(count)), 1, count+1);
+                }
+                for(int count = 0; count < 13; count++){
+                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF().get(count)), 2, count+1);
+                }
+                frontend.getStateDCF().setText(String.valueOf(getStateGrowthRate()));
+                frontend.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF()*100));
+                frontend.getCashDCF().setText(String.valueOf(getCash()));
+                frontend.getDebtDCF().setText(String.valueOf(getTotalDebt()));
+                frontend.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
+                frontend.getSumFCFDCF().setText(String.valueOf(decfor.format(dcf.sumOfDFCF())));
+                frontend.getEVDCF().setText(String.valueOf(decfor.format(dcf.equityDCF())));
+                frontend.getPriceDCF().setText(String.valueOf(decfor.format(dcf.price())));
+                frontend.getPriceDCFMoS().setText(String.valueOf(decfor.format(dcf.priceMoS())));
             }
             if(choices.contains("CalcDDM")){
-                
+                DefaultTableModel DivPredModel = (DefaultTableModel) frontend.getDividendsPrediction().getModel();
+                frontend.getDDMMoSAns().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
+                frontend.getDDMAns().setText(String.valueOf(decfor.format(ddm.controlDDM())));
+                for(int count = 0; count < getDividends().size(); count++){
+                    frontend.getDividendsPrediction().setValueAt(getDividends().get(count), 0,count+1);
+                }
+                for(int count = 0; count < ddm.getYDiv().size(); count++){
+                    frontend.getDividendsPrediction().setValueAt(ddm.getYDiv().get(count), 1,count+1);
+                }
+                for(int count = 0; count < ddm.getGrowthDiv().size(); count++){
+                    frontend.getDividendsPrediction().setValueAt(ddm.getGrowthDiv().get(count), 2,count+1);
+                }
+                DivPredModel.fireTableDataChanged();
+                frontend.getAvGRDDM().setText(String.valueOf(decfor.format(ddm.getAveGrowDDM())));
+                frontend.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
+                frontend.getPriceDDMMoS().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
+                frontend.getPriceDDM().setText(String.valueOf(decfor.format(ddm.controlDDM())));
             }
             if(choices.contains("CalcGraham")){
-                
+                frontend.getGrahamAns().setText(String.valueOf(decfor.format(graham.graham())));
+                frontend.getGrahamRevAns().setText(String.valueOf(decfor.format(graham.grahamReversed())));
+                frontend.getGrahamMoSAns().setText(String.valueOf(decfor.format(graham.grahamMoS())));
+                frontend.getGrahamRevMoSAns().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
+                frontend.getEPSGraham().setText(String.valueOf(decfor.format((Double)getEarningsPerShare())));
+                frontend.getEPSGrahamRev().setText(String.valueOf(decfor.format((Double)getEarningsPerShare())));
+                frontend.getGRGraham().setText(String.valueOf(decfor.format(getGrowthRate())));
+                frontend.getGRGrahamRev().setText(String.valueOf(decfor.format(getGrowthRate())));
+                frontend.getYGraham().setText(String.valueOf(decfor.format(getAAACurrentYield())));
+                frontend.getYGrahamRev().setText(String.valueOf(decfor.format(getAAACurrentYield())));
+                frontend.getEndGraham().setText(String.valueOf(decfor.format(graham.graham())));
+                frontend.getEndGrahamRev().setText(String.valueOf(decfor.format(graham.grahamReversed())));
+                frontend.getEndGrahamMoS().setText(String.valueOf(decfor.format(graham.grahamMoS())));
+                frontend.getEndGrahamRevMoS().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
             }
             if(choices.contains("CalcNAV")){
                 
             }
+            makeValue();
+            frontend.getIdealPrice().setText(String.valueOf(decfor.format(value)));
+            frontend.getIdealPriceMoS().setText(String.valueOf(decfor.format(makeValueMoS(value))));
+            frontend.getDiff().setText(String.valueOf(decfor.format(difference(value))));
+            //Actual Prices
+            frontend.getActPriceAns().setText(String.valueOf(getActualPrice()));
+            frontend.getActPriceDDM().setText(String.valueOf(getActualPrice()));
+            frontend.getActPriceGraham().setText(String.valueOf(getActualPrice()));
+            frontend.getActPriceDCF().setText(String.valueOf(getActualPrice()));
+            //Pillows
+            frontend.getPillowAns().setText(String.valueOf(getMarginOfSafety()*100));
+            frontend.getPillowDDM().setText(String.valueOf(getMarginOfSafety()*100));
+            frontend.getPillowGraham().setText(String.valueOf(getMarginOfSafety()*100));
+            frontend.getPillowDCF().setText(String.valueOf(getMarginOfSafety()*100));
         }
     }
 }
