@@ -28,6 +28,7 @@ public class Controller {
     DividendDiscountModel ddm = new DividendDiscountModel(this);
     DiscountedCashFlowModel dcf = new DiscountedCashFlowModel(this);
     GrahamsFormulas graham = new GrahamsFormulas(this);
+    NetAssetValue nav = new NetAssetValue(this);
     private ReworkedFrontend frontend;
     private double value;
         
@@ -343,6 +344,30 @@ public class Controller {
     public double getOperatingExpense(){
         return Double.parseDouble(frontend.getOpExpense().getText());
     }
+    
+    /**
+     *
+     * @return
+     */
+    public double getAssetsNAV(){
+        return Double.parseDouble(frontend.getAssets().getText());
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public double getLiabilitiesNAV(){
+        return Double.parseDouble(frontend.getLiabilities().getText());
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public double getSharesNAV(){
+        return Double.parseDouble(frontend.getSharesNAV().getText());
+    }
     /***************************************Getters***********************************************
      * @return s*/
     public double getDiscontRate(){
@@ -591,7 +616,11 @@ public class Controller {
                 frontend.getEndGrahamRevMoS().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
             }
             if(choices.contains("CalcNAV")){
-                
+                frontend.getAssetsNAVOut().setText(frontend.getAssets().getText());
+                frontend.getLiabilitiesNAVOut().setText(frontend.getLiabilities().getText());
+                frontend.getSharesNAVOut().setText(frontend.getSharesNAV().getText());
+                frontend.getPriceNAV().setText(String.valueOf(decfor.format(nav.valuation(getAssetsNAV(), getLiabilitiesNAV(), getSharesNAV()))));
+                frontend.getPriceNAVMoS().setText(String.valueOf(decfor.format(nav.valuationMoS(getMarginOfSafety()))));
             }
             makeValue();
             frontend.getIdealPrice().setText(String.valueOf(decfor.format(value)));
