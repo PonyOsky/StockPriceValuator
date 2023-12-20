@@ -922,7 +922,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         HidingMenuInputs.add(InRatio);
 
         InDCF.setBackground(new java.awt.Color(0, 231, 255));
-        InDCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         InDCF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 InDCFMouseClicked(evt);
@@ -939,21 +938,17 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         ViewDCFIn.setForeground(new java.awt.Color(51, 51, 51));
         ViewDCFIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ViewDCFIn.setText("DCF");
-        ViewDCFIn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewDCFInMouseClicked(evt);
-            }
-        });
+        ViewDCFIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout InDCFLayout = new javax.swing.GroupLayout(InDCF);
         InDCF.setLayout(InDCFLayout);
         InDCFLayout.setHorizontalGroup(
             InDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDCFIn, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+            .addComponent(ViewDCFIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
         );
         InDCFLayout.setVerticalGroup(
             InDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDCFIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(ViewDCFIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InDCF);
@@ -4497,10 +4492,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
     
-    public void SetItemUnactive(){
-        actMenuItem.setBackground(lightColor);
-    }
-    
     private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
         changeColor(InputBut, lightDarkColor);
     }//GEN-LAST:event_InputButMouseEntered
@@ -4545,7 +4536,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }else{
             hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/result.png");
         }
-        SetItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_ResultButMouseClicked
 
@@ -4574,18 +4564,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         OpenView(Help);
         ShowingViewBackground(HelpBut, 1);
     }//GEN-LAST:event_HelpButMouseClicked
-
-    private void InDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseClicked
-        OpenView(DCFIn);
-    }//GEN-LAST:event_InDCFMouseClicked
-
-    private void InDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseEntered
-        changeColor(InDCF, darkLightColor);
-    }//GEN-LAST:event_InDCFMouseEntered
-
-    private void InDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseExited
-        exiting(InDCF, lightDarkColor);
-    }//GEN-LAST:event_InDCFMouseExited
 
     private void InRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseClicked
         OpenView(RatioIn);
@@ -4742,7 +4720,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }else{
             hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/rubber.png");
         }
-        SetItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_CleanButMouseClicked
 
@@ -4792,7 +4769,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }else{
             hiddenCalc = showHideMenu(HidingMenuCalculation, CalcBut, hiddenCalc, calcLabel, "/Icons/calc.png");
         }
-        SetItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_CalcButMouseClicked
 
@@ -4960,9 +4936,18 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_CalcMouseClicked
 
-    private void ViewDCFInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewDCFInMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ViewDCFInMouseClicked
+    private void InDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseClicked
+        OpenView(DCFIn);
+        ShowingViewBackground(InDCF, 0);
+    }//GEN-LAST:event_InDCFMouseClicked
+
+    private void InDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseEntered
+        changeColor(InDCF, darkLightColor);
+    }//GEN-LAST:event_InDCFMouseEntered
+
+    private void InDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseExited
+        exiting(InDCF, lightDarkColor);
+    }//GEN-LAST:event_InDCFMouseExited
 
     /**
      * @param args the command line arguments
