@@ -18,20 +18,16 @@ import javax.swing.SwingUtilities;
 /**
  *
  * @author ondre
- * 
- * Colors set up:
- * rgb(0, 255, 246)
- * rgb(0, 231, 255)
- * rgb(0, 158, 255)
- * rgb(0, 20, 255)
- * 
+ *
+ * Colors set up: rgb(0, 255, 246) rgb(0, 231, 255) rgb(0, 158, 255) rgb(0, 20,
+ * 255)
+ *
  */
 public final class ReworkedFrontend extends javax.swing.JFrame {
 
     /**
      * Creates new form ReworkedFrontend
      */
-    
     private final Color lightColor;
     private final Color lightDarkColor;
     private final Color darkLightColor;
@@ -47,7 +43,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private JPanel actShowing;
     private JPanel actMenuItem;
     public Controller controller;
-    
+
     public ReworkedFrontend() {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
@@ -66,16 +62,31 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
         makeUnvisibleViews();
+        setChoicesNames();
     }
-    
-    public void makeUnvisibleViews(){
-        if(views != null){
-            for(JPanel a : views){
+
+    public void makeUnvisibleViews() {
+        if (views != null) {
+            for (JPanel a : views) {
                 a.setVisible(false);
             }
         }
     }
 
+    public void setChoicesNames() {
+        CleanAll.setName("CleanAll");
+        CleanInfo.setName("CleanInfo");
+        CleanRatio.setName("CleanRatio");
+        CleanDCF.setName("CleanDCF");
+        CleanDDM.setName("CleanDDM");
+        CleanGraham.setName("CleanGraham");
+        CleanNAV.setName("CleanNAV");
+        CalcRatio.setName("CalcRatio");
+        CalcDCF.setName("CalcDCF");
+        CalcDDM.setName("CalcDDM");
+        CalcGraham.setName("CalcGraham");
+        CalcNAV.setName("CalcNAV");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -4309,12 +4320,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      * @param target
      * @param rand
      */
-    public void changeColor(JPanel target, Color rand){
-        if(target != null) {
+    public void changeColor(JPanel target, Color rand) {
+        if (target != null) {
             target.setBackground(rand);
         }
     }
-    
+
     /**
      *
      * @param showingMenu
@@ -4322,17 +4333,17 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      * @param hid
      * @param icon
      * @param route
-     * @return 
+     * @return
      */
-    public boolean showHideMenu(JPanel showingMenu, JPanel target, boolean hid, JLabel icon, String route){
-        if(showingMenu != null && target != null && icon != null && route != null){
-            if(!hid){
+    public boolean showHideMenu(JPanel showingMenu, JPanel target, boolean hid, JLabel icon, String route) {
+        if (showingMenu != null && target != null && icon != null && route != null) {
+            if (!hid) {
                 showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
                 Menu.setPreferredSize(new Dimension(50, 400));
                 target.setBackground(lightColor);
                 activeChoices.remove(target);
                 changeIcon(icon, route);
-            }else{
+            } else {
                 showingMenu.setPreferredSize(new Dimension(270, MenuColumn.getHeight()));
                 Menu.setPreferredSize(new Dimension(320, 400));
                 target.setBackground(lightDarkColor);
@@ -4343,53 +4354,53 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
         return hid;
     }
-    
+
     /**
      *
      * @param target
      * @param resourceRoute
      */
-    public void changeIcon(JLabel target, String resourceRoute){
+    public void changeIcon(JLabel target, String resourceRoute) {
         ImageIcon icon = new ImageIcon(getClass().getResource(resourceRoute));
         target.setIcon(icon);
         target.setSize(50, 50);
         target.setVerticalAlignment(SwingConstants.CENTER);
         target.setHorizontalAlignment(SwingConstants.CENTER);
     }
-    
+
     /**
      *
      * @param target
      * @param change
      */
-    public void exiting(JPanel target, Color change){
-        if(target != null){
-            if(target != actShowing && target != actMenuItem){
-                if(!cleaningChoices.contains(target) || !calcChoices.contains(target)){
-                    if(!activeChoices.contains(target)){
+    public void exiting(JPanel target, Color change) {
+        if (target != null) {
+            if (target != actShowing && target != actMenuItem) {
+                if(!cleaningChoices.contains(target.getName()) && !calcChoices.contains(target.getName())) {
+                    if (!activeChoices.contains(target)) {
                         target.setBackground(change);
                     }
                 }
             }
         }
     }
-    
+
     /**
      *
      * @param target
      */
-    public void clickUnclick(JPanel target){
-        if(target != null){
-            if(!activeChoices.contains(target)){
+    public void clickUnclick(JPanel target) {
+        if (target != null) {
+            if (!activeChoices.contains(target)) {
                 target.setBackground(darkLightColor);
                 activeChoices.add(target);
-            }else{
+            } else {
                 target.setBackground(lightDarkColor);
                 activeChoices.remove(target);
             }
         }
     }
-    
+
     /**
      *
      * @param hide
@@ -4398,9 +4409,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      * @param color
      * @param icon
      * @param route
-     * @return 
+     * @return
      */
-    public boolean hideMenus(boolean hide, JPanel menu, JPanel but, Color color, JLabel icon, String route){
+    public boolean hideMenus(boolean hide, JPanel menu, JPanel but, Color color, JLabel icon, String route) {
         hide = true;
         menu.setVisible(false);
         Menu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
@@ -4409,79 +4420,80 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         changeIcon(icon, route);
         return hide;
     }
-    
+
     /**
      *
      * @param choice
      */
-    public void chooseCleaning(JPanel choice){
-        if(choice != null){
-            if(cleaningChoices.contains(choice.getName())){
+    public void chooseCleaning(JPanel choice) {
+        if (choice != null) {
+            if (cleaningChoices.contains(choice.getName())) {
                 cleaningChoices.remove(choice.getName());
                 choice.setBackground(lightDarkColor);
-            }else{
+            } else {
                 cleaningChoices.add(choice.getName());
                 choice.setBackground(darkLightColor);
             }
         }
     }
-    
+
     /**
      *
      * @param choice
      */
-    public void chooseCalculation(JPanel choice){
-        if(choice != null){
-            if(calcChoices.contains(choice.getName())){
+    public void chooseCalculation(JPanel choice) {
+        if (choice != null) {
+            if (calcChoices.contains(choice.getName())) {
                 calcChoices.remove(choice.getName());
                 choice.setBackground(lightDarkColor);
-            }else{
+            } else {
                 calcChoices.add(choice.getName());
                 choice.setBackground(darkLightColor);
             }
         }
     }
-    
-    public void OpenView(JPanel target){
-        if(target != null && Menu != null){
-            for(JPanel a : views){
-                if(a.equals(target)){
+
+    public void OpenView(JPanel target) {
+        if (target != null && Menu != null) {
+            for (JPanel a : views) {
+                if (a.equals(target)) {
                     a.setVisible(true);
                     a.setPreferredSize(new Dimension(WelcomePanel.getWidth(), WelcomePanel.getHeight()));
-                }else{
+                } else {
                     a.setVisible(false);
                 }
             }
         }
     }
-    
+
     /**
      *
      * @param opening
      * @param type
      */
-    public void ShowingViewBackground(JPanel opening, int type){
-        if(opening != null){
-            if(opening != actShowing){
+    public void ShowingViewBackground(JPanel opening, int type) {
+        if (opening != null) {
+            if (opening != actShowing) {
                 switch (type) {
                     case 0:
-                        if(actShowing != null){
+                        if (actShowing != null) {
                             actShowing.setBackground(lightDarkColor);
                         }
                         actShowing = opening;
                         opening.setBackground(darkLightColor);
                         break;
                     case 1:
-                        if(actMenuItem != opening){
+                        if (actMenuItem != opening) {
                             actMenuItem.setBackground(lightColor);
-                            if(!activeChoices.contains(actMenuItem)){
+                            if (!activeChoices.contains(actMenuItem)) {
                                 activeChoices.add(opening);
                             }
-                            if(activeChoices.size() >= 1){
-                                if(activeChoices.contains(OM))
-                                activeChoices.clear();
+                            if (activeChoices.size() >= 1) {
+                                if (activeChoices.contains(OM)) {
+                                    activeChoices.clear();
+                                }
                             }
-                            
+
                             actMenuItem = opening;
                             opening.setBackground(lightDarkColor);
                         }
@@ -4491,7 +4503,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             }
         }
     }
-    
+
     private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
         changeColor(InputBut, lightDarkColor);
     }//GEN-LAST:event_InputButMouseEntered
@@ -4502,14 +4514,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void InputButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseClicked
         HidingMenuInputs.setVisible(hiddenInputs);
-        if(!hiddenOutputs || !hiddenCleaning || !hiddenCalc){
+        if (!hiddenOutputs || !hiddenCleaning || !hiddenCalc) {
             hiddenOutputs = hideMenus(hiddenOutputs, HidingMenuOutputs, ResultBut, lightColor, resultLabel, "/Icons/result.png");
             hiddenCleaning = hideMenus(hiddenCleaning, HidingMenuCleaning, CleanBut, lightColor, cleanLabel, "/Icons/rubber.png");
             hiddenCalc = hideMenus(hiddenCalc, HidingMenuInputs, CalcBut, lightColor, calcLabel, "/Icons/calc.png");
         }
-        if(hiddenInputs) {
+        if (hiddenInputs) {
             hiddenInputs = showHideMenu(HidingMenuInputs, InputBut, hiddenInputs, innLabel, "/Icons/close-edit.png");
-        }else{
+        } else {
             hiddenInputs = showHideMenu(HidingMenuInputs, InputBut, hiddenInputs, innLabel, "/Icons/inputs.png");
         }
         //SetItemUnactive();
@@ -4526,14 +4538,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void ResultButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseClicked
         HidingMenuOutputs.setVisible(hiddenOutputs);
-        if(!hiddenInputs || !hiddenCleaning || !hiddenCalc){
-            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut,lightColor, innLabel, "/Icons/inputs.png");
+        if (!hiddenInputs || !hiddenCleaning || !hiddenCalc) {
+            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut, lightColor, innLabel, "/Icons/inputs.png");
             hiddenCleaning = hideMenus(hiddenCleaning, HidingMenuCleaning, CleanBut, lightColor, cleanLabel, "/Icons/rubber.png");
             hiddenCalc = hideMenus(hiddenCalc, HidingMenuInputs, CalcBut, lightColor, calcLabel, "/Icons/calc.png");
         }
-        if(hiddenOutputs) {
+        if (hiddenOutputs) {
             hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/close-edit.png");
-        }else{
+        } else {
             hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/result.png");
         }
         SwingUtilities.updateComponentTreeUI(this);
@@ -4571,7 +4583,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InRatioMouseClicked
 
     private void InRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseEntered
-    changeColor(InRatio, darkLightColor);
+        changeColor(InRatio, darkLightColor);
     }//GEN-LAST:event_InRatioMouseEntered
 
     private void InRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseExited
@@ -4584,7 +4596,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InDDMMouseClicked
 
     private void InDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseEntered
-    changeColor(InDDM, darkLightColor);
+        changeColor(InDDM, darkLightColor);
     }//GEN-LAST:event_InDDMMouseEntered
 
     private void InDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseExited
@@ -4597,7 +4609,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InGrahamMouseClicked
 
     private void InGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseEntered
-    changeColor(InGraham, darkLightColor);
+        changeColor(InGraham, darkLightColor);
     }//GEN-LAST:event_InGrahamMouseEntered
 
     private void InGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseExited
@@ -4610,7 +4622,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InfoMouseClicked
 
     private void InfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseEntered
-    changeColor(Info, darkLightColor);
+        changeColor(Info, darkLightColor);
     }//GEN-LAST:event_InfoMouseEntered
 
     private void InfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseExited
@@ -4623,7 +4635,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_InNAVMouseClicked
 
     private void InNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseEntered
-    changeColor(InNAV, darkLightColor);
+        changeColor(InNAV, darkLightColor);
     }//GEN-LAST:event_InNAVMouseEntered
 
     private void InNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseExited
@@ -4636,7 +4648,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_OutSummaryMouseClicked
 
     private void OutSummaryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseEntered
-    changeColor(OutSummary, darkLightColor);
+        changeColor(OutSummary, darkLightColor);
     }//GEN-LAST:event_OutSummaryMouseEntered
 
     private void OutSummaryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseExited
@@ -4649,7 +4661,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_OutRatioMouseClicked
 
     private void OutRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseEntered
-    changeColor(OutRatio, darkLightColor);
+        changeColor(OutRatio, darkLightColor);
     }//GEN-LAST:event_OutRatioMouseEntered
 
     private void OutRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseExited
@@ -4662,7 +4674,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_OutDCFMouseClicked
 
     private void OutDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseEntered
-    changeColor(OutDCF, darkLightColor);
+        changeColor(OutDCF, darkLightColor);
     }//GEN-LAST:event_OutDCFMouseEntered
 
     private void OutDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseExited
@@ -4675,7 +4687,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_OutDDMMouseClicked
 
     private void OutDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseEntered
-    changeColor(OutDDM, darkLightColor);
+        changeColor(OutDDM, darkLightColor);
     }//GEN-LAST:event_OutDDMMouseEntered
 
     private void OutDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseExited
@@ -4688,7 +4700,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_OutGrahamMouseClicked
 
     private void OutGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseEntered
-    changeColor(OutGraham, darkLightColor);
+        changeColor(OutGraham, darkLightColor);
     }//GEN-LAST:event_OutGrahamMouseEntered
 
     private void OutGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseExited
@@ -4701,7 +4713,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_OutNAVMouseClicked
 
     private void OutNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseEntered
-    changeColor(OutNAV, darkLightColor);
+        changeColor(OutNAV, darkLightColor);
     }//GEN-LAST:event_OutNAVMouseEntered
 
     private void OutNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseExited
@@ -4710,14 +4722,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void CleanButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseClicked
         HidingMenuCleaning.setVisible(hiddenCleaning);
-        if(!hiddenInputs || !hiddenOutputs || !hiddenCalc){
+        if (!hiddenInputs || !hiddenOutputs || !hiddenCalc) {
             hiddenOutputs = hideMenus(hiddenOutputs, HidingMenuOutputs, ResultBut, lightColor, resultLabel, "/Icons/result.png");
-            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut,lightColor, innLabel, "/Icons/inputs.png");
+            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut, lightColor, innLabel, "/Icons/inputs.png");
             hiddenCalc = hideMenus(hiddenCalc, HidingMenuInputs, CalcBut, lightColor, calcLabel, "/Icons/calc.png");
         }
-        if(hiddenCleaning) {
+        if (hiddenCleaning) {
             hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/close-edit.png");
-        }else{
+        } else {
             hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/rubber.png");
         }
         SwingUtilities.updateComponentTreeUI(this);
@@ -4759,14 +4771,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
     private void CalcButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseClicked
         HidingMenuCalculation.setVisible(hiddenCalc);
-        if(!hiddenInputs || !hiddenOutputs || !hiddenCleaning){
+        if (!hiddenInputs || !hiddenOutputs || !hiddenCleaning) {
             hiddenOutputs = hideMenus(hiddenOutputs, HidingMenuOutputs, ResultBut, lightColor, resultLabel, "/Icons/result.png");
-            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut,lightColor, innLabel, "/Icons/inputs.png");
+            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut, lightColor, innLabel, "/Icons/inputs.png");
             hiddenCleaning = hideMenus(hiddenCleaning, HidingMenuCleaning, CleanBut, lightColor, cleanLabel, "/Icons/rubber.png");
         }
-        if(hiddenCalc) {
+        if (hiddenCalc) {
             hiddenCalc = showHideMenu(HidingMenuCalculation, CalcBut, hiddenCalc, calcLabel, "/Icons/close-edit.png");
-        }else{
+        } else {
             hiddenCalc = showHideMenu(HidingMenuCalculation, CalcBut, hiddenCalc, calcLabel, "/Icons/calc.png");
         }
         SwingUtilities.updateComponentTreeUI(this);
@@ -4809,7 +4821,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanRatioMouseClicked
 
     private void CleanRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseEntered
-    changeColor(CleanRatio, darkLightColor);
+        changeColor(CleanRatio, darkLightColor);
     }//GEN-LAST:event_CleanRatioMouseEntered
 
     private void CleanRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseExited
@@ -4821,7 +4833,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanDCFMouseClicked
 
     private void CleanDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseEntered
-    changeColor(CleanDCF, darkLightColor);
+        changeColor(CleanDCF, darkLightColor);
     }//GEN-LAST:event_CleanDCFMouseEntered
 
     private void CleanDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseExited
@@ -4833,7 +4845,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanDDMMouseClicked
 
     private void CleanDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseEntered
-    changeColor(CleanDDM, darkLightColor);
+        changeColor(CleanDDM, darkLightColor);
     }//GEN-LAST:event_CleanDDMMouseEntered
 
     private void CleanDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseExited
@@ -4845,7 +4857,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanGrahamMouseClicked
 
     private void CleanGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseEntered
-    changeColor(CleanGraham, darkLightColor);
+        changeColor(CleanGraham, darkLightColor);
     }//GEN-LAST:event_CleanGrahamMouseEntered
 
     private void CleanGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseExited
@@ -4955,7 +4967,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public static void main(String args[]) {
         //řeší problém se škálováním ikon
         System.setProperty("sun.java2d.uiScale", "1");
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -5435,44 +5447,44 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewNAVVal;
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
- 
+
     /**
      *
      * @return
      */
-    public JTable getFCF(){
+    public JTable getFCF() {
         return FCF2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTable getDividends(){
+    public JTable getDividends() {
         return Dividends;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTable getDividendsPrediction(){
+    public JTable getDividendsPrediction() {
         return DividendsPrediction;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGrahamAns(){
+    public JTextField getGrahamAns() {
         return GrahamAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGR(){
+    public JTextField getGR() {
         return GRGrahamInn;
     }
 
@@ -5480,858 +5492,858 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @return
      */
-    public JTextField getYInn(){
+    public JTextField getYInn() {
         return Y;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getWACCDDMInn(){
+    public JTextField getWACCDDMInn() {
         return WACCDDM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActFCF(){
+    public JTextField getActFCF() {
         return ActFCF2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDebt(){
+    public JTextField getDebt() {
         return Debt2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getShares(){
+    public JTextField getShares() {
         return Shares2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCandC(){
+    public JTextField getCandC() {
         return CandC2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPillow(){
+    public JTextField getPillow() {
         return Pillow2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getInv(){
+    public JTextField getInv() {
         return Inv2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getReceivable(){
+    public JTextField getReceivable() {
         return Receivable2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCapLO(){
+    public JTextField getCapLO() {
         return CapLO2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getTEGMI(){
+    public JTextField getTEGMI() {
         return TEGMI2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEBIT(){
+    public JTextField getEBIT() {
         return EBIT2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEPS(){
+    public JTextField getEPS() {
         return EPS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPriceInn(){
+    public JTextField getActPriceInn() {
         return ActPriceInn2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPrice(){
+    public JTextField getActPrice() {
         return ActPrice;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getComDiv(){
+    public JTextField getComDiv() {
         return ComDiv2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getTAssets(){
+    public JTextField getTAssets() {
         return TAssets2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getTLiabilities(){
+    public JTextField getTLiabilities() {
         return TLiabilities2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getSHEquity(){
+    public JTextField getSHEquity() {
         return SHEquity2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getTanBookVal(){
+    public JTextField getTanBookVal() {
         return TanBookVal2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCurLiabilities(){
+    public JTextField getCurLiabilities() {
         return CurLiabilities2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCurAssets(){
+    public JTextField getCurAssets() {
         return CurAssets2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getOrShNum(){
+    public JTextField getOrShNum() {
         return OrShNum2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getNIncome(){
+    public JTextField getNIncome() {
         return NIncome2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getTaxes(){
+    public JTextField getTaxes() {
         return Taxes2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getIntExp(){
+    public JTextField getIntExp() {
         return IntExp2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getTRevenue(){
+    public JTextField getTRevenue() {
         return TRevenue2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getOthIncome(){
+    public JTextField getOthIncome() {
         return OthIncome2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCofRevenue(){
+    public JTextField getCofRevenue() {
         return CofRevenue2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getOpExpense(){
+    public JTextField getOpExpense() {
         return OpExpense2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGrahamRevAns(){
+    public JTextField getGrahamRevAns() {
         return GrahamRevAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGrahamMoSAns(){
+    public JTextField getGrahamMoSAns() {
         return GrahamMoSAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGrahamRevMoSAns(){
+    public JTextField getGrahamRevMoSAns() {
         return GrahamRevMoSAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDDMMoSAns(){
+    public JTextField getDDMMoSAns() {
         return DDMMoSAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDDMAns(){
+    public JTextField getDDMAns() {
         return DDMAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDCFMoSAns(){
+    public JTextField getDCFMoSAns() {
         return DCFMoSAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDCFAns(){
+    public JTextField getDCFAns() {
         return DCFAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getIdealPrice(){
+    public JTextField getIdealPrice() {
         return IdealPrice;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getIdealPriceMoS(){
+    public JTextField getIdealPriceMoS() {
         return IdealPriceMoS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDiff(){
+    public JTextField getDiff() {
         return Diff;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPriceAns(){
+    public JTextField getActPriceAns() {
         return ActPriceAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPriceDDM(){
+    public JTextField getActPriceDDM() {
         return ActPriceDDM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPriceGraham(){
+    public JTextField getActPriceGraham() {
         return ActPriceGraham;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPriceDCF(){
+    public JTextField getActPriceDCF() {
         return ActPriceDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPillowAns(){
+    public JTextField getPillowAns() {
         return PillowAns;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPillowDDM(){
+    public JTextField getPillowDDM() {
         return PillowDDM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPillowGraham(){
+    public JTextField getPillowGraham() {
         return PillowGraham;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPillowDCF(){
+    public JTextField getPillowDCF() {
         return PillowDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEPSGraham(){
+    public JTextField getEPSGraham() {
         return EPSGraham;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEPSGrahamRev(){
+    public JTextField getEPSGrahamRev() {
         return EPSGrahamRev;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGRGraham(){
+    public JTextField getGRGraham() {
         return GRGraham;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGRGrahamRev(){
+    public JTextField getGRGrahamRev() {
         return GRGrahamRev;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getYGraham(){
+    public JTextField getYGraham() {
         return YGraham;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getYGrahamRev(){
+    public JTextField getYGrahamRev() {
         return YGrahamRev;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEndGraham(){
+    public JTextField getEndGraham() {
         return EndGraham;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEndGrahamRev(){
+    public JTextField getEndGrahamRev() {
         return EndGrahamRev;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEndGrahamMoS(){
+    public JTextField getEndGrahamMoS() {
         return EndGrahamMoS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEndGrahamRevMoS(){
+    public JTextField getEndGrahamRevMoS() {
         return EndGrahamRevMoS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getAvGRDDM(){
+    public JTextField getAvGRDDM() {
         return AvGRDDM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getWACCDDMOut(){
+    public JTextField getWACCDDMOut() {
         return WACCDDMOut;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPriceDDMMoS(){
+    public JTextField getPriceDDMMoS() {
         return PriceDDMMoS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPriceDDM(){
+    public JTextField getPriceDDM() {
         return PriceDDM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTable getLastFCF(){
+    public JTable getLastFCF() {
         return LastFCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGRDCF(){
+    public JTextField getGRDCF() {
         return GR3;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getAvGRDCF(){
+    public JTextField getAvGRDCF() {
         return AvGRDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTable getFutureFCF(){
+    public JTable getFutureFCF() {
         return FutureFCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getStateDCF(){
+    public JTextField getStateDCF() {
         return StateDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getWACCDCFOut(){
+    public JTextField getWACCDCFOut() {
         return WACCDCFOut;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCashDCF(){
+    public JTextField getCashDCF() {
         return CashDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDebtDCF(){
+    public JTextField getDebtDCF() {
         return DebtDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getSharesDCF(){
+    public JTextField getSharesDCF() {
         return SharesDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getSumFCFDCF(){
+    public JTextField getSumFCFDCF() {
         return SumFCFDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEVDCF(){
+    public JTextField getEVDCF() {
         return EVDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPriceDCF(){
+    public JTextField getPriceDCF() {
         return PriceDCF;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPriceDCFMoS(){
+    public JTextField getPriceDCFMoS() {
         return PriceDCFMoS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getGM(){
+    public JTextField getGM() {
         return GM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getOM(){
+    public JTextField getOM() {
         return OM;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getEPSRatio(){
+    public JTextField getEPSRatio() {
         return EPSRatio;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPpE(){
+    public JTextField getPpE() {
         return PpE;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCLiq(){
+    public JTextField getCLiq() {
         return CLiq;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPpB(){
+    public JTextField getPpB() {
         return PpB;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getDpE(){
+    public JTextField getDpE() {
         return DpE;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPayOut(){
+    public JTextField getPayOut() {
         return PayOut;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getROA(){
+    public JTextField getROA() {
         return ROA;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getROE(){
+    public JTextField getROE() {
         return ROE;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getROS(){
+    public JTextField getROS() {
         return ROS;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getRN(){
+    public JTextField getRN() {
         return RN;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getIndebtedness(){
+    public JTextField getIndebtedness() {
         return Indebtedness;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getReceivablesTime(){
+    public JTextField getReceivablesTime() {
         return ReceivablesTime;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getLiabilitiesTime(){
+    public JTextField getLiabilitiesTime() {
         return LiabilitiesTime;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getInventoryTime(){
+    public JTextField getInventoryTime() {
         return InventoryTime;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getCorpName(){
+    public JTextField getCorpName() {
         return CorpNameField;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getSticker(){
+    public JTextField getSticker() {
         return CorpStickerField;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getStockExchange(){
+    public JTextField getStockExchange() {
         return StockExchField;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getNotes(){
+    public JTextField getNotes() {
         return NotesField;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getWACCDCFInn(){
+    public JTextField getWACCDCFInn() {
         return WACCDCFInn;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getStateInn(){
+    public JTextField getStateInn() {
         return State2;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getAssets(){
+    public JTextField getAssets() {
         return TotalAssets;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getLiabilities(){
+    public JTextField getLiabilities() {
         return TotalLiab;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getSharesNAV(){
+    public JTextField getSharesNAV() {
         return SharesOut;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getAssetsNAVOut(){
+    public JTextField getAssetsNAVOut() {
         return TotalAssetsNAV;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getLiabilitiesNAVOut(){
+    public JTextField getLiabilitiesNAVOut() {
         return TotalLiabilitiesNAV;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getSharesNAVOut(){
+    public JTextField getSharesNAVOut() {
         return SharesNAV;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getActPriceNAV(){
+    public JTextField getActPriceNAV() {
         return ActPriceNAV;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPillowNAV(){
+    public JTextField getPillowNAV() {
         return PillowNAV;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPriceNAV(){
+    public JTextField getPriceNAV() {
         return PriceNAV;
     }
-    
+
     /**
      *
      * @return
      */
-    public JTextField getPriceNAVMoS(){
+    public JTextField getPriceNAVMoS() {
         return PriceNAVMoS;
     }
-    
+
     /**
      *
      * @return
