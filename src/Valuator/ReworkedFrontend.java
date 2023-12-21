@@ -4376,7 +4376,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public void exiting(JPanel target, Color change) {
         if (target != null) {
             if (target != actShowing && target != actMenuItem) {
-                if(!cleaningChoices.contains(target.getName()) && !calcChoices.contains(target.getName())) {
+                if (!cleaningChoices.contains(target.getName()) && !calcChoices.contains(target.getName())) {
                     if (!activeChoices.contains(target)) {
                         target.setBackground(change);
                     }
@@ -4473,34 +4473,32 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      */
     public void ShowingViewBackground(JPanel opening, int type) {
         if (opening != null) {
-            if (opening != actShowing) {
-                switch (type) {
-                    case 0:
-                        if (actShowing != null) {
-                            actShowing.setBackground(lightDarkColor);
-                        }
-                        actShowing = opening;
-                        opening.setBackground(darkLightColor);
-                        break;
-                    case 1:
-                        if (actMenuItem != opening) {
-                            actMenuItem.setBackground(lightColor);
-                            if (!activeChoices.contains(actMenuItem)) {
-                                activeChoices.add(opening);
-                            }
-                            if (activeChoices.size() >= 1) {
-                                if (activeChoices.contains(OM)) {
-                                    activeChoices.clear();
-                                }
-                            }
+            switch (type) {
+                case 0 -> {
+                    if (actShowing != null) {
+                        actShowing.setBackground(lightDarkColor);
+                    }
+                    actShowing = opening;
+                    opening.setBackground(darkLightColor);
+                }
+                case 1 -> {
+                    if (actMenuItem != null) {
+                        actMenuItem.setBackground(lightColor);
+                    }
 
-                            actMenuItem = opening;
-                            opening.setBackground(lightDarkColor);
-                        }
-                        break;
-                    default:
+                    actMenuItem = opening;
+                    opening.setBackground(lightDarkColor);
+                }
+                default -> {
                 }
             }
+        }
+    }
+    
+    public void setItemUnactive(){
+        if(actMenuItem != null){
+            actMenuItem.setBackground(lightColor);
+            actMenuItem = null;
         }
     }
 
@@ -4524,7 +4522,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         } else {
             hiddenInputs = showHideMenu(HidingMenuInputs, InputBut, hiddenInputs, innLabel, "/Icons/inputs.png");
         }
-        //SetItemUnactive();
+        setItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_InputButMouseClicked
 
@@ -4548,6 +4546,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         } else {
             hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/result.png");
         }
+        setItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_ResultButMouseClicked
 
@@ -4732,6 +4731,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         } else {
             hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/rubber.png");
         }
+        setItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_CleanButMouseClicked
 
@@ -4781,6 +4781,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         } else {
             hiddenCalc = showHideMenu(HidingMenuCalculation, CalcBut, hiddenCalc, calcLabel, "/Icons/calc.png");
         }
+        setItemUnactive();
         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_CalcButMouseClicked
 
