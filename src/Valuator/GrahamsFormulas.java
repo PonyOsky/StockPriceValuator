@@ -5,10 +5,10 @@ package Valuator;
  * @author ondre
  */
 public class GrahamsFormulas {
-    private final CentralObject central;
+    private final Controller controller;
     
-    public GrahamsFormulas(CentralObject central){
-        this.central = central;
+    public GrahamsFormulas(Controller controller){
+        this.controller = controller;
     }
     /**
      *
@@ -17,8 +17,8 @@ public class GrahamsFormulas {
     public double grahamsSummary(){
         double grah = graham();
         double grahRev = grahamReversed();
-        double diff1 = central.getActualPrice()/grah;
-        double diff2 = central.getActualPrice()/grahRev;
+        double diff1 = controller.getActualPrice()/grah;
+        double diff2 = controller.getActualPrice()/grahRev;
         if(diff1 > 1 && diff2 > 1){
             if(diff1 > diff2){return grahRev;}else{return grah;}
         }else{if(diff1 < 1 && diff2 < 1){
@@ -41,30 +41,30 @@ public class GrahamsFormulas {
      * @return
      */
     public double grahamMoS(){
-        return graham() - graham() * central.getMarginOfSafety();
+        return graham() - graham() * controller.getMarginOfSafety();
     }
     /**
      *
      * @return
      */
     public double grahamRevMoS(){
-        return grahamReversed() - grahamReversed() * central.getMarginOfSafety();
+        return grahamReversed() - grahamReversed() * controller.getMarginOfSafety();
     }
     /**
      *
      * @return
      */
     public double graham(){
-        if(central.getEarningsPerShare() == 0){
+        if(controller.getEarningsPerShare() == 0){
             return 0;
         }else{
-            if(central.getGrowthRate() == 0){
+            if(controller.getGrowthRate() == 0){
                 return 0;
             }else{
-                if(central.getAAACurrentYield() == 0){
+                if(controller.getAAACurrentYield() == 0){
                     return 0;
                 }else{
-                    return (central.getEarningsPerShare() * ((2 * central.getGrowthRate()) + 8.5) * 4.4) / central.getAAACurrentYield();
+                    return (controller.getEarningsPerShare() * ((2 * controller.getGrowthRate()) + 8.5) * 4.4) / controller.getAAACurrentYield();
                 }
             }
         }
@@ -74,9 +74,9 @@ public class GrahamsFormulas {
      * @return
      */
     public double grahamReversed(){
-        if(central.getEarningsPerShare() == 0 || central.getGrowthRate() == 0 || central.getAAACurrentYield() == 0) {
+        if(controller.getEarningsPerShare() == 0 || controller.getGrowthRate() == 0 || controller.getAAACurrentYield() == 0) {
             return 0;
         }
-        return (central.getEarningsPerShare() * ((1 * central.getGrowthRate()) + 7) * 4.4) / central.getAAACurrentYield();
+        return (controller.getEarningsPerShare() * ((1 * controller.getGrowthRate()) + 7) * 4.4) / controller.getAAACurrentYield();
     }
 }

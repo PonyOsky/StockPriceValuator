@@ -934,7 +934,7 @@ public class CentralObject extends javax.swing.JFrame {
         jLabel13.setText("Dividend Payout");
 
         FCF.setBackground(new java.awt.Color(204, 255, 255));
-        FCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FCF.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         FCF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null}
@@ -954,7 +954,7 @@ public class CentralObject extends javax.swing.JFrame {
         jScrollPane2.setViewportView(FCF);
 
         Dividends.setBackground(new java.awt.Color(204, 255, 255));
-        Dividends.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Dividends.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         Dividends.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
@@ -2562,7 +2562,7 @@ public class CentralObject extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 3, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
