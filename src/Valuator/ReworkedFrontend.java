@@ -188,8 +188,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jLabel192 = new javax.swing.JLabel();
         jPanel93 = new javax.swing.JPanel();
         jPanel94 = new javax.swing.JPanel();
-        jLabel193 = new javax.swing.JLabel();
-        ActPriceInn2 = new javax.swing.JTextField();
         jLabel194 = new javax.swing.JLabel();
         TRevenue2 = new javax.swing.JTextField();
         jLabel195 = new javax.swing.JLabel();
@@ -1828,17 +1826,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel94.setForeground(new java.awt.Color(51, 51, 51));
         jPanel94.setLayout(new java.awt.GridLayout(12, 2));
 
-        jLabel193.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel193.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel193.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel193.setText("Actual Stock Price");
-        jPanel94.add(jLabel193);
-
-        ActPriceInn2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActPriceInn2.setForeground(new java.awt.Color(204, 204, 204));
-        ActPriceInn2.setBorder(null);
-        jPanel94.add(ActPriceInn2);
-
         jLabel194.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel194.setForeground(new java.awt.Color(51, 51, 51));
         jLabel194.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2518,6 +2505,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         jLabel88.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel88.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel88.setText("Grahams Revs Formula");
         jPanel35.add(jLabel88);
 
@@ -3151,7 +3139,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel53.setLayout(jPanel53Layout);
         jPanel53Layout.setHorizontalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3272,7 +3260,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             new Object [][] {
                 {"Year", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "TV"},
                 {"Future FCF", null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {"Discounted FFCF", null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {"Discounted FFCF", null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "PoFFCF", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"
@@ -4105,7 +4094,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
+            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4125,7 +4114,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
+            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4968,12 +4957,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public static void main(String args[]) {
         //řeší problém se škálováním ikon
         System.setProperty("sun.java2d.uiScale", "1");
-
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -5005,7 +4988,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField ActPriceDCF;
     private javax.swing.JTextField ActPriceDDM;
     private javax.swing.JTextField ActPriceGraham;
-    private javax.swing.JTextField ActPriceInn2;
     private javax.swing.JTextField ActPriceNAV;
     private javax.swing.JTextField AvGRDCF;
     private javax.swing.JTextField AvGRDDM;
@@ -5264,7 +5246,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel191;
     private javax.swing.JLabel jLabel192;
-    private javax.swing.JLabel jLabel193;
     private javax.swing.JLabel jLabel194;
     private javax.swing.JLabel jLabel195;
     private javax.swing.JLabel jLabel196;
@@ -5591,14 +5572,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      */
     public JTextField getEPS() {
         return EPS;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public JTextField getActPriceInn() {
-        return ActPriceInn2;
     }
 
     /**
