@@ -219,7 +219,7 @@ public class Controller {
      */
     public double getActualPrice(){
         if(frontend.getActPrice().getText() == null){
-            return Double.parseDouble(frontend.getActPriceInn().getText());
+            return Double.parseDouble(frontend.getActPrice().getText());
         }else{
             return Double.parseDouble(frontend.getActPrice().getText());
         }
@@ -439,7 +439,6 @@ public class Controller {
                 frontend.getEBIT().setText("");
                 frontend.getTRevenue().setText("");
                 frontend.getNIncome().setText("");
-                frontend.getActPriceInn().setText("");
                 frontend.getCurAssets().setText("");
                 frontend.getOrShNum().setText("");
                 frontend.getTanBookVal().setText("");
@@ -494,7 +493,6 @@ public class Controller {
                 frontend.getEBIT().setText("");
                 frontend.getTRevenue().setText("");
                 frontend.getNIncome().setText("");
-                frontend.getActPriceInn().setText("");
                 frontend.getCurAssets().setText("");
                 frontend.getOrShNum().setText("");
                 frontend.getTanBookVal().setText("");
