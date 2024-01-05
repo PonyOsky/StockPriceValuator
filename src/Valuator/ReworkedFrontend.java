@@ -6,7 +6,10 @@ package Valuator;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -35,6 +38,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private ArrayList<JPanel> activeChoices;
     public ArrayList<String> cleaningChoices;
     public ArrayList<String> calcChoices;
+    public ArrayList<String> langChoices;
     public final JPanel[] views;
     private boolean hiddenInputs = true;
     private boolean hiddenOutputs = true;
@@ -42,12 +46,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private boolean hiddenCalc = true;
     private JPanel actShowing;
     private JPanel actMenuItem;
+    public Initialize init;
     public Controller controller;
 
-    public ReworkedFrontend() {
+    public ReworkedFrontend() throws IOException {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
+        init = new Initialize(this);
         controller = new Controller(this);
         HidingMenuInputs.setVisible(false);
         HidingMenuOutputs.setVisible(false);
@@ -56,6 +62,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         activeChoices = new ArrayList();
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
+        langChoices = new ArrayList();
         views = new JPanel[]{InfoIn, RatioIn, DCFIn, DDMIn, GrahamIn, NAVIn, SummaryOut, RatioOut, DCFOut, DDMOut, GrahamOut, NAVOut, Settings, Help, Save, Library};
         lightColor = new Color(0, 255, 246);
         lightDarkColor = new Color(0, 231, 255);
@@ -63,6 +70,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         darkColor = new Color(0, 20, 255);
         makeUnvisibleViews();
         setChoicesNames();
+        init.init();
     }
 
     public void makeUnvisibleViews() {
@@ -4977,7 +4985,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ReworkedFrontend().setVisible(true);
+            try {
+                new ReworkedFrontend().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
