@@ -46,14 +46,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private boolean hiddenCalc = true;
     private JPanel actShowing;
     private JPanel actMenuItem;
-    public Initialize init;
+    public Languages langs;
     public Controller controller;
 
     public ReworkedFrontend() throws IOException {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
-        init = new Initialize(this);
+        langs = new Languages();
         controller = new Controller(this);
         HidingMenuInputs.setVisible(false);
         HidingMenuOutputs.setVisible(false);
@@ -70,7 +70,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         darkColor = new Color(0, 20, 255);
         makeUnvisibleViews();
         setChoicesNames();
-        init.init();
     }
 
     public void makeUnvisibleViews() {
@@ -4491,9 +4490,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             }
         }
     }
-    
-    public void setItemUnactive(){
-        if(actMenuItem != null){
+
+    public void setItemUnactive() {
+        if (actMenuItem != null) {
             actMenuItem.setBackground(lightColor);
             actMenuItem = null;
         }
