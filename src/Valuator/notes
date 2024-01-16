@@ -1,3 +1,7 @@
+Languages pracuje pouze s routeami a filenamy, reworkedFrontend bude setoval jlabely a brát hodnoty z Language
+
+
+
 /---Getters only---/
 FCF <- table
 Dividends <-
