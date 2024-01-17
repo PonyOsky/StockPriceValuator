@@ -5,7 +5,7 @@
             <url>src/Valuator/ReworkedFrontend.java</url>
             <bookmark id="1">
                 <name/>
-                <line>4482</line>
+                <line>4741</line>
                 <key/>
             </bookmark>
         </file>
@@ -14,7 +14,9 @@
         <group>
             <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/lang/eng.properties</file>
             <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/ReworkedFrontend.java</file>
+            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/lang/ger.properties</file>
             <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/Languages.java</file>
+            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/lang/cze.properties</file>
             <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/config.properties</file>
             <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/notes</file>
         </group>

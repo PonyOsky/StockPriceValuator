@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,17 +75,23 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         makeUnvisibleViews();
         setChoicesNames();
         setLabels(langs.getRoute());
+        getActYear();
     }
 
-    private void setLabels(String route) throws IOException{
-        if(route != null){
+    public Integer getActYear() {
+        Date currentDate = new Date();
+        return (int) currentDate.getYear() + 1900;
+    }
+
+    private void setLabels(String route) throws IOException {
+        if (route != null) {
             Properties lang = new Properties();
             Properties conf = new Properties();
             FileInputStream i = new FileInputStream("./src/Valuator/config.properties");
             conf.load(i);
             FileInputStream ip = new FileInputStream(route);
             lang.load(ip);
-            
+            //Hiding menu of Inputs
             jLabel2.setText(lang.getProperty("jLabel2"));
             ViewInfo.setText(lang.getProperty("ViewInfo"));
             ViewRatioIn.setText(lang.getProperty("Ratios"));
@@ -92,7 +99,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             ViewDDMIn.setText(lang.getProperty("DDM"));
             ViewGrahamIn.setText(lang.getProperty("Graham"));
             ViewNAVIn.setText(lang.getProperty("NAV"));
-            
+            //Hiding menu of Outputs
             jLabel3.setText(lang.getProperty("jLabel3"));
             viewValSum.setText(lang.getProperty("viewValSum"));
             viewCalcRatio.setText(lang.getProperty("viewCalcRatio"));
@@ -100,7 +107,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             viewDDMVal.setText(lang.getProperty("viewDDMVal"));
             viewGrahamVal.setText(lang.getProperty("viewGrahamVal"));
             viewNAVVal.setText(lang.getProperty("viewNAVVal"));
-            
+            //Hiding menu of cleaning choices
             jLabel13.setText(lang.getProperty("jLabel13"));
             jLabel14.setText(lang.getProperty("jLabel14"));
             jLabel15.setText(lang.getProperty("jLabel15"));
@@ -110,7 +117,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel19.setText(lang.getProperty("Graham"));
             jLabel26.setText(lang.getProperty("NAV"));
             CleaningBut.setText(lang.getProperty("CleaningBut"));
-            
+            //Hiding menu of claculation choices
             jLabel20.setText(lang.getProperty("jLabel20"));
             jLabel22.setText(lang.getProperty("Ratios"));
             jLabel23.setText(lang.getProperty("DCF"));
@@ -118,7 +125,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel25.setText(lang.getProperty("Graham"));
             jLabel27.setText(lang.getProperty("NAV"));
             CleaningBut1.setText(lang.getProperty("CleaningBut1"));
-            
+            //Informations inputs
             jLabel54.setText(lang.getProperty("jLabel54"));
             jLabel55.setText(lang.getProperty("jLabel55"));
             jLabel28.setText(lang.getProperty("jLabel28"));
@@ -127,12 +134,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel44.setText(lang.getProperty("jLabel44"));
             jLabel166.setText(lang.getProperty("jLabel166"));
             jLabel31.setText(lang.getProperty("jLabel31"));
-            
+            //Ratios inputs
             jLabel191.setText(lang.getProperty("jLabel191"));
             jLabel192.setText(lang.getProperty("jLabel192"));
             jLabel194.setText(lang.getProperty("jLabel194"));
             jLabel195.setText(lang.getProperty("jLabel195"));
-            jLabel196.setText(lang.getProperty("jLabel196")); 
+            jLabel196.setText(lang.getProperty("jLabel196"));
             jLabel197.setText(lang.getProperty("jLabel197"));
             jLabel198.setText(lang.getProperty("jLabel198"));
             jLabel199.setText(lang.getProperty("jLabel199"));
@@ -154,7 +161,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel215.setText(lang.getProperty("jLabel215"));
             jLabel216.setText(lang.getProperty("jLabel216"));
             jLabel217.setText(lang.getProperty("jLabel217"));
-                 
+            //DCF inputs
             jLabel45.setText(lang.getProperty("jLabel45"));
             jLabel134.setText(lang.getProperty("jLabel134"));
             jLabel135.setText(lang.getProperty("jLabel135"));
@@ -168,7 +175,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             TableColumn ta = FCF2.getTableHeader().getColumnModel().getColumn(1);
             ta.setHeaderValue(lang.getProperty("titleCol1"));
             FCF2.getTableHeader().repaint();
-            
+            for (int y = 0; y < 9; y++) {
+                FCF2.setValueAt(getActYear() - y, y, 0);
+            }
+            //DDM inputs
             jLabel57.setText(lang.getProperty("jLabel57"));
             jLabel58.setText(lang.getProperty("jLabel58"));
             TableColumn tb = Dividends.getTableHeader().getColumnModel().getColumn(0);
@@ -176,17 +186,20 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             TableColumn tc = Dividends.getTableHeader().getColumnModel().getColumn(1);
             tc.setHeaderValue(lang.getProperty("titleCol2"));
             Dividends.getTableHeader().repaint();
-            
+            for (int y = 0; y < 5; y++) {
+                Dividends.setValueAt(getActYear() - y, y, 0);
+            }
+            //Graham inputs
             jLabel59.setText(lang.getProperty("jLabel59"));
             jLabel60.setText(lang.getProperty("jLabel60"));
             jLabel61.setText(lang.getProperty("jLabel61"));
             jLabel62.setText(lang.getProperty("jLabel62"));
-            
+            //NAV inputs
             jLabel63.setText(lang.getProperty("jLabel63"));
             jLabel64.setText(lang.getProperty("jLabel64"));
             jLabel65.setText(lang.getProperty("jLabel65"));
             jLabel66.setText(lang.getProperty("jLabel66"));
-            
+            //Summary outputs
             jLabel67.setText(lang.getProperty("jLabel67"));
             jLabel72.setText(lang.getProperty("DCF"));
             jLabel73.setText(lang.getProperty("DDM"));
@@ -207,7 +220,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel70.setText(lang.getProperty("jLabel70"));
             jLabel69.setText(lang.getProperty("jLabel69"));
             jLabel71.setText(lang.getProperty("mos"));
-            
+            //Ratios outputs
             jLabel86.setText(lang.getProperty("jLabel86"));
             jLabel89.setText(lang.getProperty("jLabel89"));
             jLabel90.setText(lang.getProperty("jLabel90"));
@@ -225,7 +238,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel106.setText(lang.getProperty("jLabel106"));
             jLabel107.setText(lang.getProperty("jLabel107"));
             jLabel108.setText(lang.getProperty("jLabel108"));
-            
+            //DCF outputs
             jLabel87.setText(lang.getProperty("jLabel87"));
             jLabel98.setText(lang.getProperty("jLabel98"));
             jLabel100.setText(lang.getProperty("jLabel100"));
@@ -242,13 +255,28 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel99.setText(lang.getProperty("mos"));
             TableColumn td = LastFCF.getTableHeader().getColumnModel().getColumn(0);
             td.setHeaderValue(lang.getProperty("year"));
+            for (int y = 1; y < 9; y++) {
+                TableColumn c = LastFCF.getTableHeader().getColumnModel().getColumn(y);
+                c.setHeaderValue(getActYear() + (y - 8));
+            }
             LastFCF.getTableHeader().repaint();
-            //set values in table
+            LastFCF.setValueAt(lang.getProperty("tableVal1"), 0, 0);
+            LastFCF.setValueAt(lang.getProperty("tableVal2"), 1, 0);
             TableColumn te = FutureFCF.getTableHeader().getColumnModel().getColumn(0);
             te.setHeaderValue(lang.getProperty("titleCol3"));
+            for (int y = 1; y < 14; y++) {
+                TableColumn c = FutureFCF.getTableHeader().getColumnModel().getColumn(y);
+                c.setHeaderValue(y);
+            }
             FutureFCF.getTableHeader().repaint();
-            //set values in table
-            
+            FutureFCF.setValueAt(lang.getProperty("year"), 0, 0);
+            for (int y = 1; y < 13; y++) {
+                FutureFCF.setValueAt(getActYear() + y, 0, y);
+            }
+            FutureFCF.setValueAt(lang.getProperty("tableVal3"), 0, 13);
+            FutureFCF.setValueAt(lang.getProperty("tableVal4"), 1, 0);
+            FutureFCF.setValueAt(lang.getProperty("tableVal5"), 2, 0);
+            //DDM outputs
             jLabel120.setText(lang.getProperty("jLabel120"));
             jLabel122.setText(lang.getProperty("jLabel122"));
             jLabel124.setText(lang.getProperty("jLabel124"));
@@ -258,9 +286,15 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel123.setText(lang.getProperty("mos"));
             TableColumn tf = DividendsPrediction.getTableHeader().getColumnModel().getColumn(0);
             tf.setHeaderValue(lang.getProperty("year"));
+            for (int y = 1; y < 6; y++) {
+                TableColumn c = DividendsPrediction.getTableHeader().getColumnModel().getColumn(y);
+                c.setHeaderValue(getActYear() + (y - 5));
+            }
             DividendsPrediction.getTableHeader().repaint();
-            //set values in table
-            
+            DividendsPrediction.setValueAt(lang.getProperty("tableVal6"), 0, 0);
+            DividendsPrediction.setValueAt(lang.getProperty("tableVal7"), 1, 0);
+            DividendsPrediction.setValueAt(lang.getProperty("tableVal8"), 2, 0);
+            //Graham outputs
             jLabel127.setText(lang.getProperty("jLabel127"));
             jLabel156.setText(lang.getProperty("jLabel156"));
             jLabel157.setText(lang.getProperty("jLabel157"));
@@ -281,7 +315,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel149.setText(conf.getProperty("GRMRev"));
             jLabel151.setText(conf.getProperty("AvgrYeald"));
             jLabel152.setText(conf.getProperty("AvgrYeald"));
-            
+            //NAV outputs
             jLabel159.setText(lang.getProperty("jLabel159"));
             jLabel119.setText(lang.getProperty("jLabel119"));
             jLabel129.setText(lang.getProperty("jLabel129"));
@@ -290,13 +324,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel5.setText(lang.getProperty("jLabel5"));
             jLabel118.setText(lang.getProperty("actprice"));
             jLabel128.setText(lang.getProperty("mos"));
-            
+            //Help page
             jLabel161.setText(lang.getProperty("jLabel161"));
-
+            //Setting page
             jLabel160.setText(lang.getProperty("jLabel160"));
         }
     }
-    
+
     public void makeUnvisibleViews() {
         if (views != null) {
             for (JPanel a : views) {

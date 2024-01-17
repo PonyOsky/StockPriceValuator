@@ -494,7 +494,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -545,7 +545,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ViewInfo" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="ViewInfo" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -587,7 +587,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ViewRatioIn" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="ViewRatioIn" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -626,7 +626,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ViewDCFIn" alignment="1" pref="57" max="32767" attributes="0"/>
+                      <Component id="ViewDCFIn" alignment="1" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -671,7 +671,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ViewDDMIn" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="ViewDDMIn" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -713,7 +713,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ViewGrahamIn" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="ViewGrahamIn" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -758,7 +758,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ViewNAVIn" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="ViewNAVIn" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -810,7 +810,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel3" alignment="1" pref="57" max="32767" attributes="0"/>
+                      <Component id="jLabel3" alignment="1" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -861,7 +861,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="viewValSum" alignment="1" pref="57" max="32767" attributes="0"/>
+                      <Component id="viewValSum" alignment="1" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -912,7 +912,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="viewCalcRatio" alignment="1" pref="57" max="32767" attributes="0"/>
+                      <Component id="viewCalcRatio" alignment="1" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -954,7 +954,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="viewDCFVal" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="viewDCFVal" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1005,7 +1005,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="viewDDMVal" alignment="1" pref="57" max="32767" attributes="0"/>
+                      <Component id="viewDDMVal" alignment="1" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1047,7 +1047,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="viewGrahamVal" alignment="1" pref="57" max="32767" attributes="0"/>
+                      <Component id="viewGrahamVal" alignment="1" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1089,7 +1089,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="viewNAVVal" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="viewNAVVal" alignment="0" pref="89" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
