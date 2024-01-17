@@ -39,7 +39,7 @@ public class Languages {
     private ArrayList getChoices(ArrayList langs) {
         if(langs != null){
             ArrayList<String> choices = new ArrayList();
-            for(Object f : langs){
+            for(var f : langs){
                 String filePath = (String) f;
                 Properties p = new Properties();
                 FileInputStream ip = null;
@@ -63,5 +63,8 @@ public class Languages {
     public void setLastLang(String newLang){
         conf.setProperty("lastLang", newLang);
     }
-
+    
+    public String getRoute(){
+     return conf.getProperty("lastLangRoute");
+    }
 }

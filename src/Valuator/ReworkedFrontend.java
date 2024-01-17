@@ -6,8 +6,11 @@ package Valuator;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -70,8 +73,212 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         darkColor = new Color(0, 20, 255);
         makeUnvisibleViews();
         setChoicesNames();
+        setLabels(langs.getRoute());
     }
 
+    private void setLabels(String route) throws IOException{
+        if(route != null){
+            Properties lang = new Properties();
+            Properties conf = new Properties();
+            FileInputStream i = new FileInputStream("./src/Valuator/config.properties");
+            conf.load(i);
+            FileInputStream ip = new FileInputStream(route);
+            lang.load(ip);
+            
+            jLabel2.setText(lang.getProperty("jLabel2"));
+            ViewInfo.setText(lang.getProperty("ViewInfo"));
+            ViewRatioIn.setText(lang.getProperty("Ratios"));
+            ViewDCFIn.setText(lang.getProperty("DCF"));
+            ViewDDMIn.setText(lang.getProperty("DDM"));
+            ViewGrahamIn.setText(lang.getProperty("Graham"));
+            ViewNAVIn.setText(lang.getProperty("NAV"));
+            
+            jLabel3.setText(lang.getProperty("jLabel3"));
+            viewValSum.setText(lang.getProperty("viewValSum"));
+            viewCalcRatio.setText(lang.getProperty("viewCalcRatio"));
+            viewDCFVal.setText(lang.getProperty("viewDCFVal"));
+            viewDDMVal.setText(lang.getProperty("viewDDMVal"));
+            viewGrahamVal.setText(lang.getProperty("viewGrahamVal"));
+            viewNAVVal.setText(lang.getProperty("viewNAVVal"));
+            
+            jLabel13.setText(lang.getProperty("jLabel13"));
+            jLabel14.setText(lang.getProperty("jLabel14"));
+            jLabel15.setText(lang.getProperty("jLabel15"));
+            jLabel16.setText(lang.getProperty("Ratios"));
+            jLabel17.setText(lang.getProperty("DCF"));
+            jLabel18.setText(lang.getProperty("DDM"));
+            jLabel19.setText(lang.getProperty("Graham"));
+            jLabel26.setText(lang.getProperty("NAV"));
+            CleaningBut.setText(lang.getProperty("CleaningBut"));
+            
+            jLabel20.setText(lang.getProperty("jLabel20"));
+            jLabel22.setText(lang.getProperty("Ratios"));
+            jLabel23.setText(lang.getProperty("DCF"));
+            jLabel24.setText(lang.getProperty("DDM"));
+            jLabel25.setText(lang.getProperty("Graham"));
+            jLabel27.setText(lang.getProperty("NAV"));
+            CleaningBut1.setText(lang.getProperty("CleaningBut1"));
+            
+            jLabel54.setText(lang.getProperty("jLabel54"));
+            jLabel55.setText(lang.getProperty("jLabel55"));
+            jLabel28.setText(lang.getProperty("jLabel28"));
+            jLabel29.setText(lang.getProperty("jLabel29"));
+            jLabel30.setText(lang.getProperty("jLabel30"));
+            jLabel44.setText(lang.getProperty("jLabel44"));
+            jLabel166.setText(lang.getProperty("jLabel166"));
+            jLabel31.setText(lang.getProperty("jLabel31"));
+            
+            jLabel191.setText(lang.getProperty("jLabel191"));
+            jLabel192.setText(lang.getProperty("jLabel192"));
+            jLabel194.setText(lang.getProperty("jLabel194"));
+            jLabel195.setText(lang.getProperty("jLabel195"));
+            jLabel196.setText(lang.getProperty("jLabel196")); 
+            jLabel197.setText(lang.getProperty("jLabel197"));
+            jLabel198.setText(lang.getProperty("jLabel198"));
+            jLabel199.setText(lang.getProperty("jLabel199"));
+            jLabel200.setText(lang.getProperty("jLabel200"));
+            jLabel201.setText(lang.getProperty("jLabel201"));
+            jLabel202.setText(lang.getProperty("jLabel202"));
+            jLabel203.setText(lang.getProperty("jLabel203"));
+            jLabel204.setText(lang.getProperty("jLabel204"));
+            jLabel205.setText(lang.getProperty("jLabel205"));
+            jLabel206.setText(lang.getProperty("jLabel206"));
+            jLabel207.setText(lang.getProperty("jLabel207"));
+            jLabel208.setText(lang.getProperty("jLabel208"));
+            jLabel209.setText(lang.getProperty("jLabel209"));
+            jLabel210.setText(lang.getProperty("jLabel210"));
+            jLabel211.setText(lang.getProperty("jLabel211"));
+            jLabel212.setText(lang.getProperty("jLabel212"));
+            jLabel213.setText(lang.getProperty("jLabel213"));
+            jLabel214.setText(lang.getProperty("jLabel214"));
+            jLabel215.setText(lang.getProperty("jLabel215"));
+            jLabel216.setText(lang.getProperty("jLabel216"));
+            jLabel217.setText(lang.getProperty("jLabel217"));
+                 
+            jLabel45.setText(lang.getProperty("jLabel45"));
+            jLabel134.setText(lang.getProperty("jLabel134"));
+            jLabel135.setText(lang.getProperty("jLabel135"));
+            jLabel136.setText(lang.getProperty("jLabel136"));
+            jLabel137.setText(lang.getProperty("jLabel137"));
+            jLabel141.setText(lang.getProperty("jLabel141"));
+            jLabel142.setText(lang.getProperty("jLabel142"));
+            jLabel164.setText(lang.getProperty("jLabel164"));
+            //napojit na headery
+            
+            jLabel57.setText(lang.getProperty("jLabel57"));
+            jLabel58.setText(lang.getProperty("jLabel58"));
+            //napojit na headery
+            
+            jLabel59.setText(lang.getProperty("jLabel59"));
+            jLabel60.setText(lang.getProperty("jLabel60"));
+            jLabel61.setText(lang.getProperty("jLabel61"));
+            jLabel62.setText(lang.getProperty("jLabel62"));
+            
+            jLabel63.setText(lang.getProperty("jLabel63"));
+            jLabel64.setText(lang.getProperty("jLabel64"));
+            jLabel65.setText(lang.getProperty("jLabel65"));
+            jLabel66.setText(lang.getProperty("jLabel66"));
+            
+            jLabel67.setText(lang.getProperty("jLabel67"));
+            jLabel72.setText(lang.getProperty("DCF"));
+            jLabel73.setText(lang.getProperty("DDM"));
+            jLabel74.setText(lang.getProperty("Graham"));
+            jLabel88.setText(lang.getProperty("jLabel88"));
+            jLabel75.setText(lang.getProperty("NAV"));
+            jLabel76.setText(lang.getProperty("price"));
+            jLabel77.setText(lang.getProperty("price"));
+            jLabel78.setText(lang.getProperty("price"));
+            jLabel79.setText(lang.getProperty("price"));
+            jLabel80.setText(lang.getProperty("price"));
+            jLabel81.setText(lang.getProperty("pricemos"));
+            jLabel82.setText(lang.getProperty("pricemos"));
+            jLabel83.setText(lang.getProperty("pricemos"));
+            jLabel84.setText(lang.getProperty("pricemos"));
+            jLabel85.setText(lang.getProperty("pricemos"));
+            jLabel68.setText(lang.getProperty("jLabel68"));
+            jLabel70.setText(lang.getProperty("jLabel70"));
+            jLabel69.setText(lang.getProperty("jLabel69"));
+            jLabel71.setText(lang.getProperty("mos"));
+            
+            jLabel86.setText(lang.getProperty("jLabel86"));
+            jLabel89.setText(lang.getProperty("jLabel89"));
+            jLabel90.setText(lang.getProperty("jLabel90"));
+            jLabel91.setText(lang.getProperty("jLabel91"));
+            jLabel92.setText(lang.getProperty("jLabel92"));
+            jLabel93.setText(lang.getProperty("jLabel93"));
+            jLabel94.setText(lang.getProperty("jLabel94"));
+            jLabel95.setText(lang.getProperty("jLabel95"));
+            jLabel96.setText(lang.getProperty("jLabel96"));
+            jLabel101.setText(lang.getProperty("jLabel101"));
+            jLabel102.setText(lang.getProperty("jLabel102"));
+            jLabel103.setText(lang.getProperty("jLabel103"));
+            jLabel104.setText(lang.getProperty("jLabel104"));
+            jLabel105.setText(lang.getProperty("jLabel105"));
+            jLabel106.setText(lang.getProperty("jLabel106"));
+            jLabel107.setText(lang.getProperty("jLabel107"));
+            jLabel108.setText(lang.getProperty("jLabel108"));
+            
+            jLabel87.setText(lang.getProperty("jLabel87"));
+            jLabel98.setText(lang.getProperty("jLabel98"));
+            jLabel100.setText(lang.getProperty("jLabel100"));
+            jLabel116.setText(lang.getProperty("jLabel116"));
+            jLabel117.setText(lang.getProperty("jLabel117"));
+            jLabel109.setText(lang.getProperty("jLabel109"));
+            jLabel110.setText(lang.getProperty("jLabel110"));
+            jLabel111.setText(lang.getProperty("jLabel111"));
+            jLabel112.setText(lang.getProperty("jLabel112"));
+            jLabel113.setText(lang.getProperty("jLabel113"));
+            jLabel114.setText(lang.getProperty("jLabel114"));
+            jLabel115.setText(lang.getProperty("jLabel115"));
+            jLabel97.setText(lang.getProperty("actprice"));
+            jLabel99.setText(lang.getProperty("mos"));
+            //napojit na headery
+            
+            jLabel120.setText(lang.getProperty("jLabel120"));
+            jLabel122.setText(lang.getProperty("jLabel122"));
+            jLabel124.setText(lang.getProperty("jLabel124"));
+            jLabel125.setText(lang.getProperty("jLabel125"));
+            jLabel126.setText(lang.getProperty("jLabel126"));
+            jLabel121.setText(lang.getProperty("actprice"));
+            jLabel123.setText(lang.getProperty("mos"));
+            //napojit na headery
+            
+            jLabel127.setText(lang.getProperty("jLabel127"));
+            jLabel156.setText(lang.getProperty("jLabel156"));
+            jLabel157.setText(lang.getProperty("jLabel157"));
+            jLabel158.setText(lang.getProperty("jLabel158"));
+            jLabel139.setText(lang.getProperty("jLabel139"));
+            jLabel143.setText(lang.getProperty("jLabel143"));
+            jLabel146.setText(lang.getProperty("jLabel146"));
+            jLabel147.setText(lang.getProperty("jLabel147"));
+            jLabel150.setText(lang.getProperty("jLabel150"));
+            jLabel153.setText(lang.getProperty("jLabel153"));
+            jLabel154.setText(lang.getProperty("jLabel154"));
+            jLabel155.setText(lang.getProperty("jLabel155"));
+            jLabel138.setText(lang.getProperty("actprice"));
+            jLabel140.setText(lang.getProperty("mos"));
+            jLabel144.setText(conf.getProperty("PE"));
+            jLabel145.setText(conf.getProperty("PERev"));
+            jLabel148.setText(conf.getProperty("GRM"));
+            jLabel149.setText(conf.getProperty("GRMRev"));
+            jLabel151.setText(conf.getProperty("AvgrYeald"));
+            jLabel152.setText(conf.getProperty("AvgrYeald"));
+            
+            jLabel159.setText(lang.getProperty("jLabel159"));
+            jLabel119.setText(lang.getProperty("jLabel119"));
+            jLabel129.setText(lang.getProperty("jLabel129"));
+            jLabel1.setText(lang.getProperty("jLabel1"));
+            jLabel4.setText(lang.getProperty("jLabel4"));
+            jLabel5.setText(lang.getProperty("jLabel5"));
+            jLabel118.setText(lang.getProperty("actprice"));
+            jLabel128.setText(lang.getProperty("mos"));
+            
+            jLabel161.setText(lang.getProperty("jLabel161"));
+
+            jLabel160.setText(lang.getProperty("jLabel160"));
+        }
+    }
+    
     public void makeUnvisibleViews() {
         if (views != null) {
             for (JPanel a : views) {
@@ -592,7 +799,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InputButLayout.setVerticalGroup(
             InputButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(innLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(innLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(InputBut);
@@ -622,7 +829,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         CleanButLayout.setVerticalGroup(
             CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cleanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(cleanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(CleanBut);
@@ -654,7 +861,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         ResultButLayout.setVerticalGroup(
             ResultButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(resultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(resultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(ResultBut);
@@ -684,7 +891,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         SaveButLayout.setVerticalGroup(
             SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(SaveBut);
@@ -714,7 +921,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         LibraryButLayout.setVerticalGroup(
             LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(LibraryBut);
@@ -744,7 +951,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         CalcButLayout.setVerticalGroup(
             CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(calcLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(calcLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(CalcBut);
@@ -759,7 +966,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         Space0Layout.setVerticalGroup(
             Space0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(Space0);
@@ -774,7 +981,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         Space1Layout.setVerticalGroup(
             Space1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(Space1);
@@ -806,7 +1013,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         SettingButLayout.setVerticalGroup(
             SettingButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(setttingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(setttingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(SettingBut);
@@ -839,7 +1046,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         HelpButLayout.setVerticalGroup(
             HelpButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(helpLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(helpLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(HelpBut);
