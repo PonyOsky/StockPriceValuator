@@ -7,7 +7,6 @@ package Valuator;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -20,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -163,11 +163,19 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel141.setText(lang.getProperty("jLabel141"));
             jLabel142.setText(lang.getProperty("jLabel142"));
             jLabel164.setText(lang.getProperty("jLabel164"));
-            //napojit na headery
+            TableColumn t = FCF2.getTableHeader().getColumnModel().getColumn(0);
+            t.setHeaderValue(lang.getProperty("year"));
+            TableColumn ta = FCF2.getTableHeader().getColumnModel().getColumn(1);
+            ta.setHeaderValue(lang.getProperty("titleCol1"));
+            FCF2.getTableHeader().repaint();
             
             jLabel57.setText(lang.getProperty("jLabel57"));
             jLabel58.setText(lang.getProperty("jLabel58"));
-            //napojit na headery
+            TableColumn tb = Dividends.getTableHeader().getColumnModel().getColumn(0);
+            tb.setHeaderValue(lang.getProperty("year"));
+            TableColumn tc = Dividends.getTableHeader().getColumnModel().getColumn(1);
+            tc.setHeaderValue(lang.getProperty("titleCol2"));
+            Dividends.getTableHeader().repaint();
             
             jLabel59.setText(lang.getProperty("jLabel59"));
             jLabel60.setText(lang.getProperty("jLabel60"));
@@ -232,7 +240,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel115.setText(lang.getProperty("jLabel115"));
             jLabel97.setText(lang.getProperty("actprice"));
             jLabel99.setText(lang.getProperty("mos"));
-            //napojit na headery
+            TableColumn td = LastFCF.getTableHeader().getColumnModel().getColumn(0);
+            td.setHeaderValue(lang.getProperty("year"));
+            LastFCF.getTableHeader().repaint();
+            //set values in table
+            TableColumn te = FutureFCF.getTableHeader().getColumnModel().getColumn(0);
+            te.setHeaderValue(lang.getProperty("titleCol3"));
+            FutureFCF.getTableHeader().repaint();
+            //set values in table
             
             jLabel120.setText(lang.getProperty("jLabel120"));
             jLabel122.setText(lang.getProperty("jLabel122"));
@@ -241,7 +256,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel126.setText(lang.getProperty("jLabel126"));
             jLabel121.setText(lang.getProperty("actprice"));
             jLabel123.setText(lang.getProperty("mos"));
-            //napojit na headery
+            TableColumn tf = DividendsPrediction.getTableHeader().getColumnModel().getColumn(0);
+            tf.setHeaderValue(lang.getProperty("year"));
+            DividendsPrediction.getTableHeader().repaint();
+            //set values in table
             
             jLabel127.setText(lang.getProperty("jLabel127"));
             jLabel156.setText(lang.getProperty("jLabel156"));
