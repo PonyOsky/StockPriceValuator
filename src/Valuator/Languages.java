@@ -33,7 +33,6 @@ public class Languages {
                 props.add(file.getName());
             }
         }
-        System.out.println(props);
         choices = new ArrayList();
         choices.add(" ");
         fillChoices(props);
@@ -44,7 +43,6 @@ public class Languages {
             for (var f : langs) {
                 if (f != " ") {
                     String filePath = "./src/lang/" + f;
-                    System.out.println(filePath);
                     Properties p = new Properties();
                     FileInputStream ip = new FileInputStream(filePath);
                     p.load(ip);
@@ -54,13 +52,13 @@ public class Languages {
         }
     }
 
-    public ArrayList getChoices() {
+    public ArrayList<String> getChoices() {
         return choices;
     }
 
     public void setLastLang(int choice) throws FileNotFoundException, IOException {
         conf.setProperty("lastLang", choices.get(choice));
-        conf.setProperty("lastLangRoute", "./src/lang" + props.get(choice));
+        conf.setProperty("lastLangRoute", "./src/lang/" + props.get(choice));
     }
 
     public String getRoute() {
@@ -69,10 +67,15 @@ public class Languages {
             if (f.exists()) {
                 return conf.getProperty("lastLangRoute");
             } else {
+                conf.setProperty("lastLang", conf.getProperty("defLang"));
                 return conf.getProperty("defLangRoute");
             }
         } else {
             return conf.getProperty("defLangRoute");
         }
+    }
+    
+    public String getDefLangType() {
+        return conf.getProperty("lastLang");
     }
 }
