@@ -74,7 +74,7 @@ public class Languages {
             return conf.getProperty("defLangRoute");
         }
     }
-    
+
     public String getDefLangType() {
         return conf.getProperty("lastLang");
     }
