@@ -6,7 +6,13 @@ package Valuator;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,6 +20,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -35,6 +42,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private ArrayList<JPanel> activeChoices;
     public ArrayList<String> cleaningChoices;
     public ArrayList<String> calcChoices;
+    public ArrayList<String> langChoices;
     public final JPanel[] views;
     private boolean hiddenInputs = true;
     private boolean hiddenOutputs = true;
@@ -42,12 +50,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private boolean hiddenCalc = true;
     private JPanel actShowing;
     private JPanel actMenuItem;
+    public Languages langs;
     public Controller controller;
 
-    public ReworkedFrontend() {
+    public ReworkedFrontend() throws IOException {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
+        langs = new Languages();
         controller = new Controller(this);
         HidingMenuInputs.setVisible(false);
         HidingMenuOutputs.setVisible(false);
@@ -56,6 +66,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         activeChoices = new ArrayList();
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
+        langChoices = new ArrayList();
         views = new JPanel[]{InfoIn, RatioIn, DCFIn, DDMIn, GrahamIn, NAVIn, SummaryOut, RatioOut, DCFOut, DDMOut, GrahamOut, NAVOut, Settings, Help, Save, Library};
         lightColor = new Color(0, 255, 246);
         lightDarkColor = new Color(0, 231, 255);
@@ -63,6 +74,271 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         darkColor = new Color(0, 20, 255);
         makeUnvisibleViews();
         setChoicesNames();
+        setLabels(langs.getRoute());
+        getActYear();
+        setLangChoices();
+    }
+
+    private void setLangChoices() {
+        for (String item : langs.getChoices()) {
+            LangChoice.addItem(item);
+        }
+        LangChoice.setSelectedItem(langs.getDefLangType());
+    }
+
+    public Integer getActYear() {
+        Date currentDate = new Date();
+        return (int) currentDate.getYear() + 1900;
+    }
+
+    private void setLabels(String route) throws IOException {
+        if (route != null) {
+            Properties lang = new Properties();
+            Properties conf = new Properties();
+            FileInputStream i = new FileInputStream("./src/Valuator/config.properties");
+            conf.load(i);
+            FileInputStream ip = new FileInputStream(route);
+            lang.load(ip);
+            //Hiding menu of Inputs
+            jLabel2.setText(lang.getProperty("jLabel2"));
+            ViewInfo.setText(lang.getProperty("ViewInfo"));
+            ViewRatioIn.setText(lang.getProperty("Ratios"));
+            ViewDCFIn.setText(lang.getProperty("DCF"));
+            ViewDDMIn.setText(lang.getProperty("DDM"));
+            ViewGrahamIn.setText(lang.getProperty("Graham"));
+            ViewNAVIn.setText(lang.getProperty("NAV"));
+            //Hiding menu of Outputs
+            jLabel3.setText(lang.getProperty("jLabel3"));
+            viewValSum.setText(lang.getProperty("viewValSum"));
+            viewCalcRatio.setText(lang.getProperty("viewCalcRatio"));
+            viewDCFVal.setText(lang.getProperty("viewDCFVal"));
+            viewDDMVal.setText(lang.getProperty("viewDDMVal"));
+            viewGrahamVal.setText(lang.getProperty("viewGrahamVal"));
+            viewNAVVal.setText(lang.getProperty("viewNAVVal"));
+            //Hiding menu of cleaning choices
+            jLabel13.setText(lang.getProperty("jLabel13"));
+            jLabel14.setText(lang.getProperty("jLabel14"));
+            jLabel15.setText(lang.getProperty("jLabel15"));
+            jLabel16.setText(lang.getProperty("Ratios"));
+            jLabel17.setText(lang.getProperty("DCF"));
+            jLabel18.setText(lang.getProperty("DDM"));
+            jLabel19.setText(lang.getProperty("Graham"));
+            jLabel26.setText(lang.getProperty("NAV"));
+            CleaningBut.setText(lang.getProperty("CleaningBut"));
+            //Hiding menu of claculation choices
+            jLabel20.setText(lang.getProperty("jLabel20"));
+            jLabel22.setText(lang.getProperty("Ratios"));
+            jLabel23.setText(lang.getProperty("DCF"));
+            jLabel24.setText(lang.getProperty("DDM"));
+            jLabel25.setText(lang.getProperty("Graham"));
+            jLabel27.setText(lang.getProperty("NAV"));
+            CleaningBut1.setText(lang.getProperty("CleaningBut1"));
+            //Informations inputs
+            jLabel54.setText(lang.getProperty("jLabel54"));
+            jLabel55.setText(lang.getProperty("jLabel55"));
+            jLabel28.setText(lang.getProperty("jLabel28"));
+            jLabel29.setText(lang.getProperty("jLabel29"));
+            jLabel30.setText(lang.getProperty("jLabel30"));
+            jLabel44.setText(lang.getProperty("jLabel44"));
+            jLabel166.setText(lang.getProperty("jLabel166"));
+            jLabel31.setText(lang.getProperty("jLabel31"));
+            //Ratios inputs
+            jLabel191.setText(lang.getProperty("jLabel191"));
+            jLabel192.setText(lang.getProperty("jLabel192"));
+            jLabel194.setText(lang.getProperty("jLabel194"));
+            jLabel195.setText(lang.getProperty("jLabel195"));
+            jLabel196.setText(lang.getProperty("jLabel196"));
+            jLabel197.setText(lang.getProperty("jLabel197"));
+            jLabel198.setText(lang.getProperty("jLabel198"));
+            jLabel199.setText(lang.getProperty("jLabel199"));
+            jLabel200.setText(lang.getProperty("jLabel200"));
+            jLabel201.setText(lang.getProperty("jLabel201"));
+            jLabel202.setText(lang.getProperty("jLabel202"));
+            jLabel203.setText(lang.getProperty("jLabel203"));
+            jLabel204.setText(lang.getProperty("jLabel204"));
+            jLabel205.setText(lang.getProperty("jLabel205"));
+            jLabel206.setText(lang.getProperty("jLabel206"));
+            jLabel207.setText(lang.getProperty("jLabel207"));
+            jLabel208.setText(lang.getProperty("jLabel208"));
+            jLabel209.setText(lang.getProperty("jLabel209"));
+            jLabel210.setText(lang.getProperty("jLabel210"));
+            jLabel211.setText(lang.getProperty("jLabel211"));
+            jLabel212.setText(lang.getProperty("jLabel212"));
+            jLabel213.setText(lang.getProperty("jLabel213"));
+            jLabel214.setText(lang.getProperty("jLabel214"));
+            jLabel215.setText(lang.getProperty("jLabel215"));
+            jLabel216.setText(lang.getProperty("jLabel216"));
+            jLabel217.setText(lang.getProperty("jLabel217"));
+            //DCF inputs
+            jLabel45.setText(lang.getProperty("jLabel45"));
+            jLabel134.setText(lang.getProperty("jLabel134"));
+            jLabel135.setText(lang.getProperty("jLabel135"));
+            jLabel136.setText(lang.getProperty("jLabel136"));
+            jLabel137.setText(lang.getProperty("jLabel137"));
+            jLabel141.setText(lang.getProperty("jLabel141"));
+            jLabel142.setText(lang.getProperty("jLabel142"));
+            jLabel164.setText(lang.getProperty("jLabel164"));
+            TableColumn t = FCF2.getTableHeader().getColumnModel().getColumn(0);
+            t.setHeaderValue(lang.getProperty("year"));
+            TableColumn ta = FCF2.getTableHeader().getColumnModel().getColumn(1);
+            ta.setHeaderValue(lang.getProperty("titleCol1"));
+            FCF2.getTableHeader().repaint();
+            for (int y = 0; y < 9; y++) {
+                FCF2.setValueAt(getActYear() - y, y, 0);
+            }
+            //DDM inputs
+            jLabel57.setText(lang.getProperty("jLabel57"));
+            jLabel58.setText(lang.getProperty("jLabel58"));
+            TableColumn tb = Dividends.getTableHeader().getColumnModel().getColumn(0);
+            tb.setHeaderValue(lang.getProperty("year"));
+            TableColumn tc = Dividends.getTableHeader().getColumnModel().getColumn(1);
+            tc.setHeaderValue(lang.getProperty("titleCol2"));
+            Dividends.getTableHeader().repaint();
+            for (int y = 0; y < 5; y++) {
+                Dividends.setValueAt(getActYear() - y, y, 0);
+            }
+            //Graham inputs
+            jLabel59.setText(lang.getProperty("jLabel59"));
+            jLabel60.setText(lang.getProperty("jLabel60"));
+            jLabel61.setText(lang.getProperty("jLabel61"));
+            jLabel62.setText(lang.getProperty("jLabel62"));
+            //NAV inputs
+            jLabel63.setText(lang.getProperty("jLabel63"));
+            jLabel64.setText(lang.getProperty("jLabel64"));
+            jLabel65.setText(lang.getProperty("jLabel65"));
+            jLabel66.setText(lang.getProperty("jLabel66"));
+            //Summary outputs
+            jLabel67.setText(lang.getProperty("jLabel67"));
+            jLabel72.setText(lang.getProperty("DCF"));
+            jLabel73.setText(lang.getProperty("DDM"));
+            jLabel74.setText(lang.getProperty("Graham"));
+            jLabel88.setText(lang.getProperty("jLabel88"));
+            jLabel75.setText(lang.getProperty("NAV"));
+            jLabel76.setText(lang.getProperty("price"));
+            jLabel77.setText(lang.getProperty("price"));
+            jLabel78.setText(lang.getProperty("price"));
+            jLabel79.setText(lang.getProperty("price"));
+            jLabel80.setText(lang.getProperty("price"));
+            jLabel81.setText(lang.getProperty("pricemos"));
+            jLabel82.setText(lang.getProperty("pricemos"));
+            jLabel83.setText(lang.getProperty("pricemos"));
+            jLabel84.setText(lang.getProperty("pricemos"));
+            jLabel85.setText(lang.getProperty("pricemos"));
+            jLabel68.setText(lang.getProperty("jLabel68"));
+            jLabel70.setText(lang.getProperty("jLabel70"));
+            jLabel69.setText(lang.getProperty("jLabel69"));
+            jLabel71.setText(lang.getProperty("mos"));
+            //Ratios outputs
+            jLabel86.setText(lang.getProperty("jLabel86"));
+            jLabel89.setText(lang.getProperty("jLabel89"));
+            jLabel90.setText(lang.getProperty("jLabel90"));
+            jLabel91.setText(lang.getProperty("jLabel91"));
+            jLabel92.setText(lang.getProperty("jLabel92"));
+            jLabel93.setText(lang.getProperty("jLabel93"));
+            jLabel94.setText(lang.getProperty("jLabel94"));
+            jLabel95.setText(lang.getProperty("jLabel95"));
+            jLabel96.setText(lang.getProperty("jLabel96"));
+            jLabel101.setText(lang.getProperty("jLabel101"));
+            jLabel102.setText(lang.getProperty("jLabel102"));
+            jLabel103.setText(lang.getProperty("jLabel103"));
+            jLabel104.setText(lang.getProperty("jLabel104"));
+            jLabel105.setText(lang.getProperty("jLabel105"));
+            jLabel106.setText(lang.getProperty("jLabel106"));
+            jLabel107.setText(lang.getProperty("jLabel107"));
+            jLabel108.setText(lang.getProperty("jLabel108"));
+            //DCF outputs
+            jLabel87.setText(lang.getProperty("jLabel87"));
+            jLabel98.setText(lang.getProperty("jLabel98"));
+            jLabel100.setText(lang.getProperty("jLabel100"));
+            jLabel116.setText(lang.getProperty("jLabel116"));
+            jLabel117.setText(lang.getProperty("jLabel117"));
+            jLabel109.setText(lang.getProperty("jLabel109"));
+            jLabel110.setText(lang.getProperty("jLabel110"));
+            jLabel111.setText(lang.getProperty("jLabel111"));
+            jLabel112.setText(lang.getProperty("jLabel112"));
+            jLabel113.setText(lang.getProperty("jLabel113"));
+            jLabel114.setText(lang.getProperty("jLabel114"));
+            jLabel115.setText(lang.getProperty("jLabel115"));
+            jLabel97.setText(lang.getProperty("actprice"));
+            jLabel99.setText(lang.getProperty("mos"));
+            TableColumn td = LastFCF.getTableHeader().getColumnModel().getColumn(0);
+            td.setHeaderValue(lang.getProperty("year"));
+            for (int y = 1; y < 9; y++) {
+                TableColumn c = LastFCF.getTableHeader().getColumnModel().getColumn(y);
+                c.setHeaderValue(getActYear() + (y - 8));
+            }
+            LastFCF.getTableHeader().repaint();
+            LastFCF.setValueAt(lang.getProperty("tableVal1"), 0, 0);
+            LastFCF.setValueAt(lang.getProperty("tableVal2"), 1, 0);
+            TableColumn te = FutureFCF.getTableHeader().getColumnModel().getColumn(0);
+            te.setHeaderValue(lang.getProperty("titleCol3"));
+            for (int y = 1; y < 14; y++) {
+                TableColumn c = FutureFCF.getTableHeader().getColumnModel().getColumn(y);
+                c.setHeaderValue(y);
+            }
+            FutureFCF.getTableHeader().repaint();
+            FutureFCF.setValueAt(lang.getProperty("year"), 0, 0);
+            for (int y = 1; y < 13; y++) {
+                FutureFCF.setValueAt(getActYear() + y, 0, y);
+            }
+            FutureFCF.setValueAt(lang.getProperty("tableVal3"), 0, 13);
+            FutureFCF.setValueAt(lang.getProperty("tableVal4"), 1, 0);
+            FutureFCF.setValueAt(lang.getProperty("tableVal5"), 2, 0);
+            //DDM outputs
+            jLabel120.setText(lang.getProperty("jLabel120"));
+            jLabel122.setText(lang.getProperty("jLabel122"));
+            jLabel124.setText(lang.getProperty("jLabel124"));
+            jLabel125.setText(lang.getProperty("jLabel125"));
+            jLabel126.setText(lang.getProperty("jLabel126"));
+            jLabel121.setText(lang.getProperty("actprice"));
+            jLabel123.setText(lang.getProperty("mos"));
+            TableColumn tf = DividendsPrediction.getTableHeader().getColumnModel().getColumn(0);
+            tf.setHeaderValue(lang.getProperty("year"));
+            for (int y = 1; y < 6; y++) {
+                TableColumn c = DividendsPrediction.getTableHeader().getColumnModel().getColumn(y);
+                c.setHeaderValue(getActYear() + (y - 5));
+            }
+            DividendsPrediction.getTableHeader().repaint();
+            DividendsPrediction.setValueAt(lang.getProperty("tableVal6"), 0, 0);
+            DividendsPrediction.setValueAt(lang.getProperty("tableVal7"), 1, 0);
+            DividendsPrediction.setValueAt(lang.getProperty("tableVal8"), 2, 0);
+            //Graham outputs
+            jLabel127.setText(lang.getProperty("jLabel127"));
+            jLabel156.setText(lang.getProperty("jLabel156"));
+            jLabel157.setText(lang.getProperty("jLabel157"));
+            jLabel158.setText(lang.getProperty("jLabel158"));
+            jLabel139.setText(lang.getProperty("jLabel139"));
+            jLabel143.setText(lang.getProperty("jLabel143"));
+            jLabel146.setText(lang.getProperty("jLabel146"));
+            jLabel147.setText(lang.getProperty("jLabel147"));
+            jLabel150.setText(lang.getProperty("jLabel150"));
+            jLabel153.setText(lang.getProperty("jLabel153"));
+            jLabel154.setText(lang.getProperty("jLabel154"));
+            jLabel155.setText(lang.getProperty("jLabel155"));
+            jLabel138.setText(lang.getProperty("actprice"));
+            jLabel140.setText(lang.getProperty("mos"));
+            jLabel144.setText(conf.getProperty("PE"));
+            jLabel145.setText(conf.getProperty("PERev"));
+            jLabel148.setText(conf.getProperty("GRM"));
+            jLabel149.setText(conf.getProperty("GRMRev"));
+            jLabel151.setText(conf.getProperty("AvgrYeald"));
+            jLabel152.setText(conf.getProperty("AvgrYeald"));
+            //NAV outputs
+            jLabel159.setText(lang.getProperty("jLabel159"));
+            jLabel119.setText(lang.getProperty("jLabel119"));
+            jLabel129.setText(lang.getProperty("jLabel129"));
+            jLabel1.setText(lang.getProperty("jLabel1"));
+            jLabel4.setText(lang.getProperty("jLabel4"));
+            jLabel5.setText(lang.getProperty("jLabel5"));
+            jLabel118.setText(lang.getProperty("actprice"));
+            jLabel128.setText(lang.getProperty("mos"));
+            //Help page
+            jLabel161.setText(lang.getProperty("jLabel161"));
+            //Setting page
+            jLabel160.setText(lang.getProperty("jLabel160"));
+            jLabel6.setText(lang.getProperty("jLabel6"));
+            jButton1.setText(lang.getProperty("jButton1"));
+        }
     }
 
     public void makeUnvisibleViews() {
@@ -435,6 +711,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Settings = new javax.swing.JPanel();
         jPanel79 = new javax.swing.JPanel();
         jLabel160 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        LangChoice = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         RatioOut = new javax.swing.JPanel();
         jPanel51 = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
@@ -585,7 +868,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InputButLayout.setVerticalGroup(
             InputButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(innLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(innLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(InputBut);
@@ -615,7 +898,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         CleanButLayout.setVerticalGroup(
             CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cleanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(cleanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(CleanBut);
@@ -647,7 +930,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         ResultButLayout.setVerticalGroup(
             ResultButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(resultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(resultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(ResultBut);
@@ -677,7 +960,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         SaveButLayout.setVerticalGroup(
             SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(SaveBut);
@@ -707,7 +990,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         LibraryButLayout.setVerticalGroup(
             LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(LibraryBut);
@@ -737,7 +1020,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         CalcButLayout.setVerticalGroup(
             CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(calcLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(calcLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(CalcBut);
@@ -752,7 +1035,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         Space0Layout.setVerticalGroup(
             Space0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(Space0);
@@ -767,7 +1050,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         Space1Layout.setVerticalGroup(
             Space1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(Space1);
@@ -799,7 +1082,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         SettingButLayout.setVerticalGroup(
             SettingButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(setttingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(setttingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(SettingBut);
@@ -832,7 +1115,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         HelpButLayout.setVerticalGroup(
             HelpButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(helpLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(helpLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         MenuColumn.add(HelpBut);
@@ -861,7 +1144,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         LocalizatorInLayout.setVerticalGroup(
             LocalizatorInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(LocalizatorIn);
@@ -893,7 +1176,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InfoLayout.setVerticalGroup(
             InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(ViewInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(Info);
@@ -925,7 +1208,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InRatioLayout.setVerticalGroup(
             InRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewRatioIn, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(ViewRatioIn, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InRatio);
@@ -989,7 +1272,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InDDMLayout.setVerticalGroup(
             InDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDDMIn, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(ViewDDMIn, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InDDM);
@@ -1021,7 +1304,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InGrahamLayout.setVerticalGroup(
             InGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewGrahamIn, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(ViewGrahamIn, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InGraham);
@@ -1054,7 +1337,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         InNAVLayout.setVerticalGroup(
             InNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewNAVIn, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(ViewNAVIn, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuInputs.add(InNAV);
@@ -1082,7 +1365,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         LocalizatorOutLayout.setVerticalGroup(
             LocalizatorOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(LocalizatorOut);
@@ -1117,7 +1400,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutSummaryLayout.setVerticalGroup(
             OutSummaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewValSum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(viewValSum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutSummary);
@@ -1149,7 +1432,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutRatioLayout.setVerticalGroup(
             OutRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewCalcRatio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(viewCalcRatio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutRatio);
@@ -1184,7 +1467,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutDCFLayout.setVerticalGroup(
             OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewDCFVal, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(viewDCFVal, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutDCF);
@@ -1216,7 +1499,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutDDMLayout.setVerticalGroup(
             OutDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewDDMVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(viewDDMVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutDDM);
@@ -1248,7 +1531,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutGrahamLayout.setVerticalGroup(
             OutGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewGrahamVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(viewGrahamVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutGraham);
@@ -1280,7 +1563,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
         OutNAVLayout.setVerticalGroup(
             OutNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewNAVVal, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(viewNAVVal, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
 
         HidingMenuOutputs.add(OutNAV);
@@ -3575,7 +3858,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel79.setLayout(jPanel79Layout);
         jPanel79Layout.setHorizontalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
         );
         jPanel79Layout.setVerticalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3583,6 +3866,83 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
 
         Settings.add(jPanel79, java.awt.BorderLayout.PAGE_START);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new java.awt.GridLayout(5, 2));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("jLabel6");
+        jPanel3.add(jLabel6);
+
+        LangChoice.setBackground(new java.awt.Color(255, 255, 255));
+        LangChoice.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        LangChoice.setForeground(new java.awt.Color(51, 51, 51));
+        LangChoice.setBorder(null);
+        LangChoice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel3.add(LangChoice);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 299, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 51, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 299, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 51, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 299, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 51, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel6);
+
+        jButton1.setBackground(new java.awt.Color(0, 51, 255));
+        jButton1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("jButton1");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jButton1);
+
+        Settings.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         WelcomePanel.add(Settings);
 
@@ -3600,7 +3960,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel51.setLayout(jPanel51Layout);
         jPanel51Layout.setHorizontalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4483,9 +4843,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             }
         }
     }
-    
-    public void setItemUnactive(){
-        if(actMenuItem != null){
+
+    public void setItemUnactive() {
+        if (actMenuItem != null) {
             actMenuItem.setBackground(lightColor);
             actMenuItem = null;
         }
@@ -4951,6 +5311,24 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         exiting(InDCF, lightDarkColor);
     }//GEN-LAST:event_InDCFMouseExited
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        try {
+            langs.setLastLang(LangChoice.getSelectedIndex());
+        } catch (IOException ex) {
+            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            setLabels(langs.getRoute());
+        } catch (IOException ex) {
+            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            setLabels(langs.getRoute());
+        } catch (IOException ex) {
+            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -4977,7 +5355,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ReworkedFrontend().setVisible(true);
+            try {
+                new ReworkedFrontend().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
@@ -5077,6 +5459,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField IntExp2;
     private javax.swing.JTextField Inv2;
     private javax.swing.JTextField InventoryTime;
+    private javax.swing.JComboBox<String> LangChoice;
     private javax.swing.JTable LastFCF;
     private javax.swing.JTextField LiabilitiesTime;
     private javax.swing.JPanel Library;
@@ -5172,6 +5555,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel cleanLabel;
     private javax.swing.JLabel helpLabel;
     private javax.swing.JLabel innLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -5292,6 +5676,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -5352,6 +5737,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
@@ -5362,6 +5748,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
@@ -5372,6 +5759,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;
@@ -5382,6 +5770,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel57;
     private javax.swing.JPanel jPanel58;
     private javax.swing.JPanel jPanel59;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel61;
     private javax.swing.JPanel jPanel62;
