@@ -612,9 +612,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Help = new javax.swing.JPanel();
         jPanel80 = new javax.swing.JPanel();
         jLabel161 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         DDMOut = new javax.swing.JPanel();
         jPanel59 = new javax.swing.JPanel();
         jLabel120 = new javax.swing.JLabel();
@@ -3069,46 +3066,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         Help.add(jPanel80, java.awt.BorderLayout.PAGE_START);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
-            }
-        });
-
-        jButton2.setText("jButton2");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(208, 208, 208)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1734, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
-
-        Help.add(jPanel7, java.awt.BorderLayout.CENTER);
-
         WelcomePanel.add(Help);
 
         DDMOut.setLayout(new java.awt.BorderLayout());
@@ -5384,18 +5341,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TRevenue2KeyTyped
 
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c) && !evt.isAltDown()) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_jTextField1KeyTyped
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        double d = Double.parseDouble(jTextField1.getText());
-        System.out.println(d);
-    }//GEN-LAST:event_jButton2MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -5623,7 +5568,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel helpLabel;
     private javax.swing.JLabel innLabel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -5849,7 +5793,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel67;
     private javax.swing.JPanel jPanel68;
     private javax.swing.JPanel jPanel69;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel70;
     private javax.swing.JPanel jPanel71;
     private javax.swing.JPanel jPanel72;
@@ -5878,7 +5821,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel setttingLabel;
     private javax.swing.JLabel viewCalcRatio;
@@ -5889,6 +5831,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
 
+    public void keyCheck(java.awt.event.KeyEvent evt){
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c) && c != ',' && c != '.')
+            evt.consume();
+    }
+    
     /**
      *
      * @return

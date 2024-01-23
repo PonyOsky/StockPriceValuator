@@ -636,4 +636,26 @@ public class Controller {
             frontend.getPillowDCF().setText(String.valueOf(getMarginOfSafety()*100));
         }
     }
+     public Double doubleFormat(String s){
+        if(s.contains(".") && s.contains(",")){
+            s = s.replaceAll(",", "");
+            while(s.indexOf(".") != s.lastIndexOf(".")){
+                s = s.replaceFirst("\\.", "");
+            }
+            s = s.replaceAll(",", "");
+        }
+        if(s.contains(".") && !s.contains(",")){
+            while(s.indexOf(".") != s.lastIndexOf(".")){
+                s = s.replaceFirst("\\.", "");
+            }
+        }
+        if(!s.contains(".") && s.contains(",")){
+            if(s.indexOf(",") == s.lastIndexOf(",")){
+                s = s.replaceFirst(",", ".");
+            }else{
+                s = s.replaceAll(",", "");
+            }
+        }
+        return Double.valueOf(s);
+     }
 }
