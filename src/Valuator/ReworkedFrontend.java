@@ -2134,6 +2134,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CofRevenue2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CofRevenue2.setForeground(new java.awt.Color(204, 204, 204));
         CofRevenue2.setBorder(null);
+        CofRevenue2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CofRevenue2KeyTyped(evt);
+            }
+        });
         jPanel94.add(CofRevenue2);
 
         jLabel196.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2145,6 +2150,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         OpExpense2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         OpExpense2.setForeground(new java.awt.Color(204, 204, 204));
         OpExpense2.setBorder(null);
+        OpExpense2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                OpExpense2KeyTyped(evt);
+            }
+        });
         jPanel94.add(OpExpense2);
 
         jLabel197.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2156,6 +2166,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         OthIncome2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         OthIncome2.setForeground(new java.awt.Color(204, 204, 204));
         OthIncome2.setBorder(null);
+        OthIncome2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                OthIncome2KeyTyped(evt);
+            }
+        });
         jPanel94.add(OthIncome2);
 
         jLabel198.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2167,6 +2182,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         NIncome2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         NIncome2.setForeground(new java.awt.Color(204, 204, 204));
         NIncome2.setBorder(null);
+        NIncome2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NIncome2KeyTyped(evt);
+            }
+        });
         jPanel94.add(NIncome2);
 
         jLabel199.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2178,6 +2198,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         EBIT2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EBIT2.setForeground(new java.awt.Color(204, 204, 204));
         EBIT2.setBorder(null);
+        EBIT2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EBIT2KeyTyped(evt);
+            }
+        });
         jPanel94.add(EBIT2);
 
         jPanel95.setBackground(new java.awt.Color(0, 153, 255));
@@ -2231,6 +2256,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         ComDiv2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ComDiv2.setForeground(new java.awt.Color(204, 204, 204));
         ComDiv2.setBorder(null);
+        ComDiv2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ComDiv2KeyTyped(evt);
+            }
+        });
         jPanel94.add(ComDiv2);
 
         jPanel97.setBackground(new java.awt.Color(0, 153, 255));
@@ -2284,6 +2314,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Taxes2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Taxes2.setForeground(new java.awt.Color(204, 204, 204));
         Taxes2.setBorder(null);
+        Taxes2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Taxes2KeyTyped(evt);
+            }
+        });
         jPanel94.add(Taxes2);
 
         jLabel206.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2295,6 +2330,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         IntExp2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         IntExp2.setForeground(new java.awt.Color(204, 204, 204));
         IntExp2.setBorder(null);
+        IntExp2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                IntExp2KeyTyped(evt);
+            }
+        });
         jPanel94.add(IntExp2);
 
         jPanel93.add(jPanel94);
@@ -2311,6 +2351,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         TAssets2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TAssets2.setForeground(new java.awt.Color(204, 204, 204));
         TAssets2.setBorder(null);
+        TAssets2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TAssets2KeyTyped(evt);
+            }
+        });
         jPanel99.add(TAssets2);
 
         jLabel208.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2322,6 +2367,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CurAssets2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CurAssets2.setForeground(new java.awt.Color(204, 204, 204));
         CurAssets2.setBorder(null);
+        CurAssets2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CurAssets2KeyTyped(evt);
+            }
+        });
         jPanel99.add(CurAssets2);
 
         jLabel209.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2333,6 +2383,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Receivable2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Receivable2.setForeground(new java.awt.Color(204, 204, 204));
         Receivable2.setBorder(null);
+        Receivable2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Receivable2KeyTyped(evt);
+            }
+        });
         jPanel99.add(Receivable2);
 
         jLabel210.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2344,6 +2399,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Inv2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Inv2.setForeground(new java.awt.Color(204, 204, 204));
         Inv2.setBorder(null);
+        Inv2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Inv2KeyTyped(evt);
+            }
+        });
         jPanel99.add(Inv2);
 
         jLabel211.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2355,6 +2415,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         TLiabilities2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TLiabilities2.setForeground(new java.awt.Color(204, 204, 204));
         TLiabilities2.setBorder(null);
+        TLiabilities2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TLiabilities2KeyTyped(evt);
+            }
+        });
         jPanel99.add(TLiabilities2);
 
         jLabel212.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2366,6 +2431,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CurLiabilities2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CurLiabilities2.setForeground(new java.awt.Color(204, 204, 204));
         CurLiabilities2.setBorder(null);
+        CurLiabilities2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CurLiabilities2KeyTyped(evt);
+            }
+        });
         jPanel99.add(CurLiabilities2);
 
         jLabel213.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2377,6 +2447,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         TEGMI2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TEGMI2.setForeground(new java.awt.Color(204, 204, 204));
         TEGMI2.setBorder(null);
+        TEGMI2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TEGMI2KeyTyped(evt);
+            }
+        });
         jPanel99.add(TEGMI2);
 
         jLabel214.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2388,6 +2463,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         SHEquity2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         SHEquity2.setForeground(new java.awt.Color(204, 204, 204));
         SHEquity2.setBorder(null);
+        SHEquity2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SHEquity2KeyTyped(evt);
+            }
+        });
         jPanel99.add(SHEquity2);
 
         jLabel215.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2399,6 +2479,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CapLO2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CapLO2.setForeground(new java.awt.Color(204, 204, 204));
         CapLO2.setBorder(null);
+        CapLO2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CapLO2KeyTyped(evt);
+            }
+        });
         jPanel99.add(CapLO2);
 
         jLabel216.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2410,6 +2495,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         TanBookVal2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         TanBookVal2.setForeground(new java.awt.Color(204, 204, 204));
         TanBookVal2.setBorder(null);
+        TanBookVal2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TanBookVal2KeyTyped(evt);
+            }
+        });
         jPanel99.add(TanBookVal2);
 
         jLabel217.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -2421,6 +2511,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         OrShNum2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         OrShNum2.setForeground(new java.awt.Color(204, 204, 204));
         OrShNum2.setBorder(null);
+        OrShNum2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                OrShNum2KeyTyped(evt);
+            }
+        });
         jPanel99.add(OrShNum2);
 
         jPanel93.add(jPanel99);
@@ -3371,6 +3466,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         EPS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EPS.setForeground(new java.awt.Color(204, 204, 204));
         EPS.setBorder(null);
+        EPS.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EPSKeyTyped(evt);
+            }
+        });
         jPanel26.add(EPS);
 
         jLabel61.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -3382,6 +3482,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         GRGrahamInn.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         GRGrahamInn.setForeground(new java.awt.Color(204, 204, 204));
         GRGrahamInn.setBorder(null);
+        GRGrahamInn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                GRGrahamInnKeyTyped(evt);
+            }
+        });
         jPanel26.add(GRGrahamInn);
 
         jLabel62.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -3393,6 +3498,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Y.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Y.setForeground(new java.awt.Color(204, 204, 204));
         Y.setBorder(null);
+        Y.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                YKeyTyped(evt);
+            }
+        });
         jPanel26.add(Y);
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
@@ -3740,6 +3850,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         WACCDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         WACCDDM.setForeground(new java.awt.Color(204, 204, 204));
         WACCDDM.setBorder(null);
+        WACCDDM.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                WACCDDMKeyTyped(evt);
+            }
+        });
         jPanel19.add(WACCDDM);
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
@@ -4240,6 +4355,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         GR3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         GR3.setForeground(new java.awt.Color(204, 204, 204));
         GR3.setBorder(null);
+        GR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                GR3KeyTyped(evt);
+            }
+        });
         jPanel87.add(GR3);
 
         jLabel135.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4251,6 +4371,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         WACCDCFInn.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         WACCDCFInn.setForeground(new java.awt.Color(204, 204, 204));
         WACCDCFInn.setBorder(null);
+        WACCDCFInn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                WACCDCFInnKeyTyped(evt);
+            }
+        });
         jPanel87.add(WACCDCFInn);
 
         jLabel136.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4262,6 +4387,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         ActFCF2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ActFCF2.setForeground(new java.awt.Color(204, 204, 204));
         ActFCF2.setBorder(null);
+        ActFCF2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ActFCF2KeyTyped(evt);
+            }
+        });
         jPanel87.add(ActFCF2);
 
         jLabel137.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4273,6 +4403,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Debt2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Debt2.setForeground(new java.awt.Color(204, 204, 204));
         Debt2.setBorder(null);
+        Debt2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Debt2KeyTyped(evt);
+            }
+        });
         jPanel87.add(Debt2);
 
         jLabel141.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4284,6 +4419,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Shares2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Shares2.setForeground(new java.awt.Color(204, 204, 204));
         Shares2.setBorder(null);
+        Shares2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Shares2KeyTyped(evt);
+            }
+        });
         jPanel87.add(Shares2);
 
         jLabel142.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4295,6 +4435,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CandC2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CandC2.setForeground(new java.awt.Color(204, 204, 204));
         CandC2.setBorder(null);
+        CandC2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CandC2KeyTyped(evt);
+            }
+        });
         jPanel87.add(CandC2);
 
         jLabel164.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -4306,6 +4451,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         State2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         State2.setForeground(new java.awt.Color(204, 204, 204));
         State2.setBorder(null);
+        State2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                State2KeyTyped(evt);
+            }
+        });
         jPanel87.add(State2);
 
         jPanel14.add(jPanel87);
@@ -4499,6 +4649,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CorpNameField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CorpNameField.setForeground(new java.awt.Color(204, 204, 204));
         CorpNameField.setBorder(null);
+        CorpNameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CorpNameFieldKeyTyped(evt);
+            }
+        });
         InfoIn.add(CorpNameField);
 
         jLabel29.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -4510,6 +4665,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CorpStickerField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         CorpStickerField.setForeground(new java.awt.Color(204, 204, 204));
         CorpStickerField.setBorder(null);
+        CorpStickerField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CorpStickerFieldKeyTyped(evt);
+            }
+        });
         InfoIn.add(CorpStickerField);
 
         jLabel30.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -4521,6 +4681,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         StockExchField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         StockExchField.setForeground(new java.awt.Color(204, 204, 204));
         StockExchField.setBorder(null);
+        StockExchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                StockExchFieldKeyTyped(evt);
+            }
+        });
         InfoIn.add(StockExchField);
 
         jLabel44.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -4532,6 +4697,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         ActPrice.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         ActPrice.setForeground(new java.awt.Color(204, 204, 204));
         ActPrice.setBorder(null);
+        ActPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ActPriceKeyTyped(evt);
+            }
+        });
         InfoIn.add(ActPrice);
 
         jLabel166.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -4543,6 +4713,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Pillow2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         Pillow2.setForeground(new java.awt.Color(204, 204, 204));
         Pillow2.setBorder(null);
+        Pillow2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Pillow2KeyTyped(evt);
+            }
+        });
         InfoIn.add(Pillow2);
 
         jLabel31.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -4554,6 +4729,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         NotesField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         NotesField.setForeground(new java.awt.Color(204, 204, 204));
         NotesField.setBorder(null);
+        NotesField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NotesFieldKeyTyped(evt);
+            }
+        });
         InfoIn.add(NotesField);
 
         WelcomePanel.add(InfoIn);
@@ -4619,6 +4799,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         TotalAssets.setForeground(new java.awt.Color(204, 204, 204));
         TotalAssets.setToolTipText("");
         TotalAssets.setBorder(null);
+        TotalAssets.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TotalAssetsKeyTyped(evt);
+            }
+        });
         jPanel29.add(TotalAssets);
 
         jLabel65.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -4631,6 +4816,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         TotalLiab.setForeground(new java.awt.Color(204, 204, 204));
         TotalLiab.setToolTipText("");
         TotalLiab.setBorder(null);
+        TotalLiab.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TotalLiabKeyTyped(evt);
+            }
+        });
         jPanel29.add(TotalLiab);
 
         jLabel66.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -4643,6 +4833,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         SharesOut.setForeground(new java.awt.Color(204, 204, 204));
         SharesOut.setToolTipText("");
         SharesOut.setBorder(null);
+        SharesOut.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SharesOutKeyTyped(evt);
+            }
+        });
         jPanel29.add(SharesOut);
 
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
@@ -5335,11 +5530,176 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void TRevenue2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TRevenue2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TRevenue2KeyTyped
+
+    private void CofRevenue2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CofRevenue2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_CofRevenue2KeyTyped
+
+    private void OpExpense2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OpExpense2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_OpExpense2KeyTyped
+
+    private void OthIncome2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OthIncome2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_OthIncome2KeyTyped
+
+    private void NIncome2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NIncome2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_NIncome2KeyTyped
+
+    private void EBIT2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EBIT2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_EBIT2KeyTyped
+
+    private void ComDiv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ComDiv2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_ComDiv2KeyTyped
+
+    private void Taxes2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxes2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_Taxes2KeyTyped
+
+    private void IntExp2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IntExp2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_IntExp2KeyTyped
+
+    private void TAssets2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TAssets2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TAssets2KeyTyped
+
+    private void CurAssets2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CurAssets2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_CurAssets2KeyTyped
+
+    private void Receivable2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Receivable2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_Receivable2KeyTyped
+
+    private void Inv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Inv2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_Inv2KeyTyped
+
+    private void TLiabilities2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TLiabilities2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TLiabilities2KeyTyped
+
+    private void CurLiabilities2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CurLiabilities2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_CurLiabilities2KeyTyped
+
+    private void TEGMI2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TEGMI2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TEGMI2KeyTyped
+
+    private void SHEquity2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SHEquity2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_SHEquity2KeyTyped
+
+    private void CapLO2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CapLO2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_CapLO2KeyTyped
+
+    private void TanBookVal2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TanBookVal2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TanBookVal2KeyTyped
+
+    private void OrShNum2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OrShNum2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_OrShNum2KeyTyped
+
+    private void EPSKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EPSKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_EPSKeyTyped
+
+    private void GRGrahamInnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GRGrahamInnKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_GRGrahamInnKeyTyped
+
+    private void YKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_YKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_YKeyTyped
+
+    private void ActPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ActPriceKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_ActPriceKeyTyped
+
+    private void Pillow2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Pillow2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_Pillow2KeyTyped
+
+    private void TotalAssetsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TotalAssetsKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TotalAssetsKeyTyped
+
+    private void TotalLiabKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TotalLiabKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_TotalLiabKeyTyped
+
+    private void SharesOutKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SharesOutKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_SharesOutKeyTyped
+
+    private void WACCDDMKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_WACCDDMKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_WACCDDMKeyTyped
+
+    private void GR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GR3KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_GR3KeyTyped
+
+    private void WACCDCFInnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_WACCDCFInnKeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_WACCDCFInnKeyTyped
+
+    private void ActFCF2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ActFCF2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_ActFCF2KeyTyped
+
+    private void Debt2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Debt2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_Debt2KeyTyped
+
+    private void Shares2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Shares2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_Shares2KeyTyped
+
+    private void CandC2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CandC2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_CandC2KeyTyped
+
+    private void State2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_State2KeyTyped
+        keyCheck(evt);
+    }//GEN-LAST:event_State2KeyTyped
+
+    private void NotesFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NotesFieldKeyTyped
         char c = evt.getKeyChar();
-        if (Character.isLetter(c) && !evt.isAltDown()) {
+        if (!Character.isAlphabetic(c) && !Character.isDigit(c) && c != ' ' && c != ',') {
             evt.consume();
         }
-    }//GEN-LAST:event_TRevenue2KeyTyped
+    }//GEN-LAST:event_NotesFieldKeyTyped
+
+    private void StockExchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_StockExchFieldKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isAlphabetic(c) && !Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_StockExchFieldKeyTyped
+
+    private void CorpStickerFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorpStickerFieldKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isAlphabetic(c) && !Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_CorpStickerFieldKeyTyped
+
+    private void CorpNameFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorpNameFieldKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isAlphabetic(c) && !Character.isDigit(c) && c != ' ' && c != ',' && c != '.') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_CorpNameFieldKeyTyped
 
     /**
      * @param args the command line arguments
