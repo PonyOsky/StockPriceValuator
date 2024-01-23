@@ -5831,12 +5831,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
 
-    public void keyCheck(java.awt.event.KeyEvent evt){
+    public void keyCheck(java.awt.event.KeyEvent evt) {
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c) && c != ',' && c != '.')
+        if (!Character.isDigit(c) && c != ',' && c != '.') {
             evt.consume();
+        }
     }
-    
+
     /**
      *
      * @return
