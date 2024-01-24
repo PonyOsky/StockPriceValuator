@@ -79,7 +79,7 @@ public class Controller {
         if (frontend.getGR().getText() == null) {
             return 0;
         } else {
-            return Double.parseDouble(frontend.getGR().getText());
+            return doubleFormat(frontend.getGR().getText());
         }
     }
 
@@ -91,7 +91,7 @@ public class Controller {
         if (frontend.getGRDCF().getText() == null) {
             return 0;
         } else {
-            return Double.parseDouble(frontend.getGRDCF().getText());
+            return doubleFormat(frontend.getGRDCF().getText());
         }
     }
 
@@ -100,7 +100,7 @@ public class Controller {
      * @return
      */
     public double getAAACurrentYield() {
-        return Double.parseDouble(frontend.getYInn().getText());
+        return doubleFormat(frontend.getYInn().getText());
     }
 
     /**
@@ -108,7 +108,7 @@ public class Controller {
      * @return
      */
     public double getDiscountRateDDM() {
-        return Double.parseDouble(frontend.getWACCDDMInn().getText()) / 100;
+        return doubleFormat(frontend.getWACCDDMInn().getText()) / 100;
     }
 
     /**
@@ -116,7 +116,7 @@ public class Controller {
      * @return
      */
     public double getDiscountRateDCF() {
-        return Double.parseDouble(frontend.getWACCDCFInn().getText()) / 100;
+        return doubleFormat(frontend.getWACCDCFInn().getText()) / 100;
     }
 
     /**
@@ -124,7 +124,7 @@ public class Controller {
      * @return
      */
     public double getActualFreeCashFlow() {
-        return Double.parseDouble(frontend.getActFCF().getText());
+        return doubleFormat(frontend.getActFCF().getText());
     }
 
     /**
@@ -132,7 +132,7 @@ public class Controller {
      * @return
      */
     public double getTotalDebt() {
-        return Double.parseDouble(frontend.getDebt().getText());
+        return doubleFormat(frontend.getDebt().getText());
     }
 
     /**
@@ -140,7 +140,7 @@ public class Controller {
      * @return
      */
     public double getSharesOutstanding() {
-        return Double.parseDouble(frontend.getShares().getText());
+        return doubleFormat(frontend.getShares().getText());
     }
 
     /**
@@ -148,7 +148,7 @@ public class Controller {
      * @return
      */
     public double getCash() {
-        return Double.parseDouble(frontend.getCandC().getText());
+        return doubleFormat(frontend.getCandC().getText());
     }
 
     /**
@@ -156,7 +156,7 @@ public class Controller {
      * @return
      */
     public double getMarginOfSafety() {
-        return Double.parseDouble(frontend.getPillow().getText()) / 100;
+        return doubleFormat(frontend.getPillow().getText()) / 100;
     }
 
     /**
@@ -164,7 +164,7 @@ public class Controller {
      * @return
      */
     public double getInventory() {
-        return Double.parseDouble(frontend.getInv().getText());
+        return doubleFormat(frontend.getInv().getText());
     }
 
     /**
@@ -172,7 +172,7 @@ public class Controller {
      * @return
      */
     public double getReceivable() {
-        return Double.parseDouble(frontend.getReceivable().getText());
+        return doubleFormat(frontend.getReceivable().getText());
     }
 
     /**
@@ -180,7 +180,7 @@ public class Controller {
      * @return
      */
     public double getCapitalLeaseObligations() {
-        return Double.parseDouble(frontend.getCapLO().getText());
+        return doubleFormat(frontend.getCapLO().getText());
     }
 
     /**
@@ -188,7 +188,7 @@ public class Controller {
      * @return
      */
     public double getTEGMI() {
-        return Double.parseDouble(frontend.getTEGMI().getText());
+        return doubleFormat(frontend.getTEGMI().getText());
     }
 
     /**
@@ -199,7 +199,7 @@ public class Controller {
         if (frontend.getEBIT().getText() == null) {
             return addons.calcEbit();
         } else {
-            return Double.parseDouble(frontend.getEBIT().getText());
+            return doubleFormat(frontend.getEBIT().getText());
         }
     }
 
@@ -216,7 +216,7 @@ public class Controller {
                 return ratios.earningsPerShare();
             }
         } else {
-            return Double.parseDouble(frontend.getEPS().getText());
+            return doubleFormat(frontend.getEPS().getText());
         }
     }
 
@@ -225,11 +225,7 @@ public class Controller {
      * @return
      */
     public double getActualPrice() {
-        if (frontend.getActPrice().getText() == null) {
-            return Double.parseDouble(frontend.getActPrice().getText());
-        } else {
-            return Double.parseDouble(frontend.getActPrice().getText());
-        }
+        return doubleFormat(frontend.getActPrice().getText());
     }
 
     /**
@@ -237,7 +233,7 @@ public class Controller {
      * @return
      */
     public double getCommonStockDividendPaid() {
-        return Double.parseDouble(frontend.getComDiv().getText());
+        return doubleFormat(frontend.getComDiv().getText());
     }
 
     /**
@@ -245,7 +241,7 @@ public class Controller {
      * @return
      */
     public double getTotalAssets() {
-        return Double.parseDouble(frontend.getTAssets().getText());
+        return doubleFormat(frontend.getTAssets().getText());
     }
 
     /**
@@ -253,7 +249,7 @@ public class Controller {
      * @return
      */
     public double getTotalLiabilities() {
-        return Double.parseDouble(frontend.getTLiabilities().getText());
+        return doubleFormat(frontend.getTLiabilities().getText());
     }
 
     /**
@@ -261,7 +257,7 @@ public class Controller {
      * @return
      */
     public double getShareHoldersEquity() {
-        return Double.parseDouble(frontend.getSHEquity().getText());
+        return doubleFormat(frontend.getSHEquity().getText());
     }
 
     /**
@@ -269,7 +265,7 @@ public class Controller {
      * @return
      */
     public double getTangiableBookValue() {
-        return Double.parseDouble(frontend.getTanBookVal().getText());
+        return doubleFormat(frontend.getTanBookVal().getText());
     }
 
     /**
@@ -277,7 +273,7 @@ public class Controller {
      * @return
      */
     public double getCurrentLiabilities() {
-        return Double.parseDouble(frontend.getCurLiabilities().getText());
+        return doubleFormat(frontend.getCurLiabilities().getText());
     }
 
     /**
@@ -285,7 +281,7 @@ public class Controller {
      * @return
      */
     public double getCurrentAssets() {
-        return Double.parseDouble(frontend.getCurAssets().getText());
+        return doubleFormat(frontend.getCurAssets().getText());
     }
 
     /**
@@ -293,7 +289,7 @@ public class Controller {
      * @return
      */
     public double getOrdinarySharesNumber() {
-        return Double.parseDouble(frontend.getOrShNum().getText());
+        return doubleFormat(frontend.getOrShNum().getText());
     }
 
     /**
@@ -301,7 +297,7 @@ public class Controller {
      * @return
      */
     public double getNetIncome() {
-        return Double.parseDouble(frontend.getNIncome().getText());
+        return doubleFormat(frontend.getNIncome().getText());
     }
 
     /**
@@ -309,7 +305,7 @@ public class Controller {
      * @return
      */
     public double getTaxes() {
-        return Double.parseDouble(frontend.getTaxes().getText());
+        return doubleFormat(frontend.getTaxes().getText());
     }
 
     /**
@@ -317,7 +313,7 @@ public class Controller {
      * @return
      */
     public double getInterestExpense() {
-        return Double.parseDouble(frontend.getIntExp().getText());
+        return doubleFormat(frontend.getIntExp().getText());
     }
 
     /**
@@ -325,7 +321,7 @@ public class Controller {
      * @return
      */
     public double getTotalRevenue() {
-        return Double.parseDouble(frontend.getTRevenue().getText());
+        return doubleFormat(frontend.getTRevenue().getText());
     }
 
     /**
@@ -333,7 +329,7 @@ public class Controller {
      * @return
      */
     public double getOtherIncomeExpense() {
-        return Double.parseDouble(frontend.getOthIncome().getText());
+        return doubleFormat(frontend.getOthIncome().getText());
     }
 
     /**
@@ -341,7 +337,7 @@ public class Controller {
      * @return
      */
     public double getCostOfRevenue() {
-        return Double.parseDouble(frontend.getCofRevenue().getText());
+        return doubleFormat(frontend.getCofRevenue().getText());
     }
 
     /**
@@ -349,7 +345,7 @@ public class Controller {
      * @return
      */
     public double getOperatingExpense() {
-        return Double.parseDouble(frontend.getOpExpense().getText());
+        return doubleFormat(frontend.getOpExpense().getText());
     }
 
     /**
@@ -357,7 +353,7 @@ public class Controller {
      * @return
      */
     public double getAssetsNAV() {
-        return Double.parseDouble(frontend.getAssets().getText());
+        return doubleFormat(frontend.getAssets().getText());
     }
 
     /**
@@ -365,7 +361,7 @@ public class Controller {
      * @return
      */
     public double getLiabilitiesNAV() {
-        return Double.parseDouble(frontend.getLiabilities().getText());
+        return doubleFormat(frontend.getLiabilities().getText());
     }
 
     /**
@@ -373,7 +369,7 @@ public class Controller {
      * @return
      */
     public double getSharesNAV() {
-        return Double.parseDouble(frontend.getSharesNAV().getText());
+        return doubleFormat(frontend.getSharesNAV().getText());
     }
 
     /**

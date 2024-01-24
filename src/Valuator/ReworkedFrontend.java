@@ -53,6 +53,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public Languages langs;
     public Controller controller;
 
+    /**
+     *
+     * @throws IOException
+     */
     public ReworkedFrontend() throws IOException {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
@@ -86,6 +90,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         LangChoice.setSelectedItem(langs.getDefLangType());
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getActYear() {
         Date currentDate = new Date();
         return (int) currentDate.getYear() + 1900;
@@ -5002,6 +5010,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *
+     * @param target
+     */
     public void OpenView(JPanel target) {
         if (target != null && Menu != null) {
             for (JPanel a : views) {
@@ -6191,6 +6203,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel viewValSum;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @param evt
+     */
     public void keyCheck(java.awt.event.KeyEvent evt) {
         char c = evt.getKeyChar();
         if (!Character.isDigit(c) && c != ',' && c != '.') {
