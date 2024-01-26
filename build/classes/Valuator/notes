@@ -1,6 +1,6 @@
 Languages pracuje pouze s routeami a filenamy, reworkedFrontend bude setovat jlabely a brát hodnoty z Language
 
-test
+one file - one valuation
 
 /---Getters only---/
 FCF <- table

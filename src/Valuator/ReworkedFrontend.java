@@ -381,6 +381,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
         Menu = new javax.swing.JPanel();
         MenuColumn = new javax.swing.JPanel();
         InputBut = new javax.swing.JPanel();
@@ -716,6 +718,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Library = new javax.swing.JPanel();
         jPanel81 = new javax.swing.JPanel();
         jLabel162 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Settings = new javax.swing.JPanel();
@@ -825,6 +832,60 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Save = new javax.swing.JPanel();
         jPanel82 = new javax.swing.JPanel();
         jLabel163 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jPanel107 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jPanel108 = new javax.swing.JPanel();
+        jLabel130 = new javax.swing.JLabel();
+        GM1 = new javax.swing.JTextField();
+        jLabel131 = new javax.swing.JLabel();
+        jLabel132 = new javax.swing.JLabel();
+        jLabel133 = new javax.swing.JLabel();
+        jLabel165 = new javax.swing.JLabel();
+        CLiq1 = new javax.swing.JTextField();
+        jLabel167 = new javax.swing.JLabel();
+        jLabel168 = new javax.swing.JLabel();
+        EPSRatio1 = new javax.swing.JTextField();
+        PpE1 = new javax.swing.JTextField();
+        InventoryTime1 = new javax.swing.JTextField();
+        ROE1 = new javax.swing.JTextField();
+        PpB1 = new javax.swing.JTextField();
+        LiabilitiesTime1 = new javax.swing.JTextField();
+        ReceivablesTime1 = new javax.swing.JTextField();
+        jLabel169 = new javax.swing.JLabel();
+        OM1 = new javax.swing.JTextField();
+        jLabel170 = new javax.swing.JLabel();
+        jLabel171 = new javax.swing.JLabel();
+        DpE1 = new javax.swing.JTextField();
+        jLabel172 = new javax.swing.JLabel();
+        PayOut1 = new javax.swing.JTextField();
+        jLabel173 = new javax.swing.JLabel();
+        jLabel174 = new javax.swing.JLabel();
+        RN1 = new javax.swing.JTextField();
+        ROS1 = new javax.swing.JTextField();
+        Indebtedness1 = new javax.swing.JTextField();
+        ROA1 = new javax.swing.JTextField();
+        jLabel175 = new javax.swing.JLabel();
+        jLabel176 = new javax.swing.JLabel();
+        jLabel177 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jPanel109 = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        jPanel110 = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jTable10 = new javax.swing.JTable();
+        jPanel111 = new javax.swing.JPanel();
+        jLabel50 = new javax.swing.JLabel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jTable11 = new javax.swing.JTable();
+        jPanel112 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        jPanel113 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jPanel114 = new javax.swing.JPanel();
         NAVIn = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
@@ -836,6 +897,19 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
         SharesOut = new javax.swing.JTextField();
         jPanel30 = new javax.swing.JPanel();
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane10.setViewportView(jTable4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(null);
@@ -3846,6 +3920,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Dividends.setShowGrid(true);
         Dividends.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(Dividends);
+        if (Dividends.getColumnModel().getColumnCount() > 0) {
+            Dividends.getColumnModel().getColumn(0).setResizable(false);
+            Dividends.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jPanel11.add(jScrollPane1);
 
@@ -3967,7 +4045,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel81.setLayout(jPanel81Layout);
         jPanel81Layout.setHorizontalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3975,6 +4053,40 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
 
         Library.add(jPanel81, java.awt.BorderLayout.PAGE_START);
+
+        jPanel7.setBackground(new java.awt.Color(0, 20, 255));
+        jPanel7.setLayout(new java.awt.GridLayout(1, 5));
+
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Show");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.add(jLabel7);
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Load");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.setPreferredSize(new java.awt.Dimension(50, 40));
+        jPanel7.add(jLabel8);
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Save");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.add(jLabel9);
+
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Delete");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.add(jLabel12);
+
+        Library.add(jPanel7, java.awt.BorderLayout.PAGE_END);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3984,9 +4096,25 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Ticker", "Date", "Notes"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable1);
 
         Library.add(jScrollPane2, java.awt.BorderLayout.CENTER);
@@ -4368,6 +4496,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         FCF2.setShowGrid(true);
         FCF2.getTableHeader().setReorderingAllowed(false);
         jScrollPane8.setViewportView(FCF2);
+        if (FCF2.getColumnModel().getColumnCount() > 0) {
+            FCF2.getColumnModel().getColumn(0).setResizable(false);
+            FCF2.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jPanel14.add(jScrollPane8);
 
@@ -4769,24 +4901,395 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Save.setLayout(new java.awt.BorderLayout());
 
         jPanel82.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel82.setLayout(new java.awt.GridLayout(1, 2));
 
-        jLabel163.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel163.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel163.setForeground(new java.awt.Color(51, 51, 51));
         jLabel163.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel163.setText("Saving works! Yay!");
+        jPanel82.add(jLabel163);
 
-        javax.swing.GroupLayout jPanel82Layout = new javax.swing.GroupLayout(jPanel82);
-        jPanel82.setLayout(jPanel82Layout);
-        jPanel82Layout.setHorizontalGroup(
-            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
-        );
-        jPanel82Layout.setVerticalGroup(
-            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
+        jLabel34.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("jLabel34");
+        jLabel34.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel82.add(jLabel34);
 
         Save.add(jPanel82, java.awt.BorderLayout.PAGE_START);
+
+        jScrollPane15.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jPanel107.setBackground(new java.awt.Color(0, 20, 255));
+        jPanel107.setLayout(new java.awt.GridLayout(16, 1));
+
+        jLabel47.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("jLabel21");
+        jLabel47.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel107.add(jLabel47);
+
+        jPanel108.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel108.setLayout(new java.awt.GridLayout(8, 4));
+
+        jLabel130.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel130.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel130.setText("Gross Margin");
+        jPanel108.add(jLabel130);
+
+        GM1.setEditable(false);
+        GM1.setBackground(new java.awt.Color(70, 73, 75));
+        GM1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        GM1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(GM1);
+
+        jLabel131.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel131.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel131.setText("Cost-effectiveness");
+        jPanel108.add(jLabel131);
+
+        jLabel132.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel132.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel132.setText("Inventory turnover time");
+        jPanel108.add(jLabel132);
+
+        jLabel133.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel133.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel133.setText("Debt / Equity");
+        jPanel108.add(jLabel133);
+
+        jLabel165.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel165.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel165.setText("Price / Earinings");
+        jPanel108.add(jLabel165);
+
+        CLiq1.setEditable(false);
+        CLiq1.setBackground(new java.awt.Color(70, 73, 75));
+        CLiq1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        CLiq1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(CLiq1);
+
+        jLabel167.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel167.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel167.setText("Price / Book");
+        jPanel108.add(jLabel167);
+
+        jLabel168.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel168.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel168.setText("Period of turnover of liabilities");
+        jPanel108.add(jLabel168);
+
+        EPSRatio1.setEditable(false);
+        EPSRatio1.setBackground(new java.awt.Color(70, 73, 75));
+        EPSRatio1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        EPSRatio1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(EPSRatio1);
+
+        PpE1.setEditable(false);
+        PpE1.setBackground(new java.awt.Color(70, 73, 75));
+        PpE1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PpE1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(PpE1);
+
+        InventoryTime1.setEditable(false);
+        InventoryTime1.setBackground(new java.awt.Color(70, 73, 75));
+        InventoryTime1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        InventoryTime1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(InventoryTime1);
+
+        ROE1.setEditable(false);
+        ROE1.setBackground(new java.awt.Color(70, 73, 75));
+        ROE1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ROE1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(ROE1);
+
+        PpB1.setEditable(false);
+        PpB1.setBackground(new java.awt.Color(70, 73, 75));
+        PpB1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PpB1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(PpB1);
+
+        LiabilitiesTime1.setEditable(false);
+        LiabilitiesTime1.setBackground(new java.awt.Color(70, 73, 75));
+        LiabilitiesTime1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        LiabilitiesTime1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(LiabilitiesTime1);
+
+        ReceivablesTime1.setEditable(false);
+        ReceivablesTime1.setBackground(new java.awt.Color(70, 73, 75));
+        ReceivablesTime1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ReceivablesTime1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(ReceivablesTime1);
+
+        jLabel169.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel169.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel169.setText("Return on Assets (ROA)");
+        jPanel108.add(jLabel169);
+
+        OM1.setEditable(false);
+        OM1.setBackground(new java.awt.Color(70, 73, 75));
+        OM1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        OM1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(OM1);
+
+        jLabel170.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel170.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel170.setText("Period of turnover of receivables");
+        jPanel108.add(jLabel170);
+
+        jLabel171.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel171.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel171.setText("Current liquidity");
+        jPanel108.add(jLabel171);
+
+        DpE1.setEditable(false);
+        DpE1.setBackground(new java.awt.Color(70, 73, 75));
+        DpE1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        DpE1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(DpE1);
+
+        jLabel172.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel172.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel172.setText("Earinings per Share (EPS)");
+        jPanel108.add(jLabel172);
+
+        PayOut1.setEditable(false);
+        PayOut1.setBackground(new java.awt.Color(70, 73, 75));
+        PayOut1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        PayOut1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(PayOut1);
+
+        jLabel173.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel173.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel173.setText("Return on Sales (ROS)");
+        jPanel108.add(jLabel173);
+
+        jLabel174.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel174.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel174.setText("Payout Ratio");
+        jPanel108.add(jLabel174);
+
+        RN1.setEditable(false);
+        RN1.setBackground(new java.awt.Color(70, 73, 75));
+        RN1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        RN1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(RN1);
+
+        ROS1.setEditable(false);
+        ROS1.setBackground(new java.awt.Color(70, 73, 75));
+        ROS1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ROS1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(ROS1);
+
+        Indebtedness1.setEditable(false);
+        Indebtedness1.setBackground(new java.awt.Color(70, 73, 75));
+        Indebtedness1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Indebtedness1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(Indebtedness1);
+
+        ROA1.setEditable(false);
+        ROA1.setBackground(new java.awt.Color(70, 73, 75));
+        ROA1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        ROA1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel108.add(ROA1);
+
+        jLabel175.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel175.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel175.setText("Total indebtedness of the enterprise");
+        jPanel108.add(jLabel175);
+
+        jLabel176.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel176.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel176.setText("Return on Equity (ROE)");
+        jPanel108.add(jLabel176);
+
+        jLabel177.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel177.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel177.setText("Operating Margin");
+        jPanel108.add(jLabel177);
+
+        jPanel107.add(jPanel108);
+
+        jLabel48.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("jLabel32");
+        jLabel48.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel107.add(jLabel48);
+
+        jPanel109.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel109Layout = new javax.swing.GroupLayout(jPanel109);
+        jPanel109.setLayout(jPanel109Layout);
+        jPanel109Layout.setHorizontalGroup(
+            jPanel109Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanel109Layout.setVerticalGroup(
+            jPanel109Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel109);
+
+        jLabel49.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setText("jLabel33");
+        jLabel49.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel107.add(jLabel49);
+
+        jScrollPane16.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane16.setViewportView(jTable9);
+
+        jPanel107.add(jScrollPane16);
+
+        jPanel110.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel110Layout = new javax.swing.GroupLayout(jPanel110);
+        jPanel110.setLayout(jPanel110Layout);
+        jPanel110Layout.setHorizontalGroup(
+            jPanel110Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanel110Layout.setVerticalGroup(
+            jPanel110Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel110);
+
+        jScrollPane17.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane17.setViewportView(jTable10);
+
+        jPanel107.add(jScrollPane17);
+
+        jPanel111.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel111Layout = new javax.swing.GroupLayout(jPanel111);
+        jPanel111.setLayout(jPanel111Layout);
+        jPanel111Layout.setHorizontalGroup(
+            jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanel111Layout.setVerticalGroup(
+            jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel111);
+
+        jLabel50.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setText("jLabel35");
+        jLabel50.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel107.add(jLabel50);
+
+        jScrollPane18.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane18.setViewportView(jTable11);
+
+        jPanel107.add(jScrollPane18);
+
+        jPanel112.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel112Layout = new javax.swing.GroupLayout(jPanel112);
+        jPanel112.setLayout(jPanel112Layout);
+        jPanel112Layout.setHorizontalGroup(
+            jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanel112Layout.setVerticalGroup(
+            jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel112);
+
+        jLabel51.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.setText("jLabel37");
+        jLabel51.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel107.add(jLabel51);
+
+        jPanel113.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel113Layout = new javax.swing.GroupLayout(jPanel113);
+        jPanel113.setLayout(jPanel113Layout);
+        jPanel113Layout.setHorizontalGroup(
+            jPanel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanel113Layout.setVerticalGroup(
+            jPanel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel113);
+
+        jLabel52.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.setText("jLabel36");
+        jLabel52.setPreferredSize(new java.awt.Dimension(88, 30));
+        jPanel107.add(jLabel52);
+
+        jPanel114.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel114Layout = new javax.swing.GroupLayout(jPanel114);
+        jPanel114.setLayout(jPanel114Layout);
+        jPanel114Layout.setHorizontalGroup(
+            jPanel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanel114Layout.setVerticalGroup(
+            jPanel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel114);
+
+        jScrollPane15.setViewportView(jPanel107);
+
+        Save.add(jScrollPane15, java.awt.BorderLayout.CENTER);
 
         WelcomePanel.add(Save);
 
@@ -5778,6 +6281,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField AvGRDCF;
     private javax.swing.JTextField AvGRDDM;
     private javax.swing.JTextField CLiq;
+    private javax.swing.JTextField CLiq1;
     private javax.swing.JPanel Calc;
     private javax.swing.JPanel CalcBut;
     private javax.swing.JPanel CalcDCF;
@@ -5819,11 +6323,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTable Dividends;
     private javax.swing.JTable DividendsPrediction;
     private javax.swing.JTextField DpE;
+    private javax.swing.JTextField DpE1;
     private javax.swing.JTextField EBIT2;
     private javax.swing.JTextField EPS;
     private javax.swing.JTextField EPSGraham;
     private javax.swing.JTextField EPSGrahamRev;
     private javax.swing.JTextField EPSRatio;
+    private javax.swing.JTextField EPSRatio1;
     private javax.swing.JTextField EVDCF;
     private javax.swing.JTextField EndGraham;
     private javax.swing.JTextField EndGrahamMoS;
@@ -5832,6 +6338,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTable FCF2;
     private javax.swing.JTable FutureFCF;
     private javax.swing.JTextField GM;
+    private javax.swing.JTextField GM1;
     private javax.swing.JTextField GR3;
     private javax.swing.JTextField GRDCF;
     private javax.swing.JTextField GRGraham;
@@ -5857,15 +6364,18 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel InNAV;
     private javax.swing.JPanel InRatio;
     private javax.swing.JTextField Indebtedness;
+    private javax.swing.JTextField Indebtedness1;
     private javax.swing.JPanel Info;
     private javax.swing.JPanel InfoIn;
     private javax.swing.JPanel InputBut;
     private javax.swing.JTextField IntExp2;
     private javax.swing.JTextField Inv2;
     private javax.swing.JTextField InventoryTime;
+    private javax.swing.JTextField InventoryTime1;
     private javax.swing.JComboBox<String> LangChoice;
     private javax.swing.JTable LastFCF;
     private javax.swing.JTextField LiabilitiesTime;
+    private javax.swing.JTextField LiabilitiesTime1;
     private javax.swing.JPanel Library;
     private javax.swing.JPanel LibraryBut;
     private javax.swing.JPanel LocalizatorCalculating;
@@ -5881,6 +6391,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField NIncome2;
     private javax.swing.JTextField NotesField;
     private javax.swing.JTextField OM;
+    private javax.swing.JTextField OM1;
     private javax.swing.JTextField OpExpense2;
     private javax.swing.JTextField OrShNum2;
     private javax.swing.JTextField OthIncome2;
@@ -5891,6 +6402,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel OutRatio;
     private javax.swing.JPanel OutSummary;
     private javax.swing.JTextField PayOut;
+    private javax.swing.JTextField PayOut1;
     private javax.swing.JTextField Pillow2;
     private javax.swing.JTextField PillowAns;
     private javax.swing.JTextField PillowDCF;
@@ -5898,7 +6410,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField PillowGraham;
     private javax.swing.JTextField PillowNAV;
     private javax.swing.JTextField PpB;
+    private javax.swing.JTextField PpB1;
     private javax.swing.JTextField PpE;
+    private javax.swing.JTextField PpE1;
     private javax.swing.JTextField PriceDCF;
     private javax.swing.JTextField PriceDCFMoS;
     private javax.swing.JTextField PriceDDM;
@@ -5906,13 +6420,18 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField PriceNAV;
     private javax.swing.JTextField PriceNAVMoS;
     private javax.swing.JTextField RN;
+    private javax.swing.JTextField RN1;
     private javax.swing.JTextField ROA;
+    private javax.swing.JTextField ROA1;
     private javax.swing.JTextField ROE;
+    private javax.swing.JTextField ROE1;
     private javax.swing.JTextField ROS;
+    private javax.swing.JTextField ROS1;
     private javax.swing.JPanel RatioIn;
     private javax.swing.JPanel RatioOut;
     private javax.swing.JTextField Receivable2;
     private javax.swing.JTextField ReceivablesTime;
+    private javax.swing.JTextField ReceivablesTime1;
     private javax.swing.JPanel ResultBut;
     private javax.swing.JTextField SHEquity2;
     private javax.swing.JPanel Save;
@@ -5983,6 +6502,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
@@ -5994,6 +6514,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
+    private javax.swing.JLabel jLabel131;
+    private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
@@ -6028,8 +6552,20 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel162;
     private javax.swing.JLabel jLabel163;
     private javax.swing.JLabel jLabel164;
+    private javax.swing.JLabel jLabel165;
     private javax.swing.JLabel jLabel166;
+    private javax.swing.JLabel jLabel167;
+    private javax.swing.JLabel jLabel168;
+    private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel170;
+    private javax.swing.JLabel jLabel171;
+    private javax.swing.JLabel jLabel172;
+    private javax.swing.JLabel jLabel173;
+    private javax.swing.JLabel jLabel174;
+    private javax.swing.JLabel jLabel175;
+    private javax.swing.JLabel jLabel176;
+    private javax.swing.JLabel jLabel177;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel191;
@@ -6052,6 +6588,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel207;
     private javax.swing.JLabel jLabel208;
     private javax.swing.JLabel jLabel209;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel210;
     private javax.swing.JLabel jLabel211;
     private javax.swing.JLabel jLabel212;
@@ -6071,10 +6608,17 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel57;
@@ -6091,6 +6635,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -6101,6 +6646,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
@@ -6111,6 +6657,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
@@ -6123,7 +6670,15 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel107;
+    private javax.swing.JPanel jPanel108;
+    private javax.swing.JPanel jPanel109;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel110;
+    private javax.swing.JPanel jPanel111;
+    private javax.swing.JPanel jPanel112;
+    private javax.swing.JPanel jPanel113;
+    private javax.swing.JPanel jPanel114;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -6185,6 +6740,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel67;
     private javax.swing.JPanel jPanel68;
     private javax.swing.JPanel jPanel69;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel70;
     private javax.swing.JPanel jPanel71;
     private javax.swing.JPanel jPanel72;
@@ -6195,11 +6751,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel77;
     private javax.swing.JPanel jPanel78;
     private javax.swing.JPanel jPanel79;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel80;
     private javax.swing.JPanel jPanel81;
     private javax.swing.JPanel jPanel82;
     private javax.swing.JPanel jPanel83;
     private javax.swing.JPanel jPanel87;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanel92;
     private javax.swing.JPanel jPanel93;
     private javax.swing.JPanel jPanel94;
@@ -6209,12 +6767,21 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel98;
     private javax.swing.JPanel jPanel99;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable10;
+    private javax.swing.JTable jTable11;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable9;
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel setttingLabel;
     private javax.swing.JLabel viewCalcRatio;
