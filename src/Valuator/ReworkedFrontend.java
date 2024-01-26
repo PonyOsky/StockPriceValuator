@@ -389,12 +389,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         cleanLabel = new javax.swing.JLabel();
         ResultBut = new javax.swing.JPanel();
         resultLabel = new javax.swing.JLabel();
-        SaveBut = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         LibraryBut = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         CalcBut = new javax.swing.JPanel();
         calcLabel = new javax.swing.JLabel();
+        SaveBut = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         Space0 = new javax.swing.JPanel();
         Space1 = new javax.swing.JPanel();
         SettingBut = new javax.swing.JPanel();
@@ -716,6 +716,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         Library = new javax.swing.JPanel();
         jPanel81 = new javax.swing.JPanel();
         jLabel162 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Settings = new javax.swing.JPanel();
         jPanel79 = new javax.swing.JPanel();
         jLabel160 = new javax.swing.JLabel();
@@ -943,36 +945,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         MenuColumn.add(ResultBut);
 
-        SaveBut.setBackground(new java.awt.Color(0, 255, 246));
-        SaveBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SaveBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SaveButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SaveButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SaveButMouseExited(evt);
-            }
-        });
-
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/save.png"))); // NOI18N
-
-        javax.swing.GroupLayout SaveButLayout = new javax.swing.GroupLayout(SaveBut);
-        SaveBut.setLayout(SaveButLayout);
-        SaveButLayout.setHorizontalGroup(
-            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        SaveButLayout.setVerticalGroup(
-            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(SaveBut);
-
         LibraryBut.setBackground(new java.awt.Color(0, 255, 246));
         LibraryBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LibraryBut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1032,6 +1004,36 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
 
         MenuColumn.add(CalcBut);
+
+        SaveBut.setBackground(new java.awt.Color(0, 255, 246));
+        SaveBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SaveBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SaveButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SaveButMouseExited(evt);
+            }
+        });
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/save.png"))); // NOI18N
+
+        javax.swing.GroupLayout SaveButLayout = new javax.swing.GroupLayout(SaveBut);
+        SaveBut.setLayout(SaveButLayout);
+        SaveButLayout.setHorizontalGroup(
+            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        SaveButLayout.setVerticalGroup(
+            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        MenuColumn.add(SaveBut);
 
         Space0.setBackground(new java.awt.Color(0, 255, 246));
 
@@ -3269,6 +3271,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        DividendsPrediction.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(DividendsPrediction);
 
         jPanel61.add(jScrollPane4);
@@ -3631,6 +3634,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        LastFCF.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(LastFCF);
 
         jPanel56.add(jScrollPane5);
@@ -3688,6 +3692,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        FutureFCF.getTableHeader().setReorderingAllowed(false);
         jScrollPane6.setViewportView(FutureFCF);
 
         jPanel56.add(jScrollPane6);
@@ -3962,7 +3967,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel81.setLayout(jPanel81Layout);
         jPanel81Layout.setHorizontalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3970,6 +3975,21 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         );
 
         Library.add(jPanel81, java.awt.BorderLayout.PAGE_START);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        Library.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         WelcomePanel.add(Library);
 
@@ -6189,10 +6209,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel98;
     private javax.swing.JPanel jPanel99;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel setttingLabel;
     private javax.swing.JLabel viewCalcRatio;
