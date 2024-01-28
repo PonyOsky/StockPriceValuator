@@ -4,6 +4,7 @@
  */
 package Valuator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,9 @@ import java.util.List;
  * @author ondre
  */
 public class SaveTemplate {
+
     private int id;
+    private ArrayList<String> valMethods;
     //Inputs
     private String name;
     private String ticker;
@@ -63,6 +66,7 @@ public class SaveTemplate {
 
     /**
      *
+     * @param valMethods
      * @param name
      * @param ticker
      * @param exchange
@@ -106,7 +110,8 @@ public class SaveTemplate {
      * @param NAVTotLiab
      * @param NAVTotNumOfOutShare
      */
-    public SaveTemplate(String name, String ticker, String exchange, String note, double actPrice, double pillow, double totalRevenue, double CostOfRevenue, double operatingExpense, double otherIncomeExpense, double netIncome, double ebit, double comStockDivPaid, double taxes, double interExpense, double totalAssest, double curAssets, double receivable, double inventory, double totalLiabNetMinInt, double curLiabilities, double totalEqGrossMinInt, double shareholdersEquity, double capitalLeaseObl, double tanBookVal, double ordinaryShareNum, List<Double> FCF, double GrRate, double DisRate, double actFCF, double totalDebt, double sharesOuts, double CashCashEq, double perpGrRate, List<Double> Dividends, double discRate, double eps, double GrGrRate, double aaa, double NAVTotAssets, double NAVTotLiab, double NAVTotNumOfOutShare) {
+    public SaveTemplate(ArrayList<String> valMethods, String name, String ticker, String exchange, String note, double actPrice, double pillow, double totalRevenue, double CostOfRevenue, double operatingExpense, double otherIncomeExpense, double netIncome, double ebit, double comStockDivPaid, double taxes, double interExpense, double totalAssest, double curAssets, double receivable, double inventory, double totalLiabNetMinInt, double curLiabilities, double totalEqGrossMinInt, double shareholdersEquity, double capitalLeaseObl, double tanBookVal, double ordinaryShareNum, List<Double> FCF, double GrRate, double DisRate, double actFCF, double totalDebt, double sharesOuts, double CashCashEq, double perpGrRate, List<Double> Dividends, double discRate, double eps, double GrGrRate, double aaa, double NAVTotAssets, double NAVTotLiab, double NAVTotNumOfOutShare) {
+        this.valMethods = valMethods;
         this.name = name;
         this.ticker = ticker;
         this.exchange = exchange;
@@ -150,13 +155,13 @@ public class SaveTemplate {
         this.NAVTotLiab = NAVTotLiab;
         this.NAVTotNumOfOutShare = NAVTotNumOfOutShare;
     }
-    
+
     /**
      *
      * @param lastID
      */
-    public void setID(int lastID){
-        id = lastID+1;
+    public void setID(int lastID) {
+        id = lastID + 1;
     }
 
     /**
@@ -838,5 +843,13 @@ public class SaveTemplate {
     public void setNAVTotNumOfOutShare(double NAVTotNumOfOutShare) {
         this.NAVTotNumOfOutShare = NAVTotNumOfOutShare;
     }
-    
+
+    public ArrayList<String> getValMethods() {
+        return valMethods;
+    }
+
+    public void setValMethods(ArrayList<String> valMethods) {
+        this.valMethods = valMethods;
+    }
+
 }
