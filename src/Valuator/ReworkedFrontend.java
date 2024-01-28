@@ -52,6 +52,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private JPanel actMenuItem;
     public Languages langs;
     public Controller controller;
+    public SaveLoad saveLoad;
 
     /**
      *
@@ -63,6 +64,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         setTitle("Stock price valuator");
         langs = new Languages();
         controller = new Controller(this);
+        saveLoad = new SaveLoad(controller);
         HidingMenuInputs.setVisible(false);
         HidingMenuOutputs.setVisible(false);
         HidingMenuCleaning.setVisible(false);
@@ -81,6 +83,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         setLabels(langs.getRoute());
         getActYear();
         setLangChoices();
+        saveLoad.initSaves();
     }
 
     private void setLangChoices() {
@@ -2161,6 +2164,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         getContentPane().add(Menu, java.awt.BorderLayout.LINE_START);
 
+        WelcomePanel.setBackground(new java.awt.Color(255, 255, 255));
         WelcomePanel.setMaximumSize(new java.awt.Dimension(620, 600));
         WelcomePanel.setPreferredSize(new java.awt.Dimension(850, 600));
         WelcomePanel.setLayout(new javax.swing.OverlayLayout(WelcomePanel));
@@ -6588,7 +6592,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel207;
     private javax.swing.JLabel jLabel208;
     private javax.swing.JLabel jLabel209;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel210;
     private javax.swing.JLabel jLabel211;
     private javax.swing.JLabel jLabel212;
@@ -6751,13 +6754,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel77;
     private javax.swing.JPanel jPanel78;
     private javax.swing.JPanel jPanel79;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel80;
     private javax.swing.JPanel jPanel81;
     private javax.swing.JPanel jPanel82;
     private javax.swing.JPanel jPanel83;
     private javax.swing.JPanel jPanel87;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanel92;
     private javax.swing.JPanel jPanel93;
     private javax.swing.JPanel jPanel94;
