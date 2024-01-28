@@ -19,10 +19,8 @@ public class Controller {
 
     private static final DecimalFormat decfor = new DecimalFormat("0.000");
     NumberFormat formatter = new DecimalFormat("#0.0000");
-    private double s;
     List<Double> divis;
     List<Double> fcf;
-    private double discDDM;
     AdditionalCalculates addons = new AdditionalCalculates(this);
     StockRatios ratios = new StockRatios(this, addons);
     DividendDiscountModel ddm = new DividendDiscountModel(this);
@@ -31,6 +29,7 @@ public class Controller {
     NetAssetValue nav = new NetAssetValue(this);
     private ReworkedFrontend frontend;
     private double value;
+    public SaveTemplate stemp;
 
     /**
      *
@@ -373,21 +372,11 @@ public class Controller {
     }
 
     /**
-     * *************************************Getters
-     *
-     ***********************************************
-     * @return s
-     */
-    public double getDiscontRate() {
-        return discDDM;
-    }
-
-    /**
      *
      * @return
      */
     public double getStateGrowthRate() {
-        return s;
+        return doubleFormat(frontend.getStateInn().getText());
     }
 
     /**
@@ -656,6 +645,51 @@ public class Controller {
             frontend.getPillowDDM().setText(String.valueOf(getMarginOfSafety() * 100));
             frontend.getPillowGraham().setText(String.valueOf(getMarginOfSafety() * 100));
             frontend.getPillowDCF().setText(String.valueOf(getMarginOfSafety() * 100));
+
+            stemp = new SaveTemplate(
+                    choices,
+                    frontend.getCorpName().getText(),
+                    frontend.getSticker().getText(),
+                    frontend.getStockExchange().getText(),
+                    frontend.getNotes().getText(),
+                    getTotalRevenue(),
+                    getCostOfRevenue(),
+                    getOperatingExpense(),
+                    getOtherIncomeExpense(),
+                    getNetIncome(),
+                    getEBIT(),
+                    getCommonStockDividendPaid(),
+                    getTaxes(),
+                    getInterestExpense(),
+                    getTotalAssets(),
+                    getCurrentAssets(),
+                    getReceivable(),
+                    getInventory(),
+                    getReceivable(),
+                    getInventory(),
+                    getTotalLiabilities(),
+                    getCurrentLiabilities(),
+                    getTEGMI(),
+                    getShareHoldersEquity(),
+                    getCapitalLeaseObligations(),
+                    getTangiableBookValue(),
+                    getOrdinarySharesNumber(),
+                    getFreeCashFlow(),
+                    getGrowthRateDCF(),
+                    getDiscountRateDCF(),
+                    getActualFreeCashFlow(),
+                    getTotalDebt(),
+                    getSharesOutstanding(),
+                    getCash(),
+                    getStateGrowthRate(),
+                    getDividends(),
+                    getDiscountRateDDM(),
+                    getEarningsPerShare(),
+                    getGrowthRate(),
+                    getAAACurrentYield(),
+                    getAssetsNAV(),
+                    getLiabilitiesNAV(),
+                    getSharesNAV());
         }
     }
 
