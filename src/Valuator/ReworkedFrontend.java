@@ -1205,6 +1205,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         HidingMenuInputs.setBackground(new java.awt.Color(0, 231, 255));
         HidingMenuInputs.setMaximumSize(new java.awt.Dimension(270, 400));
+        HidingMenuInputs.setName("inputMenu"); // NOI18N
         HidingMenuInputs.setOpaque(false);
         HidingMenuInputs.setPreferredSize(new java.awt.Dimension(270, 400));
         HidingMenuInputs.setLayout(new java.awt.GridLayout(7, 1));
@@ -1651,6 +1652,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         HidingMenuOutputs.add(OutNAV);
 
+        HidingMenuCleaning.setName("cleanMenu"); // NOI18N
         HidingMenuCleaning.setLayout(new java.awt.GridLayout(9, 1));
 
         LocalizatorCleaning.setBackground(new java.awt.Color(0, 20, 255));
@@ -1923,6 +1925,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         HidingMenuCleaning.add(Clean);
 
+        HidingMenuCalculation.setName("calcMenu"); // NOI18N
         HidingMenuCalculation.setLayout(new java.awt.GridLayout(7, 1));
 
         LocalizatorCalculating.setBackground(new java.awt.Color(0, 20, 255));
@@ -5027,7 +5030,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jLabel186);
 
         jPanel86.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel86.setLayout(new java.awt.GridLayout());
+        jPanel86.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel187.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel187.setForeground(new java.awt.Color(51, 51, 51));
@@ -5059,7 +5062,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel88);
 
         jPanel89.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel89.setLayout(new java.awt.GridLayout());
+        jPanel89.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel189.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel189.setForeground(new java.awt.Color(51, 51, 51));
@@ -5075,7 +5078,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel89);
 
         jPanel90.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel90.setLayout(new java.awt.GridLayout());
+        jPanel90.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel190.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel190.setForeground(new java.awt.Color(51, 51, 51));
@@ -5091,7 +5094,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel90);
 
         jPanel91.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel91.setLayout(new java.awt.GridLayout());
+        jPanel91.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel193.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel193.setForeground(new java.awt.Color(51, 51, 51));
@@ -5107,7 +5110,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel91);
 
         jPanel100.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel100.setLayout(new java.awt.GridLayout());
+        jPanel100.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel218.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel218.setForeground(new java.awt.Color(51, 51, 51));
@@ -5123,7 +5126,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel100);
 
         jPanel101.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel101.setLayout(new java.awt.GridLayout());
+        jPanel101.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel219.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel219.setForeground(new java.awt.Color(51, 51, 51));
@@ -5139,7 +5142,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel101);
 
         jPanel102.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel102.setLayout(new java.awt.GridLayout());
+        jPanel102.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel220.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel220.setForeground(new java.awt.Color(51, 51, 51));
@@ -5155,7 +5158,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel102);
 
         jPanel103.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel103.setLayout(new java.awt.GridLayout());
+        jPanel103.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel221.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel221.setForeground(new java.awt.Color(51, 51, 51));
@@ -5171,7 +5174,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel85.add(jPanel103);
 
         jPanel104.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel104.setLayout(new java.awt.GridLayout());
+        jPanel104.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel222.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel222.setForeground(new java.awt.Color(51, 51, 51));
@@ -5395,6 +5398,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 target.setBackground(lightColor);
                 activeChoices.remove(target);
                 changeIcon(icon, route);
+                showingMenu.setVisible(false);
             } else {
                 showingMenu.setPreferredSize(new Dimension(270, MenuColumn.getHeight()));
                 Menu.setPreferredSize(new Dimension(320, 400));

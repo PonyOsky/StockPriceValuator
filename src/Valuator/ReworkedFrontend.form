@@ -491,6 +491,7 @@
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[270, 400]"/>
             </Property>
+            <Property name="name" type="java.lang.String" value="inputMenu" noResource="true"/>
             <Property name="opaque" type="boolean" value="false"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[270, 400]"/>
@@ -1134,6 +1135,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="HidingMenuCleaning">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="cleanMenu" noResource="true"/>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="1"/>
@@ -1511,6 +1515,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="HidingMenuCalculation">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="calcMenu" noResource="true"/>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="1"/>
