@@ -4,6 +4,7 @@
  */
 package Valuator;
 
+import java.io.IOException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -23,13 +24,15 @@ public class Controller {
     List<Double> fcf;
     AdditionalCalculates addons = new AdditionalCalculates(this);
     StockRatios ratios = new StockRatios(this, addons);
-    DividendDiscountModel ddm = new DividendDiscountModel(this);
-    DiscountedCashFlowModel dcf = new DiscountedCashFlowModel(this);
-    GrahamsFormulas graham = new GrahamsFormulas(this);
-    NetAssetValue nav = new NetAssetValue(this);
+    DividendDiscountModel ddm = new DividendDiscountModel();
+    DiscountedCashFlowModel dcf = new DiscountedCashFlowModel();
+    GrahamsFormulas graham = new GrahamsFormulas();
+    NetAssetValue nav = new NetAssetValue();
     private ReworkedFrontend frontend;
     private double value;
+    private double valueMoS;
     public SaveTemplate stemp;
+    public SaveLoad saveLoad;
 
     /**
      *
@@ -45,7 +48,7 @@ public class Controller {
      *
      * @return s**************************************
      */
-    public List<Double> getFreeCashFlow() {
+    public ArrayList getFreeCashFlow() {
         fcf = new ArrayList<>();
         for (int coun = 0; coun < frontend.getFCF().getColumnCount(); coun++) {
             if (frontend.getFCF().getValueAt(0, coun) == null) {
@@ -54,20 +57,20 @@ public class Controller {
                 fcf.add(Double.valueOf(frontend.getFCF().getValueAt(0, coun).toString()));
             }
         }
-        return fcf;
+        return (ArrayList) fcf;
     }
 
     /**
      *
      * @return
      */
-    public List<Double> getDividends() {
+    public ArrayList getDividends() {
         divis = new ArrayList();
         for (int count = 0; count < frontend.getDividends().getColumnCount(); count++) {
             String str = frontend.getDividends().getValueAt(0, count).toString();
             divis.add(Double.valueOf(str));
         }
-        return divis;
+        return (ArrayList) divis;
     }
 
     /**
@@ -381,19 +384,21 @@ public class Controller {
 
     /**
      * **************************************Make
-     * Valuation*********************************************
+     * Valuation
+     *
+     *********************************************
+     * @param divider
      */
-    public void makeValue() {
-        value = (dcf.price() + ddm.controlDDM() + graham.grahamsSummary() + nav.getValue()) / 4;
+    public void makeValue(int divider) {
+        value = (dcf.getValue() + ddm.getValue() + graham.grahamsSummary(getActualPrice()) + nav.getValue()) / divider;
     }
 
     /**
      *
-     * @param value
-     * @return
+     * @param divider
      */
-    public double makeValueMoS(double value) {
-        return value - (value * getMarginOfSafety());
+    public void makeValueMoS(int divider) {
+        valueMoS = (dcf.getValueMoS() + ddm.getValueMoS() + graham.grahamsSummaryMoS(getActualPrice()) + nav.getValuePillow()) / divider;
     }
 
     /**
@@ -563,36 +568,40 @@ public class Controller {
                 setRatioAns();
             }
             if (choices.contains("CalcDCF")) {
-                frontend.getDCFMoSAns().setText(String.valueOf(decfor.format(dcf.priceMoS())));
-                frontend.getDCFAns().setText(String.valueOf(decfor.format(dcf.price())));
+                dcf.price(getSharesOutstanding(), getCash(), getTotalDebt());
+                dcf.priceMoS(getMarginOfSafety());
+                frontend.getDCFMoSAns().setText(String.valueOf(decfor.format(dcf.getValueMoS())));
+                frontend.getDCFAns().setText(decfor.format(dcf.getValue()));
                 for (int count = 0; count < getFreeCashFlow().size(); count++) {
                     frontend.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0, count + 1);
                 }
-                for (int count = 0; count < dcf.getFCFGR().size(); count++) {
-                    frontend.getLastFCF().setValueAt(dcf.getFCFGR().get(count), 1, count + 1);
+                for (int count = 0; count < dcf.getFCFGR(getFreeCashFlow()).size(); count++) {
+                    frontend.getLastFCF().setValueAt(dcf.getFCFGR(getFreeCashFlow()).get(count), 1, count + 1);
                 }
                 frontend.getGRDCF().setText(String.valueOf(decfor.format(getGrowthRate())));
                 frontend.getAvGRDCF().setText(String.valueOf(decfor.format(dcf.aveGR())));
                 for (int count = 0; count < 13; count++) {
-                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getFFCF().get(count)), 1, count + 1);
+                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getFFCF(getActualPrice(), getGrowthRateDCF()).get(count)), 1, count + 1);
                 }
                 for (int count = 0; count < 13; count++) {
-                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF().get(count)), 2, count + 1);
+                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF(getDiscountRateDCF()).get(count)), 2, count + 1);
                 }
                 frontend.getStateDCF().setText(String.valueOf(getStateGrowthRate()));
                 frontend.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF() * 100));
                 frontend.getCashDCF().setText(String.valueOf(getCash()));
                 frontend.getDebtDCF().setText(String.valueOf(getTotalDebt()));
                 frontend.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
-                frontend.getSumFCFDCF().setText(String.valueOf(decfor.format(dcf.sumOfDFCF())));
-                frontend.getEVDCF().setText(String.valueOf(decfor.format(dcf.equityDCF())));
-                frontend.getPriceDCF().setText(String.valueOf(decfor.format(dcf.price())));
-                frontend.getPriceDCFMoS().setText(String.valueOf(decfor.format(dcf.priceMoS())));
+                frontend.getSumFCFDCF().setText(decfor.format(dcf.sumOfDFCF()));
+                frontend.getEVDCF().setText(decfor.format(dcf.equityDCF(getCash(), getTotalDebt())));
+                frontend.getPriceDCF().setText(decfor.format(dcf.getValue()));
+                frontend.getPriceDCFMoS().setText(decfor.format(dcf.getValueMoS()));
             }
             if (choices.contains("CalcDDM")) {
                 DefaultTableModel DivPredModel = (DefaultTableModel) frontend.getDividendsPrediction().getModel();
-                frontend.getDDMMoSAns().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
-                frontend.getDDMAns().setText(String.valueOf(decfor.format(ddm.controlDDM())));
+                ddm.getDDMPrice(getDividends());
+                ddm.ddmMoS(getMarginOfSafety());
+                frontend.getDDMMoSAns().setText(decfor.format(ddm.getValueMoS()));
+                frontend.getDDMAns().setText(decfor.format(ddm.getValue()));
                 for (int count = 0; count < getDividends().size(); count++) {
                     frontend.getDividendsPrediction().setValueAt(getDividends().get(count), 0, count + 1);
                 }
@@ -603,38 +612,47 @@ public class Controller {
                     frontend.getDividendsPrediction().setValueAt(ddm.getGrowthDiv().get(count), 2, count + 1);
                 }
                 DivPredModel.fireTableDataChanged();
-                frontend.getAvGRDDM().setText(String.valueOf(decfor.format(ddm.getAveGrowDDM())));
+                frontend.getAvGRDDM().setText(decfor.format(ddm.getAveGrowDDM()));
                 frontend.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
-                frontend.getPriceDDMMoS().setText(String.valueOf(decfor.format(ddm.ddmMoS())));
-                frontend.getPriceDDM().setText(String.valueOf(decfor.format(ddm.controlDDM())));
+                frontend.getPriceDDMMoS().setText(decfor.format(ddm.getValueMoS()));
+                frontend.getPriceDDM().setText(decfor.format(ddm.getValue()));
             }
             if (choices.contains("CalcGraham")) {
-                frontend.getGrahamAns().setText(String.valueOf(decfor.format(graham.graham())));
-                frontend.getGrahamRevAns().setText(String.valueOf(decfor.format(graham.grahamReversed())));
-                frontend.getGrahamMoSAns().setText(String.valueOf(decfor.format(graham.grahamMoS())));
-                frontend.getGrahamRevMoSAns().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
-                frontend.getEPSGraham().setText(String.valueOf(decfor.format((Double) getEarningsPerShare())));
-                frontend.getEPSGrahamRev().setText(String.valueOf(decfor.format((Double) getEarningsPerShare())));
-                frontend.getGRGraham().setText(String.valueOf(decfor.format(getGrowthRate())));
-                frontend.getGRGrahamRev().setText(String.valueOf(decfor.format(getGrowthRate())));
-                frontend.getYGraham().setText(String.valueOf(decfor.format(getAAACurrentYield())));
-                frontend.getYGrahamRev().setText(String.valueOf(decfor.format(getAAACurrentYield())));
-                frontend.getEndGraham().setText(String.valueOf(decfor.format(graham.graham())));
-                frontend.getEndGrahamRev().setText(String.valueOf(decfor.format(graham.grahamReversed())));
-                frontend.getEndGrahamMoS().setText(String.valueOf(decfor.format(graham.grahamMoS())));
-                frontend.getEndGrahamRevMoS().setText(String.valueOf(decfor.format(graham.grahamRevMoS())));
+                graham.graham(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
+                graham.grahamReversed(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
+                graham.grahamMoS(getMarginOfSafety());
+                graham.grahamRevMoS(getMarginOfSafety());
+                frontend.getGrahamAns().setText(decfor.format(graham.getValue()));
+                frontend.getGrahamRevAns().setText(decfor.format(graham.getValueRev()));
+                frontend.getGrahamMoSAns().setText(decfor.format(graham.getValueMoS()));
+                frontend.getGrahamRevMoSAns().setText(decfor.format(graham.getValueRevMoS()));
+                frontend.getEPSGraham().setText(decfor.format((Double) getEarningsPerShare()));
+                frontend.getEPSGrahamRev().setText(decfor.format((Double) getEarningsPerShare()));
+                frontend.getGRGraham().setText(decfor.format(getGrowthRate()));
+                frontend.getGRGrahamRev().setText(decfor.format(getGrowthRate()));
+                frontend.getYGraham().setText(decfor.format(getAAACurrentYield()));
+                frontend.getYGrahamRev().setText(decfor.format(getAAACurrentYield()));
+                frontend.getEndGraham().setText(decfor.format(graham.getValue()));
+                frontend.getEndGrahamRev().setText(decfor.format(graham.getValueRev()));
+                frontend.getEndGrahamMoS().setText(decfor.format(graham.getValueMoS()));
+                frontend.getEndGrahamRevMoS().setText(decfor.format(graham.getValueRevMoS()));
             }
             if (choices.contains("CalcNAV")) {
+                nav.valuation(getAssetsNAV(), getLiabilitiesNAV(), getSharesNAV());
+                nav.valuationMoS(getMarginOfSafety());
+                frontend.getNAVAns().setText(String.valueOf(decfor.format(nav.getValue())));
+                frontend.getNAVMoSAns().setText(decfor.format(nav.getValuePillow()));
                 frontend.getAssetsNAVOut().setText(frontend.getAssets().getText());
                 frontend.getLiabilitiesNAVOut().setText(frontend.getLiabilities().getText());
                 frontend.getSharesNAVOut().setText(frontend.getSharesNAV().getText());
-                frontend.getPriceNAV().setText(String.valueOf(decfor.format(nav.valuation(getAssetsNAV(), getLiabilitiesNAV(), getSharesNAV()))));
-                frontend.getPriceNAVMoS().setText(String.valueOf(decfor.format(nav.valuationMoS(getMarginOfSafety()))));
+                frontend.getPriceNAV().setText(decfor.format(nav.getValue()));
+                frontend.getPriceNAVMoS().setText(decfor.format(nav.getValuePillow()));
             }
-            makeValue();
-            frontend.getIdealPrice().setText(String.valueOf(decfor.format(value)));
-            frontend.getIdealPriceMoS().setText(String.valueOf(decfor.format(makeValueMoS(value))));
-            frontend.getDiff().setText(String.valueOf(decfor.format(difference(value))));
+            makeValue(choices.size());
+            makeValueMoS(choices.size());
+            frontend.getIdealPrice().setText(decfor.format(value));
+            frontend.getIdealPriceMoS().setText(decfor.format(valueMoS));
+            frontend.getDiff().setText(decfor.format(difference(value)));
             //Actual Prices
             frontend.getActPriceAns().setText(String.valueOf(getActualPrice()));
             frontend.getActPriceDDM().setText(String.valueOf(getActualPrice()));
@@ -724,4 +742,35 @@ public class Controller {
         }
         return Double.parseDouble(s);
     }
+
+    /**
+     *
+     * @throws IOException
+     */
+    public void ShowFiles() throws IOException {
+        for (int i = 0; i > saveLoad.load().size(); i++) {
+            for (SaveTemplate st : saveLoad.load()) {
+                frontend.getSavesShowout().setValueAt(st.getName(), i, 0);
+                frontend.getSavesShowout().setValueAt(st.getTicker(), i, 1);
+                frontend.getSavesShowout().setValueAt(st.getNote(), i, 2);
+            }
+        }
+    }
+
+    /**
+     *
+     * @return
+     */
+    public double getValue() {
+        return value;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public double getValueMoS() {
+        return valueMoS;
+    }
+
 }

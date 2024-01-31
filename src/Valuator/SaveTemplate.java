@@ -5,7 +5,6 @@
 package Valuator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -14,7 +13,7 @@ import java.util.List;
 public class SaveTemplate {
 
     private int id;
-    private ArrayList<String> valMethods;
+    private ArrayList<String> valMethods;//id + ";" + s1 + "," + s2 + ";"
     //Inputs
     private String name;
     private String ticker;
@@ -44,7 +43,7 @@ public class SaveTemplate {
     private double tanBookVal;
     private double ordinaryShareNum;
     //DCF Inputs
-    private List<Double> FCF;
+    private ArrayList FCF;
     private double GrRate;
     private double DisRate;
     private double actFCF;
@@ -53,7 +52,7 @@ public class SaveTemplate {
     private double CashCashEq;
     private double perpGrRate;
     //DDM Inputs
-    private List<Double> Dividends;
+    private ArrayList Dividends;
     private double discRate;
     //Gaham Inputs
     private double eps;
@@ -110,7 +109,7 @@ public class SaveTemplate {
      * @param NAVTotLiab
      * @param NAVTotNumOfOutShare
      */
-    public SaveTemplate(ArrayList<String> valMethods, String name, String ticker, String exchange, String note, double actPrice, double pillow, double totalRevenue, double CostOfRevenue, double operatingExpense, double otherIncomeExpense, double netIncome, double ebit, double comStockDivPaid, double taxes, double interExpense, double totalAssest, double curAssets, double receivable, double inventory, double totalLiabNetMinInt, double curLiabilities, double totalEqGrossMinInt, double shareholdersEquity, double capitalLeaseObl, double tanBookVal, double ordinaryShareNum, List<Double> FCF, double GrRate, double DisRate, double actFCF, double totalDebt, double sharesOuts, double CashCashEq, double perpGrRate, List<Double> Dividends, double discRate, double eps, double GrGrRate, double aaa, double NAVTotAssets, double NAVTotLiab, double NAVTotNumOfOutShare) {
+    public SaveTemplate(ArrayList<String> valMethods, String name, String ticker, String exchange, String note, double actPrice, double pillow, double totalRevenue, double CostOfRevenue, double operatingExpense, double otherIncomeExpense, double netIncome, double ebit, double comStockDivPaid, double taxes, double interExpense, double totalAssest, double curAssets, double receivable, double inventory, double totalLiabNetMinInt, double curLiabilities, double totalEqGrossMinInt, double shareholdersEquity, double capitalLeaseObl, double tanBookVal, double ordinaryShareNum, ArrayList FCF, double GrRate, double DisRate, double actFCF, double totalDebt, double sharesOuts, double CashCashEq, double perpGrRate, ArrayList Dividends, double discRate, double eps, double GrGrRate, double aaa, double NAVTotAssets, double NAVTotLiab, double NAVTotNumOfOutShare) {
         this.valMethods = valMethods;
         this.name = name;
         this.ticker = ticker;
@@ -592,7 +591,7 @@ public class SaveTemplate {
      *
      * @return
      */
-    public List<Double> getFCF() {
+    public ArrayList getFCF() {
         return FCF;
     }
 
@@ -600,7 +599,7 @@ public class SaveTemplate {
      *
      * @param FCF
      */
-    public void setFCF(List<Double> FCF) {
+    public void setFCF(ArrayList FCF) {
         this.FCF = FCF;
     }
 
@@ -720,7 +719,7 @@ public class SaveTemplate {
      *
      * @return
      */
-    public List<Double> getDividends() {
+    public ArrayList getDividends() {
         return Dividends;
     }
 
@@ -728,7 +727,7 @@ public class SaveTemplate {
      *
      * @param Dividends
      */
-    public void setDividends(List<Double> Dividends) {
+    public void setDividends(ArrayList Dividends) {
         this.Dividends = Dividends;
     }
 
@@ -844,12 +843,57 @@ public class SaveTemplate {
         this.NAVTotNumOfOutShare = NAVTotNumOfOutShare;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getValMethods() {
         return valMethods;
     }
 
+    /**
+     *
+     * @param valMethods
+     */
     public void setValMethods(ArrayList<String> valMethods) {
         this.valMethods = valMethods;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getValues() {
+        String d = ";";
+        String s = ",";
+        String a = "";
+        String b = "";
+        String c = "";
+        int i = 0;
+        for (String str : valMethods) {
+            a = a + str;
+            i++;
+            if (i < valMethods.size()) {
+                a = a + s;
+            }
+        }
+        i = 0;
+        for (var in : FCF) {
+            b = b + in;
+            i++;
+            if (i < FCF.size()) {
+                b = b + s;
+            }
+        }
+        i = 0;
+        for (var dbl : Dividends) {
+            c = c + dbl;
+            i++;
+            if (i < Dividends.size()) {
+                c = c + s;
+            }
+        }
+        return id + d + a + d + name + d + ticker + d + exchange + d + note + d + actPrice + d + pillow + d + totalRevenue + d + CostOfRevenue + d + operatingExpense + d + otherIncomeExpense + d + netIncome + d + ebit + d + comStockDivPaid + d + taxes + d + interExpense + d + totalAssest + d + curAssets + d + receivable + d + inventory + d + totalLiabNetMinInt + d + curLiabilities + d + totalEqGrossMinInt + d + shareholdersEquity + d + capitalLeaseObl + d + tanBookVal + d + ordinaryShareNum + d + b + d + GrRate + d + DisRate + d + actFCF + d + totalDebt + d + sharesOuts + d + CashCashEq + d + perpGrRate + d + c + d + discRate + d + eps + d + GrGrRate + d + aaa + d + NAVTotAssets + d + NAVTotLiab + d + NAVTotNumOfOutShare;
     }
 
 }

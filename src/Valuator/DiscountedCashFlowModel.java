@@ -1,7 +1,6 @@
 package Valuator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -9,25 +8,22 @@ import java.util.List;
  */
 public class DiscountedCashFlowModel {
 
-    List<Double> fcfGR;
-    List<Double> ffcf;
-    List<Double> dffcf;
-    private final Controller controller;
-
-    public DiscountedCashFlowModel(Controller controller) {
-        this.controller = controller;
-    }
+    private double value;
+    private double valueMoS;
+    ArrayList fcfGR;
+    ArrayList ffcf;
+    ArrayList dffcf;
 
     /**
      *
+     * @param fcf
      * @return
      */
-    public List<Double> getFCFGR() {
-        fcfGR = new ArrayList<>();
+    public ArrayList getFCFGR(ArrayList fcf) {
         fcfGR.add(0.0);
-        for (int a = 1; a < controller.getFreeCashFlow().size(); a++) {
-            double actual = controller.getFreeCashFlow().get(a);
-            double before = controller.getFreeCashFlow().get(a - 1);
+        for (int a = 1; a < fcf.size(); a++) {
+            double actual = (double) fcf.get(a);
+            double before = (double) fcf.get(a - 1);
             if (actual != 0.0) {
                 if (before == 0.0) {
                     fcfGR.add(0.0);
@@ -57,50 +53,51 @@ public class DiscountedCashFlowModel {
         int control = 0;
         for (int count = 1; count < fcfGR.size(); count++) {
             if (fcfGR.get(count) != null) {
-                avgr += fcfGR.get(count);
+                avgr += (double) fcfGR.get(count);
                 control++;
             }
         }
-        avgr = avgr / control;
-        return avgr;
+        return avgr / control;
     }
 
     /**
      *
+     * @param actFCF
+     * @param grRate
      * @return
      */
-    public List<Double> getFFCF() {
-        ffcf.add(controller.getActualFreeCashFlow());
-        double d = 1 + (controller.getGrowthRateDCF() / 100);
-        double y = ffcf.get(0);
+    public ArrayList getFFCF(double actFCF, double grRate) {
+        ffcf.add(actFCF);
+        double d = 1 + (grRate / 100);
+        double y = (double) ffcf.get(0);
         double e = y * d;
         if (y < 0) {
-            ffcf.add(y + (y - ffcf.get(1)));
+            ffcf.add(y + (y - (double) ffcf.get(1)));
         } else {
             ffcf.add(e);
         }
         for (int c = 2; c < 12; c++) {
-            double x = ffcf.get(c - 1);
+            double x = (double) ffcf.get(c - 1);
             double z = x * d;
             if (x < 0) {
-                ffcf.add(x + (x - ffcf.get(c)));
+                ffcf.add(x + (x - (double) ffcf.get(c)));
             } else {
                 ffcf.add(z);
             }
         }
-
         return ffcf;
     }
 
     /**
      *
+     * @param disRate
      * @return
      */
-    public List<Double> getDFFCF() {
+    public ArrayList getDFFCF(double disRate) {
         int h = 1;
-        double i = 1 + controller.getDiscountRateDCF();
+        double i = 1 + disRate;
         for (int j = 0; j < ffcf.size(); j++) {
-            dffcf.add(ffcf.get(j) / Math.pow(i, h));
+            dffcf.add((double) ffcf.get(j) / Math.pow(i, h));
             h++;
         }
         return dffcf;
@@ -108,20 +105,25 @@ public class DiscountedCashFlowModel {
 
     /**
      *
+     * @param stateGrRate
+     * @param disRate
      * @return
      */
-    public double termFCF() {
-        double term = ffcf.get(11) * (1 + (controller.getStateGrowthRate() / 100)) / (controller.getDiscountRateDCF() - (controller.getStateGrowthRate() / 100));
+    public double termFCF(double stateGrRate, double disRate) {
+        double term = (double) ffcf.get(11) * (1 + (stateGrRate / 100)) / (disRate - (stateGrRate / 100));
         ffcf.add(12, term);
         return term;
     }
 
     /**
      *
+     * @param disRate
+     * @param cash
+     * @param tDebt
      * @return
      */
-    public double termDCFC() {
-        double val = termFCF() / Math.pow((1 + controller.getDiscountRateDCF()), 13);
+    public double termDCFC(double disRate, double cash, double tDebt) {
+        double val = termFCF(cash, tDebt) / Math.pow((1 + disRate), 13);
         dffcf.add(val);
         return val;
     }
@@ -133,34 +135,53 @@ public class DiscountedCashFlowModel {
     public double sumOfDFCF() {
         double sum = 0;
         for (int a = 0; a < dffcf.size(); a++) {
-            sum += dffcf.get(a);
+            sum += (double) dffcf.get(a);
         }
         return sum;
     }
 
     /**
      *
+     * @param cash
+     * @param tDebt
      * @return
      */
-    public double equityDCF() {
-        return sumOfDFCF() + controller.getCash() - controller.getTotalDebt();
+    public double equityDCF(double cash, double tDebt) {
+        return sumOfDFCF() + cash - tDebt;
+    }
+
+    /**
+     *
+     * @param sharesOuts
+     * @param cash
+     * @param tDebt
+     */
+    public void price(double sharesOuts, double cash, double tDebt) {
+        value = equityDCF(cash, tDebt) / sharesOuts;
+    }
+
+    /**
+     *
+     * @param pillow
+     */
+    public void priceMoS(double pillow) {
+        valueMoS = value - (value * pillow);
     }
 
     /**
      *
      * @return
      */
-    public double price() {
-        dffcf = new ArrayList<>();
-        ffcf = new ArrayList<>();
-        return equityDCF() / controller.getSharesOutstanding();
+    public double getValue() {
+        return value;
     }
 
     /**
      *
      * @return
      */
-    public double priceMoS() {
-        return price() - (price() * controller.getMarginOfSafety());
+    public double getValueMoS() {
+        return valueMoS;
     }
+
 }
