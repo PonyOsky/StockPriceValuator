@@ -9,44 +9,38 @@ package Valuator;
  * @author ondre
  */
 public class NetAssetValue {
-    
-    private final Controller controller;
+
     private double value;
-    
-    /**
-     *
-     * @param controller
-     */
-    public NetAssetValue(Controller controller){
-        this.controller = controller;
-    }
-    
+    private double valuePillow;
+
     /**
      *
      * @param assets
      * @param liabilities
      * @param shares
-     * @return
      */
-    public double valuation(double assets, double liabilities, double shares){
-        value = (controller.getTotalAssets() - controller.getTotalLiabilities())/controller.getSharesOutstanding();
-        return value;
+    public void valuation(double assets, double liabilities, double shares) {
+        value = (assets - liabilities) / shares;
     }
-    
+
     /**
      *
      * @param pillow
-     * @return
      */
-    public double valuationMoS(double pillow){
-        return value - (value * pillow);
+    public void valuationMoS(double pillow) {
+        valuePillow = value - (value * pillow);
     }
-    
+
     /**
      *
      * @return
      */
-    public double getValue(){
+    public double getValue() {
         return value;
     }
+
+    public double getValuePillow() {
+        return valuePillow;
+    }
+
 }
