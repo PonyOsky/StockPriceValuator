@@ -11,7 +11,13 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
@@ -30,21 +36,10 @@ public class Menu extends JComponent {
 
     private MenuEvent event;
     private MigLayout layout;
-    private String[][] menuItems = new String[][]{
-        {"Dashboard"},
-        {"Email", "Inbox", "Read", "Compost"},
-        {"Chat"},
-        {"Calendar"},
-        {"UI Kit", "Accordion", "Alerts", "Badges", "Breadcrumbs", "Buttons", "Button group"},
-        {"Advanced UI", "Cropper", "Owl Carousel", "Sweet Alert"},
-        {"Forms", "Basic Elements", "Advanced Elements", "SEditors", "Wizard"},
-        {"Charts", "Apex", "Flot", "Peity", "Sparkline"},
-        {"Table", "Basic Tables", "Data Table"},
-        {"Icons", "Feather Icons", "Flag Icons", "Mdi Icons"},
-        {"Special Pages", "Blank page", "Faq", "Invoice", "Profile", "Pricing", "Timeline"}
-    };
+    private String[][] menuItems;
 
     public Menu() {
+        initValues();
         init();
     }
 
@@ -58,9 +53,36 @@ public class Menu extends JComponent {
         }
 
     }
+    
+    private void initValues(){
+        Properties prop = new Properties();
+        Properties conf = new Properties();
+        FileInputStream ip;
+        FileInputStream target;
+        try {
+            ip = new FileInputStream("./src/Valuator/config.properties");
+            conf.load(ip);
+            target = new FileInputStream(conf.getProperty("lastLangRoute"));
+            prop.load(target);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        menuItems = new String[][]{
+            {prop.getProperty("ViewInfo"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV")},
+            {prop.getProperty("jLabel13"), prop.getProperty("jLabel14"), prop.getProperty("jLabel15"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV"), prop.getProperty("CleaningBut")},
+            {prop.getProperty("viewValSum"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV")},
+            {prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV"), prop.getProperty("CleaningBut1")},
+            {prop.getProperty("showSave")},
+            {prop.getProperty("library")},
+            {prop.getProperty("setting")},
+            {prop.getProperty("help")}
+        };
+    }
 
     private Icon getIcon(int index) {
-        URL url = getClass().getResource("/raven/menu/" + index + ".png");
+        URL url = getClass().getResource("/Icons/" + index + ".png");
         if (url != null) {
             return new ImageIcon(url);
         } else {
