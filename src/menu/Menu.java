@@ -24,12 +24,24 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 
+/**
+ *
+ * @author ondre
+ */
 public class Menu extends JComponent {
 
+    /**
+     *
+     * @return
+     */
     public MenuEvent getEvent() {
         return event;
     }
 
+    /**
+     *
+     * @param event
+     */
     public void setEvent(MenuEvent event) {
         this.event = event;
     }
@@ -154,6 +166,10 @@ public class Menu extends JComponent {
         }
     }
 
+    /**
+     *
+     * @param grphcs
+     */
     @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs.create();

@@ -9,6 +9,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -383,8 +384,7 @@ public class Controller {
     }
 
     /**
-     * **************************************Make
-     * Valuation
+     * **************************************Make Valuation
      *
      *********************************************
      * @param divider
@@ -773,4 +773,34 @@ public class Controller {
         return valueMoS;
     }
 
+    /**
+     *
+     * @param evt
+     */
+    public void keyCheck(java.awt.event.KeyEvent evt) {
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) && c != ',' && c != '.') {
+            evt.consume();
+        }
+    }
+
+    /**
+     *
+     * @param evt
+     */
+    public void letterCheck(java.awt.event.KeyEvent evt) {
+        char c = evt.getKeyChar();
+        if (!Character.isAlphabetic(c) && !Character.isDigit(c) && c != ' ' && c != ',') {
+            evt.consume();
+        }
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Integer getActYear() {
+        Date currentDate = new Date();
+        return (int) currentDate.getYear() + 1900;
+    }
 }
