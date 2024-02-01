@@ -21,8 +21,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.TableColumn;
-import raven.menu.Menu;
-import raven.menu.MenuEvent;
+import menu.Menu;
+import menu.MenuEvent;
 
 /**
  *
@@ -83,12 +83,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         setLangChoices();
         saveLoad.initSaves();
         
-        menu1.setEvent(new MenuEvent() {
+        /*menu1.setEvent(new MenuEvent() {
             @Override
             public void selected(int index, int subIndex) {
                 showForm(null);
             }
-        });
+        });*/
     }
     
     private void showForm(Component com) {
@@ -399,6 +399,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        polygonCorner1 = new scroll.PolygonCorner();
         body = new javax.swing.JPanel();
         RatioIn = new javax.swing.JPanel();
         jPanel92 = new javax.swing.JPanel();
@@ -826,7 +827,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         SharesOut = new javax.swing.JTextField();
         jPanel30 = new javax.swing.JPanel();
         heading1 = new component.Heading();
-        menu1 = new raven.menu.Menu();
+        scrollPaneWin111 = new scroll.ScrollPaneWin11();
+        menu2 = new menu.Menu();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -4047,17 +4049,19 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         body.add(NAVIn);
 
+        scrollPaneWin111.setViewportView(menu2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 1064, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(scrollPaneWin111, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(1070, 1070, 1070))
         );
@@ -4065,11 +4069,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(heading1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(scrollPaneWin111, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -4949,7 +4953,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable4;
-    private raven.menu.Menu menu1;
+    private menu.Menu menu2;
+    private scroll.PolygonCorner polygonCorner1;
+    private scroll.ScrollPaneWin11 scrollPaneWin111;
     // End of variables declaration//GEN-END:variables
 
     /**

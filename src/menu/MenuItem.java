@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package raven.menu;
+package menu;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -71,7 +71,7 @@ public class MenuItem extends JButton {
         this.index = index;
         this.subMenuAble = subMenuAble;
         setContentAreaFilled(false);
-        setForeground(new Color(230, 230, 230));
+        setForeground(new Color(51,51,51));
         setHorizontalAlignment(SwingConstants.LEFT);
         setBorder(new EmptyBorder(9, 10, 9, 10));
         setIconTextGap(10);
@@ -93,7 +93,7 @@ public class MenuItem extends JButton {
         this.subMenuIndex = subMenuIndex;
         this.length = length;
         setBorder(new EmptyBorder(9, 33, 9, 10));
-        setBackground(new Color(18, 99, 63));
+        setBackground(new Color(0, 231, 255));
         setOpaque(true);
     }
 
