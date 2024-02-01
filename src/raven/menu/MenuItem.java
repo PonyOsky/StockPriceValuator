@@ -15,7 +15,6 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import raven.effect.RippleEffect;
-import raven.swing.shadow.ShadowRenderer;
 
 public class MenuItem extends JButton {
 
@@ -60,9 +59,6 @@ public class MenuItem extends JButton {
     }
 
     private RippleEffect rippleEffect;
-    private BufferedImage shadow;
-    private int shadowWidth;
-    private int shadowSize = 10;
     private int index;
     private boolean subMenuAble;
     private float animate;
@@ -90,7 +86,6 @@ public class MenuItem extends JButton {
         Graphics2D g2 = img.createGraphics();
         g2.setColor(Color.BLACK);
         g2.fill(new Rectangle2D.Double(0, 0, widht, height));
-        shadow = new ShadowRenderer(shadowSize, 0.2f, Color.BLACK).createShadow(img);
         g2.dispose();
     }
 
@@ -109,20 +104,6 @@ public class MenuItem extends JButton {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         if (length != 0) {
             g2.setColor(new Color(43, 141, 98));
-            if (subMenuIndex == 1) {
-                //  First Index
-                g2.drawImage(shadow, -shadowSize, -20, null);
-                g2.drawLine(18, 0, 18, getHeight());
-                g2.drawLine(18, getHeight() / 2, 26, getHeight() / 2);
-            } else if (subMenuIndex == length - 1) {
-                //  Last Index
-                g2.drawImage(shadow, -shadowSize, getHeight() - 6, null);
-                g2.drawLine(18, 0, 18, getHeight() / 2);
-                g2.drawLine(18, getHeight() / 2, 26, getHeight() / 2);
-            } else {
-                g2.drawLine(18, 0, 18, getHeight());
-                g2.drawLine(18, getHeight() / 2, 26, getHeight() / 2);
-            }
         } else if (subMenuAble) {
             g2.setColor(getForeground());
             int arrowWidth = 8;
@@ -136,7 +117,6 @@ public class MenuItem extends JButton {
             g2.draw(p);
         }
         g2.dispose();
-        rippleEffect.reder(grphcs, new Rectangle2D.Double(0, 0, getWidth(), getHeight()));
     }
 
     @Override

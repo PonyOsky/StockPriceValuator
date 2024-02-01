@@ -1,4 +1,4 @@
-package raven.scroll.win11;
+package scroll;
 
 import java.awt.Point;
 import java.awt.geom.GeneralPath;

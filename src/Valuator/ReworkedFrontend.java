@@ -65,10 +65,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         langs = new Languages();
         controller = new Controller(this);
         saveLoad = new SaveLoad(controller);
-        HidingMenuInputs.setVisible(false);
-        HidingMenuOutputs.setVisible(false);
-        HidingMenuCleaning.setVisible(false);
-        HidingMenuCalculation.setVisible(false);
         activeChoices = new ArrayList();
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
@@ -79,7 +75,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
         makeUnvisibleViews();
-        setChoicesNames();
+        //setChoicesNames();
         setLabels(langs.getRoute());
         getActYear();
         setLangChoices();
@@ -110,7 +106,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             conf.load(i);
             FileInputStream ip = new FileInputStream(route);
             lang.load(ip);
-            //Hiding menu of Inputs
+            /*Hiding menu of Inputs
             jLabel2.setText(lang.getProperty("jLabel2"));
             ViewInfo.setText(lang.getProperty("ViewInfo"));
             ViewRatioIn.setText(lang.getProperty("Ratios"));
@@ -144,6 +140,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             jLabel25.setText(lang.getProperty("Graham"));
             jLabel27.setText(lang.getProperty("NAV"));
             CleaningBut1.setText(lang.getProperty("CleaningBut1"));
+            */
             //Informations inputs
             jLabel54.setText(lang.getProperty("jLabel54"));
             jLabel55.setText(lang.getProperty("jLabel55"));
@@ -360,7 +357,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
     }
 
-    public void setChoicesNames() {
+    /*public void setChoicesNames() {
         CleanAll.setName("CleanAll");
         CleanInfo.setName("CleanInfo");
         CleanRatio.setName("CleanRatio");
@@ -373,7 +370,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         CalcDDM.setName("CalcDDM");
         CalcGraham.setName("CalcGraham");
         CalcNAV.setName("CalcNAV");
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -386,90 +383,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        Menu = new javax.swing.JPanel();
-        MenuColumn = new javax.swing.JPanel();
-        InputBut = new javax.swing.JPanel();
-        innLabel = new javax.swing.JLabel();
-        CleanBut = new javax.swing.JPanel();
-        cleanLabel = new javax.swing.JLabel();
-        ResultBut = new javax.swing.JPanel();
-        resultLabel = new javax.swing.JLabel();
-        LibraryBut = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        CalcBut = new javax.swing.JPanel();
-        calcLabel = new javax.swing.JLabel();
-        SaveBut = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        Space0 = new javax.swing.JPanel();
-        Space1 = new javax.swing.JPanel();
-        SettingBut = new javax.swing.JPanel();
-        setttingLabel = new javax.swing.JLabel();
-        HelpBut = new javax.swing.JPanel();
-        helpLabel = new javax.swing.JLabel();
-        HidingMenuInputs = new javax.swing.JPanel();
-        LocalizatorIn = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        Info = new javax.swing.JPanel();
-        ViewInfo = new javax.swing.JLabel();
-        InRatio = new javax.swing.JPanel();
-        ViewRatioIn = new javax.swing.JLabel();
-        InDCF = new javax.swing.JPanel();
-        ViewDCFIn = new javax.swing.JLabel();
-        InDDM = new javax.swing.JPanel();
-        ViewDDMIn = new javax.swing.JLabel();
-        InGraham = new javax.swing.JPanel();
-        ViewGrahamIn = new javax.swing.JLabel();
-        InNAV = new javax.swing.JPanel();
-        ViewNAVIn = new javax.swing.JLabel();
-        HidingMenuOutputs = new javax.swing.JPanel();
-        LocalizatorOut = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        OutSummary = new javax.swing.JPanel();
-        viewValSum = new javax.swing.JLabel();
-        OutRatio = new javax.swing.JPanel();
-        viewCalcRatio = new javax.swing.JLabel();
-        OutDCF = new javax.swing.JPanel();
-        viewDCFVal = new javax.swing.JLabel();
-        OutDDM = new javax.swing.JPanel();
-        viewDDMVal = new javax.swing.JLabel();
-        OutGraham = new javax.swing.JPanel();
-        viewGrahamVal = new javax.swing.JLabel();
-        OutNAV = new javax.swing.JPanel();
-        viewNAVVal = new javax.swing.JLabel();
-        HidingMenuCleaning = new javax.swing.JPanel();
-        LocalizatorCleaning = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        CleanAll = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        CleanInfo = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        CleanRatio = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        CleanDCF = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        CleanDDM = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        CleanGraham = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        CleanNAV = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        Clean = new javax.swing.JPanel();
-        CleaningBut = new javax.swing.JLabel();
-        HidingMenuCalculation = new javax.swing.JPanel();
-        LocalizatorCalculating = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        CalcRatio = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        CalcDCF = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        CalcDDM = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        CalcGraham = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        CalcNAV = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        Calc = new javax.swing.JPanel();
-        CleaningBut1 = new javax.swing.JLabel();
+        menu1 = new raven.menu.Menu();
         WelcomePanel = new javax.swing.JPanel();
         RatioIn = new javax.swing.JPanel();
         jPanel92 = new javax.swing.JPanel();
@@ -896,6 +810,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
         SharesOut = new javax.swing.JTextField();
         jPanel30 = new javax.swing.JPanel();
+        heading1 = new component.Heading();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -913,1255 +828,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(null);
         setMinimumSize(new java.awt.Dimension(900, 600));
-
-        Menu.setBackground(new java.awt.Color(0, 231, 255));
-        Menu.setMaximumSize(new java.awt.Dimension(50, 600));
-        Menu.setPreferredSize(new java.awt.Dimension(50, 600));
-
-        MenuColumn.setBackground(new java.awt.Color(0, 255, 246));
-        MenuColumn.setMaximumSize(new java.awt.Dimension(50, 400));
-        MenuColumn.setPreferredSize(new java.awt.Dimension(50, 400));
-        MenuColumn.setLayout(new java.awt.GridLayout(10, 1));
-
-        InputBut.setBackground(new java.awt.Color(0, 255, 246));
-        InputBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        InputBut.setPreferredSize(new java.awt.Dimension(50, 50));
-        InputBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InputButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InputButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InputButMouseExited(evt);
-            }
-        });
-
-        innLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        innLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/inputs.png"))); // NOI18N
-        innLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        innLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        javax.swing.GroupLayout InputButLayout = new javax.swing.GroupLayout(InputBut);
-        InputBut.setLayout(InputButLayout);
-        InputButLayout.setHorizontalGroup(
-            InputButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(innLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        InputButLayout.setVerticalGroup(
-            InputButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(innLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(InputBut);
-
-        CleanBut.setBackground(new java.awt.Color(0, 255, 246));
-        CleanBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanButMouseExited(evt);
-            }
-        });
-
-        cleanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cleanLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/rubber.png"))); // NOI18N
-
-        javax.swing.GroupLayout CleanButLayout = new javax.swing.GroupLayout(CleanBut);
-        CleanBut.setLayout(CleanButLayout);
-        CleanButLayout.setHorizontalGroup(
-            CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cleanLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        CleanButLayout.setVerticalGroup(
-            CleanButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cleanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(CleanBut);
-
-        ResultBut.setBackground(new java.awt.Color(0, 255, 246));
-        ResultBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ResultBut.setPreferredSize(new java.awt.Dimension(50, 50));
-        ResultBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ResultButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ResultButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ResultButMouseExited(evt);
-            }
-        });
-
-        resultLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        resultLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/result.png"))); // NOI18N
-        resultLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout ResultButLayout = new javax.swing.GroupLayout(ResultBut);
-        ResultBut.setLayout(ResultButLayout);
-        ResultButLayout.setHorizontalGroup(
-            ResultButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(resultLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        ResultButLayout.setVerticalGroup(
-            ResultButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(resultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(ResultBut);
-
-        LibraryBut.setBackground(new java.awt.Color(0, 255, 246));
-        LibraryBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LibraryBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LibraryButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LibraryButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LibraryButMouseExited(evt);
-            }
-        });
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/library.png"))); // NOI18N
-
-        javax.swing.GroupLayout LibraryButLayout = new javax.swing.GroupLayout(LibraryBut);
-        LibraryBut.setLayout(LibraryButLayout);
-        LibraryButLayout.setHorizontalGroup(
-            LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        LibraryButLayout.setVerticalGroup(
-            LibraryButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(LibraryBut);
-
-        CalcBut.setBackground(new java.awt.Color(0, 255, 246));
-        CalcBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcButMouseExited(evt);
-            }
-        });
-
-        calcLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        calcLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/calc.png"))); // NOI18N
-
-        javax.swing.GroupLayout CalcButLayout = new javax.swing.GroupLayout(CalcBut);
-        CalcBut.setLayout(CalcButLayout);
-        CalcButLayout.setHorizontalGroup(
-            CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(calcLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        CalcButLayout.setVerticalGroup(
-            CalcButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(calcLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(CalcBut);
-
-        SaveBut.setBackground(new java.awt.Color(0, 255, 246));
-        SaveBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SaveBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SaveButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SaveButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SaveButMouseExited(evt);
-            }
-        });
-
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doc.png"))); // NOI18N
-
-        javax.swing.GroupLayout SaveButLayout = new javax.swing.GroupLayout(SaveBut);
-        SaveBut.setLayout(SaveButLayout);
-        SaveButLayout.setHorizontalGroup(
-            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        SaveButLayout.setVerticalGroup(
-            SaveButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(SaveBut);
-
-        Space0.setBackground(new java.awt.Color(0, 255, 246));
-
-        javax.swing.GroupLayout Space0Layout = new javax.swing.GroupLayout(Space0);
-        Space0.setLayout(Space0Layout);
-        Space0Layout.setHorizontalGroup(
-            Space0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        Space0Layout.setVerticalGroup(
-            Space0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(Space0);
-
-        Space1.setBackground(new java.awt.Color(0, 255, 246));
-
-        javax.swing.GroupLayout Space1Layout = new javax.swing.GroupLayout(Space1);
-        Space1.setLayout(Space1Layout);
-        Space1Layout.setHorizontalGroup(
-            Space1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        Space1Layout.setVerticalGroup(
-            Space1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(Space1);
-
-        SettingBut.setBackground(new java.awt.Color(0, 255, 246));
-        SettingBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SettingBut.setPreferredSize(new java.awt.Dimension(50, 50));
-        SettingBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SettingButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SettingButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SettingButMouseExited(evt);
-            }
-        });
-
-        setttingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        setttingLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/settings.png"))); // NOI18N
-        setttingLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout SettingButLayout = new javax.swing.GroupLayout(SettingBut);
-        SettingBut.setLayout(SettingButLayout);
-        SettingButLayout.setHorizontalGroup(
-            SettingButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(setttingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        SettingButLayout.setVerticalGroup(
-            SettingButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(setttingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(SettingBut);
-
-        HelpBut.setBackground(new java.awt.Color(0, 255, 246));
-        HelpBut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        HelpBut.setPreferredSize(new java.awt.Dimension(50, 50));
-        HelpBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                HelpButMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                HelpButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                HelpButMouseExited(evt);
-            }
-        });
-
-        helpLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        helpLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/info.png"))); // NOI18N
-        helpLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        helpLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        javax.swing.GroupLayout HelpButLayout = new javax.swing.GroupLayout(HelpBut);
-        HelpBut.setLayout(HelpButLayout);
-        HelpButLayout.setHorizontalGroup(
-            HelpButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(helpLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        HelpButLayout.setVerticalGroup(
-            HelpButLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(helpLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        MenuColumn.add(HelpBut);
-
-        HidingMenuInputs.setBackground(new java.awt.Color(0, 231, 255));
-        HidingMenuInputs.setMaximumSize(new java.awt.Dimension(270, 400));
-        HidingMenuInputs.setName("inputMenu"); // NOI18N
-        HidingMenuInputs.setOpaque(false);
-        HidingMenuInputs.setPreferredSize(new java.awt.Dimension(270, 400));
-        HidingMenuInputs.setLayout(new java.awt.GridLayout(7, 1));
-
-        LocalizatorIn.setBackground(new java.awt.Color(0, 20, 255));
-
-        jLabel2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Inputs for calculation");
-        jLabel2.setMaximumSize(new java.awt.Dimension(50, 22));
-        jLabel2.setMinimumSize(new java.awt.Dimension(50, 22));
-        jLabel2.setPreferredSize(new java.awt.Dimension(50, 22));
-
-        javax.swing.GroupLayout LocalizatorInLayout = new javax.swing.GroupLayout(LocalizatorIn);
-        LocalizatorIn.setLayout(LocalizatorInLayout);
-        LocalizatorInLayout.setHorizontalGroup(
-            LocalizatorInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        LocalizatorInLayout.setVerticalGroup(
-            LocalizatorInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(LocalizatorIn);
-
-        Info.setBackground(new java.awt.Color(0, 231, 255));
-        Info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Info.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InfoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InfoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InfoMouseExited(evt);
-            }
-        });
-
-        ViewInfo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        ViewInfo.setForeground(new java.awt.Color(51, 51, 51));
-        ViewInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ViewInfo.setText("Informations");
-
-        javax.swing.GroupLayout InfoLayout = new javax.swing.GroupLayout(Info);
-        Info.setLayout(InfoLayout);
-        InfoLayout.setHorizontalGroup(
-            InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        InfoLayout.setVerticalGroup(
-            InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(Info);
-
-        InRatio.setBackground(new java.awt.Color(0, 231, 255));
-        InRatio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        InRatio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InRatioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InRatioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InRatioMouseExited(evt);
-            }
-        });
-
-        ViewRatioIn.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        ViewRatioIn.setForeground(new java.awt.Color(51, 51, 51));
-        ViewRatioIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ViewRatioIn.setText("Ratios");
-
-        javax.swing.GroupLayout InRatioLayout = new javax.swing.GroupLayout(InRatio);
-        InRatio.setLayout(InRatioLayout);
-        InRatioLayout.setHorizontalGroup(
-            InRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewRatioIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        InRatioLayout.setVerticalGroup(
-            InRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewRatioIn, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(InRatio);
-
-        InDCF.setBackground(new java.awt.Color(0, 231, 255));
-        InDCF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InDCFMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InDCFMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InDCFMouseExited(evt);
-            }
-        });
-
-        ViewDCFIn.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        ViewDCFIn.setForeground(new java.awt.Color(51, 51, 51));
-        ViewDCFIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ViewDCFIn.setText("DCF");
-        ViewDCFIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout InDCFLayout = new javax.swing.GroupLayout(InDCF);
-        InDCF.setLayout(InDCFLayout);
-        InDCFLayout.setHorizontalGroup(
-            InDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDCFIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        InDCFLayout.setVerticalGroup(
-            InDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDCFIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(InDCF);
-
-        InDDM.setBackground(new java.awt.Color(0, 231, 255));
-        InDDM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        InDDM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InDDMMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InDDMMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InDDMMouseExited(evt);
-            }
-        });
-
-        ViewDDMIn.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        ViewDDMIn.setForeground(new java.awt.Color(51, 51, 51));
-        ViewDDMIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ViewDDMIn.setText("DDM");
-
-        javax.swing.GroupLayout InDDMLayout = new javax.swing.GroupLayout(InDDM);
-        InDDM.setLayout(InDDMLayout);
-        InDDMLayout.setHorizontalGroup(
-            InDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDDMIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        InDDMLayout.setVerticalGroup(
-            InDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewDDMIn, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(InDDM);
-
-        InGraham.setBackground(new java.awt.Color(0, 231, 255));
-        InGraham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        InGraham.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InGrahamMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InGrahamMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InGrahamMouseExited(evt);
-            }
-        });
-
-        ViewGrahamIn.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        ViewGrahamIn.setForeground(new java.awt.Color(51, 51, 51));
-        ViewGrahamIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ViewGrahamIn.setText("Grahams Fromula");
-
-        javax.swing.GroupLayout InGrahamLayout = new javax.swing.GroupLayout(InGraham);
-        InGraham.setLayout(InGrahamLayout);
-        InGrahamLayout.setHorizontalGroup(
-            InGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewGrahamIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        InGrahamLayout.setVerticalGroup(
-            InGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewGrahamIn, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(InGraham);
-
-        InNAV.setBackground(new java.awt.Color(0, 231, 255));
-        InNAV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        InNAV.setPreferredSize(new java.awt.Dimension(270, 30));
-        InNAV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InNAVMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InNAVMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InNAVMouseExited(evt);
-            }
-        });
-
-        ViewNAVIn.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        ViewNAVIn.setForeground(new java.awt.Color(51, 51, 51));
-        ViewNAVIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ViewNAVIn.setText("NAV");
-
-        javax.swing.GroupLayout InNAVLayout = new javax.swing.GroupLayout(InNAV);
-        InNAV.setLayout(InNAVLayout);
-        InNAVLayout.setHorizontalGroup(
-            InNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewNAVIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        InNAVLayout.setVerticalGroup(
-            InNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ViewNAVIn, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        HidingMenuInputs.add(InNAV);
-
-        HidingMenuOutputs.setMaximumSize(new java.awt.Dimension(270, 400));
-        HidingMenuOutputs.setOpaque(false);
-        HidingMenuOutputs.setPreferredSize(new java.awt.Dimension(270, 400));
-        HidingMenuOutputs.setLayout(new java.awt.GridLayout(7, 1));
-
-        LocalizatorOut.setBackground(new java.awt.Color(0, 20, 255));
-
-        jLabel3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Outputs of valuation");
-        jLabel3.setMaximumSize(new java.awt.Dimension(50, 22));
-        jLabel3.setMinimumSize(new java.awt.Dimension(50, 22));
-        jLabel3.setPreferredSize(new java.awt.Dimension(50, 22));
-
-        javax.swing.GroupLayout LocalizatorOutLayout = new javax.swing.GroupLayout(LocalizatorOut);
-        LocalizatorOut.setLayout(LocalizatorOutLayout);
-        LocalizatorOutLayout.setHorizontalGroup(
-            LocalizatorOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        LocalizatorOutLayout.setVerticalGroup(
-            LocalizatorOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(LocalizatorOut);
-
-        OutSummary.setBackground(new java.awt.Color(0, 231, 255));
-        OutSummary.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OutSummary.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OutSummaryMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OutSummaryMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OutSummaryMouseExited(evt);
-            }
-        });
-
-        viewValSum.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        viewValSum.setForeground(new java.awt.Color(51, 51, 51));
-        viewValSum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewValSum.setText("Valuation Summary");
-        viewValSum.setMaximumSize(new java.awt.Dimension(50, 22));
-        viewValSum.setMinimumSize(new java.awt.Dimension(50, 22));
-        viewValSum.setPreferredSize(new java.awt.Dimension(50, 22));
-
-        javax.swing.GroupLayout OutSummaryLayout = new javax.swing.GroupLayout(OutSummary);
-        OutSummary.setLayout(OutSummaryLayout);
-        OutSummaryLayout.setHorizontalGroup(
-            OutSummaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewValSum, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        OutSummaryLayout.setVerticalGroup(
-            OutSummaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewValSum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(OutSummary);
-
-        OutRatio.setBackground(new java.awt.Color(0, 231, 255));
-        OutRatio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OutRatio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OutRatioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OutRatioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OutRatioMouseExited(evt);
-            }
-        });
-
-        viewCalcRatio.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        viewCalcRatio.setForeground(new java.awt.Color(51, 51, 51));
-        viewCalcRatio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewCalcRatio.setText("Calculated Ratios");
-
-        javax.swing.GroupLayout OutRatioLayout = new javax.swing.GroupLayout(OutRatio);
-        OutRatio.setLayout(OutRatioLayout);
-        OutRatioLayout.setHorizontalGroup(
-            OutRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewCalcRatio, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        OutRatioLayout.setVerticalGroup(
-            OutRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewCalcRatio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(OutRatio);
-
-        OutDCF.setBackground(new java.awt.Color(0, 231, 255));
-        OutDCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OutDCF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OutDCFMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OutDCFMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OutDCFMouseExited(evt);
-            }
-        });
-
-        viewDCFVal.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        viewDCFVal.setForeground(new java.awt.Color(51, 51, 51));
-        viewDCFVal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewDCFVal.setText("DCF Valuation");
-        viewDCFVal.setMaximumSize(new java.awt.Dimension(50, 28));
-        viewDCFVal.setMinimumSize(new java.awt.Dimension(50, 28));
-        viewDCFVal.setPreferredSize(new java.awt.Dimension(50, 28));
-
-        javax.swing.GroupLayout OutDCFLayout = new javax.swing.GroupLayout(OutDCF);
-        OutDCF.setLayout(OutDCFLayout);
-        OutDCFLayout.setHorizontalGroup(
-            OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewDCFVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        OutDCFLayout.setVerticalGroup(
-            OutDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewDCFVal, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(OutDCF);
-
-        OutDDM.setBackground(new java.awt.Color(0, 231, 255));
-        OutDDM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OutDDM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OutDDMMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OutDDMMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OutDDMMouseExited(evt);
-            }
-        });
-
-        viewDDMVal.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        viewDDMVal.setForeground(new java.awt.Color(51, 51, 51));
-        viewDDMVal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewDDMVal.setText("DDM Valuation");
-
-        javax.swing.GroupLayout OutDDMLayout = new javax.swing.GroupLayout(OutDDM);
-        OutDDM.setLayout(OutDDMLayout);
-        OutDDMLayout.setHorizontalGroup(
-            OutDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewDDMVal, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        OutDDMLayout.setVerticalGroup(
-            OutDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewDDMVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(OutDDM);
-
-        OutGraham.setBackground(new java.awt.Color(0, 231, 255));
-        OutGraham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OutGraham.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OutGrahamMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OutGrahamMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OutGrahamMouseExited(evt);
-            }
-        });
-
-        viewGrahamVal.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        viewGrahamVal.setForeground(new java.awt.Color(51, 51, 51));
-        viewGrahamVal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewGrahamVal.setText("Grahams Valuation");
-
-        javax.swing.GroupLayout OutGrahamLayout = new javax.swing.GroupLayout(OutGraham);
-        OutGraham.setLayout(OutGrahamLayout);
-        OutGrahamLayout.setHorizontalGroup(
-            OutGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewGrahamVal, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        OutGrahamLayout.setVerticalGroup(
-            OutGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewGrahamVal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(OutGraham);
-
-        OutNAV.setBackground(new java.awt.Color(0, 231, 255));
-        OutNAV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OutNAV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OutNAVMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OutNAVMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                OutNAVMouseExited(evt);
-            }
-        });
-
-        viewNAVVal.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        viewNAVVal.setForeground(new java.awt.Color(51, 51, 51));
-        viewNAVVal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewNAVVal.setText("NAV Valuation");
-
-        javax.swing.GroupLayout OutNAVLayout = new javax.swing.GroupLayout(OutNAV);
-        OutNAV.setLayout(OutNAVLayout);
-        OutNAVLayout.setHorizontalGroup(
-            OutNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewNAVVal, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        OutNAVLayout.setVerticalGroup(
-            OutNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(viewNAVVal, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-        );
-
-        HidingMenuOutputs.add(OutNAV);
-
-        HidingMenuCleaning.setName("cleanMenu"); // NOI18N
-        HidingMenuCleaning.setLayout(new java.awt.GridLayout(9, 1));
-
-        LocalizatorCleaning.setBackground(new java.awt.Color(0, 20, 255));
-
-        jLabel13.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Cleaning choices");
-
-        javax.swing.GroupLayout LocalizatorCleaningLayout = new javax.swing.GroupLayout(LocalizatorCleaning);
-        LocalizatorCleaning.setLayout(LocalizatorCleaningLayout);
-        LocalizatorCleaningLayout.setHorizontalGroup(
-            LocalizatorCleaningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        LocalizatorCleaningLayout.setVerticalGroup(
-            LocalizatorCleaningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(LocalizatorCleaning);
-
-        CleanAll.setBackground(new java.awt.Color(0, 231, 255));
-        CleanAll.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanAll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanAllMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanAllMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanAllMouseExited(evt);
-            }
-        });
-
-        jLabel14.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("All");
-
-        javax.swing.GroupLayout CleanAllLayout = new javax.swing.GroupLayout(CleanAll);
-        CleanAll.setLayout(CleanAllLayout);
-        CleanAllLayout.setHorizontalGroup(
-            CleanAllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanAllLayout.setVerticalGroup(
-            CleanAllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanAll);
-
-        CleanInfo.setBackground(new java.awt.Color(0, 231, 255));
-        CleanInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanInfoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanInfoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanInfoMouseExited(evt);
-            }
-        });
-
-        jLabel15.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Informations");
-
-        javax.swing.GroupLayout CleanInfoLayout = new javax.swing.GroupLayout(CleanInfo);
-        CleanInfo.setLayout(CleanInfoLayout);
-        CleanInfoLayout.setHorizontalGroup(
-            CleanInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanInfoLayout.setVerticalGroup(
-            CleanInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanInfo);
-
-        CleanRatio.setBackground(new java.awt.Color(0, 231, 255));
-        CleanRatio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanRatio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanRatioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanRatioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanRatioMouseExited(evt);
-            }
-        });
-
-        jLabel16.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Ratios");
-
-        javax.swing.GroupLayout CleanRatioLayout = new javax.swing.GroupLayout(CleanRatio);
-        CleanRatio.setLayout(CleanRatioLayout);
-        CleanRatioLayout.setHorizontalGroup(
-            CleanRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanRatioLayout.setVerticalGroup(
-            CleanRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanRatio);
-
-        CleanDCF.setBackground(new java.awt.Color(0, 231, 255));
-        CleanDCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanDCF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanDCFMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanDCFMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanDCFMouseExited(evt);
-            }
-        });
-
-        jLabel17.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("DCF");
-
-        javax.swing.GroupLayout CleanDCFLayout = new javax.swing.GroupLayout(CleanDCF);
-        CleanDCF.setLayout(CleanDCFLayout);
-        CleanDCFLayout.setHorizontalGroup(
-            CleanDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanDCFLayout.setVerticalGroup(
-            CleanDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanDCF);
-
-        CleanDDM.setBackground(new java.awt.Color(0, 231, 255));
-        CleanDDM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanDDM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanDDMMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanDDMMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanDDMMouseExited(evt);
-            }
-        });
-
-        jLabel18.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("DDM");
-
-        javax.swing.GroupLayout CleanDDMLayout = new javax.swing.GroupLayout(CleanDDM);
-        CleanDDM.setLayout(CleanDDMLayout);
-        CleanDDMLayout.setHorizontalGroup(
-            CleanDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanDDMLayout.setVerticalGroup(
-            CleanDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanDDM);
-
-        CleanGraham.setBackground(new java.awt.Color(0, 231, 255));
-        CleanGraham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanGraham.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanGrahamMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanGrahamMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanGrahamMouseExited(evt);
-            }
-        });
-
-        jLabel19.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Grahams Formulas");
-
-        javax.swing.GroupLayout CleanGrahamLayout = new javax.swing.GroupLayout(CleanGraham);
-        CleanGraham.setLayout(CleanGrahamLayout);
-        CleanGrahamLayout.setHorizontalGroup(
-            CleanGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanGrahamLayout.setVerticalGroup(
-            CleanGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanGraham);
-
-        CleanNAV.setBackground(new java.awt.Color(0, 231, 255));
-        CleanNAV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CleanNAV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanNAVMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CleanNAVMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CleanNAVMouseExited(evt);
-            }
-        });
-
-        jLabel26.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("NAV");
-
-        javax.swing.GroupLayout CleanNAVLayout = new javax.swing.GroupLayout(CleanNAV);
-        CleanNAV.setLayout(CleanNAVLayout);
-        CleanNAVLayout.setHorizontalGroup(
-            CleanNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanNAVLayout.setVerticalGroup(
-            CleanNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(CleanNAV);
-
-        Clean.setBackground(new java.awt.Color(0, 20, 255));
-        Clean.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Clean.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanMouseClicked(evt);
-            }
-        });
-
-        CleaningBut.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        CleaningBut.setForeground(new java.awt.Color(255, 255, 255));
-        CleaningBut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CleaningBut.setText("CLEAN");
-
-        javax.swing.GroupLayout CleanLayout = new javax.swing.GroupLayout(Clean);
-        Clean.setLayout(CleanLayout);
-        CleanLayout.setHorizontalGroup(
-            CleanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CleaningBut, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        CleanLayout.setVerticalGroup(
-            CleanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CleaningBut, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-        );
-
-        HidingMenuCleaning.add(Clean);
-
-        HidingMenuCalculation.setName("calcMenu"); // NOI18N
-        HidingMenuCalculation.setLayout(new java.awt.GridLayout(7, 1));
-
-        LocalizatorCalculating.setBackground(new java.awt.Color(0, 20, 255));
-
-        jLabel20.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Calculation choices");
-
-        javax.swing.GroupLayout LocalizatorCalculatingLayout = new javax.swing.GroupLayout(LocalizatorCalculating);
-        LocalizatorCalculating.setLayout(LocalizatorCalculatingLayout);
-        LocalizatorCalculatingLayout.setHorizontalGroup(
-            LocalizatorCalculatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        LocalizatorCalculatingLayout.setVerticalGroup(
-            LocalizatorCalculatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(LocalizatorCalculating);
-
-        CalcRatio.setBackground(new java.awt.Color(0, 231, 255));
-        CalcRatio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcRatio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcRatioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcRatioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcRatioMouseExited(evt);
-            }
-        });
-
-        jLabel22.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Ratios");
-
-        javax.swing.GroupLayout CalcRatioLayout = new javax.swing.GroupLayout(CalcRatio);
-        CalcRatio.setLayout(CalcRatioLayout);
-        CalcRatioLayout.setHorizontalGroup(
-            CalcRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        CalcRatioLayout.setVerticalGroup(
-            CalcRatioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(CalcRatio);
-
-        CalcDCF.setBackground(new java.awt.Color(0, 231, 255));
-        CalcDCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcDCF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcDCFMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcDCFMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcDCFMouseExited(evt);
-            }
-        });
-
-        jLabel23.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("DCF");
-
-        javax.swing.GroupLayout CalcDCFLayout = new javax.swing.GroupLayout(CalcDCF);
-        CalcDCF.setLayout(CalcDCFLayout);
-        CalcDCFLayout.setHorizontalGroup(
-            CalcDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        CalcDCFLayout.setVerticalGroup(
-            CalcDCFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(CalcDCF);
-
-        CalcDDM.setBackground(new java.awt.Color(0, 231, 255));
-        CalcDDM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcDDM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcDDMMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcDDMMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcDDMMouseExited(evt);
-            }
-        });
-
-        jLabel24.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("DDM");
-
-        javax.swing.GroupLayout CalcDDMLayout = new javax.swing.GroupLayout(CalcDDM);
-        CalcDDM.setLayout(CalcDDMLayout);
-        CalcDDMLayout.setHorizontalGroup(
-            CalcDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        CalcDDMLayout.setVerticalGroup(
-            CalcDDMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(CalcDDM);
-
-        CalcGraham.setBackground(new java.awt.Color(0, 231, 255));
-        CalcGraham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcGraham.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcGrahamMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcGrahamMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcGrahamMouseExited(evt);
-            }
-        });
-
-        jLabel25.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Grahams Formulas");
-
-        javax.swing.GroupLayout CalcGrahamLayout = new javax.swing.GroupLayout(CalcGraham);
-        CalcGraham.setLayout(CalcGrahamLayout);
-        CalcGrahamLayout.setHorizontalGroup(
-            CalcGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        CalcGrahamLayout.setVerticalGroup(
-            CalcGrahamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(CalcGraham);
-
-        CalcNAV.setBackground(new java.awt.Color(0, 231, 255));
-        CalcNAV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CalcNAV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcNAVMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CalcNAVMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CalcNAVMouseExited(evt);
-            }
-        });
-
-        jLabel27.setFont(new java.awt.Font("Verdana", 1, 22)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("NAV");
-
-        javax.swing.GroupLayout CalcNAVLayout = new javax.swing.GroupLayout(CalcNAV);
-        CalcNAV.setLayout(CalcNAVLayout);
-        CalcNAVLayout.setHorizontalGroup(
-            CalcNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        CalcNAVLayout.setVerticalGroup(
-            CalcNAVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(CalcNAV);
-
-        Calc.setBackground(new java.awt.Color(0, 20, 255));
-        Calc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Calc.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CalcMouseClicked(evt);
-            }
-        });
-
-        CleaningBut1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        CleaningBut1.setForeground(new java.awt.Color(255, 255, 255));
-        CleaningBut1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CleaningBut1.setText("CALCULATE");
-
-        javax.swing.GroupLayout CalcLayout = new javax.swing.GroupLayout(Calc);
-        Calc.setLayout(CalcLayout);
-        CalcLayout.setHorizontalGroup(
-            CalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CleaningBut1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-        );
-        CalcLayout.setVerticalGroup(
-            CalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CleaningBut1, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-        );
-
-        HidingMenuCalculation.add(Calc);
-
-        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
-        Menu.setLayout(MenuLayout);
-        MenuLayout.setHorizontalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addComponent(MenuColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(HidingMenuOutputs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HidingMenuInputs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HidingMenuCleaning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(HidingMenuCalculation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        MenuLayout.setVerticalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HidingMenuOutputs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(MenuColumn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(HidingMenuInputs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(HidingMenuCleaning, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addComponent(HidingMenuCalculation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Menu, java.awt.BorderLayout.LINE_START);
 
         WelcomePanel.setBackground(new java.awt.Color(255, 255, 255));
         WelcomePanel.setMaximumSize(new java.awt.Dimension(620, 600));
@@ -2304,11 +970,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel95.setLayout(jPanel95Layout);
         jPanel95Layout.setHorizontalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
         );
         jPanel95Layout.setVerticalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         jPanel94.add(jPanel95);
@@ -2325,11 +991,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel96.setLayout(jPanel96Layout);
         jPanel96Layout.setHorizontalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
         );
         jPanel96Layout.setVerticalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         jPanel94.add(jPanel96);
@@ -2362,11 +1028,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel97.setLayout(jPanel97Layout);
         jPanel97Layout.setHorizontalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
         );
         jPanel97Layout.setVerticalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         jPanel94.add(jPanel97);
@@ -2383,11 +1049,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel98.setLayout(jPanel98Layout);
         jPanel98Layout.setHorizontalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
         );
         jPanel98Layout.setVerticalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         jPanel94.add(jPanel98);
@@ -2625,7 +1291,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel72.setLayout(jPanel72Layout);
         jPanel72Layout.setHorizontalGroup(
             jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel72Layout.setVerticalGroup(
             jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2675,11 +1341,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel75.setLayout(jPanel75Layout);
         jPanel75Layout.setHorizontalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
+            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel156, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(jLabel156, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         jPanel74.add(jPanel75);
@@ -2695,11 +1361,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel76.setLayout(jPanel76Layout);
         jPanel76Layout.setHorizontalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel157, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
+            .addComponent(jLabel157, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel157, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(jLabel157, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         jPanel74.add(jPanel76);
@@ -2715,11 +1381,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel77.setLayout(jPanel77Layout);
         jPanel77Layout.setHorizontalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
+            .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel158, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(jLabel158, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         jPanel74.add(jPanel77);
@@ -2871,7 +1537,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3151,11 +1817,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel46);
@@ -3166,11 +1832,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel47);
@@ -3181,11 +1847,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel48.setLayout(jPanel48Layout);
         jPanel48Layout.setHorizontalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel48);
@@ -3196,11 +1862,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel49);
@@ -3211,11 +1877,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
 
         jPanel35.add(jPanel50);
@@ -3239,7 +1905,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel80.setLayout(jPanel80Layout);
         jPanel80Layout.setHorizontalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel80Layout.setVerticalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3263,7 +1929,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel59.setLayout(jPanel59Layout);
         jPanel59Layout.setHorizontalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3384,7 +2050,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel63.setLayout(jPanel63Layout);
         jPanel63Layout.setHorizontalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3399,7 +2065,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel64.setLayout(jPanel64Layout);
         jPanel64Layout.setHorizontalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3414,7 +2080,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel65.setLayout(jPanel65Layout);
         jPanel65Layout.setHorizontalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3429,7 +2095,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel66.setLayout(jPanel66Layout);
         jPanel66Layout.setHorizontalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel66Layout.setVerticalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3444,7 +2110,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel67.setLayout(jPanel67Layout);
         jPanel67Layout.setHorizontalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel67Layout.setVerticalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3459,7 +2125,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel68.setLayout(jPanel68Layout);
         jPanel68Layout.setHorizontalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3474,7 +2140,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel69.setLayout(jPanel69Layout);
         jPanel69Layout.setHorizontalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3489,7 +2155,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel70.setLayout(jPanel70Layout);
         jPanel70Layout.setHorizontalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3504,7 +2170,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel71.setLayout(jPanel71Layout);
         jPanel71Layout.setHorizontalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel71Layout.setVerticalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3532,7 +2198,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3599,11 +2265,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1091, Short.MAX_VALUE)
+            .addGap(0, 1054, Short.MAX_VALUE)
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 35, Short.MAX_VALUE)
+            .addGap(0, 81, Short.MAX_VALUE)
         );
 
         jPanel26.add(jPanel27);
@@ -3625,7 +2291,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel53.setLayout(jPanel53Layout);
         jPanel53Layout.setHorizontalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
+            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3877,7 +2543,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3957,7 +2623,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3972,7 +2638,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3987,7 +2653,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4002,7 +2668,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4017,7 +2683,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4048,7 +2714,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel81.setLayout(jPanel81Layout);
         jPanel81Layout.setHorizontalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4157,7 +2823,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel79.setLayout(jPanel79Layout);
         jPanel79Layout.setHorizontalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel79Layout.setVerticalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4188,11 +2854,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 299, Short.MAX_VALUE)
+            .addGap(0, 1054, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 51, Short.MAX_VALUE)
+            .addGap(0, 98, Short.MAX_VALUE)
         );
 
         jPanel3.add(jPanel4);
@@ -4203,11 +2869,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 299, Short.MAX_VALUE)
+            .addGap(0, 1054, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 51, Short.MAX_VALUE)
+            .addGap(0, 98, Short.MAX_VALUE)
         );
 
         jPanel3.add(jPanel5);
@@ -4218,11 +2884,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 299, Short.MAX_VALUE)
+            .addGap(0, 1054, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 51, Short.MAX_VALUE)
+            .addGap(0, 98, Short.MAX_VALUE)
         );
 
         jPanel3.add(jPanel6);
@@ -4259,7 +2925,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel51.setLayout(jPanel51Layout);
         jPanel51Layout.setHorizontalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
+            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4466,7 +3132,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4660,7 +3326,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel78.setLayout(jPanel78Layout);
         jPanel78Layout.setHorizontalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel78Layout.setVerticalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4763,11 +3429,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1091, Short.MAX_VALUE)
+            .addGap(0, 1054, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 79, Short.MAX_VALUE)
+            .addGap(0, 110, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2);
@@ -4792,7 +3458,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 1054, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4812,7 +3478,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 1054, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4985,7 +3651,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 252, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5195,11 +3861,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel105.setLayout(jPanel105Layout);
         jPanel105Layout.setHorizontalGroup(
             jPanel105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel105Layout.setVerticalGroup(
             jPanel105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
 
         jPanel85.add(jPanel105);
@@ -5210,11 +3876,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel106.setLayout(jPanel106Layout);
         jPanel106Layout.setHorizontalGroup(
             jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel106Layout.setVerticalGroup(
             jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
 
         jPanel85.add(jPanel106);
@@ -5225,11 +3891,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel115.setLayout(jPanel115Layout);
         jPanel115Layout.setHorizontalGroup(
             jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel115Layout.setVerticalGroup(
             jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
 
         jPanel85.add(jPanel115);
@@ -5240,11 +3906,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel116.setLayout(jPanel116Layout);
         jPanel116Layout.setHorizontalGroup(
             jPanel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel116Layout.setVerticalGroup(
             jPanel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
 
         jPanel85.add(jPanel116);
@@ -5255,11 +3921,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel117.setLayout(jPanel117Layout);
         jPanel117Layout.setHorizontalGroup(
             jPanel117Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         jPanel117Layout.setVerticalGroup(
             jPanel117Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 124, Short.MAX_VALUE)
         );
 
         jPanel85.add(jPanel117);
@@ -5283,7 +3949,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 2183, Short.MAX_VALUE)
+            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 2108, Short.MAX_VALUE)
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5352,7 +4018,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1091, Short.MAX_VALUE)
+            .addGap(0, 1054, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5365,7 +4031,30 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 
         WelcomePanel.add(NAVIn);
 
-        getContentPane().add(WelcomePanel, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(heading1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(WelcomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 2109, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WelcomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 591, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(51, 51, 51)
+                    .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -5393,15 +4082,15 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public boolean showHideMenu(JPanel showingMenu, JPanel target, boolean hid, JLabel icon, String route) {
         if (showingMenu != null && target != null && icon != null && route != null) {
             if (!hid) {
-                showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
-                Menu.setPreferredSize(new Dimension(50, 400));
+                //showingMenu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
+                //Menu.setPreferredSize(new Dimension(50, 400));
                 target.setBackground(lightColor);
                 activeChoices.remove(target);
                 changeIcon(icon, route);
                 showingMenu.setVisible(false);
             } else {
-                showingMenu.setPreferredSize(new Dimension(270, MenuColumn.getHeight()));
-                Menu.setPreferredSize(new Dimension(320, 400));
+                //showingMenu.setPreferredSize(new Dimension(270, MenuColumn.getHeight()));
+                //Menu.setPreferredSize(new Dimension(320, 400));
                 target.setBackground(lightDarkColor);
                 activeChoices.add(target);
                 changeIcon(icon, route);
@@ -5470,7 +4159,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public boolean hideMenus(boolean hide, JPanel menu, JPanel but, Color color, JLabel icon, String route) {
         hide = true;
         menu.setVisible(false);
-        Menu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
+        //Menu.setPreferredSize(new Dimension(0, MenuColumn.getHeight()));
         but.setBackground(color);
         activeChoices.remove(but);
         changeIcon(icon, route);
@@ -5514,7 +4203,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      * @param target
      */
     public void OpenView(JPanel target) {
-        if (target != null && Menu != null) {
+        if (target != null) {
             for (JPanel a : views) {
                 if (a.equals(target)) {
                     a.setVisible(true);
@@ -5561,471 +4250,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             actMenuItem = null;
         }
     }
-
-    private void InputButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseEntered
-        changeColor(InputBut, lightDarkColor);
-    }//GEN-LAST:event_InputButMouseEntered
-
-    private void InputButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseExited
-        exiting(InputBut, lightColor);
-    }//GEN-LAST:event_InputButMouseExited
-
-    private void InputButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputButMouseClicked
-        HidingMenuInputs.setVisible(hiddenInputs);
-        if (!hiddenOutputs || !hiddenCleaning || !hiddenCalc) {
-            hiddenOutputs = hideMenus(hiddenOutputs, HidingMenuOutputs, ResultBut, lightColor, resultLabel, "/Icons/result.png");
-            hiddenCleaning = hideMenus(hiddenCleaning, HidingMenuCleaning, CleanBut, lightColor, cleanLabel, "/Icons/rubber.png");
-            hiddenCalc = hideMenus(hiddenCalc, HidingMenuInputs, CalcBut, lightColor, calcLabel, "/Icons/calc.png");
-        }
-        if (hiddenInputs) {
-            hiddenInputs = showHideMenu(HidingMenuInputs, InputBut, hiddenInputs, innLabel, "/Icons/close-edit.png");
-        } else {
-            hiddenInputs = showHideMenu(HidingMenuInputs, InputBut, hiddenInputs, innLabel, "/Icons/inputs.png");
-        }
-        setItemUnactive();
-        SwingUtilities.updateComponentTreeUI(this);
-    }//GEN-LAST:event_InputButMouseClicked
-
-    private void ResultButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseEntered
-        changeColor(ResultBut, lightDarkColor);
-    }//GEN-LAST:event_ResultButMouseEntered
-
-    private void ResultButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseExited
-        exiting(ResultBut, lightColor);
-    }//GEN-LAST:event_ResultButMouseExited
-
-    private void ResultButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultButMouseClicked
-        HidingMenuOutputs.setVisible(hiddenOutputs);
-        if (!hiddenInputs || !hiddenCleaning || !hiddenCalc) {
-            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut, lightColor, innLabel, "/Icons/inputs.png");
-            hiddenCleaning = hideMenus(hiddenCleaning, HidingMenuCleaning, CleanBut, lightColor, cleanLabel, "/Icons/rubber.png");
-            hiddenCalc = hideMenus(hiddenCalc, HidingMenuInputs, CalcBut, lightColor, calcLabel, "/Icons/calc.png");
-        }
-        if (hiddenOutputs) {
-            hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/close-edit.png");
-        } else {
-            hiddenOutputs = showHideMenu(HidingMenuOutputs, ResultBut, hiddenOutputs, resultLabel, "/Icons/result.png");
-        }
-        setItemUnactive();
-        SwingUtilities.updateComponentTreeUI(this);
-    }//GEN-LAST:event_ResultButMouseClicked
-
-    private void SettingButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseEntered
-        changeColor(SettingBut, lightDarkColor);
-    }//GEN-LAST:event_SettingButMouseEntered
-
-    private void SettingButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseExited
-        exiting(SettingBut, lightColor);
-    }//GEN-LAST:event_SettingButMouseExited
-
-    private void SettingButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingButMouseClicked
-        OpenView(Settings);
-        ShowingViewBackground(SettingBut, 1);
-    }//GEN-LAST:event_SettingButMouseClicked
-
-    private void HelpButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseEntered
-        changeColor(HelpBut, lightDarkColor);
-    }//GEN-LAST:event_HelpButMouseEntered
-
-    private void HelpButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseExited
-        exiting(HelpBut, lightColor);
-    }//GEN-LAST:event_HelpButMouseExited
-
-    private void HelpButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButMouseClicked
-        OpenView(Help);
-        ShowingViewBackground(HelpBut, 1);
-    }//GEN-LAST:event_HelpButMouseClicked
-
-    private void InRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseClicked
-        OpenView(RatioIn);
-        ShowingViewBackground(InRatio, 0);
-    }//GEN-LAST:event_InRatioMouseClicked
-
-    private void InRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseEntered
-        changeColor(InRatio, darkLightColor);
-    }//GEN-LAST:event_InRatioMouseEntered
-
-    private void InRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InRatioMouseExited
-        exiting(InRatio, lightDarkColor);
-    }//GEN-LAST:event_InRatioMouseExited
-
-    private void InDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseClicked
-        OpenView(DDMIn);
-        ShowingViewBackground(InDDM, 0);
-    }//GEN-LAST:event_InDDMMouseClicked
-
-    private void InDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseEntered
-        changeColor(InDDM, darkLightColor);
-    }//GEN-LAST:event_InDDMMouseEntered
-
-    private void InDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDDMMouseExited
-        exiting(InDDM, lightDarkColor);
-    }//GEN-LAST:event_InDDMMouseExited
-
-    private void InGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseClicked
-        OpenView(GrahamIn);
-        ShowingViewBackground(InGraham, 0);
-    }//GEN-LAST:event_InGrahamMouseClicked
-
-    private void InGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseEntered
-        changeColor(InGraham, darkLightColor);
-    }//GEN-LAST:event_InGrahamMouseEntered
-
-    private void InGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InGrahamMouseExited
-        exiting(InGraham, lightDarkColor);
-    }//GEN-LAST:event_InGrahamMouseExited
-
-    private void InfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseClicked
-        OpenView(InfoIn);
-        ShowingViewBackground(Info, 0);
-    }//GEN-LAST:event_InfoMouseClicked
-
-    private void InfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseEntered
-        changeColor(Info, darkLightColor);
-    }//GEN-LAST:event_InfoMouseEntered
-
-    private void InfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseExited
-        exiting(Info, lightDarkColor);
-    }//GEN-LAST:event_InfoMouseExited
-
-    private void InNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseClicked
-        OpenView(NAVIn);
-        ShowingViewBackground(InNAV, 0);
-    }//GEN-LAST:event_InNAVMouseClicked
-
-    private void InNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseEntered
-        changeColor(InNAV, darkLightColor);
-    }//GEN-LAST:event_InNAVMouseEntered
-
-    private void InNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InNAVMouseExited
-        exiting(InNAV, lightDarkColor);
-    }//GEN-LAST:event_InNAVMouseExited
-
-    private void OutSummaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseClicked
-        OpenView(SummaryOut);
-        ShowingViewBackground(OutSummary, 0);
-    }//GEN-LAST:event_OutSummaryMouseClicked
-
-    private void OutSummaryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseEntered
-        changeColor(OutSummary, darkLightColor);
-    }//GEN-LAST:event_OutSummaryMouseEntered
-
-    private void OutSummaryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutSummaryMouseExited
-        exiting(OutSummary, lightDarkColor);
-    }//GEN-LAST:event_OutSummaryMouseExited
-
-    private void OutRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseClicked
-        OpenView(RatioOut);
-        ShowingViewBackground(OutRatio, 0);
-    }//GEN-LAST:event_OutRatioMouseClicked
-
-    private void OutRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseEntered
-        changeColor(OutRatio, darkLightColor);
-    }//GEN-LAST:event_OutRatioMouseEntered
-
-    private void OutRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutRatioMouseExited
-        exiting(OutRatio, lightDarkColor);
-    }//GEN-LAST:event_OutRatioMouseExited
-
-    private void OutDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseClicked
-        OpenView(DCFOut);
-        ShowingViewBackground(OutDCF, 0);
-    }//GEN-LAST:event_OutDCFMouseClicked
-
-    private void OutDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseEntered
-        changeColor(OutDCF, darkLightColor);
-    }//GEN-LAST:event_OutDCFMouseEntered
-
-    private void OutDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDCFMouseExited
-        exiting(OutDCF, lightDarkColor);
-    }//GEN-LAST:event_OutDCFMouseExited
-
-    private void OutDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseClicked
-        OpenView(DDMOut);
-        ShowingViewBackground(OutDDM, 0);
-    }//GEN-LAST:event_OutDDMMouseClicked
-
-    private void OutDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseEntered
-        changeColor(OutDDM, darkLightColor);
-    }//GEN-LAST:event_OutDDMMouseEntered
-
-    private void OutDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutDDMMouseExited
-        exiting(OutDDM, lightDarkColor);
-    }//GEN-LAST:event_OutDDMMouseExited
-
-    private void OutGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseClicked
-        OpenView(GrahamOut);
-        ShowingViewBackground(OutGraham, 0);
-    }//GEN-LAST:event_OutGrahamMouseClicked
-
-    private void OutGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseEntered
-        changeColor(OutGraham, darkLightColor);
-    }//GEN-LAST:event_OutGrahamMouseEntered
-
-    private void OutGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutGrahamMouseExited
-        exiting(OutGraham, lightDarkColor);
-    }//GEN-LAST:event_OutGrahamMouseExited
-
-    private void OutNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseClicked
-        OpenView(NAVOut);
-        ShowingViewBackground(OutNAV, 0);
-    }//GEN-LAST:event_OutNAVMouseClicked
-
-    private void OutNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseEntered
-        changeColor(OutNAV, darkLightColor);
-    }//GEN-LAST:event_OutNAVMouseEntered
-
-    private void OutNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutNAVMouseExited
-        exiting(OutNAV, lightDarkColor);
-    }//GEN-LAST:event_OutNAVMouseExited
-
-    private void CleanButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseClicked
-        HidingMenuCleaning.setVisible(hiddenCleaning);
-        if (!hiddenInputs || !hiddenOutputs || !hiddenCalc) {
-            hiddenOutputs = hideMenus(hiddenOutputs, HidingMenuOutputs, ResultBut, lightColor, resultLabel, "/Icons/result.png");
-            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut, lightColor, innLabel, "/Icons/inputs.png");
-            hiddenCalc = hideMenus(hiddenCalc, HidingMenuInputs, CalcBut, lightColor, calcLabel, "/Icons/calc.png");
-        }
-        if (hiddenCleaning) {
-            hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/close-edit.png");
-        } else {
-            hiddenCleaning = showHideMenu(HidingMenuCleaning, CleanBut, hiddenCleaning, cleanLabel, "/Icons/rubber.png");
-        }
-        setItemUnactive();
-        SwingUtilities.updateComponentTreeUI(this);
-    }//GEN-LAST:event_CleanButMouseClicked
-
-    private void CleanButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseEntered
-        changeColor(CleanBut, lightDarkColor);
-    }//GEN-LAST:event_CleanButMouseEntered
-
-    private void CleanButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButMouseExited
-        exiting(CleanBut, lightColor);
-    }//GEN-LAST:event_CleanButMouseExited
-
-    private void SaveButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseClicked
-        OpenView(ShowOut);
-        ShowingViewBackground(SaveBut, 1);
-    }//GEN-LAST:event_SaveButMouseClicked
-
-    private void SaveButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseEntered
-        changeColor(SaveBut, lightDarkColor);
-    }//GEN-LAST:event_SaveButMouseEntered
-
-    private void SaveButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButMouseExited
-        exiting(SaveBut, lightColor);
-    }//GEN-LAST:event_SaveButMouseExited
-
-    private void LibraryButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseClicked
-        OpenView(Library);
-        try {
-            controller.ShowFiles();
-        } catch (IOException ex) {
-            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ShowingViewBackground(LibraryBut, 1);
-    }//GEN-LAST:event_LibraryButMouseClicked
-
-    private void LibraryButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseEntered
-        changeColor(LibraryBut, lightDarkColor);
-    }//GEN-LAST:event_LibraryButMouseEntered
-
-    private void LibraryButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LibraryButMouseExited
-        exiting(LibraryBut, lightColor);
-    }//GEN-LAST:event_LibraryButMouseExited
-
-    private void CalcButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseClicked
-        HidingMenuCalculation.setVisible(hiddenCalc);
-        if (!hiddenInputs || !hiddenOutputs || !hiddenCleaning) {
-            hiddenOutputs = hideMenus(hiddenOutputs, HidingMenuOutputs, ResultBut, lightColor, resultLabel, "/Icons/result.png");
-            hiddenInputs = hideMenus(hiddenInputs, HidingMenuInputs, InputBut, lightColor, innLabel, "/Icons/inputs.png");
-            hiddenCleaning = hideMenus(hiddenCleaning, HidingMenuCleaning, CleanBut, lightColor, cleanLabel, "/Icons/rubber.png");
-        }
-        if (hiddenCalc) {
-            hiddenCalc = showHideMenu(HidingMenuCalculation, CalcBut, hiddenCalc, calcLabel, "/Icons/close-edit.png");
-        } else {
-            hiddenCalc = showHideMenu(HidingMenuCalculation, CalcBut, hiddenCalc, calcLabel, "/Icons/calc.png");
-        }
-        setItemUnactive();
-        SwingUtilities.updateComponentTreeUI(this);
-    }//GEN-LAST:event_CalcButMouseClicked
-
-    private void CalcButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseEntered
-        changeColor(CalcBut, lightDarkColor);
-    }//GEN-LAST:event_CalcButMouseEntered
-
-    private void CalcButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcButMouseExited
-        exiting(CalcBut, lightColor);
-    }//GEN-LAST:event_CalcButMouseExited
-
-    private void CleanAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanAllMouseClicked
-        chooseCleaning(CleanAll);
-    }//GEN-LAST:event_CleanAllMouseClicked
-
-    private void CleanAllMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanAllMouseEntered
-        changeColor(CleanAll, darkLightColor);
-    }//GEN-LAST:event_CleanAllMouseEntered
-
-    private void CleanAllMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanAllMouseExited
-        exiting(CleanAll, lightDarkColor);
-    }//GEN-LAST:event_CleanAllMouseExited
-
-    private void CleanInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanInfoMouseClicked
-        chooseCleaning(CleanInfo);
-    }//GEN-LAST:event_CleanInfoMouseClicked
-
-    private void CleanInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanInfoMouseEntered
-        changeColor(CleanInfo, darkLightColor);
-    }//GEN-LAST:event_CleanInfoMouseEntered
-
-    private void CleanInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanInfoMouseExited
-        exiting(CleanInfo, lightDarkColor);
-    }//GEN-LAST:event_CleanInfoMouseExited
-
-    private void CleanRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseClicked
-        chooseCleaning(CleanRatio);
-    }//GEN-LAST:event_CleanRatioMouseClicked
-
-    private void CleanRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseEntered
-        changeColor(CleanRatio, darkLightColor);
-    }//GEN-LAST:event_CleanRatioMouseEntered
-
-    private void CleanRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanRatioMouseExited
-        exiting(CleanRatio, lightDarkColor);
-    }//GEN-LAST:event_CleanRatioMouseExited
-
-    private void CleanDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseClicked
-        chooseCleaning(CleanDCF);
-    }//GEN-LAST:event_CleanDCFMouseClicked
-
-    private void CleanDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseEntered
-        changeColor(CleanDCF, darkLightColor);
-    }//GEN-LAST:event_CleanDCFMouseEntered
-
-    private void CleanDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDCFMouseExited
-        exiting(CleanDCF, lightDarkColor);
-    }//GEN-LAST:event_CleanDCFMouseExited
-
-    private void CleanDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseClicked
-        chooseCleaning(CleanDDM);
-    }//GEN-LAST:event_CleanDDMMouseClicked
-
-    private void CleanDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseEntered
-        changeColor(CleanDDM, darkLightColor);
-    }//GEN-LAST:event_CleanDDMMouseEntered
-
-    private void CleanDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanDDMMouseExited
-        exiting(CleanDDM, lightDarkColor);
-    }//GEN-LAST:event_CleanDDMMouseExited
-
-    private void CleanGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseClicked
-        chooseCleaning(CleanGraham);
-    }//GEN-LAST:event_CleanGrahamMouseClicked
-
-    private void CleanGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseEntered
-        changeColor(CleanGraham, darkLightColor);
-    }//GEN-LAST:event_CleanGrahamMouseEntered
-
-    private void CleanGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanGrahamMouseExited
-        exiting(CleanGraham, lightDarkColor);
-    }//GEN-LAST:event_CleanGrahamMouseExited
-
-    private void CleanNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanNAVMouseClicked
-        chooseCleaning(CleanNAV);
-    }//GEN-LAST:event_CleanNAVMouseClicked
-
-    private void CleanNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanNAVMouseEntered
-        changeColor(CleanNAV, darkLightColor);
-    }//GEN-LAST:event_CleanNAVMouseEntered
-
-    private void CleanNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanNAVMouseExited
-        exiting(CleanNAV, lightDarkColor);
-    }//GEN-LAST:event_CleanNAVMouseExited
-
-    private void CleanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanMouseClicked
-        controller.clean(cleaningChoices);
-        cleaningChoices.clear();
-        SwingUtilities.updateComponentTreeUI(this);
-    }//GEN-LAST:event_CleanMouseClicked
-
-    private void CalcRatioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcRatioMouseClicked
-        chooseCalculation(CalcRatio);
-    }//GEN-LAST:event_CalcRatioMouseClicked
-
-    private void CalcRatioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcRatioMouseEntered
-        changeColor(CalcRatio, darkLightColor);
-    }//GEN-LAST:event_CalcRatioMouseEntered
-
-    private void CalcRatioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcRatioMouseExited
-        exiting(CalcRatio, lightDarkColor);
-    }//GEN-LAST:event_CalcRatioMouseExited
-
-    private void CalcDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcDCFMouseClicked
-        chooseCalculation(CalcDCF);
-    }//GEN-LAST:event_CalcDCFMouseClicked
-
-    private void CalcDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcDCFMouseEntered
-        changeColor(CalcDCF, darkLightColor);
-    }//GEN-LAST:event_CalcDCFMouseEntered
-
-    private void CalcDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcDCFMouseExited
-        exiting(CalcDCF, lightDarkColor);
-    }//GEN-LAST:event_CalcDCFMouseExited
-
-    private void CalcDDMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcDDMMouseClicked
-        chooseCalculation(CalcDDM);
-    }//GEN-LAST:event_CalcDDMMouseClicked
-
-    private void CalcDDMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcDDMMouseEntered
-        changeColor(CalcDDM, darkLightColor);
-    }//GEN-LAST:event_CalcDDMMouseEntered
-
-    private void CalcDDMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcDDMMouseExited
-        exiting(CalcDDM, lightDarkColor);
-    }//GEN-LAST:event_CalcDDMMouseExited
-
-    private void CalcGrahamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcGrahamMouseClicked
-        chooseCalculation(CalcGraham);
-    }//GEN-LAST:event_CalcGrahamMouseClicked
-
-    private void CalcGrahamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcGrahamMouseEntered
-        changeColor(CalcGraham, darkLightColor);
-    }//GEN-LAST:event_CalcGrahamMouseEntered
-
-    private void CalcGrahamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcGrahamMouseExited
-        exiting(CalcGraham, lightDarkColor);
-    }//GEN-LAST:event_CalcGrahamMouseExited
-
-    private void CalcNAVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcNAVMouseClicked
-        chooseCalculation(CalcNAV);
-    }//GEN-LAST:event_CalcNAVMouseClicked
-
-    private void CalcNAVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcNAVMouseEntered
-        changeColor(CalcNAV, darkLightColor);
-    }//GEN-LAST:event_CalcNAVMouseEntered
-
-    private void CalcNAVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcNAVMouseExited
-        exiting(CalcNAV, lightDarkColor);
-    }//GEN-LAST:event_CalcNAVMouseExited
-
-    private void CalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalcMouseClicked
-        controller.calculation(calcChoices);
-        calcChoices.clear();
-        SwingUtilities.updateComponentTreeUI(this);
-    }//GEN-LAST:event_CalcMouseClicked
-
-    private void InDCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseClicked
-        OpenView(DCFIn);
-        ShowingViewBackground(InDCF, 0);
-    }//GEN-LAST:event_InDCFMouseClicked
-
-    private void InDCFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseEntered
-        changeColor(InDCF, darkLightColor);
-    }//GEN-LAST:event_InDCFMouseEntered
-
-    private void InDCFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InDCFMouseExited
-        exiting(InDCF, lightDarkColor);
-    }//GEN-LAST:event_InDCFMouseExited
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         try {
@@ -6290,27 +4514,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField AvGRDCF;
     private javax.swing.JTextField AvGRDDM;
     private javax.swing.JTextField CLiq;
-    private javax.swing.JPanel Calc;
-    private javax.swing.JPanel CalcBut;
-    private javax.swing.JPanel CalcDCF;
-    private javax.swing.JPanel CalcDDM;
-    private javax.swing.JPanel CalcGraham;
-    private javax.swing.JPanel CalcNAV;
-    private javax.swing.JPanel CalcRatio;
     private javax.swing.JTextField CandC2;
     private javax.swing.JTextField CapLO2;
     private javax.swing.JTextField CashDCF;
-    private javax.swing.JPanel Clean;
-    private javax.swing.JPanel CleanAll;
-    private javax.swing.JPanel CleanBut;
-    private javax.swing.JPanel CleanDCF;
-    private javax.swing.JPanel CleanDDM;
-    private javax.swing.JPanel CleanGraham;
-    private javax.swing.JPanel CleanInfo;
-    private javax.swing.JPanel CleanNAV;
-    private javax.swing.JPanel CleanRatio;
-    private javax.swing.JLabel CleaningBut;
-    private javax.swing.JLabel CleaningBut1;
     private javax.swing.JTextField CofRevenue2;
     private javax.swing.JTextField ComDiv2;
     private javax.swing.JTextField CorpNameField;
@@ -6364,24 +4570,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField GrahamRevMoSAns;
     private javax.swing.JTextField GrahamRevMoSAns1;
     private javax.swing.JPanel Help;
-    private javax.swing.JPanel HelpBut;
-    private javax.swing.JPanel HidingMenuCalculation;
-    private javax.swing.JPanel HidingMenuCleaning;
-    private javax.swing.JPanel HidingMenuInputs;
-    private javax.swing.JPanel HidingMenuOutputs;
     private javax.swing.JTextField IdealPrice;
     private javax.swing.JTextField IdealPrice1;
     private javax.swing.JTextField IdealPriceMoS;
     private javax.swing.JTextField IdealPriceMoS1;
-    private javax.swing.JPanel InDCF;
-    private javax.swing.JPanel InDDM;
-    private javax.swing.JPanel InGraham;
-    private javax.swing.JPanel InNAV;
-    private javax.swing.JPanel InRatio;
     private javax.swing.JTextField Indebtedness;
-    private javax.swing.JPanel Info;
     private javax.swing.JPanel InfoIn;
-    private javax.swing.JPanel InputBut;
     private javax.swing.JTextField IntExp2;
     private javax.swing.JTextField Inv2;
     private javax.swing.JTextField InventoryTime;
@@ -6389,13 +4583,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTable LastFCF;
     private javax.swing.JTextField LiabilitiesTime;
     private javax.swing.JPanel Library;
-    private javax.swing.JPanel LibraryBut;
-    private javax.swing.JPanel LocalizatorCalculating;
-    private javax.swing.JPanel LocalizatorCleaning;
-    private javax.swing.JPanel LocalizatorIn;
-    private javax.swing.JPanel LocalizatorOut;
-    private javax.swing.JPanel Menu;
-    private javax.swing.JPanel MenuColumn;
     private javax.swing.JTextField NAVAns;
     private javax.swing.JTextField NAVAns1;
     private javax.swing.JPanel NAVIn;
@@ -6408,12 +4595,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField OpExpense2;
     private javax.swing.JTextField OrShNum2;
     private javax.swing.JTextField OthIncome2;
-    private javax.swing.JPanel OutDCF;
-    private javax.swing.JPanel OutDDM;
-    private javax.swing.JPanel OutGraham;
-    private javax.swing.JPanel OutNAV;
-    private javax.swing.JPanel OutRatio;
-    private javax.swing.JPanel OutSummary;
     private javax.swing.JTextField PayOut;
     private javax.swing.JTextField Pillow2;
     private javax.swing.JTextField PillowAns;
@@ -6438,19 +4619,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JPanel RatioOut;
     private javax.swing.JTextField Receivable2;
     private javax.swing.JTextField ReceivablesTime;
-    private javax.swing.JPanel ResultBut;
     private javax.swing.JTextField SHEquity2;
-    private javax.swing.JPanel SaveBut;
     private javax.swing.JTable SavesShowout;
-    private javax.swing.JPanel SettingBut;
     private javax.swing.JPanel Settings;
     private javax.swing.JTextField Shares2;
     private javax.swing.JTextField SharesDCF;
     private javax.swing.JTextField SharesNAV;
     private javax.swing.JTextField SharesOut;
     private javax.swing.JPanel ShowOut;
-    private javax.swing.JPanel Space0;
-    private javax.swing.JPanel Space1;
     private javax.swing.JTextField State2;
     private javax.swing.JTextField StateDCF;
     private javax.swing.JTextField StockExchField;
@@ -6467,12 +4643,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField TotalAssetsNAV;
     private javax.swing.JTextField TotalLiab;
     private javax.swing.JTextField TotalLiabilitiesNAV;
-    private javax.swing.JLabel ViewDCFIn;
-    private javax.swing.JLabel ViewDDMIn;
-    private javax.swing.JLabel ViewGrahamIn;
-    private javax.swing.JLabel ViewInfo;
-    private javax.swing.JLabel ViewNAVIn;
-    private javax.swing.JLabel ViewRatioIn;
     private javax.swing.JTextField WACCDCFInn;
     private javax.swing.JTextField WACCDCFOut;
     private javax.swing.JTextField WACCDDM;
@@ -6481,13 +4651,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JTextField Y;
     private javax.swing.JTextField YGraham;
     private javax.swing.JTextField YGrahamRev;
-    private javax.swing.JLabel calcLabel;
-    private javax.swing.JLabel cleanLabel;
-    private javax.swing.JLabel helpLabel;
-    private javax.swing.JLabel innLabel;
+    private component.Heading heading1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
@@ -6498,7 +4664,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
@@ -6520,14 +4685,12 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
@@ -6538,7 +4701,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel147;
     private javax.swing.JLabel jLabel148;
     private javax.swing.JLabel jLabel149;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
@@ -6549,17 +4711,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel158;
     private javax.swing.JLabel jLabel159;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel162;
     private javax.swing.JLabel jLabel163;
     private javax.swing.JLabel jLabel164;
     private javax.swing.JLabel jLabel166;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel178;
     private javax.swing.JLabel jLabel179;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel181;
     private javax.swing.JLabel jLabel182;
     private javax.swing.JLabel jLabel183;
@@ -6569,7 +4728,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel187;
     private javax.swing.JLabel jLabel188;
     private javax.swing.JLabel jLabel189;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel190;
     private javax.swing.JLabel jLabel191;
     private javax.swing.JLabel jLabel192;
@@ -6580,8 +4738,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel197;
     private javax.swing.JLabel jLabel198;
     private javax.swing.JLabel jLabel199;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel200;
     private javax.swing.JLabel jLabel201;
     private javax.swing.JLabel jLabel202;
@@ -6602,18 +4758,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel217;
     private javax.swing.JLabel jLabel218;
     private javax.swing.JLabel jLabel219;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel220;
     private javax.swing.JLabel jLabel221;
     private javax.swing.JLabel jLabel222;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel34;
@@ -6784,14 +4933,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable4;
-    private javax.swing.JLabel resultLabel;
-    private javax.swing.JLabel setttingLabel;
-    private javax.swing.JLabel viewCalcRatio;
-    private javax.swing.JLabel viewDCFVal;
-    private javax.swing.JLabel viewDDMVal;
-    private javax.swing.JLabel viewGrahamVal;
-    private javax.swing.JLabel viewNAVVal;
-    private javax.swing.JLabel viewValSum;
+    private raven.menu.Menu menu1;
     // End of variables declaration//GEN-END:variables
 
     /**
