@@ -5,6 +5,7 @@
 package menu;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -72,6 +73,7 @@ public class MenuItem extends JButton {
         this.subMenuAble = subMenuAble;
         setContentAreaFilled(false);
         setForeground(new Color(51,51,51));
+        setFont(new Font("Verdana", 1, 15));
         setHorizontalAlignment(SwingConstants.LEFT);
         setBorder(new EmptyBorder(9, 10, 9, 10));
         setIconTextGap(10);
