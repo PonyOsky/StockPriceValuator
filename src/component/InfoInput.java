@@ -26,6 +26,7 @@ public class InfoInput extends javax.swing.JPanel {
      */
     public InfoInput() {
         initComponents();
+        controller = new Controller();
     }
 
     public void setLabels(String fileRoute) {
@@ -124,7 +125,7 @@ public class InfoInput extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(51, 51, 51));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("Corporation name:");
+        jLabel28.setText("Corporation:");
         jLabel28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel28.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         InfoIn.add(jLabel28);

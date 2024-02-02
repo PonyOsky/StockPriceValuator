@@ -41,7 +41,6 @@ public class Controller {
     DiscountedCashFlowModel dcf = new DiscountedCashFlowModel();
     GrahamsFormulas graham = new GrahamsFormulas();
     NetAssetValue nav = new NetAssetValue();
-    private ReworkedFrontend frontend;
     private double value;
     private double valueMoS;
     public SaveTemplate stemp;
@@ -64,9 +63,8 @@ public class Controller {
      *
      * @param f
      */
-    public Controller(ReworkedFrontend f) {
+    public Controller() {
         decfor.setRoundingMode(RoundingMode.DOWN);
-        this.frontend = f;
     }
 
     /**

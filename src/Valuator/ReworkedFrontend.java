@@ -4,24 +4,32 @@
  */
 package Valuator;
 
+import component.DCFInput;
+import component.DCFOutput;
+import component.DDMInput;
+import component.DDMOutput;
+import component.GrahamInput;
+import component.GrahamOutput;
+import component.Help;
 import component.HomePage;
+import component.InfoInput;
+import component.Library;
+import component.NAVInput;
+import component.NAVOutput;
+import component.RatioInput;
+import component.RatioOutput;
+import component.Settings;
+import component.ShowOut;
+import component.SummaryOutput;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.table.TableColumn;
 import menu.MenuEvent;
 
 /**
@@ -48,6 +56,24 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public Languages langs;
     public Controller controller;
     public SaveLoad saveLoad;
+    public DCFInput dcfin;
+    public DDMInput ddmin;
+    public GrahamInput grahamin;
+    public InfoInput info;
+    public NAVInput navin;
+    public RatioInput ratioin;
+    public DCFOutput dcfout;
+    public DDMOutput ddmout;
+    public GrahamOutput grahamout;
+    public NAVOutput navout;
+    public RatioOutput ratioout;
+    public SummaryOutput sumout;
+    public Library lib;
+    public Help help;
+    public HomePage hp;
+    public ShowOut showout;
+    public Settings settings;
+    private boolean v;
 
     /**
      *
@@ -58,9 +84,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
         langs = new Languages();
-        controller = new Controller(this);
+        controller = new Controller();
         saveLoad = new SaveLoad(controller);
-        activeChoices = new ArrayList();
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
         langChoices = new ArrayList();
@@ -68,23 +93,35 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         lightDarkColor = new Color(0, 231, 255);
         darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
-        setLabels(langs.getRoute());
+        info = new InfoInput();
+        ratioin = new RatioInput();
+        JPanel[] panels = new JPanel[]{info, ratioin};
+        //setLabels(langs.getRoute());
         //setLangChoices();
         saveLoad.initSaves();
-        
+        v = false;
         menu2.setEvent(new MenuEvent() {
             @Override
             public void selected(int index, int subIndex) {
-                if(index == 0 && subIndex == 3){
-                    showForm(new HomePage());
+                if(index == 0 && subIndex == 1){
+                    showForm(panels, info);
+                }
+                if(index == 0 && subIndex == 2){
+                    showForm(panels, ratioin);
                 }
             }
         });
     }
     
-    private void showForm(Component com) {
-        body.removeAll();
-        body.add(com);
+    private void showForm(JPanel[] target, JPanel panel) {
+        for(JPanel jp : target){
+            if(jp == panel){
+                jp.setVisible(true);
+            }else{
+                jp.setVisible(false);
+            }
+        }
+        body.add(panel);
         body.repaint();
         body.revalidate();
     }
@@ -98,14 +135,23 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
 */
 
     public void setLabels(String route) throws IOException {
-        if (route != null) {
-            Properties lang = new Properties();
-            Properties conf = new Properties();
-            FileInputStream i = new FileInputStream("./src/Valuator/config.properties");
-            conf.load(i);
-            FileInputStream ip = new FileInputStream(route);
-            lang.load(ip);
-        }
+        dcfin.setLabels(route);
+        dcfout.setLabels(route);
+        ddmin.setLabels(route);
+        ddmout.setLabels(route);
+        grahamin.setLabels(route);
+        grahamout.setLabels(route);
+        help.setLabels(route);
+        hp.setLabels(route);
+        info.setLabels(route);
+        lib.setLabels(route);
+        navin.setLabels(route);
+        navout.setLabels(route);
+        ratioin.setLabels(route);
+        ratioout.setLabels(route);
+        settings.setLabels(route);
+        showout.setLabels(route);
+        sumout.setLabels(route);
     }
 
     /**
