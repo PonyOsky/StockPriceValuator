@@ -735,7 +735,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getCapLO2() {
+    public JTextField getCapLO() {
         return CapLO2;
     }
 
@@ -743,7 +743,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getCofRevenue2() {
+    public JTextField getCofRevenue() {
         return CofRevenue2;
     }
 
@@ -751,7 +751,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getComDiv2() {
+    public JTextField getComDiv() {
         return ComDiv2;
     }
 
@@ -759,7 +759,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getCurAssets2() {
+    public JTextField getCurAssets() {
         return CurAssets2;
     }
 
@@ -767,7 +767,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getCurLiabilities2() {
+    public JTextField getCurLiabilities() {
         return CurLiabilities2;
     }
 
@@ -775,7 +775,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getEBIT2() {
+    public JTextField getEBIT() {
         return EBIT2;
     }
 
@@ -783,7 +783,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getIntExp2() {
+    public JTextField getIntExp() {
         return IntExp2;
     }
 
@@ -791,7 +791,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getInv2() {
+    public JTextField getInv() {
         return Inv2;
     }
 
@@ -799,7 +799,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getNIncome2() {
+    public JTextField getNIncome() {
         return NIncome2;
     }
 
@@ -807,7 +807,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getOpExpense2() {
+    public JTextField getOpExpense() {
         return OpExpense2;
     }
 
@@ -815,7 +815,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getOrShNum2() {
+    public JTextField getOrShNum() {
         return OrShNum2;
     }
 
@@ -823,7 +823,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getOthIncome2() {
+    public JTextField getOthIncome() {
         return OthIncome2;
     }
 
@@ -839,7 +839,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getReceivable2() {
+    public JTextField getReceivable() {
         return Receivable2;
     }
 
@@ -847,7 +847,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getSHEquity2() {
+    public JTextField getSHEquity() {
         return SHEquity2;
     }
 
@@ -855,7 +855,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getTAssets2() {
+    public JTextField getTAssets() {
         return TAssets2;
     }
 
@@ -863,7 +863,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getTEGMI2() {
+    public JTextField getTEGMI() {
         return TEGMI2;
     }
 
@@ -871,7 +871,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getTLiabilities2() {
+    public JTextField getTLiabilities() {
         return TLiabilities2;
     }
 
@@ -879,7 +879,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getTRevenue2() {
+    public JTextField getTRevenue() {
         return TRevenue2;
     }
 
@@ -887,7 +887,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getTanBookVal2() {
+    public JTextField getTanBookVal() {
         return TanBookVal2;
     }
 
@@ -895,7 +895,7 @@ public class RatioInput extends javax.swing.JPanel {
      *
      * @return
      */
-    public JTextField getTaxes2() {
+    public JTextField getTaxes() {
         return Taxes2;
     }
 

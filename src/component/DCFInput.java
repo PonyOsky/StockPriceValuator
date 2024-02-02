@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.TableColumn;
 
 /**
@@ -352,4 +354,38 @@ public class DCFInput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel87;
     private javax.swing.JScrollPane jScrollPane8;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getActFCF() {
+        return ActFCF2;
+    }
+
+    public JTextField getCandC() {
+        return CandC2;
+    }
+
+    public JTextField getDebt() {
+        return Debt2;
+    }
+
+    public JTable getFCF() {
+        return FCF2;
+    }
+
+    public JTextField getGR() {
+        return GR3;
+    }
+
+    public JTextField getShares() {
+        return Shares2;
+    }
+
+    public JTextField getState() {
+        return State2;
+    }
+
+    public JTextField getWACCDCFInn() {
+        return WACCDCFInn;
+    }
+
+    
 }

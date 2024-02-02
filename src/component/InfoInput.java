@@ -290,23 +290,23 @@ public class InfoInput extends javax.swing.JPanel {
         return ActPrice;
     }
 
-    public JTextField getCorpNameField() {
+    public JTextField getCorpName() {
         return CorpNameField;
     }
 
-    public JTextField getCorpStickerField() {
+    public JTextField getSticker() {
         return CorpStickerField;
     }
 
-    public JTextField getNotesField() {
+    public JTextField getNotes() {
         return NotesField;
     }
 
-    public JTextField getPillow2() {
+    public JTextField getPillow() {
         return Pillow2;
     }
 
-    public JTextField getStockExchField() {
+    public JTextField getStockExchange() {
         return StockExchField;
     }
 

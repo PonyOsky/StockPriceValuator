@@ -210,7 +210,7 @@ public class GrahamInput extends javax.swing.JPanel {
         return EPS;
     }
 
-    public JTextField getGRGrahamInn() {
+    public JTextField getGRGraham() {
         return GRGrahamInn;
     }
 
