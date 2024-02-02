@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 
 /**
@@ -236,4 +237,8 @@ public class Library extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel81;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getSavesShowout() {
+        return SavesShowout;
+    }    
 }

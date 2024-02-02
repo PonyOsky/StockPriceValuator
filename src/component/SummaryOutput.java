@@ -638,9 +638,4 @@ public class SummaryOutput extends javax.swing.JPanel {
     public JTextField getSumSticker() {
         return SumSticker;
     }
-
-    public JPanel getSummaryOut() {
-        return SummaryOut;
-    }
-
 }
