@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -543,56 +544,64 @@ public class ShowOut extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel91;
     // End of variables declaration//GEN-END:variables
 
-    public JTextField getDCFAns1() {
+    public JTextField getDCFAns() {
         return DCFAns1;
     }
 
-    public JTextField getDCFMoSAns1() {
+    public JTextField getDCFMoSAns() {
         return DCFMoSAns1;
     }
 
-    public JTextField getDDMAns1() {
+    public JTextField getDDMAns() {
         return DDMAns1;
     }
 
-    public JTextField getDDMMoSAns1() {
+    public JTextField getDDMMoSAns() {
         return DDMMoSAns1;
     }
 
-    public JTextField getGrahamAns1() {
+    public JTextField getGrahamAns() {
         return GrahamAns1;
     }
 
-    public JTextField getGrahamMoSAns1() {
+    public JTextField getGrahamMoSAns() {
         return GrahamMoSAns1;
     }
 
-    public JTextField getGrahamRevAns1() {
+    public JTextField getGrahamRevAns() {
         return GrahamRevAns1;
     }
 
-    public JTextField getGrahamRevMoSAns1() {
+    public JTextField getGrahamRevMoSAns() {
         return GrahamRevMoSAns1;
     }
 
-    public JTextField getIdealPrice1() {
+    public JTextField getIdealPrice() {
         return IdealPrice1;
     }
 
-    public JTextField getIdealPriceMoS1() {
+    public JTextField getIdealPriceMoS() {
         return IdealPriceMoS1;
     }
 
-    public JTextField getNAVAns1() {
+    public JTextField getNAVAns() {
         return NAVAns1;
     }
 
-    public JTextField getNAVMoSAns1() {
+    public JTextField getNAVMoSAns() {
         return NAVMoSAns1;
     }
 
-    public JTextField getPillowAns1() {
+    public JTextField getPillowAns() {
         return PillowAns1;
+    }
+
+    public JLabel getjLabel163() {
+        return jLabel163;
+    }
+
+    public JLabel getjLabel34() {
+        return jLabel34;
     }
 
 }
