@@ -25,8 +25,10 @@ public class RatioInput extends javax.swing.JPanel {
     /**
      * Creates new form RatioInputs
      */
-    public RatioInput() {
+    public RatioInput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

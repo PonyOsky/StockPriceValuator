@@ -93,31 +93,91 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         lightDarkColor = new Color(0, 231, 255);
         darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
-        info = new InfoInput();
-        ratioin = new RatioInput();
-        JPanel[] panels = new JPanel[]{info, ratioin};
+        info = new InfoInput(controller, langs.getRoute());
+        ratioin = new RatioInput(controller, langs.getRoute());
+        dcfin = new DCFInput();
+        ddmin = new DDMInput();
+        grahamin = new GrahamInput();
+        navin = new NAVInput();
+        ratioout = new RatioOutput();
+        dcfout = new DCFOutput();
+        ddmout = new DDMOutput();
+        grahamout = new GrahamOutput();
+        navout = new NAVOutput();
+        help = new Help();
+        lib = new Library();
+        settings = new Settings();
+        showout = new ShowOut();
+        sumout = new SummaryOutput();
+        JPanel[] panels = new JPanel[]{info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, help, lib, settings, showout, sumout};
         //setLabels(langs.getRoute());
         //setLangChoices();
         saveLoad.initSaves();
         v = false;
-        menu2.setEvent(new MenuEvent() {
+
+        menu2.setEvent(
+                new MenuEvent() {
             @Override
-            public void selected(int index, int subIndex) {
-                if(index == 0 && subIndex == 1){
+            public void selected(int index, int subIndex
+            ) {
+                if (index == 0 && subIndex == 1) {
                     showForm(panels, info);
                 }
-                if(index == 0 && subIndex == 2){
+                if (index == 0 && subIndex == 2) {
                     showForm(panels, ratioin);
                 }
+                if (index == 0 && subIndex == 3) {
+                    showForm(panels, dcfin);
+                }
+                if (index == 0 && subIndex == 4) {
+                    showForm(panels, ddmin);
+                }
+                if (index == 0 && subIndex == 5) {
+                    showForm(panels, grahamin);
+                }
+                if (index == 0 && subIndex == 6) {
+                    showForm(panels, navin);
+                }
+                if (index == 2 && subIndex == 1) {
+                    showForm(panels, sumout);
+                }
+                if (index == 2 && subIndex == 2) {
+                    showForm(panels, ratioout);
+                }
+                if (index == 2 && subIndex == 3) {
+                    showForm(panels, dcfout);
+                }
+                if (index == 2 && subIndex == 4) {
+                    showForm(panels, ddmout);
+                }
+                if (index == 2 && subIndex == 5) {
+                    showForm(panels, grahamout);
+                }
+                if (index == 2 && subIndex == 6) {
+                    showForm(panels, navout);
+                }
+                if (index == 4) {
+                    showForm(panels, showout);
+                }
+                if (index == 5) {
+                    showForm(panels, lib);
+                }
+                if (index == 6) {
+                    showForm(panels, settings);
+                }
+                if (index == 7) {
+                    showForm(panels, help);
+                }
             }
-        });
+        }
+        );
     }
-    
+
     private void showForm(JPanel[] target, JPanel panel) {
-        for(JPanel jp : target){
-            if(jp == panel){
+        for (JPanel jp : target) {
+            if (jp == panel) {
                 jp.setVisible(true);
-            }else{
+            } else {
                 jp.setVisible(false);
             }
         }
@@ -125,35 +185,15 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         body.repaint();
         body.revalidate();
     }
-/*
+
+    /*
     private void setLangChoices() {
         for (String item : langs.getChoices()) {
             LangChoice.addItem(item);
         }
         LangChoice.setSelectedItem(langs.getDefLangType());
     }
-*/
-
-    public void setLabels(String route) throws IOException {
-        dcfin.setLabels(route);
-        dcfout.setLabels(route);
-        ddmin.setLabels(route);
-        ddmout.setLabels(route);
-        grahamin.setLabels(route);
-        grahamout.setLabels(route);
-        help.setLabels(route);
-        hp.setLabels(route);
-        info.setLabels(route);
-        lib.setLabels(route);
-        navin.setLabels(route);
-        navout.setLabels(route);
-        ratioin.setLabels(route);
-        ratioout.setLabels(route);
-        settings.setLabels(route);
-        showout.setLabels(route);
-        sumout.setLabels(route);
-    }
-
+     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -185,7 +225,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         jScrollPane10.setViewportView(jTable4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(null);
         setMinimumSize(new java.awt.Dimension(900, 600));
 
         body.setBackground(new java.awt.Color(255, 255, 255));
@@ -203,7 +242,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
             .addComponent(heading2, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -215,7 +255,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                     .addComponent(scrollPaneWin111, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))))
+                        .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -226,7 +267,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      * @param target
      * @param change
      */
-
     /**
      *
      * @param target
@@ -286,21 +326,25 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ReworkedFrontend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReworkedFrontend.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             try {
                 new ReworkedFrontend().setVisible(true);
+
             } catch (IOException ex) {
-                Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ReworkedFrontend.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         });
     }

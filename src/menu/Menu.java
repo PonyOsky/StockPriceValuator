@@ -82,10 +82,10 @@ public class Menu extends JComponent {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
         menuItems = new String[][]{
-            {prop.getProperty("ViewInfo"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV")},
+            {prop.getProperty("ViewInfo"), prop.getProperty("info"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV")},
             {prop.getProperty("jLabel13"), prop.getProperty("jLabel14"), prop.getProperty("jLabel15"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV"), prop.getProperty("CleaningBut")},
-            {prop.getProperty("viewValSum"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV")},
-            {prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV"), prop.getProperty("CleaningBut1")},
+            {prop.getProperty("valuation"), prop.getProperty("viewValSum"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV")},
+            {prop.getProperty("calc"), prop.getProperty("Ratios"), prop.getProperty("DCF"), prop.getProperty("DDM"), prop.getProperty("Graham"), prop.getProperty("NAV"), prop.getProperty("CleaningBut1")},
             {prop.getProperty("showSave")},
             {prop.getProperty("library")},
             {prop.getProperty("setting")},

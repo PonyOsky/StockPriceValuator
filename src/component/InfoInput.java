@@ -24,9 +24,10 @@ public class InfoInput extends javax.swing.JPanel {
     /**
      * Creates new form InfoInput
      */
-    public InfoInput() {
+    public InfoInput(Controller c, String route) {
         initComponents();
-        controller = new Controller();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {
