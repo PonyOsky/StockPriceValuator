@@ -25,8 +25,12 @@ public class Settings extends javax.swing.JPanel {
     /**
      * Creates new form Settings
      */
-    public Settings() {
+    public Settings(Languages l, ReworkedFrontend rf, String route) {
         initComponents();
+        langs = l;
+        frontend = rf;
+        setLabels(route);
+        setLangChoices();
     }
 
     public void setLabels(String fileRoute) {
@@ -43,6 +47,13 @@ public class Settings extends javax.swing.JPanel {
         jLabel160.setText(p.getProperty("jLabel160"));
         jLabel6.setText(p.getProperty("jLabel6"));
         jButton1.setText(p.getProperty("jButton1"));
+    }
+    
+    private void setLangChoices() {
+        for (String item : langs.getChoices()) {
+            LangChoice.addItem(item);
+        }
+        LangChoice.setSelectedItem(langs.getDefLangType());
     }
 
     /**
@@ -192,11 +203,7 @@ public class Settings extends javax.swing.JPanel {
         } catch (IOException ex) {
             Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try {
-            frontend.setLabels(langs.getRoute());
-        } catch (IOException ex) {
-            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        frontend.translate(langs.getRoute());
     }//GEN-LAST:event_jButton1MouseClicked
 
 

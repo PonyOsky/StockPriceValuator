@@ -20,8 +20,9 @@ public class HomePage extends javax.swing.JPanel {
     /**
      * Creates new form HomePage
      */
-    public HomePage() {
+    public HomePage(String route) {
         initComponents();
+        setLabels(route);
     }
     
     public void setLabels(String fileRoute) {

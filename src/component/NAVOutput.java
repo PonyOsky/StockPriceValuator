@@ -21,8 +21,9 @@ public class NAVOutput extends javax.swing.JPanel {
     /**
      * Creates new form NAVOutput
      */
-    public NAVOutput() {
+    public NAVOutput(String route) {
         initComponents();
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

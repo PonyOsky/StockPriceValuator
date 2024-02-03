@@ -22,14 +22,13 @@ import component.Settings;
 import component.ShowOut;
 import component.SummaryOutput;
 import java.awt.Color;
-import java.awt.Component;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import menu.MenuEvent;
 
 /**
@@ -73,7 +72,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public HomePage hp;
     public ShowOut showout;
     public Settings settings;
-    private boolean v;
+    private JPanel[] panels;
 
     /**
      *
@@ -93,30 +92,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         lightDarkColor = new Color(0, 231, 255);
         darkLightColor = new Color(0, 158, 255);
         darkColor = new Color(0, 20, 255);
-        info = new InfoInput(controller, langs.getRoute());
-        ratioin = new RatioInput(controller, langs.getRoute());
-        dcfin = new DCFInput();
-        ddmin = new DDMInput();
-        grahamin = new GrahamInput();
-        navin = new NAVInput();
-        ratioout = new RatioOutput();
-        dcfout = new DCFOutput();
-        ddmout = new DDMOutput();
-        grahamout = new GrahamOutput();
-        navout = new NAVOutput();
-        help = new Help();
-        lib = new Library();
-        settings = new Settings();
-        showout = new ShowOut();
-        sumout = new SummaryOutput();
-        JPanel[] panels = new JPanel[]{info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, help, lib, settings, showout, sumout};
-        //setLabels(langs.getRoute());
-        //setLangChoices();
+        initViews(langs.getRoute());
         saveLoad.initSaves();
-        v = false;
-
         menu2.setEvent(
-                new MenuEvent() {
+            new MenuEvent() {
             @Override
             public void selected(int index, int subIndex
             ) {
@@ -186,14 +165,33 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         body.revalidate();
     }
 
-    /*
-    private void setLangChoices() {
-        for (String item : langs.getChoices()) {
-            LangChoice.addItem(item);
-        }
-        LangChoice.setSelectedItem(langs.getDefLangType());
+    private void initViews(String route) {
+        info = new InfoInput(controller, route);
+        ratioin = new RatioInput(controller, route);
+        dcfin = new DCFInput(controller, route);
+        ddmin = new DDMInput(controller, route);
+        grahamin = new GrahamInput(controller, route);
+        navin = new NAVInput(controller, route);
+        ratioout = new RatioOutput(route);
+        dcfout = new DCFOutput(controller, route);
+        ddmout = new DDMOutput(controller, route);
+        grahamout = new GrahamOutput(route);
+        navout = new NAVOutput(route);
+        help = new Help(route);
+        lib = new Library(route);
+        settings = new Settings(langs, this, route);
+        showout = new ShowOut(route);
+        sumout = new SummaryOutput(route);
+        panels = new JPanel[]{info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, help, lib, settings, showout, sumout};
     }
-     */
+
+    public void translate(String route) {
+        body.removeAll();
+        panels = new JPanel[]{};
+        initViews(route);
+        showForm(panels, settings);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

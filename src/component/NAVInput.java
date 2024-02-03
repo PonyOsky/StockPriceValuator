@@ -24,8 +24,10 @@ public class NAVInput extends javax.swing.JPanel {
     /**
      * Creates new form NAVInput
      */
-    public NAVInput() {
+    public NAVInput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

@@ -22,8 +22,9 @@ public class ShowOut extends javax.swing.JPanel {
     /**
      * Creates new form ShowOut
      */
-    public ShowOut() {
+    public ShowOut(String route) {
         initComponents();
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

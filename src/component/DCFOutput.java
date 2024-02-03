@@ -26,8 +26,10 @@ public class DCFOutput extends javax.swing.JPanel {
     /**
      * Creates new form DCFOutput
      */
-    public DCFOutput() {
+    public DCFOutput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

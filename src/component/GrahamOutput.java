@@ -22,8 +22,9 @@ public class GrahamOutput extends javax.swing.JPanel {
     /**
      * Creates new form GrahamOutputs
      */
-    public GrahamOutput() {
+    public GrahamOutput(String route) {
         initComponents();
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

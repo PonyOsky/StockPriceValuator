@@ -26,8 +26,10 @@ public class DDMInput extends javax.swing.JPanel {
     /**
      * Creates new form DDMInput
      */
-    public DDMInput() {
+    public DDMInput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

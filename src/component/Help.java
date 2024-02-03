@@ -20,8 +20,9 @@ public class Help extends javax.swing.JPanel {
     /**
      * Creates new form Help
      */
-    public Help() {
+    public Help(String route) {
         initComponents();
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

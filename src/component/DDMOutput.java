@@ -27,8 +27,10 @@ public class DDMOutput extends javax.swing.JPanel {
     /**
      * Creates new form DDMOutput
      */
-    public DDMOutput() {
+    public DDMOutput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
     
     public void setLabels(String fileRoute) {

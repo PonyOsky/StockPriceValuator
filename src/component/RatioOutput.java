@@ -21,8 +21,9 @@ public class RatioOutput extends javax.swing.JPanel {
     /**
      * Creates new form RatioOutput
      */
-    public RatioOutput() {
+    public RatioOutput(String route) {
         initComponents();
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

@@ -24,8 +24,10 @@ public class GrahamInput extends javax.swing.JPanel {
     /**
      * Creates new form GrahamInput
      */
-    public GrahamInput() {
+    public GrahamInput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

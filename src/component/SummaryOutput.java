@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -22,8 +21,9 @@ public class SummaryOutput extends javax.swing.JPanel {
     /**
      * Creates new form SummaryOutput
      */
-    public SummaryOutput() {
+    public SummaryOutput(String route) {
         initComponents();
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {

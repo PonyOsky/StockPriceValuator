@@ -26,8 +26,10 @@ public class DCFInput extends javax.swing.JPanel {
     /**
      * Creates new form DCFInput
      */
-    public DCFInput() {
+    public DCFInput(Controller c, String route) {
         initComponents();
+        controller = c;
+        setLabels(route);
     }
 
     public void setLabels(String fileRoute) {
