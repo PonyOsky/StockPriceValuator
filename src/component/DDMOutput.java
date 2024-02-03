@@ -4,7 +4,7 @@
  */
 package component;
 
-import Valuator.ReworkedFrontend;
+import Valuator.Frontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,12 +22,12 @@ import javax.swing.table.TableColumn;
  */
 public class DDMOutput extends javax.swing.JPanel {
 
-    public ReworkedFrontend frontend;
+    public Frontend frontend;
 
     /**
      * Creates new form DDMOutput
      */
-    public DDMOutput(ReworkedFrontend f, String route) {
+    public DDMOutput(Frontend f, String route) {
         initComponents();
         frontend = f;
         setLabels(route);

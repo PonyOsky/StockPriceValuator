@@ -5,7 +5,7 @@
 package component;
 
 import Valuator.Controller;
-import Valuator.ReworkedFrontend;
+import Valuator.Frontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,12 +23,12 @@ import javax.swing.table.TableColumn;
 public class DDMInput extends javax.swing.JPanel {
 
     public Controller controller;
-    public ReworkedFrontend frontend;
+    public Frontend frontend;
 
     /**
      * Creates new form DDMInput
      */
-    public DDMInput(ReworkedFrontend f, Controller c, String route) {
+    public DDMInput(Frontend f, Controller c, String route) {
         initComponents();
         controller = c;
         frontend = f;

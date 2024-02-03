@@ -33,7 +33,7 @@ public class SaveLoad {
 
     public SaveTemplate stemp;
     public Controller cont;
-    public ReworkedFrontend frontend;
+    public Frontend frontend;
     private ArrayList<String> saves;
     private Properties conf;
     private static final DecimalFormat decfor = new DecimalFormat("0.000");

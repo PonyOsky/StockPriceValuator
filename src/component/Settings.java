@@ -5,7 +5,7 @@
 package component;
 
 import Valuator.Languages;
-import Valuator.ReworkedFrontend;
+import Valuator.Frontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,12 +20,12 @@ import java.util.logging.Logger;
 public class Settings extends javax.swing.JPanel {
 
     public Languages langs;
-    public ReworkedFrontend frontend;
+    public Frontend frontend;
 
     /**
      * Creates new form Settings
      */
-    public Settings(Languages l, ReworkedFrontend rf, String route) {
+    public Settings(Languages l, Frontend rf, String route) {
         initComponents();
         langs = l;
         frontend = rf;
@@ -201,7 +201,7 @@ public class Settings extends javax.swing.JPanel {
         try {
             langs.setLastLang(LangChoice.getSelectedIndex());
         } catch (IOException ex) {
-            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
         }
         frontend.translate(langs.getRoute());
     }//GEN-LAST:event_jButton1MouseClicked

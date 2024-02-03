@@ -5,7 +5,7 @@
  */
 package component;
 
-import Valuator.ReworkedFrontend;
+import Valuator.Frontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,12 +22,12 @@ import javax.swing.table.TableColumn;
  */
 public class DCFOutput extends javax.swing.JPanel {
 
-    public ReworkedFrontend frontend;
+    public Frontend frontend;
 
     /**
      * Creates new form DCFOutput
      */
-    public DCFOutput(ReworkedFrontend f, String route) {
+    public DCFOutput(Frontend f, String route) {
         initComponents();
         frontend = f;
         setLabels(route);

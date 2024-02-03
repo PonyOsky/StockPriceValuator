@@ -4,7 +4,7 @@
  */
 package component;
 
-import Valuator.ReworkedFrontend;
+import Valuator.Frontend;
 import Valuator.SaveLoad;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -206,7 +206,7 @@ public class Library extends javax.swing.JPanel {
         try {
             saveLoad.show(SavesShowout.getSelectedRow());
         } catch (IOException ex) {
-            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel7MouseClicked
 
@@ -214,7 +214,7 @@ public class Library extends javax.swing.JPanel {
         try {
             saveLoad.edit(SavesShowout.getSelectedRow());
         } catch (IOException ex) {
-            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -222,7 +222,7 @@ public class Library extends javax.swing.JPanel {
         try {
             saveLoad.save();
         } catch (IOException ex) {
-            Logger.getLogger(ReworkedFrontend.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel9MouseClicked
 

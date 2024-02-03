@@ -5,7 +5,7 @@
 package component;
 
 import Valuator.Controller;
-import Valuator.ReworkedFrontend;
+import Valuator.Frontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,13 +22,13 @@ import javax.swing.table.TableColumn;
  */
 public class DCFInput extends javax.swing.JPanel {
 
-    public ReworkedFrontend frontend;
+    public Frontend frontend;
     public Controller controller;
 
     /**
      * Creates new form DCFInput
      */
-    public DCFInput(ReworkedFrontend f, Controller c, String route) {
+    public DCFInput(Frontend f, Controller c, String route) {
         initComponents();
         controller = c;
         frontend = f;

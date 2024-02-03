@@ -41,10 +41,10 @@ import menu.MenuEvent;
  * 255)
  *
  */
-public final class ReworkedFrontend extends javax.swing.JFrame {
+public final class Frontend extends javax.swing.JFrame {
 
     /**
-     * Creates new form ReworkedFrontend
+     * Creates new form Frontend
      */
     public ArrayList<String> cleaningChoices;
     public ArrayList<String> calcChoices;
@@ -77,7 +77,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
      *
      * @throws IOException
      */
-    public ReworkedFrontend() throws IOException {
+    public Frontend() throws IOException {
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
@@ -415,9 +415,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ReworkedFrontend.class
+            java.util.logging.Logger.getLogger(Frontend.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         //</editor-fold>
@@ -425,10 +426,10 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             try {
-                new ReworkedFrontend().setVisible(true);
+                new Frontend().setVisible(true);
 
             } catch (IOException ex) {
-                Logger.getLogger(ReworkedFrontend.class
+                Logger.getLogger(Frontend.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
         });
