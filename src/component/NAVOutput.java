@@ -20,12 +20,18 @@ public class NAVOutput extends javax.swing.JPanel {
 
     /**
      * Creates new form NAVOutput
+     *
+     * @param route
      */
     public NAVOutput(String route) {
         initComponents();
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -271,30 +277,58 @@ public class NAVOutput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel83;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceNAV() {
         return ActPriceNAV;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowNAV() {
         return PillowNAV;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceNAV() {
         return PriceNAV;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceNAVMoS() {
         return PriceNAVMoS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getSharesNAV() {
         return SharesNAV;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTotalAssetsNAV() {
         return TotalAssetsNAV;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTotalLiabilitiesNAV() {
         return TotalLiabilitiesNAV;
     }

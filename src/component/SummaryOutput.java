@@ -20,12 +20,18 @@ public class SummaryOutput extends javax.swing.JPanel {
 
     /**
      * Creates new form SummaryOutput
+     *
+     * @param route
      */
     public SummaryOutput(String route) {
         initComponents();
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -158,7 +164,6 @@ public class SummaryOutput extends javax.swing.JPanel {
         SumSticker.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         SumSticker.setForeground(new java.awt.Color(255, 255, 255));
         SumSticker.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        SumSticker.setText("Sticker");
         jPanel33.add(SumSticker);
 
         ActPriceAns.setEditable(false);
@@ -166,7 +171,6 @@ public class SummaryOutput extends javax.swing.JPanel {
         ActPriceAns.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         ActPriceAns.setForeground(new java.awt.Color(255, 255, 255));
         ActPriceAns.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ActPriceAns.setText("Actual Stock Price");
         jPanel33.add(ActPriceAns);
 
         jPanel32.add(jPanel33, java.awt.BorderLayout.PAGE_START);
@@ -617,66 +621,130 @@ public class SummaryOutput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel50;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceAns() {
         return ActPriceAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDCFAns() {
         return DCFAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDCFMoSAns() {
         return DCFMoSAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDDMAns() {
         return DDMAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDDMMoSAns() {
         return DDMMoSAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDiff() {
         return Diff;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamAns() {
         return GrahamAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamMoSAns() {
         return GrahamMoSAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamRevAns() {
         return GrahamRevAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamRevMoSAns() {
         return GrahamRevMoSAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getIdealPrice() {
         return IdealPrice;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getIdealPriceMoS() {
         return IdealPriceMoS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getNAVAns() {
         return NAVAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getNAVMoSAns() {
         return NAVMoSAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowAns() {
         return PillowAns;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getSumSticker() {
         return SumSticker;
     }

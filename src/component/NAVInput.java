@@ -23,6 +23,9 @@ public class NAVInput extends javax.swing.JPanel {
 
     /**
      * Creates new form NAVInput
+     *
+     * @param c
+     * @param route
      */
     public NAVInput(Controller c, String route) {
         initComponents();
@@ -30,6 +33,10 @@ public class NAVInput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -218,14 +225,26 @@ public class NAVInput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel30;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getSharesOut() {
         return SharesOut;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTotalAssets() {
         return TotalAssets;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTotalLiab() {
         return TotalLiab;
     }

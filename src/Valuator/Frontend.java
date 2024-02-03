@@ -252,6 +252,11 @@ public final class Frontend extends javax.swing.JFrame {
         );
     }
 
+    /**
+     *
+     * @param target
+     * @param panel
+     */
     private void showForm(JPanel[] target, JPanel panel) {
         for (JPanel jp : target) {
             if (jp == panel) {
@@ -265,6 +270,10 @@ public final class Frontend extends javax.swing.JFrame {
         body.revalidate();
     }
 
+    /**
+     *
+     * @param route
+     */
     private void initViews(String route) {
         info = new InfoInput(controller, route);
         ratioin = new RatioInput(controller, route);
@@ -285,6 +294,10 @@ public final class Frontend extends javax.swing.JFrame {
         panels = new JPanel[]{info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, lib, sumout, help, settings, showout};
     }
 
+    /**
+     *
+     * @param route
+     */
     public void translate(String route) {
         body.removeAll();
         panels = new JPanel[]{};
@@ -292,6 +305,11 @@ public final class Frontend extends javax.swing.JFrame {
         showForm(panels, settings);
     }
 
+    /**
+     *
+     * @param cl
+     * @param calc
+     */
     public void setSelector(ArrayList cl, ArrayList calc) {
         if (cl.size() >= 1 || calc.size() >= 1) {
             selector1.setVisible(true);

@@ -26,6 +26,9 @@ public class DCFOutput extends javax.swing.JPanel {
 
     /**
      * Creates new form DCFOutput
+     *
+     * @param f
+     * @param route
      */
     public DCFOutput(Frontend f, String route) {
         initComponents();
@@ -33,6 +36,10 @@ public class DCFOutput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -484,62 +491,122 @@ public class DCFOutput extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceDCF() {
         return ActPriceDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getAvGRDCF() {
         return AvGRDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getCashDCF() {
         return CashDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDebtDCF() {
         return DebtDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEVDCF() {
         return EVDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getFutureFCF() {
         return FutureFCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGRDCF() {
         return GRDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getLastFCF() {
         return LastFCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowDCF() {
         return PillowDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDCF() {
         return PriceDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDCFMoS() {
         return PriceDCFMoS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getSharesDCF() {
         return SharesDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getStateDCF() {
         return StateDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getSumFCFDCF() {
         return SumFCFDCF;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getWACCDCFOut() {
         return WACCDCFOut;
     }

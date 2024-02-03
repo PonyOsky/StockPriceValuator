@@ -27,6 +27,10 @@ public class DDMInput extends javax.swing.JPanel {
 
     /**
      * Creates new form DDMInput
+     *
+     * @param f
+     * @param c
+     * @param route
      */
     public DDMInput(Frontend f, Controller c, String route) {
         initComponents();
@@ -35,6 +39,10 @@ public class DDMInput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -296,10 +304,18 @@ public class DDMInput extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTable getDividends() {
         return Dividends;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getWACCDDM() {
         return WACCDDM;
     }

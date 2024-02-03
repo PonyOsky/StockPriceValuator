@@ -27,6 +27,10 @@ public class DCFInput extends javax.swing.JPanel {
 
     /**
      * Creates new form DCFInput
+     *
+     * @param f
+     * @param c
+     * @param route
      */
     public DCFInput(Frontend f, Controller c, String route) {
         initComponents();
@@ -35,6 +39,10 @@ public class DCFInput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -374,34 +382,66 @@ public class DCFInput extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane8;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActFCF() {
         return ActFCF2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getCandC() {
         return CandC2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDebt() {
         return Debt2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getFCF() {
         return FCF2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGR() {
         return GR3;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getShares() {
         return Shares2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getState() {
         return State2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getWACCDCFInn() {
         return WACCDCFInn;
     }

@@ -122,7 +122,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Sticker"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ActPriceAns">
@@ -138,7 +137,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Actual Stock Price"/>
                   </Properties>
                 </Component>
               </SubComponents>

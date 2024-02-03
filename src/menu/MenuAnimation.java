@@ -7,6 +7,13 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class MenuAnimation {
 
+    /**
+     *
+     * @param component
+     * @param item
+     * @param layout
+     * @param show
+     */
     public static void showMenu(Component component, MenuItem item, MigLayout layout, boolean show) {
         int height = component.getPreferredSize().height;
         Animator animator = new Animator(300, new TimingTargetAdapter() {

@@ -19,42 +19,82 @@ import raven.effect.RippleEffect;
 
 public class MenuItem extends JButton {
 
+    /**
+     *
+     * @return
+     */
     public float getAnimate() {
         return animate;
     }
 
+    /**
+     *
+     * @param animate
+     */
     public void setAnimate(float animate) {
         this.animate = animate;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getIndex() {
         return index;
     }
 
+    /**
+     *
+     * @param index
+     */
     public void setIndex(int index) {
         this.index = index;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isSubMenuAble() {
         return subMenuAble;
     }
 
+    /**
+     *
+     * @param subMenuAble
+     */
     public void setSubMenuAble(boolean subMenuAble) {
         this.subMenuAble = subMenuAble;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSubMenuIndex() {
         return subMenuIndex;
     }
 
+    /**
+     *
+     * @param subMenuIndex
+     */
     public void setSubMenuIndex(int subMenuIndex) {
         this.subMenuIndex = subMenuIndex;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getLength() {
         return length;
     }
 
+    /**
+     *
+     * @param length
+     */
     public void setLength(int length) {
         this.length = length;
     }
@@ -67,12 +107,18 @@ public class MenuItem extends JButton {
     private int subMenuIndex;
     private int length;
 
+    /**
+     *
+     * @param name
+     * @param index
+     * @param subMenuAble
+     */
     public MenuItem(String name, int index, boolean subMenuAble) {
         super(name);
         this.index = index;
         this.subMenuAble = subMenuAble;
         setContentAreaFilled(false);
-        setForeground(new Color(51,51,51));
+        setForeground(new Color(51, 51, 51));
         setFont(new Font("Verdana", 1, 15));
         setHorizontalAlignment(SwingConstants.LEFT);
         setBorder(new EmptyBorder(9, 10, 9, 10));
@@ -91,6 +137,11 @@ public class MenuItem extends JButton {
         g2.dispose();
     }
 
+    /**
+     *
+     * @param subMenuIndex
+     * @param length
+     */
     public void initSubMenu(int subMenuIndex, int length) {
         this.subMenuIndex = subMenuIndex;
         this.length = length;
@@ -99,6 +150,10 @@ public class MenuItem extends JButton {
         setOpaque(true);
     }
 
+    /**
+     *
+     * @param grphcs
+     */
     @Override
     protected void paintComponent(Graphics grphcs) {
         super.paintComponent(grphcs);
@@ -121,6 +176,13 @@ public class MenuItem extends JButton {
         g2.dispose();
     }
 
+    /**
+     *
+     * @param i
+     * @param i1
+     * @param i2
+     * @param i3
+     */
     @Override
     public void setBounds(int i, int i1, int i2, int i3) {
         super.setBounds(i, i1, i2, i3);

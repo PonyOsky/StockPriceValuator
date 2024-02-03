@@ -31,6 +31,10 @@ public class Library extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -45,8 +49,10 @@ public class Library extends javax.swing.JPanel {
         jLabel162.setText(p.getProperty("jLabel162"));
         TableColumn tf = SavesShowout.getTableHeader().getColumnModel().getColumn(0);
         tf.setHeaderValue(p.getProperty("name"));
-        tf.setHeaderValue(p.getProperty("ticker"));
-        tf.setHeaderValue(p.getProperty("notes"));
+        TableColumn tf1 = SavesShowout.getTableHeader().getColumnModel().getColumn(1);
+        tf1.setHeaderValue(p.getProperty("ticker"));
+        TableColumn tf2 = SavesShowout.getTableHeader().getColumnModel().getColumn(2);
+        tf2.setHeaderValue(p.getProperty("notes"));
         jLabel7.setText(p.getProperty("jLabel7"));
         jLabel8.setText(p.getProperty("jLabel8"));
         jLabel9.setText(p.getProperty("jLabel9"));
@@ -244,6 +250,10 @@ public class Library extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTable getSavesShowout() {
         return SavesShowout;
     }

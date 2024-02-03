@@ -23,6 +23,9 @@ public class GrahamInput extends javax.swing.JPanel {
 
     /**
      * Creates new form GrahamInput
+     *
+     * @param c
+     * @param route
      */
     public GrahamInput(Controller c, String route) {
         initComponents();
@@ -30,6 +33,10 @@ public class GrahamInput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -214,14 +221,26 @@ public class GrahamInput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel27;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEPS() {
         return EPS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGRGraham() {
         return GRGrahamInn;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getYInn() {
         return Y;
     }

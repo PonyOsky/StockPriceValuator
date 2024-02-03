@@ -21,12 +21,18 @@ public class ShowOut extends javax.swing.JPanel {
 
     /**
      * Creates new form ShowOut
+     *
+     * @param route
      */
     public ShowOut(String route) {
         initComponents();
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -129,13 +135,11 @@ public class ShowOut extends javax.swing.JPanel {
         jLabel163.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel163.setForeground(new java.awt.Color(51, 51, 51));
         jLabel163.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel163.setText("Saving works! Yay!");
         jPanel82.add(jLabel163);
 
         jLabel34.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(51, 51, 51));
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("jLabel34");
         jLabel34.setPreferredSize(new java.awt.Dimension(88, 30));
         jPanel82.add(jLabel34);
 
@@ -584,62 +588,122 @@ public class ShowOut extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel91;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDCFAns() {
         return DCFAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDCFMoSAns() {
         return DCFMoSAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDDMAns() {
         return DDMAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDDMMoSAns() {
         return DDMMoSAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamAns() {
         return GrahamAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamMoSAns() {
         return GrahamMoSAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamRevAns() {
         return GrahamRevAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGrahamRevMoSAns() {
         return GrahamRevMoSAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getIdealPrice() {
         return IdealPrice1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getIdealPriceMoS() {
         return IdealPriceMoS1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getNAVAns() {
         return NAVAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getNAVMoSAns() {
         return NAVMoSAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowAns() {
         return PillowAns1;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getjLabel163() {
         return jLabel163;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getjLabel34() {
         return jLabel34;
     }

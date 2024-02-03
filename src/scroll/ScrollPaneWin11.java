@@ -22,6 +22,10 @@ public class ScrollPaneWin11 extends JScrollPane {
         setLayout(new ScrollLayout());
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean isOptimizedDrawingEnabled() {
         return false;
@@ -41,6 +45,10 @@ public class ScrollPaneWin11 extends JScrollPane {
 
     private class ScrollLayout extends ScrollPaneLayout {
 
+        /**
+         *
+         * @param parent
+         */
         @Override
         public void layoutContainer(Container parent) {
             super.layoutContainer(parent);

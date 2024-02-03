@@ -13,19 +13,25 @@ public class DividendDiscountModel {
     ArrayList YDiv;
     ArrayList GrowthDiv;
 
+    public DividendDiscountModel() {
+        value = 0;
+        valueMoS = 0;
+        YDiv = new ArrayList();
+        GrowthDiv = new ArrayList();
+    }
+
     /**
      *
      * @param divs
      */
     public void calcYDiv(ArrayList divs) {
-        for (int i = 0; i < divs.size(); i++) {
-            YDiv.add((double) divs.get(i) * 4);
+        if (divs.get(0) != null) {
+            for (int i = 0; i < divs.size(); i++) {
+                YDiv.add((double) divs.get(i) * 4);
+            }
         }
     }
 
-    /**
-     *
-     */
     public void calcGrowthDiv() {
         GrowthDiv.add(0.0);
         for (int b = 1; b < YDiv.size(); b++) {
@@ -92,7 +98,9 @@ public class DividendDiscountModel {
     public void getDDMPrice(ArrayList divs) {
         calcYDiv(divs);
         calcGrowthDiv();
-        value = ((double) YDiv.get(4) * (100 + getAveGrowDDM())) / (getDiscDDM(getAveGrowDDM()) - getAveGrowDDM());
+        if (divs.size() > 2) {
+            value = ((double) YDiv.get(4) * (100 + getAveGrowDDM())) / (getDiscDDM(getAveGrowDDM()) - getAveGrowDDM());
+        }
     }
 
     /**

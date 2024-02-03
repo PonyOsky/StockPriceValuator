@@ -37,17 +37,30 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
     private final int scrollSize = 10;
     private final MouseAdapter mouseEvent;
 
+    /**
+     *
+     * @param c
+     * @return
+     */
     public static ComponentUI createUI(JComponent c) {
         return new ScrollBarWin11UI();
     }
 
     public ScrollBarWin11UI() {
         mouseEvent = new MouseAdapter() {
+            /**
+             *
+             * @param e
+             */
             @Override
             public void mousePressed(MouseEvent e) {
                 press = true;
             }
 
+            /**
+             *
+             * @param e
+             */
             @Override
             public void mouseReleased(MouseEvent e) {
                 press = false;
@@ -56,6 +69,10 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
                 }
             }
 
+            /**
+             *
+             * @param e
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 hover = true;
@@ -64,6 +81,10 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
                 }
             }
 
+            /**
+             *
+             * @param e
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 hover = false;
@@ -74,6 +95,10 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
         };
     }
 
+    /**
+     *
+     * @param c
+     */
     @Override
     public void installUI(JComponent c) {
         super.installUI(c);
@@ -83,6 +108,10 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
         initAnimator();
     }
 
+    /**
+     *
+     * @param show
+     */
     private void start(boolean show) {
         if (animator.isRunning()) {
             float f = animator.getTimingFraction();
@@ -115,16 +144,32 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
         animator.setStartDelay(100);
     }
 
+    /**
+     *
+     * @param orientation
+     * @return
+     */
     @Override
     protected JButton createIncreaseButton(int orientation) {
         return new ScrollButton(scrollbar.getOrientation(), true);
     }
 
+    /**
+     *
+     * @param orientation
+     * @return
+     */
     @Override
     protected JButton createDecreaseButton(int orientation) {
         return new ScrollButton(scrollbar.getOrientation(), false);
     }
 
+    /**
+     *
+     * @param g
+     * @param c
+     * @param trackBounds
+     */
     @Override
     protected void paintTrack(Graphics g, JComponent c, Rectangle trackBounds) {
         Graphics2D g2 = (Graphics2D) g.create();
@@ -135,6 +180,12 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
         g2.dispose();
     }
 
+    /**
+     *
+     * @param g
+     * @param c
+     * @param thumbBounds
+     */
     @Override
     protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
         Graphics2D g2 = (Graphics2D) g.create();
@@ -164,6 +215,11 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
         private boolean mouseHover;
         private boolean mousePress;
 
+        /**
+         *
+         * @param orientation
+         * @param isIncrease
+         */
         public ScrollButton(int orientation, boolean isIncrease) {
             this.orientation = orientation;
             this.isIncrease = isIncrease;
@@ -196,21 +252,37 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
             arrow = new PolygonCorner().getRoundedGeneralPathFromPoints(points, scrollSize * 0.5f);
             addMouseListener(mouseEvent);
             addMouseListener(new MouseAdapter() {
+                /**
+                 *
+                 * @param e
+                 */
                 @Override
                 public void mouseEntered(MouseEvent e) {
                     mouseHover = true;
                 }
 
+                /**
+                 *
+                 * @param e
+                 */
                 @Override
                 public void mouseExited(MouseEvent e) {
                     mouseHover = false;
                 }
 
+                /**
+                 *
+                 * @param e
+                 */
                 @Override
                 public void mousePressed(MouseEvent e) {
                     mousePress = true;
                 }
 
+                /**
+                 *
+                 * @param e
+                 */
                 @Override
                 public void mouseReleased(MouseEvent e) {
                     mousePress = false;
@@ -218,6 +290,10 @@ public class ScrollBarWin11UI extends BasicScrollBarUI {
             });
         }
 
+        /**
+         *
+         * @param g
+         */
         @Override
         protected void paintComponent(Graphics g) {
             Graphics2D g2 = (Graphics2D) g.create();

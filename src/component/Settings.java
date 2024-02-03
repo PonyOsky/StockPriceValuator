@@ -24,6 +24,10 @@ public class Settings extends javax.swing.JPanel {
 
     /**
      * Creates new form Settings
+     *
+     * @param l
+     * @param rf
+     * @param route
      */
     public Settings(Languages l, Frontend rf, String route) {
         initComponents();
@@ -33,6 +37,10 @@ public class Settings extends javax.swing.JPanel {
         setLangChoices();
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;

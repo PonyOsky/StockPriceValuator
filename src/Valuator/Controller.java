@@ -58,6 +58,22 @@ public class Controller {
     public SummaryOutput sumout;
     public Library lib;
 
+    /**
+     *
+     * @param i
+     * @param ri
+     * @param dci
+     * @param ddi
+     * @param gi
+     * @param ni
+     * @param ro
+     * @param dco
+     * @param ddo
+     * @param go
+     * @param no
+     * @param l
+     * @param so
+     */
     public Controller(InfoInput i, RatioInput ri, DCFInput dci, DDMInput ddi, GrahamInput gi, NAVInput ni, RatioOutput ro, DCFOutput dco, DDMOutput ddo, GrahamOutput go, NAVOutput no, Library l, SummaryOutput so) {
         decfor.setRoundingMode(RoundingMode.DOWN);
         info = i;
@@ -76,20 +92,20 @@ public class Controller {
     }
 
     /**
-     * **********************Getting input
      *
-     * @return s**************************************
+     *
+     * @return
      */
     public ArrayList getFreeCashFlow() {
-        fcf = new ArrayList<>();
-        for (int coun = 0; coun < dcfin.getFCF().getColumnCount(); coun++) {
-            if (dcfin.getFCF().getValueAt(0, coun) == null) {
+        fcf = new ArrayList();
+        for (int coun = 0; coun < dcfin.getFCF().getRowCount(); coun++) {
+            if (dcfin.getFCF().getValueAt(coun, 1) == null) {
                 fcf.add(null);
             } else {
-                fcf.add(Double.valueOf(dcfin.getFCF().getValueAt(0, coun).toString()));
+                fcf.add(Double.valueOf(dcfin.getFCF().getValueAt(coun, 1).toString()));
             }
         }
-        return (ArrayList) fcf;
+        return fcf;
     }
 
     /**
@@ -99,11 +115,10 @@ public class Controller {
     public ArrayList getDividends() {
         divis = new ArrayList();
         for (int count = 0; count < ddmin.getDividends().getColumnCount(); count++) {
-            if (ddmin.getDividends().getValueAt(0, count) != null) {
-                String str = ddmin.getDividends().getValueAt(0, count).toString();
-                divis.add(Double.valueOf(str));
+            if (ddmin.getDividends().getValueAt(count, 1) != null) {
+                divis.add(Double.valueOf(ddmin.getDividends().getValueAt(count, 1).toString()));
             } else {
-                break;
+                divis.add(null);
             }
         }
         return divis;
@@ -419,9 +434,9 @@ public class Controller {
     }
 
     /**
-     * **************************************Make Valuation
      *
-     *********************************************
+     *
+     *
      * @param divider
      */
     public void makeValue(int divider) {
@@ -445,10 +460,6 @@ public class Controller {
         return ((value - getActualPrice()) / getActualPrice()) * 100;
     }
 
-    /**
-     * **************************************Setting answers and
-     * values*********************************************************
-     */
     /**
      *
      * @param choices
@@ -604,9 +615,15 @@ public class Controller {
                 dcfout.getPriceDCFMoS().setText(decfor.format(dcf.getValueMoS()));
                 dcfout.getPriceDCF().setText(decfor.format(dcf.getValue()));
                 for (int count = 0; count < getFreeCashFlow().size(); count++) {
+                    if (count + 1 == 9) {
+                        break;
+                    }
                     dcfout.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0, count + 1);
                 }
                 for (int count = 0; count < dcf.getFCFGR(getFreeCashFlow()).size(); count++) {
+                    if (count + 1 == 9) {
+                        break;
+                    }
                     dcfout.getLastFCF().setValueAt(dcf.getFCFGR(getFreeCashFlow()).get(count), 1, count + 1);
                 }
                 dcfout.getGRDCF().setText(String.valueOf(decfor.format(getGrowthRate())));

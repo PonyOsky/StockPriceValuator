@@ -24,6 +24,9 @@ public class RatioInput extends javax.swing.JPanel {
 
     /**
      * Creates new form RatioInputs
+     *
+     * @param c
+     * @param route
      */
     public RatioInput(Controller c, String route) {
         initComponents();
@@ -31,6 +34,10 @@ public class RatioInput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;

@@ -21,12 +21,18 @@ public class GrahamOutput extends javax.swing.JPanel {
 
     /**
      * Creates new form GrahamOutputs
+     *
+     * @param route
      */
     public GrahamOutput(String route) {
         initComponents();
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         Properties conf = new Properties();
@@ -465,54 +471,106 @@ public class GrahamOutput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel77;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceGraham() {
         return ActPriceGraham;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEPSGraham() {
         return EPSGraham;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEPSGrahamRev() {
         return EPSGrahamRev;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGraham() {
         return EndGraham;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGrahamMoS() {
         return EndGrahamMoS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGrahamRev() {
         return EndGrahamRev;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEndGrahamRevMoS() {
         return EndGrahamRevMoS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGRGraham() {
         return GRGraham;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGRGrahamRev() {
         return GRGrahamRev;
     }
 
+    /**
+     *
+     * @return
+     */
     public JPanel getGrahamOut() {
         return GrahamOut;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowGraham() {
         return PillowGraham;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getYGraham() {
         return YGraham;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getYGrahamRev() {
         return YGrahamRev;
     }

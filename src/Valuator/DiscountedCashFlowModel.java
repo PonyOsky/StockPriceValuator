@@ -14,6 +14,14 @@ public class DiscountedCashFlowModel {
     ArrayList ffcf;
     ArrayList dffcf;
 
+    public DiscountedCashFlowModel() {
+        value = 0;
+        valueMoS = 0;
+        fcfGR = new ArrayList();
+        ffcf = new ArrayList();
+        dffcf = new ArrayList();
+    }
+
     /**
      *
      * @param fcf
@@ -21,21 +29,23 @@ public class DiscountedCashFlowModel {
      */
     public ArrayList getFCFGR(ArrayList fcf) {
         fcfGR.add(0.0);
-        for (int a = 1; a < fcf.size(); a++) {
-            double actual = (double) fcf.get(a);
-            double before = (double) fcf.get(a - 1);
-            if (actual != 0.0) {
-                if (before == 0.0) {
-                    fcfGR.add(0.0);
-                } else {
-                    double b = ((actual - before) / before) * 100;
-                    if (actual > 0.0 && before > 0.0) {
-                        fcfGR.add(b);
+        if (fcf.get(0) != null) {
+            for (int a = 1; a < fcf.size(); a++) {
+                double actual = (double) fcf.get(a);
+                double before = (double) fcf.get(a - 1);
+                if (actual != 0.0) {
+                    if (before == 0.0) {
+                        fcfGR.add(0.0);
                     } else {
-                        if (actual < 0.0 && before > 0.0) {
+                        double b = ((actual - before) / before) * 100;
+                        if (actual > 0.0 && before > 0.0) {
                             fcfGR.add(b);
                         } else {
-                            fcfGR.add(-b);
+                            if (actual < 0.0 && before > 0.0) {
+                                fcfGR.add(b);
+                            } else {
+                                fcfGR.add(-b);
+                            }
                         }
                     }
                 }

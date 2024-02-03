@@ -23,6 +23,9 @@ public class InfoInput extends javax.swing.JPanel {
 
     /**
      * Creates new form InfoInput
+     *
+     * @param c
+     * @param route
      */
     public InfoInput(Controller c, String route) {
         initComponents();
@@ -30,6 +33,10 @@ public class InfoInput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -300,26 +307,50 @@ public class InfoInput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel18;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActPrice() {
         return ActPrice;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getCorpName() {
         return CorpNameField;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getSticker() {
         return CorpStickerField;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getNotes() {
         return NotesField;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillow() {
         return Pillow2;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getStockExchange() {
         return StockExchField;
     }

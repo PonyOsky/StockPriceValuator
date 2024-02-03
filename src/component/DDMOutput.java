@@ -26,6 +26,9 @@ public class DDMOutput extends javax.swing.JPanel {
 
     /**
      * Creates new form DDMOutput
+     *
+     * @param f
+     * @param route
      */
     public DDMOutput(Frontend f, String route) {
         initComponents();
@@ -33,6 +36,10 @@ public class DDMOutput extends javax.swing.JPanel {
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -445,34 +452,66 @@ public class DDMOutput extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getActPriceDDM() {
         return ActPriceDDM;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getAvGRDDM() {
         return AvGRDDM;
     }
 
+    /**
+     *
+     * @return
+     */
     public JPanel getDDMOut() {
         return DDMOut;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getDividendsPrediction() {
         return DividendsPrediction;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPillowDDM() {
         return PillowDDM;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDDM() {
         return PriceDDM;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPriceDDMMoS() {
         return PriceDDMMoS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getWACCDDMOut() {
         return WACCDDMOut;
     }

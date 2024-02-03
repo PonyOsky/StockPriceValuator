@@ -65,8 +65,8 @@ public class Menu extends JComponent {
         }
 
     }
-    
-    private void initValues(){
+
+    private void initValues() {
         Properties prop = new Properties();
         Properties conf = new Properties();
         FileInputStream ip;
@@ -93,6 +93,11 @@ public class Menu extends JComponent {
         };
     }
 
+    /**
+     *
+     * @param index
+     * @return
+     */
     private Icon getIcon(int index) {
         URL url = getClass().getResource("/Icons/" + index + ".png");
         if (url != null) {
@@ -102,6 +107,11 @@ public class Menu extends JComponent {
         }
     }
 
+    /**
+     *
+     * @param nemuName
+     * @param index
+     */
     private void addMenu(String menuName, int index) {
         int length = menuItems[index].length;
         MenuItem item = new MenuItem(menuName, index, length > 1);
@@ -133,6 +143,13 @@ public class Menu extends JComponent {
         repaint();
     }
 
+    /**
+     *
+     * @param item
+     * @param index
+     * @param length
+     * @param indexZorder
+     */
     private void addSubMenu(MenuItem item, int index, int length, int indexZorder) {
         JPanel panel = new JPanel(new MigLayout("wrap 1, fillx, inset 0, gapy 0", "fill"));
         panel.setName(index + "");
@@ -156,6 +173,11 @@ public class Menu extends JComponent {
         MenuAnimation.showMenu(panel, item, layout, true);
     }
 
+    /**
+     *
+     * @param item
+     * @param index
+     */
     private void hideMenu(MenuItem item, int index) {
         for (Component com : getComponents()) {
             if (com instanceof JPanel && com.getName() != null && com.getName().equals(index + "")) {
@@ -173,7 +195,7 @@ public class Menu extends JComponent {
     @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs.create();
-        g2.setColor(new Color(0,255,246));
+        g2.setColor(new Color(0, 255, 246));
         g2.fill(new Rectangle2D.Double(0, 0, getWidth(), getHeight()));
         super.paintComponent(grphcs);
     }

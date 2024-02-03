@@ -39,6 +39,10 @@ public class NetAssetValue {
         return value;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getValuePillow() {
         return valuePillow;
     }

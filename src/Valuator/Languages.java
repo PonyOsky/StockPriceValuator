@@ -21,6 +21,11 @@ public class Languages {
     private Properties conf;
     private ArrayList<String> choices;
 
+    /**
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public Languages() throws FileNotFoundException, IOException {
         props = new ArrayList();
         props.add(" ");
@@ -38,6 +43,12 @@ public class Languages {
         fillChoices(props);
     }
 
+    /**
+     *
+     * @param langs
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     private void fillChoices(ArrayList langs) throws FileNotFoundException, IOException {
         if (langs != null) {
             for (var f : langs) {
@@ -52,15 +63,29 @@ public class Languages {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getChoices() {
         return choices;
     }
 
+    /**
+     *
+     * @param choice
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public void setLastLang(int choice) throws FileNotFoundException, IOException {
         conf.setProperty("lastLang", choices.get(choice));
         conf.setProperty("lastLangRoute", "./src/lang/" + props.get(choice));
     }
 
+    /**
+     *
+     * @return
+     */
     public String getRoute() {
         if (conf.getProperty("lastLangRoute") != null) {
             File f = new File(conf.getProperty("lastLangRoute"));
@@ -75,6 +100,10 @@ public class Languages {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDefLangType() {
         return conf.getProperty("lastLang");
     }

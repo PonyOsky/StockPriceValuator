@@ -20,12 +20,18 @@ public class RatioOutput extends javax.swing.JPanel {
 
     /**
      * Creates new form RatioOutput
+     *
+     * @param route
      */
     public RatioOutput(String route) {
         initComponents();
         setLabels(route);
     }
 
+    /**
+     *
+     * @param fileRoute
+     */
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -416,66 +422,130 @@ public class RatioOutput extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel52;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return
+     */
     public JTextField getCLiq() {
         return CLiq;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getDpE() {
         return DpE;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getEPSRatio() {
         return EPSRatio;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getGM() {
         return GM;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getIndebtedness() {
         return Indebtedness;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getInventoryTime() {
         return InventoryTime;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getLiabilitiesTime() {
         return LiabilitiesTime;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getOM() {
         return OM;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPayOut() {
         return PayOut;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPpB() {
         return PpB;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getPpE() {
         return PpE;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getRN() {
         return RN;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getROA() {
         return ROA;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getROE() {
         return ROE;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getROS() {
         return ROS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getReceivablesTime() {
         return ReceivablesTime;
     }

@@ -7,6 +7,12 @@ import java.util.List;
 
 public class PolygonCorner {
 
+    /**
+     *
+     * @param l
+     * @param arcSize
+     * @return
+     */
     public GeneralPath getRoundedGeneralPathFromPoints(List<Point2D> l, float arcSize) {
         l.add(l.get(0));
         l.add(l.get(1));
@@ -25,6 +31,13 @@ public class PolygonCorner {
         return p;
     }
 
+    /**
+     *
+     * @param p1
+     * @param p2
+     * @param arcSize
+     * @return
+     */
     private Point2D calculatePoint(Point2D p1, Point2D p2, float arcSize) {
         double d1 = Math.sqrt(Math.pow(p1.getX() - p2.getX(), 2f) + Math.pow(p1.getY() - p2.getY(), 2f));
         double per = arcSize / d1;
