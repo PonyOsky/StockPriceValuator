@@ -5,6 +5,7 @@
 package component;
 
 import Valuator.Controller;
+import Valuator.ReworkedFrontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,14 +22,16 @@ import javax.swing.table.TableColumn;
  */
 public class DCFInput extends javax.swing.JPanel {
 
+    public ReworkedFrontend frontend;
     public Controller controller;
 
     /**
      * Creates new form DCFInput
      */
-    public DCFInput(Controller c, String route) {
+    public DCFInput(ReworkedFrontend f, Controller c, String route) {
         initComponents();
         controller = c;
+        frontend = f;
         setLabels(route);
     }
 
@@ -57,7 +60,7 @@ public class DCFInput extends javax.swing.JPanel {
         ta.setHeaderValue(p.getProperty("titleCol1"));
         FCF2.getTableHeader().repaint();
         for (int y = 0; y < 9; y++) {
-            FCF2.setValueAt(controller.getActYear() - y, y, 0);
+            FCF2.setValueAt(frontend.getActYear() - y, y, 0);
         }
     }
 
@@ -107,7 +110,7 @@ public class DCFInput extends javax.swing.JPanel {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,8 +124,8 @@ public class DCFInput extends javax.swing.JPanel {
 
         jScrollPane8.setBackground(new java.awt.Color(255, 255, 255));
 
-        FCF2.setBackground(new java.awt.Color(255, 255, 255));
-        FCF2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        FCF2.setBackground(new java.awt.Color(204, 204, 204));
+        FCF2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         FCF2.setForeground(new java.awt.Color(51, 51, 51));
         FCF2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,15 +169,17 @@ public class DCFInput extends javax.swing.JPanel {
         jPanel87.setBackground(new java.awt.Color(255, 255, 255));
         jPanel87.setLayout(new java.awt.GridLayout(8, 2));
 
-        jLabel134.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel134.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel134.setForeground(new java.awt.Color(51, 51, 51));
         jLabel134.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel134.setText("Growth rate (next 5y) [ % ]");
         jPanel87.add(jLabel134);
 
+        GR3.setBackground(new java.awt.Color(204, 204, 204));
         GR3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GR3.setForeground(new java.awt.Color(204, 204, 204));
-        GR3.setBorder(null);
+        GR3.setForeground(new java.awt.Color(51, 51, 51));
+        GR3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GR3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         GR3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 GR3KeyTyped(evt);
@@ -182,15 +187,17 @@ public class DCFInput extends javax.swing.JPanel {
         });
         jPanel87.add(GR3);
 
-        jLabel135.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel135.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel135.setForeground(new java.awt.Color(51, 51, 51));
         jLabel135.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel135.setText("Discount Rate [ % ]");
         jPanel87.add(jLabel135);
 
+        WACCDCFInn.setBackground(new java.awt.Color(204, 204, 204));
         WACCDCFInn.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        WACCDCFInn.setForeground(new java.awt.Color(204, 204, 204));
-        WACCDCFInn.setBorder(null);
+        WACCDCFInn.setForeground(new java.awt.Color(51, 51, 51));
+        WACCDCFInn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        WACCDCFInn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         WACCDCFInn.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 WACCDCFInnKeyTyped(evt);
@@ -198,15 +205,17 @@ public class DCFInput extends javax.swing.JPanel {
         });
         jPanel87.add(WACCDCFInn);
 
-        jLabel136.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel136.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel136.setForeground(new java.awt.Color(51, 51, 51));
         jLabel136.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel136.setText("Actual Free Cash Flow");
         jPanel87.add(jLabel136);
 
+        ActFCF2.setBackground(new java.awt.Color(204, 204, 204));
         ActFCF2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActFCF2.setForeground(new java.awt.Color(204, 204, 204));
-        ActFCF2.setBorder(null);
+        ActFCF2.setForeground(new java.awt.Color(51, 51, 51));
+        ActFCF2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ActFCF2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ActFCF2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 ActFCF2KeyTyped(evt);
@@ -214,15 +223,17 @@ public class DCFInput extends javax.swing.JPanel {
         });
         jPanel87.add(ActFCF2);
 
-        jLabel137.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel137.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel137.setForeground(new java.awt.Color(51, 51, 51));
         jLabel137.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel137.setText("Total Debt");
         jPanel87.add(jLabel137);
 
+        Debt2.setBackground(new java.awt.Color(204, 204, 204));
         Debt2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Debt2.setForeground(new java.awt.Color(204, 204, 204));
-        Debt2.setBorder(null);
+        Debt2.setForeground(new java.awt.Color(51, 51, 51));
+        Debt2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Debt2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Debt2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Debt2KeyTyped(evt);
@@ -230,15 +241,17 @@ public class DCFInput extends javax.swing.JPanel {
         });
         jPanel87.add(Debt2);
 
-        jLabel141.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel141.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel141.setForeground(new java.awt.Color(51, 51, 51));
         jLabel141.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel141.setText("Shares Outstanding");
         jPanel87.add(jLabel141);
 
+        Shares2.setBackground(new java.awt.Color(204, 204, 204));
         Shares2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Shares2.setForeground(new java.awt.Color(204, 204, 204));
-        Shares2.setBorder(null);
+        Shares2.setForeground(new java.awt.Color(51, 51, 51));
+        Shares2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Shares2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Shares2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Shares2KeyTyped(evt);
@@ -246,15 +259,17 @@ public class DCFInput extends javax.swing.JPanel {
         });
         jPanel87.add(Shares2);
 
-        jLabel142.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel142.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel142.setForeground(new java.awt.Color(51, 51, 51));
         jLabel142.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel142.setText("Cash & Cash Equivalents");
         jPanel87.add(jLabel142);
 
+        CandC2.setBackground(new java.awt.Color(204, 204, 204));
         CandC2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CandC2.setForeground(new java.awt.Color(204, 204, 204));
-        CandC2.setBorder(null);
+        CandC2.setForeground(new java.awt.Color(51, 51, 51));
+        CandC2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CandC2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CandC2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CandC2KeyTyped(evt);
@@ -262,15 +277,17 @@ public class DCFInput extends javax.swing.JPanel {
         });
         jPanel87.add(CandC2);
 
-        jLabel164.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel164.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel164.setForeground(new java.awt.Color(51, 51, 51));
         jLabel164.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel164.setText("States Perpentual Growth Rate");
         jPanel87.add(jLabel164);
 
+        State2.setBackground(new java.awt.Color(204, 204, 204));
         State2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        State2.setForeground(new java.awt.Color(204, 204, 204));
-        State2.setBorder(null);
+        State2.setForeground(new java.awt.Color(51, 51, 51));
+        State2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        State2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         State2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 State2KeyTyped(evt);
@@ -286,7 +303,7 @@ public class DCFInput extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
+            .addGap(0, 1004, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, 0)
@@ -389,5 +406,4 @@ public class DCFInput extends javax.swing.JPanel {
         return WACCDCFInn;
     }
 
-    
 }

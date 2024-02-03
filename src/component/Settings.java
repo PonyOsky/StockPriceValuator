@@ -48,7 +48,7 @@ public class Settings extends javax.swing.JPanel {
         jLabel6.setText(p.getProperty("jLabel6"));
         jButton1.setText(p.getProperty("jButton1"));
     }
-    
+
     private void setLangChoices() {
         for (String item : langs.getChoices()) {
             LangChoice.addItem(item);
@@ -107,10 +107,10 @@ public class Settings extends javax.swing.JPanel {
         jLabel6.setText("jLabel6");
         jPanel3.add(jLabel6);
 
-        LangChoice.setBackground(new java.awt.Color(255, 255, 255));
-        LangChoice.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        LangChoice.setBackground(new java.awt.Color(204, 204, 204));
+        LangChoice.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         LangChoice.setForeground(new java.awt.Color(51, 51, 51));
-        LangChoice.setBorder(null);
+        LangChoice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         LangChoice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.add(LangChoice);
 

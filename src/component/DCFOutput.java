@@ -1,10 +1,11 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package component;
 
-import Valuator.Controller;
+import Valuator.ReworkedFrontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,14 +22,14 @@ import javax.swing.table.TableColumn;
  */
 public class DCFOutput extends javax.swing.JPanel {
 
-    public Controller controller;
+    public ReworkedFrontend frontend;
 
     /**
      * Creates new form DCFOutput
      */
-    public DCFOutput(Controller c, String route) {
+    public DCFOutput(ReworkedFrontend f, String route) {
         initComponents();
-        controller = c;
+        frontend = f;
         setLabels(route);
     }
 
@@ -61,7 +62,7 @@ public class DCFOutput extends javax.swing.JPanel {
         td.setHeaderValue(p.getProperty("year"));
         for (int y = 1; y < 9; y++) {
             TableColumn c = LastFCF.getTableHeader().getColumnModel().getColumn(y);
-            c.setHeaderValue(controller.getActYear() + (y - 8));
+            c.setHeaderValue(frontend.getActYear() + (y - 8));
         }
         LastFCF.getTableHeader().repaint();
         LastFCF.setValueAt(p.getProperty("tableVal1"), 0, 0);
@@ -75,7 +76,7 @@ public class DCFOutput extends javax.swing.JPanel {
         FutureFCF.getTableHeader().repaint();
         FutureFCF.setValueAt(p.getProperty("year"), 0, 0);
         for (int y = 1; y < 13; y++) {
-            FutureFCF.setValueAt(controller.getActYear() + y, 0, y);
+            FutureFCF.setValueAt(frontend.getActYear() + y, 0, y);
         }
         FutureFCF.setValueAt(p.getProperty("tableVal3"), 0, 13);
         FutureFCF.setValueAt(p.getProperty("tableVal4"), 1, 0);
@@ -162,8 +163,11 @@ public class DCFOutput extends javax.swing.JPanel {
         jPanel54.add(jLabel97);
 
         ActPriceDCF.setEditable(false);
+        ActPriceDCF.setBackground(new java.awt.Color(255, 255, 255));
         ActPriceDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActPriceDCF.setForeground(new java.awt.Color(204, 204, 204));
+        ActPriceDCF.setForeground(new java.awt.Color(51, 51, 51));
+        ActPriceDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ActPriceDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel54.add(ActPriceDCF);
 
         jLabel98.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -173,8 +177,11 @@ public class DCFOutput extends javax.swing.JPanel {
         jPanel54.add(jLabel98);
 
         PriceDCF.setEditable(false);
+        PriceDCF.setBackground(new java.awt.Color(255, 255, 255));
         PriceDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PriceDCF.setForeground(new java.awt.Color(204, 204, 204));
+        PriceDCF.setForeground(new java.awt.Color(51, 51, 51));
+        PriceDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PriceDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel54.add(PriceDCF);
 
         jLabel99.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -184,8 +191,11 @@ public class DCFOutput extends javax.swing.JPanel {
         jPanel54.add(jLabel99);
 
         PillowDCF.setEditable(false);
+        PillowDCF.setBackground(new java.awt.Color(255, 255, 255));
         PillowDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PillowDCF.setForeground(new java.awt.Color(204, 204, 204));
+        PillowDCF.setForeground(new java.awt.Color(51, 51, 51));
+        PillowDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PillowDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel54.add(PillowDCF);
 
         jLabel100.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -195,8 +205,11 @@ public class DCFOutput extends javax.swing.JPanel {
         jPanel54.add(jLabel100);
 
         PriceDCFMoS.setEditable(false);
+        PriceDCFMoS.setBackground(new java.awt.Color(255, 255, 255));
         PriceDCFMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PriceDCFMoS.setForeground(new java.awt.Color(204, 204, 204));
+        PriceDCFMoS.setForeground(new java.awt.Color(51, 51, 51));
+        PriceDCFMoS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PriceDCFMoS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel54.add(PriceDCFMoS);
 
         DCFOut.add(jPanel54, java.awt.BorderLayout.PAGE_END);
@@ -205,6 +218,7 @@ public class DCFOutput extends javax.swing.JPanel {
 
         jPanel56.setLayout(new java.awt.GridLayout(3, 1));
 
+        LastFCF.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         LastFCF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Free Cash Flow", null, null, null, null, null, null, null, null},
@@ -229,6 +243,7 @@ public class DCFOutput extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        LastFCF.setRowHeight(25);
         LastFCF.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(LastFCF);
 
@@ -239,28 +254,33 @@ public class DCFOutput extends javax.swing.JPanel {
 
         jLabel116.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel116.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel116.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel116.setText("Growth Rate (next 5 Years)");
         jPanel58.add(jLabel116);
 
         GRDCF.setEditable(false);
-        GRDCF.setBackground(new java.awt.Color(70, 73, 75));
+        GRDCF.setBackground(new java.awt.Color(255, 255, 255));
         GRDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GRDCF.setForeground(new java.awt.Color(204, 204, 204));
+        GRDCF.setForeground(new java.awt.Color(51, 51, 51));
+        GRDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel58.add(GRDCF);
 
         jLabel117.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel117.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel117.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel117.setText("Average Growth Rate");
         jPanel58.add(jLabel117);
 
         AvGRDCF.setEditable(false);
-        AvGRDCF.setBackground(new java.awt.Color(70, 73, 75));
+        AvGRDCF.setBackground(new java.awt.Color(255, 255, 255));
         AvGRDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        AvGRDCF.setForeground(new java.awt.Color(204, 204, 204));
+        AvGRDCF.setForeground(new java.awt.Color(51, 51, 51));
+        AvGRDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel58.add(AvGRDCF);
 
         jPanel56.add(jPanel58);
 
+        FutureFCF.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         FutureFCF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Year", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "TV"},
@@ -287,6 +307,7 @@ public class DCFOutput extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        FutureFCF.setRowHeight(25);
         FutureFCF.getTableHeader().setReorderingAllowed(false);
         jScrollPane6.setViewportView(FutureFCF);
 
@@ -299,79 +320,100 @@ public class DCFOutput extends javax.swing.JPanel {
 
         jLabel109.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel109.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel109.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel109.setText("Perpentual Growth Rate");
         jPanel57.add(jLabel109);
 
         StateDCF.setEditable(false);
-        StateDCF.setBackground(new java.awt.Color(70, 73, 75));
+        StateDCF.setBackground(new java.awt.Color(255, 255, 255));
         StateDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        StateDCF.setForeground(new java.awt.Color(204, 204, 204));
+        StateDCF.setForeground(new java.awt.Color(51, 51, 51));
+        StateDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        StateDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(StateDCF);
 
         jLabel110.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel110.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel110.setText("Discount Rate");
         jPanel57.add(jLabel110);
 
         WACCDCFOut.setEditable(false);
-        WACCDCFOut.setBackground(new java.awt.Color(70, 73, 75));
+        WACCDCFOut.setBackground(new java.awt.Color(255, 255, 255));
         WACCDCFOut.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        WACCDCFOut.setForeground(new java.awt.Color(204, 204, 204));
+        WACCDCFOut.setForeground(new java.awt.Color(51, 51, 51));
+        WACCDCFOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        WACCDCFOut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(WACCDCFOut);
 
         jLabel111.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel111.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel111.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel111.setText("Cahs & Cash Equivalents");
         jPanel57.add(jLabel111);
 
         CashDCF.setEditable(false);
-        CashDCF.setBackground(new java.awt.Color(70, 73, 75));
+        CashDCF.setBackground(new java.awt.Color(255, 255, 255));
         CashDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CashDCF.setForeground(new java.awt.Color(204, 204, 204));
+        CashDCF.setForeground(new java.awt.Color(51, 51, 51));
+        CashDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CashDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(CashDCF);
 
         jLabel112.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel112.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel112.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel112.setText("Sum of FCF");
         jPanel57.add(jLabel112);
 
         SumFCFDCF.setEditable(false);
-        SumFCFDCF.setBackground(new java.awt.Color(70, 73, 75));
+        SumFCFDCF.setBackground(new java.awt.Color(255, 255, 255));
         SumFCFDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        SumFCFDCF.setForeground(new java.awt.Color(204, 204, 204));
+        SumFCFDCF.setForeground(new java.awt.Color(51, 51, 51));
+        SumFCFDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SumFCFDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(SumFCFDCF);
 
         jLabel113.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel113.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel113.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel113.setText("Total Debt");
         jPanel57.add(jLabel113);
 
         DebtDCF.setEditable(false);
-        DebtDCF.setBackground(new java.awt.Color(70, 73, 75));
+        DebtDCF.setBackground(new java.awt.Color(255, 255, 255));
         DebtDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        DebtDCF.setForeground(new java.awt.Color(204, 204, 204));
+        DebtDCF.setForeground(new java.awt.Color(51, 51, 51));
+        DebtDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DebtDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(DebtDCF);
 
         jLabel114.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel114.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel114.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel114.setText("Equity Value");
         jPanel57.add(jLabel114);
 
         EVDCF.setEditable(false);
-        EVDCF.setBackground(new java.awt.Color(70, 73, 75));
+        EVDCF.setBackground(new java.awt.Color(255, 255, 255));
         EVDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        EVDCF.setForeground(new java.awt.Color(204, 204, 204));
+        EVDCF.setForeground(new java.awt.Color(51, 51, 51));
+        EVDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EVDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(EVDCF);
 
         jLabel115.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel115.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel115.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel115.setText("Shares Outstanding");
         jPanel57.add(jLabel115);
 
         SharesDCF.setEditable(false);
-        SharesDCF.setBackground(new java.awt.Color(70, 73, 75));
+        SharesDCF.setBackground(new java.awt.Color(255, 255, 255));
         SharesDCF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        SharesDCF.setForeground(new java.awt.Color(204, 204, 204));
+        SharesDCF.setForeground(new java.awt.Color(51, 51, 51));
+        SharesDCF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SharesDCF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel57.add(SharesDCF);
 
         jPanel55.add(jPanel57);

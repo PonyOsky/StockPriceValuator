@@ -5,6 +5,7 @@
 package component;
 
 import Valuator.Controller;
+import Valuator.ReworkedFrontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,13 +23,15 @@ import javax.swing.table.TableColumn;
 public class DDMInput extends javax.swing.JPanel {
 
     public Controller controller;
+    public ReworkedFrontend frontend;
 
     /**
      * Creates new form DDMInput
      */
-    public DDMInput(Controller c, String route) {
+    public DDMInput(ReworkedFrontend f, Controller c, String route) {
         initComponents();
         controller = c;
+        frontend = f;
         setLabels(route);
     }
 
@@ -51,7 +54,7 @@ public class DDMInput extends javax.swing.JPanel {
         tc.setHeaderValue(p.getProperty("titleCol2"));
         Dividends.getTableHeader().repaint();
         for (int y = 0; y < 5; y++) {
-            Dividends.setValueAt(controller.getActYear() - y, y, 0);
+            Dividends.setValueAt(frontend.getActYear() - y, y, 0);
         }
     }
 
@@ -106,7 +109,7 @@ public class DDMInput extends javax.swing.JPanel {
 
         jPanel11.setLayout(new java.awt.GridLayout(1, 2));
 
-        Dividends.setBackground(new java.awt.Color(255, 255, 255));
+        Dividends.setBackground(new java.awt.Color(204, 204, 204));
         Dividends.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         Dividends.setForeground(new java.awt.Color(51, 51, 51));
         Dividends.setModel(new javax.swing.table.DefaultTableModel(
@@ -144,20 +147,22 @@ public class DDMInput extends javax.swing.JPanel {
 
         jPanel11.add(jScrollPane1);
 
-        jPanel12.setLayout(new java.awt.GridLayout());
+        jPanel12.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
         jPanel19.setLayout(new java.awt.GridLayout(6, 2));
 
-        jLabel58.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel58.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel58.setForeground(new java.awt.Color(51, 51, 51));
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel58.setText("Discount Rate");
         jPanel19.add(jLabel58);
 
+        WACCDDM.setBackground(new java.awt.Color(204, 204, 204));
         WACCDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        WACCDDM.setForeground(new java.awt.Color(204, 204, 204));
-        WACCDDM.setBorder(null);
+        WACCDDM.setForeground(new java.awt.Color(51, 51, 51));
+        WACCDDM.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        WACCDDM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         WACCDDM.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 WACCDDMKeyTyped(evt);

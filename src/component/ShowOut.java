@@ -151,8 +151,11 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel84.add(jLabel178);
 
         IdealPrice1.setEditable(false);
+        IdealPrice1.setBackground(new java.awt.Color(255, 255, 255));
         IdealPrice1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        IdealPrice1.setForeground(new java.awt.Color(204, 204, 204));
+        IdealPrice1.setForeground(new java.awt.Color(51, 51, 51));
+        IdealPrice1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        IdealPrice1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel84.add(IdealPrice1);
 
         jLabel179.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -162,8 +165,11 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel84.add(jLabel179);
 
         IdealPriceMoS1.setEditable(false);
+        IdealPriceMoS1.setBackground(new java.awt.Color(255, 255, 255));
         IdealPriceMoS1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        IdealPriceMoS1.setForeground(new java.awt.Color(204, 204, 204));
+        IdealPriceMoS1.setForeground(new java.awt.Color(51, 51, 51));
+        IdealPriceMoS1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        IdealPriceMoS1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel84.add(IdealPriceMoS1);
 
         jLabel181.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -173,8 +179,11 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel84.add(jLabel181);
 
         PillowAns1.setEditable(false);
+        PillowAns1.setBackground(new java.awt.Color(255, 255, 255));
         PillowAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PillowAns1.setForeground(new java.awt.Color(204, 204, 204));
+        PillowAns1.setForeground(new java.awt.Color(51, 51, 51));
+        PillowAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PillowAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel84.add(PillowAns1);
 
         jPanel8.setBackground(new java.awt.Color(102, 255, 255));
@@ -185,7 +194,7 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 252, Short.MAX_VALUE)
+            .addGap(0, 315, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,48 +208,51 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel85.setBackground(new java.awt.Color(255, 255, 255));
         jPanel85.setLayout(new java.awt.GridLayout(4, 5));
 
-        jLabel182.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel182.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel182.setForeground(new java.awt.Color(0, 102, 255));
         jLabel182.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel182.setText("DCF");
         jPanel85.add(jLabel182);
 
-        jLabel183.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel183.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel183.setForeground(new java.awt.Color(0, 102, 255));
         jLabel183.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel183.setText("DDM");
         jPanel85.add(jLabel183);
 
-        jLabel184.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel184.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel184.setForeground(new java.awt.Color(0, 102, 255));
         jLabel184.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel184.setText("Grahams Formulas");
         jPanel85.add(jLabel184);
 
-        jLabel185.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel185.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel185.setForeground(new java.awt.Color(0, 102, 255));
         jLabel185.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel185.setText("Grahams Revs Formula");
         jPanel85.add(jLabel185);
 
-        jLabel186.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel186.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel186.setForeground(new java.awt.Color(0, 102, 255));
         jLabel186.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel186.setText("NAV");
         jPanel85.add(jLabel186);
 
         jPanel86.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel86.setLayout(new java.awt.GridLayout());
+        jPanel86.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel187.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel187.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel187.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel187.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel187.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel187.setText("Price:");
         jPanel86.add(jLabel187);
 
         DCFAns1.setEditable(false);
+        DCFAns1.setBackground(new java.awt.Color(255, 255, 255));
         DCFAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        DCFAns1.setForeground(new java.awt.Color(204, 204, 204));
+        DCFAns1.setForeground(new java.awt.Color(51, 51, 51));
+        DCFAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DCFAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel86.add(DCFAns1);
 
         jPanel85.add(jPanel86);
@@ -248,143 +260,170 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel88.setBackground(new java.awt.Color(255, 255, 255));
         jPanel88.setLayout(new java.awt.GridLayout(1, 2));
 
-        jLabel188.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel188.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel188.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel188.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel188.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel188.setText("Price:");
         jPanel88.add(jLabel188);
 
         DDMAns1.setEditable(false);
+        DDMAns1.setBackground(new java.awt.Color(255, 255, 255));
         DDMAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        DDMAns1.setForeground(new java.awt.Color(204, 204, 204));
+        DDMAns1.setForeground(new java.awt.Color(51, 51, 51));
+        DDMAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DDMAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel88.add(DDMAns1);
 
         jPanel85.add(jPanel88);
 
         jPanel89.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel89.setLayout(new java.awt.GridLayout());
+        jPanel89.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel189.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel189.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel189.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel189.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel189.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel189.setText("Price:");
         jPanel89.add(jLabel189);
 
         GrahamAns1.setEditable(false);
+        GrahamAns1.setBackground(new java.awt.Color(255, 255, 255));
         GrahamAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GrahamAns1.setForeground(new java.awt.Color(204, 204, 204));
+        GrahamAns1.setForeground(new java.awt.Color(51, 51, 51));
+        GrahamAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GrahamAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel89.add(GrahamAns1);
 
         jPanel85.add(jPanel89);
 
         jPanel90.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel90.setLayout(new java.awt.GridLayout());
+        jPanel90.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel190.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel190.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel190.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel190.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel190.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel190.setText("Price:");
         jPanel90.add(jLabel190);
 
         GrahamRevAns1.setEditable(false);
+        GrahamRevAns1.setBackground(new java.awt.Color(255, 255, 255));
         GrahamRevAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GrahamRevAns1.setForeground(new java.awt.Color(204, 204, 204));
+        GrahamRevAns1.setForeground(new java.awt.Color(51, 51, 51));
+        GrahamRevAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GrahamRevAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel90.add(GrahamRevAns1);
 
         jPanel85.add(jPanel90);
 
         jPanel91.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel91.setLayout(new java.awt.GridLayout());
+        jPanel91.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel193.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel193.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel193.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel193.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel193.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel193.setText("Price:");
         jPanel91.add(jLabel193);
 
         NAVAns1.setEditable(false);
+        NAVAns1.setBackground(new java.awt.Color(255, 255, 255));
         NAVAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        NAVAns1.setForeground(new java.awt.Color(204, 204, 204));
+        NAVAns1.setForeground(new java.awt.Color(51, 51, 51));
+        NAVAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NAVAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel91.add(NAVAns1);
 
         jPanel85.add(jPanel91);
 
         jPanel100.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel100.setLayout(new java.awt.GridLayout());
+        jPanel100.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel218.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel218.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel218.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel218.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel218.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel218.setText("Price with MoS:");
         jPanel100.add(jLabel218);
 
         DCFMoSAns1.setEditable(false);
+        DCFMoSAns1.setBackground(new java.awt.Color(255, 255, 255));
         DCFMoSAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        DCFMoSAns1.setForeground(new java.awt.Color(204, 204, 204));
+        DCFMoSAns1.setForeground(new java.awt.Color(51, 51, 51));
+        DCFMoSAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DCFMoSAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel100.add(DCFMoSAns1);
 
         jPanel85.add(jPanel100);
 
         jPanel101.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel101.setLayout(new java.awt.GridLayout());
+        jPanel101.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel219.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel219.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel219.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel219.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel219.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel219.setText("Price with MoS:");
         jPanel101.add(jLabel219);
 
         DDMMoSAns1.setEditable(false);
+        DDMMoSAns1.setBackground(new java.awt.Color(255, 255, 255));
         DDMMoSAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        DDMMoSAns1.setForeground(new java.awt.Color(204, 204, 204));
+        DDMMoSAns1.setForeground(new java.awt.Color(51, 51, 51));
+        DDMMoSAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DDMMoSAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel101.add(DDMMoSAns1);
 
         jPanel85.add(jPanel101);
 
         jPanel102.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel102.setLayout(new java.awt.GridLayout());
+        jPanel102.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel220.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel220.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel220.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel220.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel220.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel220.setText("Price with MoS:");
         jPanel102.add(jLabel220);
 
         GrahamMoSAns1.setEditable(false);
+        GrahamMoSAns1.setBackground(new java.awt.Color(255, 255, 255));
         GrahamMoSAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GrahamMoSAns1.setForeground(new java.awt.Color(204, 204, 204));
+        GrahamMoSAns1.setForeground(new java.awt.Color(51, 51, 51));
+        GrahamMoSAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GrahamMoSAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel102.add(GrahamMoSAns1);
 
         jPanel85.add(jPanel102);
 
         jPanel103.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel103.setLayout(new java.awt.GridLayout());
+        jPanel103.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel221.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel221.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel221.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel221.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel221.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel221.setText("Price with MoS:");
         jPanel103.add(jLabel221);
 
         GrahamRevMoSAns1.setEditable(false);
+        GrahamRevMoSAns1.setBackground(new java.awt.Color(255, 255, 255));
         GrahamRevMoSAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GrahamRevMoSAns1.setForeground(new java.awt.Color(204, 204, 204));
+        GrahamRevMoSAns1.setForeground(new java.awt.Color(51, 51, 51));
+        GrahamRevMoSAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GrahamRevMoSAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel103.add(GrahamRevMoSAns1);
 
         jPanel85.add(jPanel103);
 
         jPanel104.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel104.setLayout(new java.awt.GridLayout());
+        jPanel104.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel222.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel222.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel222.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel222.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel222.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel222.setText("Price with MoS:");
         jPanel104.add(jLabel222);
 
         NAVMoSAns1.setEditable(false);
+        NAVMoSAns1.setBackground(new java.awt.Color(255, 255, 255));
         NAVMoSAns1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        NAVMoSAns1.setForeground(new java.awt.Color(204, 204, 204));
+        NAVMoSAns1.setForeground(new java.awt.Color(51, 51, 51));
+        NAVMoSAns1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NAVMoSAns1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel104.add(NAVMoSAns1);
 
         jPanel85.add(jPanel104);
@@ -395,7 +434,7 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel105.setLayout(jPanel105Layout);
         jPanel105Layout.setHorizontalGroup(
             jPanel105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
         );
         jPanel105Layout.setVerticalGroup(
             jPanel105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,7 +449,7 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel106.setLayout(jPanel106Layout);
         jPanel106Layout.setHorizontalGroup(
             jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
         );
         jPanel106Layout.setVerticalGroup(
             jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,7 +464,7 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel115.setLayout(jPanel115Layout);
         jPanel115Layout.setHorizontalGroup(
             jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
         );
         jPanel115Layout.setVerticalGroup(
             jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,7 +479,7 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel116.setLayout(jPanel116Layout);
         jPanel116Layout.setHorizontalGroup(
             jPanel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
         );
         jPanel116Layout.setVerticalGroup(
             jPanel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,7 +494,7 @@ public class ShowOut extends javax.swing.JPanel {
         jPanel117.setLayout(jPanel117Layout);
         jPanel117Layout.setHorizontalGroup(
             jPanel117Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
         );
         jPanel117Layout.setVerticalGroup(
             jPanel117Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -470,7 +509,7 @@ public class ShowOut extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1010, Short.MAX_VALUE)
+            .addGap(0, 1260, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, 0)

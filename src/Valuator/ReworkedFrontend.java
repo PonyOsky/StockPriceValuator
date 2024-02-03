@@ -25,6 +25,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,11 +82,11 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
         langs = new Languages();
-        controller = new Controller();
+        initViews(langs.getRoute());
+        controller = new Controller(info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, lib, sumout);
         saveLoad = new SaveLoad(controller);
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
-        initViews(langs.getRoute());
         saveLoad.initSaves();
         Properties p = new Properties();
         FileInputStream ip;
@@ -172,8 +173,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                         cleaningChoices.add("NAV");
                     }
                 }
-                if (index == 1 && subIndex == 7) {
+                if (index == 1 && subIndex == 8) {
                     controller.clean(cleaningChoices);
+                    cleaningChoices.clear();
                 }
                 if (index == 2 && subIndex == 1) {
                     showForm(panels, sumout);
@@ -230,6 +232,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 }
                 if (index == 3 && subIndex == 6) {
                     controller.calculation(calcChoices);
+                    calcChoices.clear();
                 }
                 if (index == 4) {
                     showForm(panels, showout);
@@ -265,13 +268,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private void initViews(String route) {
         info = new InfoInput(controller, route);
         ratioin = new RatioInput(controller, route);
-        dcfin = new DCFInput(controller, route);
-        ddmin = new DDMInput(controller, route);
+        dcfin = new DCFInput(this, controller, route);
+        ddmin = new DDMInput(this, controller, route);
         grahamin = new GrahamInput(controller, route);
         navin = new NAVInput(controller, route);
         ratioout = new RatioOutput(route);
-        dcfout = new DCFOutput(controller, route);
-        ddmout = new DDMOutput(controller, route);
+        dcfout = new DCFOutput(this, route);
+        ddmout = new DDMOutput(this, route);
         grahamout = new GrahamOutput(route);
         navout = new NAVOutput(route);
         help = new Help(route);
@@ -279,7 +282,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         settings = new Settings(langs, this, route);
         showout = new ShowOut(route);
         sumout = new SummaryOutput(route);
-        panels = new JPanel[]{info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, help, lib, settings, showout, sumout};
+        panels = new JPanel[]{info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, lib, sumout, help, settings, showout};
     }
 
     public void translate(String route) {
@@ -293,14 +296,14 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         if (cl.size() >= 1 || calc.size() >= 1) {
             selector1.setVisible(true);
             if (cl.size() >= 1) {
-                selector1.getjLabel1().setText(clstr + cl.toString());
-            }else{
-                selector1.getjLabel1().setText(castr + calc.toString());
+                selector1.getjLabel1().setText(clstr + " " + cl.toString());
+            } else {
+                selector1.getjLabel1().setText(castr + " " + calc.toString());
             }
             if (calc.size() >= 1) {
-                selector1.getjLabel1().setText(castr + calc.toString());
-            }else{
-                selector1.getjLabel1().setText(clstr + cl.toString());
+                selector1.getjLabel1().setText(castr + " " + calc.toString());
+            } else {
+                selector1.getjLabel1().setText(clstr + " " + cl.toString());
             }
         } else {
             selector1.setVisible(false);
@@ -308,11 +311,21 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         }
         setComponentZOrder(selector1, 2);
         setComponentZOrder(body, 1);
-        for(JPanel j : panels)
+        for (JPanel j : panels) {
             setComponentZOrder(j, 1);
+        }
         body.add(selector1);
         body.repaint();
         body.revalidate();
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Integer getActYear() {
+        Date currentDate = new Date();
+        return (int) currentDate.getYear() + 1900;
     }
 
     /**

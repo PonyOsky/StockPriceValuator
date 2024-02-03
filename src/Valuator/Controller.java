@@ -22,7 +22,6 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -59,12 +58,21 @@ public class Controller {
     public SummaryOutput sumout;
     public Library lib;
 
-    /**
-     *
-     * @param f
-     */
-    public Controller() {
+    public Controller(InfoInput i, RatioInput ri, DCFInput dci, DDMInput ddi, GrahamInput gi, NAVInput ni, RatioOutput ro, DCFOutput dco, DDMOutput ddo, GrahamOutput go, NAVOutput no, Library l, SummaryOutput so) {
         decfor.setRoundingMode(RoundingMode.DOWN);
+        info = i;
+        ratioin = ri;
+        dcfin = dci;
+        ddmin = ddi;
+        grahamin = gi;
+        navin = ni;
+        ratioout = ro;
+        dcfout = dco;
+        ddmout = ddo;
+        grahamout = go;
+        navout = no;
+        lib = l;
+        sumout = so;
     }
 
     /**
@@ -91,10 +99,14 @@ public class Controller {
     public ArrayList getDividends() {
         divis = new ArrayList();
         for (int count = 0; count < ddmin.getDividends().getColumnCount(); count++) {
-            String str = ddmin.getDividends().getValueAt(0, count).toString();
-            divis.add(Double.valueOf(str));
+            if (ddmin.getDividends().getValueAt(0, count) != null) {
+                String str = ddmin.getDividends().getValueAt(0, count).toString();
+                divis.add(Double.valueOf(str));
+            } else {
+                break;
+            }
         }
-        return (ArrayList) divis;
+        return divis;
     }
 
     /**
@@ -437,7 +449,6 @@ public class Controller {
      * **************************************Setting answers and
      * values*********************************************************
      */
-
     /**
      *
      * @param choices
@@ -568,7 +579,7 @@ public class Controller {
      * @param choices
      */
     public void calculation(ArrayList choices) {
-        if (choices != null) {
+        if (choices != null || choices.isEmpty()) {
             if (choices.contains("Ratios")) {
                 ratioout.getGM().setText(String.valueOf(decfor.format(ratios.grossMargin())));
                 ratioout.getOM().setText(String.valueOf(decfor.format(ratios.operationMargin())));
@@ -675,7 +686,7 @@ public class Controller {
             sumout.getGrahamRevMoSAns().setText(decfor.format(graham.getValueRevMoS()));
             sumout.getNAVAns().setText(decfor.format(nav.getValue()));
             sumout.getNAVMoSAns().setText(decfor.format(nav.getValuePillow()));
-           //Actual Prices
+            //Actual Prices
             sumout.getActPriceAns().setText(String.valueOf(getActualPrice()));
             ddmout.getActPriceDDM().setText(String.valueOf(getActualPrice()));
             grahamout.getActPriceGraham().setText(String.valueOf(getActualPrice()));
@@ -741,30 +752,34 @@ public class Controller {
      * @return
      */
     public double doubleFormat(String s) {
-        if (s.contains(".") && s.contains(",")) {
-            if (s.indexOf(",") < s.indexOf(".")) {
-                s = s.replace(",", "");
-            } else {
-                s = s.replace(".", "");
-            }
-            while (s.indexOf(".") != s.lastIndexOf(".")) {
-                s = s.replaceFirst("\\.", "");
-            }
-            s = s.replace(",", "");
-        }
-        if (s.contains(".") && !s.contains(",")) {
-            while (s.indexOf(".") != s.lastIndexOf(".")) {
-                s = s.replaceFirst("\\.", "");
-            }
-        }
-        if (!s.contains(".") && s.contains(",")) {
-            if (s.indexOf(",") == s.lastIndexOf(",")) {
-                s = s.replaceFirst(",", ".");
-            } else {
+        if (!s.isEmpty()) {
+            if (s.contains(".") && s.contains(",")) {
+                if (s.indexOf(",") < s.indexOf(".")) {
+                    s = s.replace(",", "");
+                } else {
+                    s = s.replace(".", "");
+                }
+                while (s.indexOf(".") != s.lastIndexOf(".")) {
+                    s = s.replaceFirst("\\.", "");
+                }
                 s = s.replace(",", "");
             }
+            if (s.contains(".") && !s.contains(",")) {
+                while (s.indexOf(".") != s.lastIndexOf(".")) {
+                    s = s.replaceFirst("\\.", "");
+                }
+            }
+            if (!s.contains(".") && s.contains(",")) {
+                if (s.indexOf(",") == s.lastIndexOf(",")) {
+                    s = s.replaceFirst(",", ".");
+                } else {
+                    s = s.replace(",", "");
+                }
+            }
+            return Double.parseDouble(s);
+        } else {
+            return 0;
         }
-        return Double.parseDouble(s);
     }
 
     /**
@@ -819,12 +834,4 @@ public class Controller {
         }
     }
 
-    /**
-     *
-     * @return
-     */
-    public Integer getActYear() {
-        Date currentDate = new Date();
-        return (int) currentDate.getYear() + 1900;
-    }
 }

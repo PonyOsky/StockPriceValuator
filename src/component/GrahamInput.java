@@ -94,15 +94,17 @@ public class GrahamInput extends javax.swing.JPanel {
         jPanel26.setForeground(new java.awt.Color(51, 51, 51));
         jPanel26.setLayout(new java.awt.GridLayout(6, 2));
 
-        jLabel60.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel60.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(51, 51, 51));
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("EPS (TTM)");
         jPanel26.add(jLabel60);
 
+        EPS.setBackground(new java.awt.Color(204, 204, 204));
         EPS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        EPS.setForeground(new java.awt.Color(204, 204, 204));
-        EPS.setBorder(null);
+        EPS.setForeground(new java.awt.Color(51, 51, 51));
+        EPS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EPS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EPS.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 EPSKeyTyped(evt);
@@ -110,15 +112,17 @@ public class GrahamInput extends javax.swing.JPanel {
         });
         jPanel26.add(EPS);
 
-        jLabel61.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel61.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(51, 51, 51));
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setText("Growth rate (next 5y) [ % ]");
         jPanel26.add(jLabel61);
 
+        GRGrahamInn.setBackground(new java.awt.Color(204, 204, 204));
         GRGrahamInn.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GRGrahamInn.setForeground(new java.awt.Color(204, 204, 204));
-        GRGrahamInn.setBorder(null);
+        GRGrahamInn.setForeground(new java.awt.Color(51, 51, 51));
+        GRGrahamInn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GRGrahamInn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         GRGrahamInn.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 GRGrahamInnKeyTyped(evt);
@@ -126,15 +130,17 @@ public class GrahamInput extends javax.swing.JPanel {
         });
         jPanel26.add(GRGrahamInn);
 
-        jLabel62.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel62.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(51, 51, 51));
         jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel62.setText("AAA current yield");
         jPanel26.add(jLabel62);
 
+        Y.setBackground(new java.awt.Color(204, 204, 204));
         Y.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Y.setForeground(new java.awt.Color(204, 204, 204));
-        Y.setBorder(null);
+        Y.setForeground(new java.awt.Color(51, 51, 51));
+        Y.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Y.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Y.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 YKeyTyped(evt);

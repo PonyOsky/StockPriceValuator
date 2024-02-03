@@ -146,8 +146,11 @@ public class GrahamOutput extends javax.swing.JPanel {
         jPanel73.add(jLabel138);
 
         ActPriceGraham.setEditable(false);
+        ActPriceGraham.setBackground(new java.awt.Color(255, 255, 255));
         ActPriceGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActPriceGraham.setForeground(new java.awt.Color(204, 204, 204));
+        ActPriceGraham.setForeground(new java.awt.Color(51, 51, 51));
+        ActPriceGraham.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ActPriceGraham.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel73.add(ActPriceGraham);
 
         jLabel140.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -157,8 +160,11 @@ public class GrahamOutput extends javax.swing.JPanel {
         jPanel73.add(jLabel140);
 
         PillowGraham.setEditable(false);
+        PillowGraham.setBackground(new java.awt.Color(255, 255, 255));
         PillowGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PillowGraham.setForeground(new java.awt.Color(204, 204, 204));
+        PillowGraham.setForeground(new java.awt.Color(51, 51, 51));
+        PillowGraham.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PillowGraham.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel73.add(PillowGraham);
 
         GrahamOut.add(jPanel73, java.awt.BorderLayout.PAGE_END);
@@ -203,7 +209,7 @@ public class GrahamOutput extends javax.swing.JPanel {
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel157, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(jLabel157, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
         jPanel74.add(jPanel76);
@@ -223,28 +229,36 @@ public class GrahamOutput extends javax.swing.JPanel {
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel158, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(jLabel158, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
         jPanel74.add(jPanel77);
 
         jLabel139.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel139.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel139.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel139.setText("EPS");
         jPanel74.add(jLabel139);
 
         EPSGraham.setEditable(false);
+        EPSGraham.setBackground(new java.awt.Color(255, 255, 255));
         EPSGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        EPSGraham.setForeground(new java.awt.Color(204, 204, 204));
+        EPSGraham.setForeground(new java.awt.Color(51, 51, 51));
+        EPSGraham.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EPSGraham.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(EPSGraham);
 
         EPSGrahamRev.setEditable(false);
+        EPSGrahamRev.setBackground(new java.awt.Color(255, 255, 255));
         EPSGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        EPSGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        EPSGrahamRev.setForeground(new java.awt.Color(51, 51, 51));
+        EPSGrahamRev.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EPSGrahamRev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(EPSGrahamRev);
 
         jLabel143.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel143.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel143.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel143.setText("P/E ratio");
         jPanel74.add(jLabel143);
 
@@ -262,21 +276,29 @@ public class GrahamOutput extends javax.swing.JPanel {
 
         jLabel146.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel146.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel146.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel146.setText("Growth rate (next 5 years)");
         jPanel74.add(jLabel146);
 
         GRGraham.setEditable(false);
+        GRGraham.setBackground(new java.awt.Color(255, 255, 255));
         GRGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GRGraham.setForeground(new java.awt.Color(204, 204, 204));
+        GRGraham.setForeground(new java.awt.Color(51, 51, 51));
+        GRGraham.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GRGraham.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(GRGraham);
 
         GRGrahamRev.setEditable(false);
+        GRGrahamRev.setBackground(new java.awt.Color(255, 255, 255));
         GRGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        GRGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        GRGrahamRev.setForeground(new java.awt.Color(51, 51, 51));
+        GRGrahamRev.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GRGrahamRev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(GRGrahamRev);
 
         jLabel147.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel147.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel147.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel147.setText("Multiplier for Growth rate");
         jPanel74.add(jLabel147);
 
@@ -294,6 +316,7 @@ public class GrahamOutput extends javax.swing.JPanel {
 
         jLabel150.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel150.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel150.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel150.setText("Average yeald");
         jPanel74.add(jLabel150);
 
@@ -311,21 +334,29 @@ public class GrahamOutput extends javax.swing.JPanel {
 
         jLabel153.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel153.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel153.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel153.setText("AAA Current Yield (Y)");
         jPanel74.add(jLabel153);
 
         YGraham.setEditable(false);
+        YGraham.setBackground(new java.awt.Color(255, 255, 255));
         YGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        YGraham.setForeground(new java.awt.Color(204, 204, 204));
+        YGraham.setForeground(new java.awt.Color(51, 51, 51));
+        YGraham.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        YGraham.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(YGraham);
 
         YGrahamRev.setEditable(false);
+        YGrahamRev.setBackground(new java.awt.Color(255, 255, 255));
         YGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        YGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        YGrahamRev.setForeground(new java.awt.Color(51, 51, 51));
+        YGrahamRev.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        YGrahamRev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(YGrahamRev);
 
         jLabel154.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel154.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel154.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel154.setText("Instrinsic value");
         jPanel74.add(jLabel154);
 
@@ -333,16 +364,21 @@ public class GrahamOutput extends javax.swing.JPanel {
         EndGraham.setBackground(new java.awt.Color(204, 255, 204));
         EndGraham.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EndGraham.setForeground(new java.awt.Color(204, 204, 204));
+        EndGraham.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EndGraham.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(EndGraham);
 
         EndGrahamRev.setEditable(false);
         EndGrahamRev.setBackground(new java.awt.Color(204, 255, 204));
         EndGrahamRev.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EndGrahamRev.setForeground(new java.awt.Color(204, 204, 204));
+        EndGrahamRev.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EndGrahamRev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(EndGrahamRev);
 
         jLabel155.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel155.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel155.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel155.setText("Instrinsic value with MoS");
         jPanel74.add(jLabel155);
 
@@ -350,12 +386,16 @@ public class GrahamOutput extends javax.swing.JPanel {
         EndGrahamMoS.setBackground(new java.awt.Color(255, 255, 204));
         EndGrahamMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EndGrahamMoS.setForeground(new java.awt.Color(204, 204, 204));
+        EndGrahamMoS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EndGrahamMoS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(EndGrahamMoS);
 
         EndGrahamRevMoS.setEditable(false);
         EndGrahamRevMoS.setBackground(new java.awt.Color(255, 255, 204));
         EndGrahamRevMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         EndGrahamRevMoS.setForeground(new java.awt.Color(204, 204, 204));
+        EndGrahamRevMoS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EndGrahamRevMoS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel74.add(EndGrahamRevMoS);
 
         GrahamOut.add(jPanel74, java.awt.BorderLayout.CENTER);
@@ -368,7 +408,7 @@ public class GrahamOutput extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, 0)
-                    .addComponent(GrahamOut, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
+                    .addComponent(GrahamOut, javax.swing.GroupLayout.PREFERRED_SIZE, 829, Short.MAX_VALUE)
                     .addGap(0, 0, 0)))
         );
         layout.setVerticalGroup(

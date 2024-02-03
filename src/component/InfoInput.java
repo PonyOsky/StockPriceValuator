@@ -123,7 +123,7 @@ public class InfoInput extends javax.swing.JPanel {
 
         InfoIn.add(jPanel16);
 
-        jLabel28.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(51, 51, 51));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("Corporation:");
@@ -131,9 +131,11 @@ public class InfoInput extends javax.swing.JPanel {
         jLabel28.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         InfoIn.add(jLabel28);
 
+        CorpNameField.setBackground(new java.awt.Color(204, 204, 204));
         CorpNameField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CorpNameField.setForeground(new java.awt.Color(204, 204, 204));
-        CorpNameField.setBorder(null);
+        CorpNameField.setForeground(new java.awt.Color(51, 51, 51));
+        CorpNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CorpNameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CorpNameField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CorpNameFieldKeyTyped(evt);
@@ -141,15 +143,17 @@ public class InfoInput extends javax.swing.JPanel {
         });
         InfoIn.add(CorpNameField);
 
-        jLabel29.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(51, 51, 51));
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel29.setText("Corporation sticker:");
         InfoIn.add(jLabel29);
 
+        CorpStickerField.setBackground(new java.awt.Color(204, 204, 204));
         CorpStickerField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CorpStickerField.setForeground(new java.awt.Color(204, 204, 204));
-        CorpStickerField.setBorder(null);
+        CorpStickerField.setForeground(new java.awt.Color(51, 51, 51));
+        CorpStickerField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CorpStickerField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CorpStickerField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CorpStickerFieldKeyTyped(evt);
@@ -157,15 +161,17 @@ public class InfoInput extends javax.swing.JPanel {
         });
         InfoIn.add(CorpStickerField);
 
-        jLabel30.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(51, 51, 51));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("Stock exchange:");
         InfoIn.add(jLabel30);
 
+        StockExchField.setBackground(new java.awt.Color(204, 204, 204));
         StockExchField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        StockExchField.setForeground(new java.awt.Color(204, 204, 204));
-        StockExchField.setBorder(null);
+        StockExchField.setForeground(new java.awt.Color(51, 51, 51));
+        StockExchField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        StockExchField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         StockExchField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 StockExchFieldKeyTyped(evt);
@@ -173,15 +179,17 @@ public class InfoInput extends javax.swing.JPanel {
         });
         InfoIn.add(StockExchField);
 
-        jLabel44.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel44.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(51, 51, 51));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("Actual Price:");
         InfoIn.add(jLabel44);
 
+        ActPrice.setBackground(new java.awt.Color(204, 204, 204));
         ActPrice.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActPrice.setForeground(new java.awt.Color(204, 204, 204));
-        ActPrice.setBorder(null);
+        ActPrice.setForeground(new java.awt.Color(51, 51, 51));
+        ActPrice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ActPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ActPrice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 ActPriceKeyTyped(evt);
@@ -189,15 +197,17 @@ public class InfoInput extends javax.swing.JPanel {
         });
         InfoIn.add(ActPrice);
 
-        jLabel166.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel166.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel166.setForeground(new java.awt.Color(51, 51, 51));
         jLabel166.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel166.setText("Margin of Safety [ % ]");
         InfoIn.add(jLabel166);
 
+        Pillow2.setBackground(new java.awt.Color(204, 204, 204));
         Pillow2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Pillow2.setForeground(new java.awt.Color(204, 204, 204));
-        Pillow2.setBorder(null);
+        Pillow2.setForeground(new java.awt.Color(51, 51, 51));
+        Pillow2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Pillow2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Pillow2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Pillow2KeyTyped(evt);
@@ -205,15 +215,17 @@ public class InfoInput extends javax.swing.JPanel {
         });
         InfoIn.add(Pillow2);
 
-        jLabel31.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel31.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(51, 51, 51));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("Notes:");
         InfoIn.add(jLabel31);
 
+        NotesField.setBackground(new java.awt.Color(204, 204, 204));
         NotesField.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        NotesField.setForeground(new java.awt.Color(204, 204, 204));
-        NotesField.setBorder(null);
+        NotesField.setForeground(new java.awt.Color(51, 51, 51));
+        NotesField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NotesField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         NotesField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NotesFieldKeyTyped(evt);

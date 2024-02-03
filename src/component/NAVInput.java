@@ -101,10 +101,12 @@ public class NAVInput extends javax.swing.JPanel {
         jLabel64.setText("Total Assets");
         jPanel29.add(jLabel64);
 
+        TotalAssets.setBackground(new java.awt.Color(204, 204, 204));
         TotalAssets.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TotalAssets.setForeground(new java.awt.Color(204, 204, 204));
+        TotalAssets.setForeground(new java.awt.Color(51, 51, 51));
+        TotalAssets.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         TotalAssets.setToolTipText("");
-        TotalAssets.setBorder(null);
+        TotalAssets.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TotalAssets.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TotalAssetsKeyTyped(evt);
@@ -118,10 +120,12 @@ public class NAVInput extends javax.swing.JPanel {
         jLabel65.setText("Total Liabilities");
         jPanel29.add(jLabel65);
 
+        TotalLiab.setBackground(new java.awt.Color(204, 204, 204));
         TotalLiab.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TotalLiab.setForeground(new java.awt.Color(204, 204, 204));
+        TotalLiab.setForeground(new java.awt.Color(51, 51, 51));
+        TotalLiab.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         TotalLiab.setToolTipText("");
-        TotalLiab.setBorder(null);
+        TotalLiab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TotalLiab.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TotalLiabKeyTyped(evt);
@@ -135,10 +139,12 @@ public class NAVInput extends javax.swing.JPanel {
         jLabel66.setText("Total number of outstanding share");
         jPanel29.add(jLabel66);
 
+        SharesOut.setBackground(new java.awt.Color(204, 204, 204));
         SharesOut.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        SharesOut.setForeground(new java.awt.Color(204, 204, 204));
+        SharesOut.setForeground(new java.awt.Color(51, 51, 51));
+        SharesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         SharesOut.setToolTipText("");
-        SharesOut.setBorder(null);
+        SharesOut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SharesOut.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 SharesOutKeyTyped(evt);

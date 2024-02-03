@@ -4,7 +4,7 @@
  */
 package component;
 
-import Valuator.Controller;
+import Valuator.ReworkedFrontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,18 +21,18 @@ import javax.swing.table.TableColumn;
  * @author ondre
  */
 public class DDMOutput extends javax.swing.JPanel {
-    
-    public Controller controller;
+
+    public ReworkedFrontend frontend;
 
     /**
      * Creates new form DDMOutput
      */
-    public DDMOutput(Controller c, String route) {
+    public DDMOutput(ReworkedFrontend f, String route) {
         initComponents();
-        controller = c;
+        frontend = f;
         setLabels(route);
     }
-    
+
     public void setLabels(String fileRoute) {
         Properties p = new Properties();
         FileInputStream ip;
@@ -45,22 +45,22 @@ public class DDMOutput extends javax.swing.JPanel {
             Logger.getLogger(GrahamOutput.class.getName()).log(Level.SEVERE, null, ex);
         }
         jLabel120.setText(p.getProperty("jLabel120"));
-            jLabel122.setText(p.getProperty("jLabel122"));
-            jLabel124.setText(p.getProperty("jLabel124"));
-            jLabel125.setText(p.getProperty("jLabel125"));
-            jLabel126.setText(p.getProperty("jLabel126"));
-            jLabel121.setText(p.getProperty("actprice"));
-            jLabel123.setText(p.getProperty("mos"));
-            TableColumn tf = DividendsPrediction.getTableHeader().getColumnModel().getColumn(0);
-            tf.setHeaderValue(p.getProperty("year"));
-            for (int y = 1; y < 6; y++) {
-                TableColumn c = DividendsPrediction.getTableHeader().getColumnModel().getColumn(y);
-                c.setHeaderValue(controller.getActYear() + (y - 5));
-            }
-            DividendsPrediction.getTableHeader().repaint();
-            DividendsPrediction.setValueAt(p.getProperty("tableVal6"), 0, 0);
-            DividendsPrediction.setValueAt(p.getProperty("tableVal7"), 1, 0);
-            DividendsPrediction.setValueAt(p.getProperty("tableVal8"), 2, 0);
+        jLabel122.setText(p.getProperty("jLabel122"));
+        jLabel124.setText(p.getProperty("jLabel124"));
+        jLabel125.setText(p.getProperty("jLabel125"));
+        jLabel126.setText(p.getProperty("jLabel126"));
+        jLabel121.setText(p.getProperty("actprice"));
+        jLabel123.setText(p.getProperty("mos"));
+        TableColumn tf = DividendsPrediction.getTableHeader().getColumnModel().getColumn(0);
+        tf.setHeaderValue(p.getProperty("year"));
+        for (int y = 1; y < 6; y++) {
+            TableColumn c = DividendsPrediction.getTableHeader().getColumnModel().getColumn(y);
+            c.setHeaderValue(frontend.getActYear() + (y - 5));
+        }
+        DividendsPrediction.getTableHeader().repaint();
+        DividendsPrediction.setValueAt(p.getProperty("tableVal6"), 0, 0);
+        DividendsPrediction.setValueAt(p.getProperty("tableVal7"), 1, 0);
+        DividendsPrediction.setValueAt(p.getProperty("tableVal8"), 2, 0);
     }
 
     /**
@@ -134,8 +134,11 @@ public class DDMOutput extends javax.swing.JPanel {
         jPanel60.add(jLabel121);
 
         ActPriceDDM.setEditable(false);
+        ActPriceDDM.setBackground(new java.awt.Color(255, 255, 255));
         ActPriceDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActPriceDDM.setForeground(new java.awt.Color(204, 204, 204));
+        ActPriceDDM.setForeground(new java.awt.Color(51, 51, 51));
+        ActPriceDDM.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ActPriceDDM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel60.add(ActPriceDDM);
 
         jLabel122.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -145,8 +148,11 @@ public class DDMOutput extends javax.swing.JPanel {
         jPanel60.add(jLabel122);
 
         PriceDDM.setEditable(false);
+        PriceDDM.setBackground(new java.awt.Color(255, 255, 255));
         PriceDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PriceDDM.setForeground(new java.awt.Color(204, 204, 204));
+        PriceDDM.setForeground(new java.awt.Color(51, 51, 51));
+        PriceDDM.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PriceDDM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel60.add(PriceDDM);
 
         jLabel123.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -156,8 +162,11 @@ public class DDMOutput extends javax.swing.JPanel {
         jPanel60.add(jLabel123);
 
         PillowDDM.setEditable(false);
+        PillowDDM.setBackground(new java.awt.Color(255, 255, 255));
         PillowDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PillowDDM.setForeground(new java.awt.Color(204, 204, 204));
+        PillowDDM.setForeground(new java.awt.Color(51, 51, 51));
+        PillowDDM.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PillowDDM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel60.add(PillowDDM);
 
         jLabel124.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -167,14 +176,18 @@ public class DDMOutput extends javax.swing.JPanel {
         jPanel60.add(jLabel124);
 
         PriceDDMMoS.setEditable(false);
+        PriceDDMMoS.setBackground(new java.awt.Color(255, 255, 255));
         PriceDDMMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PriceDDMMoS.setForeground(new java.awt.Color(204, 204, 204));
+        PriceDDMMoS.setForeground(new java.awt.Color(51, 51, 51));
+        PriceDDMMoS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PriceDDMMoS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel60.add(PriceDDMMoS);
 
         DDMOut.add(jPanel60, java.awt.BorderLayout.PAGE_END);
 
         jPanel61.setLayout(new java.awt.GridLayout(2, 1));
 
+        DividendsPrediction.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         DividendsPrediction.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Divident Payout", null, null, null, null, null},
@@ -200,6 +213,7 @@ public class DDMOutput extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        DividendsPrediction.setRowHeight(25);
         DividendsPrediction.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(DividendsPrediction);
 
@@ -210,24 +224,31 @@ public class DDMOutput extends javax.swing.JPanel {
 
         jLabel125.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel125.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel125.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel125.setText("Average Growth Rate");
         jPanel62.add(jLabel125);
 
         AvGRDDM.setEditable(false);
-        AvGRDDM.setBackground(new java.awt.Color(70, 73, 75));
-        AvGRDDM.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        AvGRDDM.setForeground(new java.awt.Color(204, 204, 204));
+        AvGRDDM.setBackground(new java.awt.Color(255, 255, 255));
+        AvGRDDM.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        AvGRDDM.setForeground(new java.awt.Color(51, 51, 51));
+        AvGRDDM.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AvGRDDM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel62.add(AvGRDDM);
 
+        jLabel126.setBackground(new java.awt.Color(255, 255, 255));
         jLabel126.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel126.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel126.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel126.setText("WACC / Discount rate");
         jPanel62.add(jLabel126);
 
         WACCDDMOut.setEditable(false);
-        WACCDDMOut.setBackground(new java.awt.Color(70, 73, 75));
-        WACCDDMOut.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        WACCDDMOut.setForeground(new java.awt.Color(204, 204, 204));
+        WACCDDMOut.setBackground(new java.awt.Color(255, 255, 255));
+        WACCDDMOut.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        WACCDDMOut.setForeground(new java.awt.Color(51, 51, 51));
+        WACCDDMOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        WACCDDMOut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel62.add(WACCDDMOut);
 
         jPanel63.setBackground(new java.awt.Color(255, 255, 255));
@@ -240,7 +261,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel63);
@@ -255,7 +276,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel64);
@@ -270,7 +291,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel65);
@@ -285,7 +306,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel66Layout.setVerticalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel66);
@@ -300,7 +321,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel67Layout.setVerticalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel67);
@@ -315,7 +336,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel68);
@@ -330,7 +351,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel69);
@@ -345,7 +366,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel70);
@@ -360,7 +381,7 @@ public class DDMOutput extends javax.swing.JPanel {
         );
         jPanel71Layout.setVerticalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         jPanel62.add(jPanel71);
@@ -456,5 +477,4 @@ public class DDMOutput extends javax.swing.JPanel {
         return WACCDDMOut;
     }
 
-    
 }

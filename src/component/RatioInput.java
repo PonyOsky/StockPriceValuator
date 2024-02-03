@@ -135,6 +135,9 @@ public class RatioInput extends javax.swing.JPanel {
         jLabel217 = new javax.swing.JLabel();
         OrShNum2 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+        setForeground(new java.awt.Color(51, 51, 51));
+
         RatioIn.setBackground(new java.awt.Color(255, 255, 255));
         RatioIn.setForeground(new java.awt.Color(204, 204, 204));
         RatioIn.setLayout(new java.awt.BorderLayout());
@@ -163,15 +166,17 @@ public class RatioInput extends javax.swing.JPanel {
         jPanel94.setForeground(new java.awt.Color(51, 51, 51));
         jPanel94.setLayout(new java.awt.GridLayout(12, 2));
 
-        jLabel194.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel194.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel194.setForeground(new java.awt.Color(51, 51, 51));
         jLabel194.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel194.setText("Total Revenue");
         jPanel94.add(jLabel194);
 
+        TRevenue2.setBackground(new java.awt.Color(204, 204, 204));
         TRevenue2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TRevenue2.setForeground(new java.awt.Color(204, 204, 204));
-        TRevenue2.setBorder(null);
+        TRevenue2.setForeground(new java.awt.Color(51, 51, 51));
+        TRevenue2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TRevenue2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TRevenue2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TRevenue2KeyTyped(evt);
@@ -179,15 +184,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel94.add(TRevenue2);
 
-        jLabel195.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel195.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel195.setForeground(new java.awt.Color(51, 51, 51));
         jLabel195.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel195.setText("Cost of Revenue");
         jPanel94.add(jLabel195);
 
+        CofRevenue2.setBackground(new java.awt.Color(204, 204, 204));
         CofRevenue2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CofRevenue2.setForeground(new java.awt.Color(204, 204, 204));
-        CofRevenue2.setBorder(null);
+        CofRevenue2.setForeground(new java.awt.Color(51, 51, 51));
+        CofRevenue2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CofRevenue2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CofRevenue2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CofRevenue2KeyTyped(evt);
@@ -195,15 +202,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel94.add(CofRevenue2);
 
-        jLabel196.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel196.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel196.setForeground(new java.awt.Color(51, 51, 51));
         jLabel196.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel196.setText("Operating expense ");
         jPanel94.add(jLabel196);
 
+        OpExpense2.setBackground(new java.awt.Color(204, 204, 204));
         OpExpense2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        OpExpense2.setForeground(new java.awt.Color(204, 204, 204));
-        OpExpense2.setBorder(null);
+        OpExpense2.setForeground(new java.awt.Color(51, 51, 51));
+        OpExpense2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        OpExpense2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         OpExpense2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 OpExpense2KeyTyped(evt);
@@ -211,15 +220,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel94.add(OpExpense2);
 
-        jLabel197.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel197.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel197.setForeground(new java.awt.Color(51, 51, 51));
         jLabel197.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel197.setText("Other Income Expense");
         jPanel94.add(jLabel197);
 
+        OthIncome2.setBackground(new java.awt.Color(204, 204, 204));
         OthIncome2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        OthIncome2.setForeground(new java.awt.Color(204, 204, 204));
-        OthIncome2.setBorder(null);
+        OthIncome2.setForeground(new java.awt.Color(51, 51, 51));
+        OthIncome2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        OthIncome2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         OthIncome2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 OthIncome2KeyTyped(evt);
@@ -227,15 +238,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel94.add(OthIncome2);
 
-        jLabel198.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel198.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel198.setForeground(new java.awt.Color(51, 51, 51));
         jLabel198.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel198.setText("Net Income");
         jPanel94.add(jLabel198);
 
+        NIncome2.setBackground(new java.awt.Color(204, 204, 204));
         NIncome2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        NIncome2.setForeground(new java.awt.Color(204, 204, 204));
-        NIncome2.setBorder(null);
+        NIncome2.setForeground(new java.awt.Color(51, 51, 51));
+        NIncome2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NIncome2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         NIncome2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NIncome2KeyTyped(evt);
@@ -243,15 +256,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel94.add(NIncome2);
 
-        jLabel199.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel199.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel199.setForeground(new java.awt.Color(51, 51, 51));
         jLabel199.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel199.setText("EBIT");
         jPanel94.add(jLabel199);
 
+        EBIT2.setBackground(new java.awt.Color(204, 204, 204));
         EBIT2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        EBIT2.setForeground(new java.awt.Color(204, 204, 204));
-        EBIT2.setBorder(null);
+        EBIT2.setForeground(new java.awt.Color(51, 51, 51));
+        EBIT2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EBIT2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EBIT2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 EBIT2KeyTyped(evt);
@@ -271,7 +286,7 @@ public class RatioInput extends javax.swing.JPanel {
         jPanel95.setLayout(jPanel95Layout);
         jPanel95Layout.setHorizontalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(jLabel200, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
         jPanel95Layout.setVerticalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,7 +307,7 @@ public class RatioInput extends javax.swing.JPanel {
         jPanel96.setLayout(jPanel96Layout);
         jPanel96Layout.setHorizontalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(jLabel201, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
         jPanel96Layout.setVerticalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,15 +316,17 @@ public class RatioInput extends javax.swing.JPanel {
 
         jPanel94.add(jPanel96);
 
-        jLabel202.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel202.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel202.setForeground(new java.awt.Color(51, 51, 51));
         jLabel202.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel202.setText("Common Stock Dividend Paid");
         jPanel94.add(jLabel202);
 
+        ComDiv2.setBackground(new java.awt.Color(204, 204, 204));
         ComDiv2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ComDiv2.setForeground(new java.awt.Color(204, 204, 204));
-        ComDiv2.setBorder(null);
+        ComDiv2.setForeground(new java.awt.Color(51, 51, 51));
+        ComDiv2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ComDiv2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ComDiv2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 ComDiv2KeyTyped(evt);
@@ -329,7 +346,7 @@ public class RatioInput extends javax.swing.JPanel {
         jPanel97.setLayout(jPanel97Layout);
         jPanel97Layout.setHorizontalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(jLabel203, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
         jPanel97Layout.setVerticalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,7 +367,7 @@ public class RatioInput extends javax.swing.JPanel {
         jPanel98.setLayout(jPanel98Layout);
         jPanel98Layout.setHorizontalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+            .addComponent(jLabel204, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
         jPanel98Layout.setVerticalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,15 +376,17 @@ public class RatioInput extends javax.swing.JPanel {
 
         jPanel94.add(jPanel98);
 
-        jLabel205.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel205.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel205.setForeground(new java.awt.Color(51, 51, 51));
         jLabel205.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel205.setText("Taxes");
         jPanel94.add(jLabel205);
 
+        Taxes2.setBackground(new java.awt.Color(204, 204, 204));
         Taxes2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Taxes2.setForeground(new java.awt.Color(204, 204, 204));
-        Taxes2.setBorder(null);
+        Taxes2.setForeground(new java.awt.Color(51, 51, 51));
+        Taxes2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Taxes2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Taxes2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Taxes2KeyTyped(evt);
@@ -375,15 +394,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel94.add(Taxes2);
 
-        jLabel206.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel206.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel206.setForeground(new java.awt.Color(51, 51, 51));
         jLabel206.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel206.setText("Interest Expense");
         jPanel94.add(jLabel206);
 
+        IntExp2.setBackground(new java.awt.Color(204, 204, 204));
         IntExp2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        IntExp2.setForeground(new java.awt.Color(204, 204, 204));
-        IntExp2.setBorder(null);
+        IntExp2.setForeground(new java.awt.Color(51, 51, 51));
+        IntExp2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        IntExp2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         IntExp2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 IntExp2KeyTyped(evt);
@@ -396,15 +417,17 @@ public class RatioInput extends javax.swing.JPanel {
         jPanel99.setBackground(new java.awt.Color(255, 255, 255));
         jPanel99.setLayout(new java.awt.GridLayout(11, 2));
 
-        jLabel207.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel207.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel207.setForeground(new java.awt.Color(51, 51, 51));
         jLabel207.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel207.setText("Total Assets");
         jPanel99.add(jLabel207);
 
+        TAssets2.setBackground(new java.awt.Color(204, 204, 204));
         TAssets2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TAssets2.setForeground(new java.awt.Color(204, 204, 204));
-        TAssets2.setBorder(null);
+        TAssets2.setForeground(new java.awt.Color(51, 51, 51));
+        TAssets2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TAssets2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TAssets2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TAssets2KeyTyped(evt);
@@ -412,15 +435,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(TAssets2);
 
-        jLabel208.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel208.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel208.setForeground(new java.awt.Color(51, 51, 51));
         jLabel208.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel208.setText("Current Assets");
         jPanel99.add(jLabel208);
 
+        CurAssets2.setBackground(new java.awt.Color(204, 204, 204));
         CurAssets2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CurAssets2.setForeground(new java.awt.Color(204, 204, 204));
-        CurAssets2.setBorder(null);
+        CurAssets2.setForeground(new java.awt.Color(51, 51, 51));
+        CurAssets2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CurAssets2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CurAssets2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CurAssets2KeyTyped(evt);
@@ -428,15 +453,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(CurAssets2);
 
-        jLabel209.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel209.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel209.setForeground(new java.awt.Color(51, 51, 51));
         jLabel209.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel209.setText("Receivable");
         jPanel99.add(jLabel209);
 
+        Receivable2.setBackground(new java.awt.Color(204, 204, 204));
         Receivable2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Receivable2.setForeground(new java.awt.Color(204, 204, 204));
-        Receivable2.setBorder(null);
+        Receivable2.setForeground(new java.awt.Color(51, 51, 51));
+        Receivable2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Receivable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Receivable2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Receivable2KeyTyped(evt);
@@ -444,15 +471,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(Receivable2);
 
-        jLabel210.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel210.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel210.setForeground(new java.awt.Color(51, 51, 51));
         jLabel210.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel210.setText("Inventory");
         jPanel99.add(jLabel210);
 
+        Inv2.setBackground(new java.awt.Color(204, 204, 204));
         Inv2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        Inv2.setForeground(new java.awt.Color(204, 204, 204));
-        Inv2.setBorder(null);
+        Inv2.setForeground(new java.awt.Color(51, 51, 51));
+        Inv2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Inv2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Inv2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Inv2KeyTyped(evt);
@@ -460,15 +489,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(Inv2);
 
-        jLabel211.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel211.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel211.setForeground(new java.awt.Color(51, 51, 51));
         jLabel211.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel211.setText("Total Liabilities Net Minority Interest");
         jPanel99.add(jLabel211);
 
+        TLiabilities2.setBackground(new java.awt.Color(204, 204, 204));
         TLiabilities2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TLiabilities2.setForeground(new java.awt.Color(204, 204, 204));
-        TLiabilities2.setBorder(null);
+        TLiabilities2.setForeground(new java.awt.Color(51, 51, 51));
+        TLiabilities2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TLiabilities2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TLiabilities2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TLiabilities2KeyTyped(evt);
@@ -476,15 +507,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(TLiabilities2);
 
-        jLabel212.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel212.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel212.setForeground(new java.awt.Color(51, 51, 51));
         jLabel212.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel212.setText("Current Liabilities");
         jPanel99.add(jLabel212);
 
+        CurLiabilities2.setBackground(new java.awt.Color(204, 204, 204));
         CurLiabilities2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CurLiabilities2.setForeground(new java.awt.Color(204, 204, 204));
-        CurLiabilities2.setBorder(null);
+        CurLiabilities2.setForeground(new java.awt.Color(51, 51, 51));
+        CurLiabilities2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CurLiabilities2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CurLiabilities2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CurLiabilities2KeyTyped(evt);
@@ -492,15 +525,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(CurLiabilities2);
 
-        jLabel213.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel213.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel213.setForeground(new java.awt.Color(51, 51, 51));
         jLabel213.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel213.setText("Total Equity Gross Minority Interest");
         jPanel99.add(jLabel213);
 
+        TEGMI2.setBackground(new java.awt.Color(204, 204, 204));
         TEGMI2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TEGMI2.setForeground(new java.awt.Color(204, 204, 204));
-        TEGMI2.setBorder(null);
+        TEGMI2.setForeground(new java.awt.Color(51, 51, 51));
+        TEGMI2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TEGMI2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TEGMI2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TEGMI2KeyTyped(evt);
@@ -508,15 +543,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(TEGMI2);
 
-        jLabel214.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel214.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel214.setForeground(new java.awt.Color(51, 51, 51));
         jLabel214.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel214.setText("Shareholders Equity");
         jPanel99.add(jLabel214);
 
+        SHEquity2.setBackground(new java.awt.Color(204, 204, 204));
         SHEquity2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        SHEquity2.setForeground(new java.awt.Color(204, 204, 204));
-        SHEquity2.setBorder(null);
+        SHEquity2.setForeground(new java.awt.Color(51, 51, 51));
+        SHEquity2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SHEquity2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SHEquity2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 SHEquity2KeyTyped(evt);
@@ -524,15 +561,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(SHEquity2);
 
-        jLabel215.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel215.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel215.setForeground(new java.awt.Color(51, 51, 51));
         jLabel215.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel215.setText("Capital Lease Obligations");
         jPanel99.add(jLabel215);
 
+        CapLO2.setBackground(new java.awt.Color(204, 204, 204));
         CapLO2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        CapLO2.setForeground(new java.awt.Color(204, 204, 204));
-        CapLO2.setBorder(null);
+        CapLO2.setForeground(new java.awt.Color(51, 51, 51));
+        CapLO2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CapLO2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CapLO2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 CapLO2KeyTyped(evt);
@@ -540,15 +579,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(CapLO2);
 
-        jLabel216.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel216.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel216.setForeground(new java.awt.Color(51, 51, 51));
         jLabel216.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel216.setText("Tangible Book Value");
         jPanel99.add(jLabel216);
 
+        TanBookVal2.setBackground(new java.awt.Color(204, 204, 204));
         TanBookVal2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TanBookVal2.setForeground(new java.awt.Color(204, 204, 204));
-        TanBookVal2.setBorder(null);
+        TanBookVal2.setForeground(new java.awt.Color(51, 51, 51));
+        TanBookVal2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TanBookVal2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TanBookVal2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TanBookVal2KeyTyped(evt);
@@ -556,15 +597,17 @@ public class RatioInput extends javax.swing.JPanel {
         });
         jPanel99.add(TanBookVal2);
 
-        jLabel217.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel217.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel217.setForeground(new java.awt.Color(51, 51, 51));
         jLabel217.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel217.setText("Ordinary Shares Number");
         jPanel99.add(jLabel217);
 
+        OrShNum2.setBackground(new java.awt.Color(204, 204, 204));
         OrShNum2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        OrShNum2.setForeground(new java.awt.Color(204, 204, 204));
-        OrShNum2.setBorder(null);
+        OrShNum2.setForeground(new java.awt.Color(51, 51, 51));
+        OrShNum2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        OrShNum2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         OrShNum2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 OrShNum2KeyTyped(evt);
@@ -580,7 +623,7 @@ public class RatioInput extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 966, Short.MAX_VALUE)
+            .addGap(0, 1198, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addComponent(RatioIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

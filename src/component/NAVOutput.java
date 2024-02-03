@@ -109,8 +109,11 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel83.add(jLabel118);
 
         ActPriceNAV.setEditable(false);
+        ActPriceNAV.setBackground(new java.awt.Color(255, 255, 255));
         ActPriceNAV.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        ActPriceNAV.setForeground(new java.awt.Color(204, 204, 204));
+        ActPriceNAV.setForeground(new java.awt.Color(51, 51, 51));
+        ActPriceNAV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ActPriceNAV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel83.add(ActPriceNAV);
 
         jLabel119.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -120,8 +123,11 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel83.add(jLabel119);
 
         PriceNAV.setEditable(false);
+        PriceNAV.setBackground(new java.awt.Color(255, 255, 255));
         PriceNAV.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PriceNAV.setForeground(new java.awt.Color(204, 204, 204));
+        PriceNAV.setForeground(new java.awt.Color(51, 51, 51));
+        PriceNAV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PriceNAV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel83.add(PriceNAV);
 
         jLabel128.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -131,8 +137,11 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel83.add(jLabel128);
 
         PillowNAV.setEditable(false);
+        PillowNAV.setBackground(new java.awt.Color(255, 255, 255));
         PillowNAV.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PillowNAV.setForeground(new java.awt.Color(204, 204, 204));
+        PillowNAV.setForeground(new java.awt.Color(51, 51, 51));
+        PillowNAV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PillowNAV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel83.add(PillowNAV);
 
         jLabel129.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -142,8 +151,11 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel83.add(jLabel129);
 
         PriceNAVMoS.setEditable(false);
+        PriceNAVMoS.setBackground(new java.awt.Color(255, 255, 255));
         PriceNAVMoS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        PriceNAVMoS.setForeground(new java.awt.Color(204, 204, 204));
+        PriceNAVMoS.setForeground(new java.awt.Color(51, 51, 51));
+        PriceNAVMoS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PriceNAVMoS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel83.add(PriceNAVMoS);
 
         NAVOut.add(jPanel83, java.awt.BorderLayout.PAGE_END);
@@ -151,7 +163,7 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.GridLayout(4, 2));
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Number of Total Assets");
@@ -159,11 +171,14 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel1.add(jLabel1);
 
         TotalAssetsNAV.setEditable(false);
+        TotalAssetsNAV.setBackground(new java.awt.Color(255, 255, 255));
         TotalAssetsNAV.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TotalAssetsNAV.setForeground(new java.awt.Color(204, 204, 204));
+        TotalAssetsNAV.setForeground(new java.awt.Color(51, 51, 51));
+        TotalAssetsNAV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TotalAssetsNAV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(TotalAssetsNAV);
 
-        jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Number of Total Liabilities");
@@ -171,11 +186,14 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel1.add(jLabel4);
 
         TotalLiabilitiesNAV.setEditable(false);
+        TotalLiabilitiesNAV.setBackground(new java.awt.Color(255, 255, 255));
         TotalLiabilitiesNAV.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        TotalLiabilitiesNAV.setForeground(new java.awt.Color(204, 204, 204));
+        TotalLiabilitiesNAV.setForeground(new java.awt.Color(51, 51, 51));
+        TotalLiabilitiesNAV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TotalLiabilitiesNAV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(TotalLiabilitiesNAV);
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Shares outstanding");
@@ -183,8 +201,11 @@ public class NAVOutput extends javax.swing.JPanel {
         jPanel1.add(jLabel5);
 
         SharesNAV.setEditable(false);
+        SharesNAV.setBackground(new java.awt.Color(255, 255, 255));
         SharesNAV.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        SharesNAV.setForeground(new java.awt.Color(204, 204, 204));
+        SharesNAV.setForeground(new java.awt.Color(51, 51, 51));
+        SharesNAV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SharesNAV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(SharesNAV);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -197,7 +218,7 @@ public class NAVOutput extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 101, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2);
