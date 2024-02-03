@@ -54,7 +54,10 @@
           <Group type="102" attributes="0">
               <Component id="scrollPaneWin111" min="-2" pref="249" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="body" pref="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="body" pref="0" max="32767" attributes="0"/>
+                  <Component id="selector1" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Component id="heading2" alignment="0" pref="1084" max="32767" attributes="0"/>
@@ -64,11 +67,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="heading2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="scrollPaneWin111" pref="558" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="scrollPaneWin111" pref="599" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="selector1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="body" pref="0" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -132,6 +136,8 @@
       </SubComponents>
     </Container>
     <Component class="component.Heading" name="heading2">
+    </Component>
+    <Component class="component.Selector" name="selector1">
     </Component>
   </SubComponents>
 </Form>

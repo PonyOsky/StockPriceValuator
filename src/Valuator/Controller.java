@@ -444,7 +444,7 @@ public class Controller {
      */
     public void clean(ArrayList choices) {
         if (choices == null || choices.isEmpty()) {
-            if (choices.contains("CleanAll")) {
+            if (choices.contains("All")) {
                 info.getCorpName().setText("");
                 info.getSticker().setText("");
                 info.getStockExchange().setText("");
@@ -495,7 +495,7 @@ public class Controller {
                 navin.getSharesOut().setText("");
             }
 
-            if (choices.contains("CleanInfo")) {
+            if (choices.contains("Informations")) {
                 info.getCorpName().setText("");
                 info.getSticker().setText("");
                 info.getStockExchange().setText("");
@@ -504,7 +504,7 @@ public class Controller {
                 info.getNotes().setText("");
             }
 
-            if (choices.contains("CleanRatio")) {
+            if (choices.contains("Ratios")) {
                 ratioin.getTaxes().setText("");
                 ratioin.getIntExp().setText("");
                 ratioin.getEBIT().setText("");
@@ -527,7 +527,7 @@ public class Controller {
                 ratioin.getSHEquity().setText("");
             }
 
-            if (choices.contains("CleanDCF")) {
+            if (choices.contains("DCF")) {
                 dcfin.getGR().setText("");
                 dcfin.getWACCDCFInn().setText("");
                 dcfin.getActFCF().setText("");
@@ -541,7 +541,7 @@ public class Controller {
                 fcf.clear();
             }
 
-            if (choices.contains("CleanDDM")) {
+            if (choices.contains("DDM")) {
                 ddmin.getWACCDDM().setText("");
                 divis.clear();
                 for (int count = 0; count < 5; count++) {
@@ -549,13 +549,13 @@ public class Controller {
                 }
             }
 
-            if (choices.contains("CleanGraham")) {
+            if (choices.contains("Grahams formula")) {
                 grahamin.getEPS().setText("");
                 grahamin.getGRGraham().setText("");
                 grahamin.getYInn().setText("");
             }
 
-            if (choices.contains("CleanNAV")) {
+            if (choices.contains("NAV")) {
                 navin.getTotalAssets().setText("");
                 navin.getTotalLiab().setText("");
                 navin.getSharesOut().setText("");
@@ -569,7 +569,7 @@ public class Controller {
      */
     public void calculation(ArrayList choices) {
         if (choices != null) {
-            if (choices.contains("CalcRatio")) {
+            if (choices.contains("Ratios")) {
                 ratioout.getGM().setText(String.valueOf(decfor.format(ratios.grossMargin())));
                 ratioout.getOM().setText(String.valueOf(decfor.format(ratios.operationMargin())));
                 ratioout.getEPSRatio().setText(String.valueOf(decfor.format(ratios.earningsPerShare())));
@@ -587,7 +587,7 @@ public class Controller {
                 ratioout.getLiabilitiesTime().setText(String.valueOf(decfor.format(ratios.liabTime())));
                 ratioout.getInventoryTime().setText(String.valueOf(formatter.format(ratios.invTime())));
             }
-            if (choices.contains("CalcDCF")) {
+            if (choices.contains("DCF")) {
                 dcf.price(getSharesOutstanding(), getCash(), getTotalDebt());
                 dcf.priceMoS(getMarginOfSafety());
                 dcfout.getPriceDCFMoS().setText(decfor.format(dcf.getValueMoS()));
@@ -614,7 +614,7 @@ public class Controller {
                 dcfout.getSumFCFDCF().setText(decfor.format(dcf.sumOfDFCF()));
                 dcfout.getEVDCF().setText(decfor.format(dcf.equityDCF(getCash(), getTotalDebt())));
             }
-            if (choices.contains("CalcDDM")) {
+            if (choices.contains("DDM")) {
                 DefaultTableModel DivPredModel = (DefaultTableModel) ddmout.getDividendsPrediction().getModel();
                 ddm.getDDMPrice(getDividends());
                 ddm.ddmMoS(getMarginOfSafety());
@@ -633,7 +633,7 @@ public class Controller {
                 ddmout.getAvGRDDM().setText(decfor.format(ddm.getAveGrowDDM()));
                 ddmout.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
             }
-            if (choices.contains("CalcGraham")) {
+            if (choices.contains("Grahams formula")) {
                 graham.graham(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
                 graham.grahamReversed(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
                 graham.grahamMoS(getMarginOfSafety());
@@ -649,7 +649,7 @@ public class Controller {
                 grahamout.getYGraham().setText(decfor.format(getAAACurrentYield()));
                 grahamout.getYGrahamRev().setText(decfor.format(getAAACurrentYield()));
             }
-            if (choices.contains("CalcNAV")) {
+            if (choices.contains("NAV")) {
                 nav.valuation(getAssetsNAV(), getLiabilitiesNAV(), getSharesNAV());
                 nav.valuationMoS(getMarginOfSafety());
                 navout.getPriceNAV().setText(decfor.format(nav.getValue()));

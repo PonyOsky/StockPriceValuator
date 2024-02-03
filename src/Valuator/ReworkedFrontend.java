@@ -11,7 +11,7 @@ import component.DDMOutput;
 import component.GrahamInput;
 import component.GrahamOutput;
 import component.Help;
-import component.HomePage;
+import component.Selector;
 import component.InfoInput;
 import component.Library;
 import component.NAVInput;
@@ -21,14 +21,15 @@ import component.RatioOutput;
 import component.Settings;
 import component.ShowOut;
 import component.SummaryOutput;
-import java.awt.Color;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import menu.MenuEvent;
 
 /**
@@ -44,14 +45,8 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     /**
      * Creates new form ReworkedFrontend
      */
-    private final Color lightColor;
-    private final Color lightDarkColor;
-    private final Color darkLightColor;
-    private final Color darkColor;
-    private ArrayList<JPanel> activeChoices;
     public ArrayList<String> cleaningChoices;
     public ArrayList<String> calcChoices;
-    public ArrayList<String> langChoices;
     public Languages langs;
     public Controller controller;
     public SaveLoad saveLoad;
@@ -69,10 +64,13 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     public SummaryOutput sumout;
     public Library lib;
     public Help help;
-    public HomePage hp;
+    public Selector hp;
     public ShowOut showout;
     public Settings settings;
     private JPanel[] panels;
+    public Selector selector;
+    private String clstr;
+    private String castr;
 
     /**
      *
@@ -87,15 +85,23 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         saveLoad = new SaveLoad(controller);
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
-        langChoices = new ArrayList();
-        lightColor = new Color(0, 255, 246);
-        lightDarkColor = new Color(0, 231, 255);
-        darkLightColor = new Color(0, 158, 255);
-        darkColor = new Color(0, 20, 255);
         initViews(langs.getRoute());
         saveLoad.initSaves();
+        Properties p = new Properties();
+        FileInputStream ip;
+        try {
+            ip = new FileInputStream(langs.getRoute());
+            p.load(ip);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RatioInput.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GrahamOutput.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        clstr = p.getProperty("cl");
+        castr = p.getProperty("ca");
+        selector1.setVisible(false);
         menu2.setEvent(
-            new MenuEvent() {
+                new MenuEvent() {
             @Override
             public void selected(int index, int subIndex
             ) {
@@ -117,6 +123,58 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 if (index == 0 && subIndex == 6) {
                     showForm(panels, navin);
                 }
+                if (index == 1 && subIndex == 1) {
+                    if (cleaningChoices.contains("All")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("All"));
+                    } else {
+                        cleaningChoices.add("All");
+                    }
+                }
+                if (index == 1 && subIndex == 2) {
+                    if (cleaningChoices.contains("Informations")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("Informations"));
+                    } else {
+                        cleaningChoices.add("Informations");
+                    }
+                }
+                if (index == 1 && subIndex == 3) {
+                    if (cleaningChoices.contains("Ratios")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("Ratios"));
+                    } else {
+                        cleaningChoices.add("Ratios");
+                    }
+                }
+                if (index == 1 && subIndex == 4) {
+                    if (cleaningChoices.contains("DCF")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("DCF"));
+                    } else {
+                        cleaningChoices.add("DCF");
+                    }
+                }
+                if (index == 1 && subIndex == 5) {
+                    if (cleaningChoices.contains("DDM")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("DDM"));
+                    } else {
+                        cleaningChoices.add("DDM");
+                    }
+                }
+                if (index == 1 && subIndex == 6) {
+                    if (cleaningChoices.contains("Grahams formula")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("Grahams formula"));
+                    } else {
+                        cleaningChoices.add("Grahams formula");
+                    }
+                }
+                if (index == 1 && subIndex == 7) {
+                    if (cleaningChoices.contains("NAV")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("NAV"));
+                    } else {
+                        cleaningChoices.add("NAV");
+                    }
+                }
+                if (index == 1 && subIndex == 7) {
+                    controller.clean(cleaningChoices);
+                }
                 if (index == 2 && subIndex == 1) {
                     showForm(panels, sumout);
                 }
@@ -135,6 +193,44 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 if (index == 2 && subIndex == 6) {
                     showForm(panels, navout);
                 }
+                if (index == 3 && subIndex == 1) {
+                    if (calcChoices.contains("Ratios")) {
+                        calcChoices.remove(calcChoices.indexOf("Ratios"));
+                    } else {
+                        calcChoices.add("Ratios");
+                    }
+                }
+                if (index == 3 && subIndex == 2) {
+                    if (calcChoices.contains("DCF")) {
+                        calcChoices.remove(calcChoices.indexOf("DCF"));
+                    } else {
+                        calcChoices.add("DCF");
+                    }
+                }
+                if (index == 3 && subIndex == 3) {
+                    if (calcChoices.contains("DDM")) {
+                        calcChoices.remove(calcChoices.indexOf("DDM"));
+                    } else {
+                        calcChoices.add("DDM");
+                    }
+                }
+                if (index == 3 && subIndex == 4) {
+                    if (calcChoices.contains("Grahams formula")) {
+                        calcChoices.remove(calcChoices.indexOf("Grahams formula"));
+                    } else {
+                        calcChoices.add("Grahams formula");
+                    }
+                }
+                if (index == 3 && subIndex == 5) {
+                    if (calcChoices.contains("NAV")) {
+                        calcChoices.remove(calcChoices.indexOf("NAV"));
+                    } else {
+                        calcChoices.add("NAV");
+                    }
+                }
+                if (index == 3 && subIndex == 6) {
+                    controller.calculation(calcChoices);
+                }
                 if (index == 4) {
                     showForm(panels, showout);
                 }
@@ -147,6 +243,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
                 if (index == 7) {
                     showForm(panels, help);
                 }
+                setSelector(cleaningChoices, calcChoices);
             }
         }
         );
@@ -191,7 +288,33 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         initViews(route);
         showForm(panels, settings);
     }
-    
+
+    public void setSelector(ArrayList cl, ArrayList calc) {
+        if (cl.size() >= 1 || calc.size() >= 1) {
+            selector1.setVisible(true);
+            if (cl.size() >= 1) {
+                selector1.getjLabel1().setText(clstr + cl.toString());
+            }else{
+                selector1.getjLabel1().setText(castr + calc.toString());
+            }
+            if (calc.size() >= 1) {
+                selector1.getjLabel1().setText(castr + calc.toString());
+            }else{
+                selector1.getjLabel1().setText(clstr + cl.toString());
+            }
+        } else {
+            selector1.setVisible(false);
+            selector1.getjLabel1().setText("");
+        }
+        setComponentZOrder(selector1, 2);
+        setComponentZOrder(body, 1);
+        for(JPanel j : panels)
+            setComponentZOrder(j, 1);
+        body.add(selector1);
+        body.repaint();
+        body.revalidate();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -208,6 +331,7 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
         scrollPaneWin111 = new scroll.ScrollPaneWin11();
         menu2 = new menu.Menu();
         heading2 = new component.Heading();
+        selector1 = new component.Selector();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,7 +364,9 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(selector1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(heading2, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
         );
@@ -248,70 +374,18 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(heading2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPaneWin111, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                    .addComponent(scrollPaneWin111, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(selector1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     *
-     * @param target
-     * @param change
-     */
-    /**
-     *
-     * @param target
-     */
-    public void clickUnclick(JPanel target) {
-        if (target != null) {
-            if (!activeChoices.contains(target)) {
-                target.setBackground(darkLightColor);
-                activeChoices.add(target);
-            } else {
-                target.setBackground(lightDarkColor);
-                activeChoices.remove(target);
-            }
-        }
-    }
-
-    /**
-     *
-     * @param choice
-     */
-    public void chooseCleaning(JPanel choice) {
-        if (choice != null) {
-            if (cleaningChoices.contains(choice.getName())) {
-                cleaningChoices.remove(choice.getName());
-                choice.setBackground(lightDarkColor);
-            } else {
-                cleaningChoices.add(choice.getName());
-                choice.setBackground(darkLightColor);
-            }
-        }
-    }
-
-    /**
-     *
-     * @param choice
-     */
-    public void chooseCalculation(JPanel choice) {
-        if (choice != null) {
-            if (calcChoices.contains(choice.getName())) {
-                calcChoices.remove(choice.getName());
-                choice.setBackground(lightDarkColor);
-            } else {
-                calcChoices.add(choice.getName());
-                choice.setBackground(darkLightColor);
-            }
-        }
-    }
 
     /**
      * @param args the command line arguments
@@ -355,5 +429,6 @@ public final class ReworkedFrontend extends javax.swing.JFrame {
     private menu.Menu menu2;
     private scroll.PolygonCorner polygonCorner1;
     private scroll.ScrollPaneWin11 scrollPaneWin111;
+    private component.Selector selector1;
     // End of variables declaration//GEN-END:variables
 }
