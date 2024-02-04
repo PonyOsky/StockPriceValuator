@@ -22,6 +22,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -102,12 +103,13 @@ public class Controller {
     public ArrayList getFreeCashFlow() {
         fcf = new ArrayList();
         for (int coun = 0; coun < dcfin.getFCF().getRowCount(); coun++) {
-            if (dcfin.getFCF().getValueAt(coun, 1) == null) {
-                fcf.add(null);
+            if (dcfin.getFCF().getValueAt(coun, 1) != null) {
+                fcf.add(dcfin.getFCF().getValueAt(coun, 1));
             } else {
-                fcf.add(Double.valueOf(dcfin.getFCF().getValueAt(coun, 1).toString()));
+                fcf.add(null);
             }
         }
+        Collections.reverse(fcf);
         return fcf;
     }
 
@@ -117,13 +119,14 @@ public class Controller {
      */
     public ArrayList getDividends() {
         divis = new ArrayList();
-        for (int count = 0; count < ddmin.getDividends().getColumnCount(); count++) {
+        for (int count = 0; count < ddmin.getDividends().getRowCount(); count++) {
             if (ddmin.getDividends().getValueAt(count, 1) != null) {
-                divis.add(Double.valueOf(ddmin.getDividends().getValueAt(count, 1).toString()));
+                divis.add(ddmin.getDividends().getValueAt(count, 1));
             } else {
                 divis.add(null);
             }
         }
+        Collections.reverse(divis);
         return divis;
     }
 
@@ -147,7 +150,7 @@ public class Controller {
         if (dcfin.getGR().getText() == null) {
             return 0;
         } else {
-            return doubleFormat(dcfin.getGR().getText());
+            return doubleFormat(dcfin.getGR().getText()) / 100;
         }
     }
 
@@ -433,7 +436,7 @@ public class Controller {
      * @return
      */
     public double getStateGrowthRate() {
-        return doubleFormat(dcfin.getState().getText());
+        return doubleFormat(dcfin.getState().getText()) / 100;
     }
 
     /**
@@ -613,37 +616,37 @@ public class Controller {
                 ratioout.getInventoryTime().setText(String.valueOf(formatter.format(ratios.invTime())));
             }
             if (choices.contains("DCF")) {
-                dcf.price(getSharesOutstanding(), getCash(), getTotalDebt());
+                dcf.price(getSharesOutstanding(), getCash(), getTotalDebt(), getStateGrowthRate(), getGrowthRateDCF(), getDiscountRateDCF(), getActualFreeCashFlow());
                 dcf.priceMoS(getMarginOfSafety());
                 dcfout.getPriceDCFMoS().setText(decfor.format(dcf.getValueMoS()));
                 dcfout.getPriceDCF().setText(decfor.format(dcf.getValue()));
                 for (int count = 0; count < getFreeCashFlow().size(); count++) {
-                    if (count + 1 == 9) {
+                    if (count + 1 == 10) {
                         break;
                     }
                     dcfout.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0, count + 1);
                 }
                 for (int count = 0; count < dcf.getFCFGR(getFreeCashFlow()).size(); count++) {
-                    if (count + 1 == 9) {
+                    if (count + 1 == 10) {
                         break;
                     }
                     dcfout.getLastFCF().setValueAt(dcf.getFCFGR(getFreeCashFlow()).get(count), 1, count + 1);
                 }
-                dcfout.getGRDCF().setText(String.valueOf(decfor.format(getGrowthRate())));
-                dcfout.getAvGRDCF().setText(String.valueOf(decfor.format(dcf.aveGR())));
+                dcfout.getGRDCF().setText(decfor.format(getGrowthRateDCF()*100));
+                dcfout.getAvGRDCF().setText(decfor.format(dcf.getAveGr()));
                 for (int count = 0; count < 13; count++) {
-                    dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getFFCF(getActualPrice(), getGrowthRateDCF()).get(count)), 1, count + 1);
+                    dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getFfcf().get(count)), 1, count + 1);
                 }
                 for (int count = 0; count < 13; count++) {
-                    dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF(getDiscountRateDCF()).get(count)), 2, count + 1);
+                    dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getDffcf().get(count)), 2, count + 1);
                 }
-                dcfout.getStateDCF().setText(String.valueOf(getStateGrowthRate()));
+                dcfout.getStateDCF().setText(String.valueOf(getStateGrowthRate()*100));
                 dcfout.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF() * 100));
                 dcfout.getCashDCF().setText(String.valueOf(getCash()));
                 dcfout.getDebtDCF().setText(String.valueOf(getTotalDebt()));
                 dcfout.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
-                dcfout.getSumFCFDCF().setText(decfor.format(dcf.sumOfDFCF()));
-                dcfout.getEVDCF().setText(decfor.format(dcf.equityDCF(getCash(), getTotalDebt())));
+                dcfout.getSumFCFDCF().setText(decfor.format(dcf.getSodfcf()));
+                dcfout.getEVDCF().setText(decfor.format(dcf.getEquity()));
             }
             if (choices.contains("DDM")) {
                 DefaultTableModel DivPredModel = (DefaultTableModel) ddmout.getDividendsPrediction().getModel();
@@ -793,6 +796,9 @@ public class Controller {
                 if (s.indexOf(",") == s.lastIndexOf(",")) {
                     s = s.replaceFirst(",", ".");
                 } else {
+                    int index = s.lastIndexOf(",");
+                    char ch = '.';
+                    s = s.substring(0, index) + ch + s.substring(index + 1);
                     s = s.replace(",", "");
                 }
             }

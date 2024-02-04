@@ -25,9 +25,12 @@ public class Library extends javax.swing.JPanel {
 
     /**
      * Creates new form Library
+     * @param sv
+     * @param route
      */
-    public Library(String route) {
+    public Library(SaveLoad sv, String route) {
         initComponents();
+        saveLoad = sv;
         setLabels(route);
     }
 

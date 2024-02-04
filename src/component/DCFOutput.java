@@ -228,18 +228,18 @@ public class DCFOutput extends javax.swing.JPanel {
         LastFCF.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         LastFCF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Free Cash Flow", null, null, null, null, null, null, null, null},
-                {"Growth Rate in %", null, null, null, null, null, null, null, null}
+                {"Free Cash Flow", null, null, null, null, null, null, null, null, null},
+                {"Growth Rate in %", null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Year", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"
+                "Year", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
