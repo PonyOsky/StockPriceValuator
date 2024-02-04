@@ -84,22 +84,22 @@ public class SaveLoad {
         NetAssetValue nav = new NetAssetValue();
         showout.getjLabel163().setText(save.getName());
         showout.getjLabel34().setText(save.getTicker());
-        if (save.getValMethods().contains("CalcRatio")) {
-            save.getValMethods().remove("CalcRatio");
+        if (save.getValMethods().contains("Ratio")) {
+            save.getValMethods().remove("Ratio");
         }
-        if (save.getValMethods().contains("CalcDCF")) {
+        if (save.getValMethods().contains("DCF")) {
             dcf.price(save.getSharesOuts(), save.getCashCashEq(), save.getTotalDebt());
             dcf.priceMoS(save.getPillow());
             showout.getDCFMoSAns().setText(decfor.format(dcf.getValueMoS()));
             showout.getDCFAns().setText(decfor.format(dcf.getValue()));
         }
-        if (save.getValMethods().contains("CalcDDM")) {
+        if (save.getValMethods().contains("DDM")) {
             ddm.getDDMPrice(save.getDividends());
             ddm.ddmMoS(save.getPillow());
             showout.getDDMMoSAns().setText(decfor.format(ddm.getValueMoS()));
             showout.getDDMAns().setText(decfor.format(ddm.getValue()));
         }
-        if (save.getValMethods().contains("CalcGraham")) {
+        if (save.getValMethods().contains("Graham")) {
             graham.graham(save.getEps(), save.getGrGrRate(), save.getAaa());
             graham.grahamReversed(save.getEps(), save.getGrGrRate(), save.getAaa());
             graham.grahamMoS(save.getPillow());
@@ -109,7 +109,7 @@ public class SaveLoad {
             showout.getGrahamMoSAns().setText(decfor.format(graham.getValueMoS()));
             showout.getGrahamRevMoSAns().setText(decfor.format(graham.getValueRevMoS()));
         }
-        if (save.getValMethods().contains("CalcNAV")) {
+        if (save.getValMethods().contains("NAV")) {
             nav.valuation(save.getNAVTotAssets(), save.getNAVTotLiab(), save.getNAVTotNumOfOutShare());
             nav.valuationMoS(save.getPillow());
             showout.getNAVAns().setText(decfor.format(nav.getValue()));

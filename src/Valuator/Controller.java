@@ -58,6 +58,10 @@ public class Controller {
     public SummaryOutput sumout;
     public Library lib;
 
+    public Controller() {
+        decfor.setRoundingMode(RoundingMode.DOWN);
+    }
+
     /**
      *
      * @param i
@@ -74,8 +78,7 @@ public class Controller {
      * @param l
      * @param so
      */
-    public Controller(InfoInput i, RatioInput ri, DCFInput dci, DDMInput ddi, GrahamInput gi, NAVInput ni, RatioOutput ro, DCFOutput dco, DDMOutput ddo, GrahamOutput go, NAVOutput no, Library l, SummaryOutput so) {
-        decfor.setRoundingMode(RoundingMode.DOWN);
+    public void setConstants(InfoInput i, RatioInput ri, DCFInput dci, DDMInput ddi, GrahamInput gi, NAVInput ni, RatioOutput ro, DCFOutput dco, DDMOutput ddo, GrahamOutput go, NAVOutput no, Library l, SummaryOutput so) {
         info = i;
         ratioin = ri;
         dcfin = dci;
@@ -571,7 +574,7 @@ public class Controller {
                 }
             }
 
-            if (choices.contains("Grahams formula")) {
+            if (choices.contains("Graham")) {
                 grahamin.getEPS().setText("");
                 grahamin.getGRGraham().setText("");
                 grahamin.getYInn().setText("");
@@ -661,7 +664,7 @@ public class Controller {
                 ddmout.getAvGRDDM().setText(decfor.format(ddm.getAveGrowDDM()));
                 ddmout.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
             }
-            if (choices.contains("Grahams formula")) {
+            if (choices.contains("Graham")) {
                 graham.graham(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
                 graham.grahamReversed(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
                 graham.grahamMoS(getMarginOfSafety());

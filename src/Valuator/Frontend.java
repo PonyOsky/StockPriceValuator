@@ -31,6 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import menu.Menu;
 import menu.MenuEvent;
 
 /**
@@ -72,6 +73,7 @@ public final class Frontend extends javax.swing.JFrame {
     public Selector selector;
     private String clstr;
     private String castr;
+    public Menu menu;
 
     /**
      *
@@ -82,12 +84,13 @@ public final class Frontend extends javax.swing.JFrame {
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
         langs = new Languages();
-        initViews(langs.getRoute());
-        controller = new Controller(info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, lib, sumout);
+        controller = new Controller();
         saveLoad = new SaveLoad(controller);
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
         saveLoad.initSaves();
+        initViews(langs.getRoute());
+        controller.setConstants(info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, lib, sumout);
         Properties p = new Properties();
         FileInputStream ip;
         try {
@@ -160,10 +163,10 @@ public final class Frontend extends javax.swing.JFrame {
                     }
                 }
                 if (index == 1 && subIndex == 6) {
-                    if (cleaningChoices.contains("Grahams formula")) {
-                        cleaningChoices.remove(cleaningChoices.indexOf("Grahams formula"));
+                    if (cleaningChoices.contains("Graham")) {
+                        cleaningChoices.remove(cleaningChoices.indexOf("Graham"));
                     } else {
-                        cleaningChoices.add("Grahams formula");
+                        cleaningChoices.add("Graham");
                     }
                 }
                 if (index == 1 && subIndex == 7) {
@@ -217,10 +220,10 @@ public final class Frontend extends javax.swing.JFrame {
                     }
                 }
                 if (index == 3 && subIndex == 4) {
-                    if (calcChoices.contains("Grahams formula")) {
-                        calcChoices.remove(calcChoices.indexOf("Grahams formula"));
+                    if (calcChoices.contains("Graham")) {
+                        calcChoices.remove(calcChoices.indexOf("Graham"));
                     } else {
-                        calcChoices.add("Grahams formula");
+                        calcChoices.add("Graham");
                     }
                 }
                 if (index == 3 && subIndex == 5) {
@@ -303,6 +306,11 @@ public final class Frontend extends javax.swing.JFrame {
         panels = new JPanel[]{};
         initViews(route);
         showForm(panels, settings);
+        menu2.setNewLang();
+        menu2.repaint();
+        menu2.revalidate();
+        scrollPaneWin111.repaint();
+        scrollPaneWin111.revalidate();
     }
 
     /**

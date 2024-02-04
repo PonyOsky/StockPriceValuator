@@ -55,6 +55,7 @@ public class Settings extends javax.swing.JPanel {
         jLabel160.setText(p.getProperty("jLabel160"));
         jLabel6.setText(p.getProperty("jLabel6"));
         jButton1.setText(p.getProperty("jButton1"));
+        jLabel1.setText(p.getProperty("settip"));
     }
 
     private void setLangChoices() {
@@ -80,6 +81,7 @@ public class Settings extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         LangChoice = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -124,15 +126,26 @@ public class Settings extends javax.swing.JPanel {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel3.add(jPanel4);
@@ -219,6 +232,7 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> LangChoice;
     private javax.swing.JPanel Settings;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;

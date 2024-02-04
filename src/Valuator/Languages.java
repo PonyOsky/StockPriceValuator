@@ -7,6 +7,7 @@ package Valuator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -78,10 +79,20 @@ public class Languages {
      * @throws IOException
      */
     public void setLastLang(int choice) throws FileNotFoundException, IOException {
+        FileOutputStream out = new FileOutputStream("./src/Valuator/config.properties");
         conf.setProperty("lastLang", choices.get(choice));
         conf.setProperty("lastLangRoute", "./src/lang/" + props.get(choice));
+        conf.store(out, null);
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getLastLang(){
+        return conf.getProperty("lastLang");
+    }
+    
     /**
      *
      * @return

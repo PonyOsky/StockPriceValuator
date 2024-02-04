@@ -66,6 +66,10 @@ public class Menu extends JComponent {
 
     }
 
+    public void setNewLang() {
+        initValues();
+    }
+
     private void initValues() {
         Properties prop = new Properties();
         Properties conf = new Properties();
