@@ -4,8 +4,10 @@
  */
 package component;
 
+import Valuator.Controller;
 import Valuator.Frontend;
 import Valuator.SaveLoad;
+import Valuator.SaveTemplate;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,16 +24,25 @@ import javax.swing.table.TableColumn;
 public class Library extends javax.swing.JPanel {
 
     public SaveLoad saveLoad;
+    public Controller controller;
 
     /**
      * Creates new form Library
      * @param sv
      * @param route
+     * @param c
      */
-    public Library(SaveLoad sv, String route) {
-        initComponents();
-        saveLoad = sv;
-        setLabels(route);
+    public Library(SaveLoad sv, String route, Controller c) {
+        
+            initComponents();
+            saveLoad = sv;
+            controller = c;
+            setLabels(route);
+        try {
+            ShowFiles();
+        } catch (IOException ex) {
+            Logger.getLogger(Library.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -60,6 +71,21 @@ public class Library extends javax.swing.JPanel {
         jLabel8.setText(p.getProperty("jLabel8"));
         jLabel9.setText(p.getProperty("jLabel9"));
         jLabel12.setText(p.getProperty("jLabel12"));
+    }
+    
+    
+    /**
+     *
+     * @throws IOException
+     */
+    public void ShowFiles() throws IOException {
+        for (int i = 0; i > saveLoad.load().size(); i++) {
+            for (SaveTemplate st : saveLoad.load()) {
+                SavesShowout.setValueAt(st.getName(), i, 0);
+                SavesShowout.setValueAt(st.getTicker(), i, 1);
+                SavesShowout.setValueAt(st.getNote(), i, 2);
+            }
+        }
     }
 
     /**
@@ -229,7 +255,7 @@ public class Library extends javax.swing.JPanel {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         try {
-            saveLoad.save();
+            saveLoad.save(controller.getStemp());
         } catch (IOException ex) {
             Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
         }

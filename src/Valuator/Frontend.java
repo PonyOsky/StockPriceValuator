@@ -290,7 +290,7 @@ public final class Frontend extends javax.swing.JFrame {
         grahamout = new GrahamOutput(route);
         navout = new NAVOutput(route);
         help = new Help(route);
-        lib = new Library(saveLoad, route);
+        lib = new Library(saveLoad, route, controller);
         settings = new Settings(langs, this, route);
         showout = new ShowOut(route);
         sumout = new SummaryOutput(route);

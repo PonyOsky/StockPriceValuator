@@ -12,6 +12,7 @@ import component.NAVInput;
 import component.RatioInput;
 import component.ShowOut;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -52,6 +53,7 @@ public class SaveLoad {
      */
     public SaveLoad(Controller cont) throws FileNotFoundException, IOException {
         this.cont = cont;
+        saves = new ArrayList();
         conf = new Properties();
         FileInputStream i = new FileInputStream("./src/Valuator/config.properties");
         conf.load(i);
@@ -60,7 +62,7 @@ public class SaveLoad {
     public void initSaves() {
         File savesDir = new File(conf.getProperty("savesLib"));
         if (savesDir.exists()) {
-            File[] files = new File(conf.getProperty("savesLib")).listFiles();
+            File[] files = new File(conf.getProperty("savesLib")+"/").listFiles();
             for (File file : files) {
                 if (file.isFile()) {
                     saves.add(file.getName());
@@ -88,7 +90,7 @@ public class SaveLoad {
             save.getValMethods().remove("Ratio");
         }
         if (save.getValMethods().contains("DCF")) {
-            dcf.price(save.getSharesOuts(), save.getCashCashEq(), save.getTotalDebt());
+            dcf.price(save.getSharesOuts(), save.getCashCashEq(), save.getTotalDebt(), save.getPerpGrRate(), save.getGrRate(), save.getDisRate(), save.getActFCF());
             dcf.priceMoS(save.getPillow());
             showout.getDCFMoSAns().setText(decfor.format(dcf.getValueMoS()));
             showout.getDCFAns().setText(decfor.format(dcf.getValue()));
@@ -184,8 +186,9 @@ public class SaveLoad {
     /**
      *
      * @throws IOException
+     * @param stemp 
      */
-    public void save() throws IOException {
+    public void save(SaveTemplate stemp) throws IOException {
         if (stemp != null) {
             for (int i = 0; i > 1000; i++) {
                 String test = Integer.toString(i) + ".csv";
@@ -194,11 +197,17 @@ public class SaveLoad {
                     break;
                 }
             }
-            File save = new File(conf.getProperty("savesLib" + stemp.getId() + ".csv"));
-            FileWriter fw = new FileWriter(save, true);
-            fw.write(stemp.getValues());
-            fw.flush();
+
         }
+        FileWriter fw;
+        BufferedWriter bw;
+        File save = new File(conf.getProperty("savesLib") + "/" + stemp.getId() + ".csv");
+        fw = new FileWriter(save, true);
+        bw = new BufferedWriter(fw);
+        bw.append(stemp.getValues());
+        bw.flush();
+        bw.close();
+        fw.close();
     }
 
     /**
@@ -212,7 +221,7 @@ public class SaveLoad {
             ArrayList<SaveTemplate> a = new ArrayList();
             for (String s : saves) {
                 ArrayList<String> values = new ArrayList();
-                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(conf.getProperty("savesLib") + s)));
+                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(conf.getProperty("savesLib") + "/" + s)));
                 if (br.readLine() != null) {
                     StringTokenizer tokens = new StringTokenizer(
                             (String) br.readLine(), ";");// this will read first line and separates values by (,) and stores them in tokens.

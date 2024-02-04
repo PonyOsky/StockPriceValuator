@@ -43,7 +43,7 @@ public class Controller {
     NetAssetValue nav = new NetAssetValue();
     private double value;
     private double valueMoS;
-    public SaveTemplate stemp;
+    private SaveTemplate stemp;
     public SaveLoad saveLoad;
     public DCFInput dcfin;
     public DDMInput ddmin;
@@ -771,6 +771,14 @@ public class Controller {
 
     /**
      *
+     * @return
+     */
+    public SaveTemplate getStemp() {
+        return stemp;
+    }
+
+    /**
+     *
      * @param s
      * @return
      */
@@ -805,20 +813,6 @@ public class Controller {
             return Double.parseDouble(s);
         } else {
             return 0;
-        }
-    }
-
-    /**
-     *
-     * @throws IOException
-     */
-    public void ShowFiles() throws IOException {
-        for (int i = 0; i > saveLoad.load().size(); i++) {
-            for (SaveTemplate st : saveLoad.load()) {
-                lib.getSavesShowout().setValueAt(st.getName(), i, 0);
-                lib.getSavesShowout().setValueAt(st.getTicker(), i, 1);
-                lib.getSavesShowout().setValueAt(st.getNote(), i, 2);
-            }
         }
     }
 
