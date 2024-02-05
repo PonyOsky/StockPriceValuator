@@ -4,7 +4,7 @@
  */
 package Valuator;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class SaveTemplate {
 
     private int id;
-    private ArrayList<String> valMethods;//id + ";" + s1 + "," + s2 + ";"
+    private List<String> valMethods;//id + ";" + s1 + "," + s2 + ";"
     //Inputs
     private String name;
     private String ticker;
@@ -43,7 +43,7 @@ public class SaveTemplate {
     private double tanBookVal;
     private double ordinaryShareNum;
     //DCF Inputs
-    private ArrayList FCF;
+    private List<Double> FCF;
     private double GrRate;
     private double DisRate;
     private double actFCF;
@@ -52,7 +52,7 @@ public class SaveTemplate {
     private double CashCashEq;
     private double perpGrRate;
     //DDM Inputs
-    private ArrayList Dividends;
+    private List<Double> Dividends;
     private double discRate;
     //Gaham Inputs
     private double eps;
@@ -109,7 +109,7 @@ public class SaveTemplate {
      * @param NAVTotLiab
      * @param NAVTotNumOfOutShare
      */
-    public SaveTemplate(ArrayList<String> valMethods, String name, String ticker, String exchange, String note, double actPrice, double pillow, double totalRevenue, double CostOfRevenue, double operatingExpense, double otherIncomeExpense, double netIncome, double ebit, double comStockDivPaid, double taxes, double interExpense, double totalAssest, double curAssets, double receivable, double inventory, double totalLiabNetMinInt, double curLiabilities, double totalEqGrossMinInt, double shareholdersEquity, double capitalLeaseObl, double tanBookVal, double ordinaryShareNum, ArrayList FCF, double GrRate, double DisRate, double actFCF, double totalDebt, double sharesOuts, double CashCashEq, double perpGrRate, ArrayList Dividends, double discRate, double eps, double GrGrRate, double aaa, double NAVTotAssets, double NAVTotLiab, double NAVTotNumOfOutShare) {
+    public SaveTemplate(List<String> valMethods, String name, String ticker, String exchange, String note, double actPrice, double pillow, double totalRevenue, double CostOfRevenue, double operatingExpense, double otherIncomeExpense, double netIncome, double ebit, double comStockDivPaid, double taxes, double interExpense, double totalAssest, double curAssets, double receivable, double inventory, double totalLiabNetMinInt, double curLiabilities, double totalEqGrossMinInt, double shareholdersEquity, double capitalLeaseObl, double tanBookVal, double ordinaryShareNum, List<Double> FCF, double GrRate, double DisRate, double actFCF, double totalDebt, double sharesOuts, double CashCashEq, double perpGrRate, List<Double> Dividends, double discRate, double eps, double GrGrRate, double aaa, double NAVTotAssets, double NAVTotLiab, double NAVTotNumOfOutShare) {
         this.valMethods = valMethods;
         this.name = name;
         this.ticker = ticker;
@@ -157,10 +157,10 @@ public class SaveTemplate {
 
     /**
      *
-     * @param lastID
+     * @param ID
      */
-    public void setID(int lastID) {
-        id = lastID + 1;
+    public void setID(int ID) {
+        id = ID;
     }
 
     /**
@@ -591,7 +591,7 @@ public class SaveTemplate {
      *
      * @return
      */
-    public ArrayList getFCF() {
+    public List<Double> getFCF() {
         return FCF;
     }
 
@@ -599,7 +599,7 @@ public class SaveTemplate {
      *
      * @param FCF
      */
-    public void setFCF(ArrayList FCF) {
+    public void setFCF(List<Double> FCF) {
         this.FCF = FCF;
     }
 
@@ -719,7 +719,7 @@ public class SaveTemplate {
      *
      * @return
      */
-    public ArrayList getDividends() {
+    public List<Double> getDividends() {
         return Dividends;
     }
 
@@ -727,7 +727,7 @@ public class SaveTemplate {
      *
      * @param Dividends
      */
-    public void setDividends(ArrayList Dividends) {
+    public void setDividends(List<Double> Dividends) {
         this.Dividends = Dividends;
     }
 
@@ -847,7 +847,7 @@ public class SaveTemplate {
      *
      * @return
      */
-    public ArrayList<String> getValMethods() {
+    public List<String> getValMethods() {
         return valMethods;
     }
 
@@ -855,7 +855,7 @@ public class SaveTemplate {
      *
      * @param valMethods
      */
-    public void setValMethods(ArrayList<String> valMethods) {
+    public void setValMethods(List<String> valMethods) {
         this.valMethods = valMethods;
     }
 

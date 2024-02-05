@@ -7,6 +7,7 @@ package Valuator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -21,6 +22,11 @@ public class Languages {
     private Properties conf;
     private ArrayList<String> choices;
 
+    /**
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public Languages() throws FileNotFoundException, IOException {
         props = new ArrayList();
         props.add(" ");
@@ -38,6 +44,12 @@ public class Languages {
         fillChoices(props);
     }
 
+    /**
+     *
+     * @param langs
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     private void fillChoices(ArrayList langs) throws FileNotFoundException, IOException {
         if (langs != null) {
             for (var f : langs) {
@@ -52,15 +64,39 @@ public class Languages {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getChoices() {
         return choices;
     }
 
+    /**
+     *
+     * @param choice
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public void setLastLang(int choice) throws FileNotFoundException, IOException {
+        FileOutputStream out = new FileOutputStream("./src/Valuator/config.properties");
         conf.setProperty("lastLang", choices.get(choice));
         conf.setProperty("lastLangRoute", "./src/lang/" + props.get(choice));
+        conf.store(out, null);
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getLastLang(){
+        return conf.getProperty("lastLang");
+    }
+    
+    /**
+     *
+     * @return
+     */
     public String getRoute() {
         if (conf.getProperty("lastLangRoute") != null) {
             File f = new File(conf.getProperty("lastLangRoute"));
@@ -75,6 +111,10 @@ public class Languages {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDefLangType() {
         return conf.getProperty("lastLang");
     }

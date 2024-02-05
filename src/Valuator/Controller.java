@@ -4,12 +4,25 @@
  */
 package Valuator;
 
+import component.DCFInput;
+import component.DCFOutput;
+import component.DDMInput;
+import component.DDMOutput;
+import component.GrahamInput;
+import component.GrahamOutput;
+import component.InfoInput;
+import component.Library;
+import component.NAVInput;
+import component.NAVOutput;
+import component.RatioInput;
+import component.RatioOutput;
+import component.SummaryOutput;
 import java.io.IOException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,44 +33,84 @@ public class Controller {
 
     private static final DecimalFormat decfor = new DecimalFormat("0.000");
     NumberFormat formatter = new DecimalFormat("#0.0000");
-    List<Double> divis;
-    List<Double> fcf;
+    ArrayList divis;
+    ArrayList fcf;
     AdditionalCalculates addons = new AdditionalCalculates(this);
     StockRatios ratios = new StockRatios(this, addons);
     DividendDiscountModel ddm = new DividendDiscountModel();
     DiscountedCashFlowModel dcf = new DiscountedCashFlowModel();
     GrahamsFormulas graham = new GrahamsFormulas();
     NetAssetValue nav = new NetAssetValue();
-    private ReworkedFrontend frontend;
     private double value;
     private double valueMoS;
-    public SaveTemplate stemp;
+    private SaveTemplate stemp;
     public SaveLoad saveLoad;
+    public DCFInput dcfin;
+    public DDMInput ddmin;
+    public GrahamInput grahamin;
+    public InfoInput info;
+    public NAVInput navin;
+    public RatioInput ratioin;
+    public DCFOutput dcfout;
+    public DDMOutput ddmout;
+    public GrahamOutput grahamout;
+    public NAVOutput navout;
+    public RatioOutput ratioout;
+    public SummaryOutput sumout;
+    public Library lib;
 
-    /**
-     *
-     * @param f
-     */
-    public Controller(ReworkedFrontend f) {
+    public Controller() {
         decfor.setRoundingMode(RoundingMode.DOWN);
-        this.frontend = f;
     }
 
     /**
-     * **********************Getting input
      *
-     * @return s**************************************
+     * @param i
+     * @param ri
+     * @param dci
+     * @param ddi
+     * @param gi
+     * @param ni
+     * @param ro
+     * @param dco
+     * @param ddo
+     * @param go
+     * @param no
+     * @param l
+     * @param so
+     */
+    public void setConstants(InfoInput i, RatioInput ri, DCFInput dci, DDMInput ddi, GrahamInput gi, NAVInput ni, RatioOutput ro, DCFOutput dco, DDMOutput ddo, GrahamOutput go, NAVOutput no, Library l, SummaryOutput so) {
+        info = i;
+        ratioin = ri;
+        dcfin = dci;
+        ddmin = ddi;
+        grahamin = gi;
+        navin = ni;
+        ratioout = ro;
+        dcfout = dco;
+        ddmout = ddo;
+        grahamout = go;
+        navout = no;
+        lib = l;
+        sumout = so;
+    }
+
+    /**
+     *
+     *
+     * @return
      */
     public ArrayList getFreeCashFlow() {
-        fcf = new ArrayList<>();
-        for (int coun = 0; coun < frontend.getFCF().getColumnCount(); coun++) {
-            if (frontend.getFCF().getValueAt(0, coun) == null) {
-                fcf.add(null);
+        fcf = new ArrayList();
+        for (int coun = 0; coun < dcfin.getFCF().getRowCount(); coun++) {
+            if (dcfin.getFCF().getValueAt(coun, 1) != null) {
+                fcf.add(dcfin.getFCF().getValueAt(coun, 1));
             } else {
-                fcf.add(Double.valueOf(frontend.getFCF().getValueAt(0, coun).toString()));
+                fcf.add(null);
             }
         }
-        return (ArrayList) fcf;
+        Collections.reverse(fcf);
+        return fcf;
     }
 
     /**
@@ -66,11 +119,15 @@ public class Controller {
      */
     public ArrayList getDividends() {
         divis = new ArrayList();
-        for (int count = 0; count < frontend.getDividends().getColumnCount(); count++) {
-            String str = frontend.getDividends().getValueAt(0, count).toString();
-            divis.add(Double.valueOf(str));
+        for (int count = 0; count < ddmin.getDividends().getRowCount(); count++) {
+            if (ddmin.getDividends().getValueAt(count, 1) != null) {
+                divis.add(ddmin.getDividends().getValueAt(count, 1));
+            } else {
+                divis.add(null);
+            }
         }
-        return (ArrayList) divis;
+        Collections.reverse(divis);
+        return divis;
     }
 
     /**
@@ -78,10 +135,10 @@ public class Controller {
      * @return
      */
     public double getGrowthRate() {
-        if (frontend.getGR().getText() == null) {
+        if (grahamin.getGRGraham().getText() == null) {
             return 0;
         } else {
-            return doubleFormat(frontend.getGR().getText());
+            return doubleFormat(grahamin.getGRGraham().getText());
         }
     }
 
@@ -90,10 +147,10 @@ public class Controller {
      * @return
      */
     public double getGrowthRateDCF() {
-        if (frontend.getGRDCF().getText() == null) {
+        if (dcfin.getGR().getText() == null) {
             return 0;
         } else {
-            return doubleFormat(frontend.getGRDCF().getText());
+            return doubleFormat(dcfin.getGR().getText()) / 100;
         }
     }
 
@@ -102,7 +159,7 @@ public class Controller {
      * @return
      */
     public double getAAACurrentYield() {
-        return doubleFormat(frontend.getYInn().getText());
+        return doubleFormat(grahamin.getYInn().getText());
     }
 
     /**
@@ -110,7 +167,7 @@ public class Controller {
      * @return
      */
     public double getDiscountRateDDM() {
-        return doubleFormat(frontend.getWACCDDMInn().getText()) / 100;
+        return doubleFormat(ddmin.getWACCDDM().getText()) / 100;
     }
 
     /**
@@ -118,7 +175,7 @@ public class Controller {
      * @return
      */
     public double getDiscountRateDCF() {
-        return doubleFormat(frontend.getWACCDCFInn().getText()) / 100;
+        return doubleFormat(dcfin.getWACCDCFInn().getText()) / 100;
     }
 
     /**
@@ -126,7 +183,7 @@ public class Controller {
      * @return
      */
     public double getActualFreeCashFlow() {
-        return doubleFormat(frontend.getActFCF().getText());
+        return doubleFormat(dcfin.getActFCF().getText());
     }
 
     /**
@@ -134,7 +191,7 @@ public class Controller {
      * @return
      */
     public double getTotalDebt() {
-        return doubleFormat(frontend.getDebt().getText());
+        return doubleFormat(dcfin.getDebt().getText());
     }
 
     /**
@@ -142,7 +199,7 @@ public class Controller {
      * @return
      */
     public double getSharesOutstanding() {
-        return doubleFormat(frontend.getShares().getText());
+        return doubleFormat(dcfin.getShares().getText());
     }
 
     /**
@@ -150,7 +207,7 @@ public class Controller {
      * @return
      */
     public double getCash() {
-        return doubleFormat(frontend.getCandC().getText());
+        return doubleFormat(dcfin.getCandC().getText());
     }
 
     /**
@@ -158,7 +215,7 @@ public class Controller {
      * @return
      */
     public double getMarginOfSafety() {
-        return doubleFormat(frontend.getPillow().getText()) / 100;
+        return doubleFormat(info.getPillow().getText()) / 100;
     }
 
     /**
@@ -166,7 +223,7 @@ public class Controller {
      * @return
      */
     public double getInventory() {
-        return doubleFormat(frontend.getInv().getText());
+        return doubleFormat(ratioin.getInv().getText());
     }
 
     /**
@@ -174,7 +231,7 @@ public class Controller {
      * @return
      */
     public double getReceivable() {
-        return doubleFormat(frontend.getReceivable().getText());
+        return doubleFormat(ratioin.getReceivable().getText());
     }
 
     /**
@@ -182,7 +239,7 @@ public class Controller {
      * @return
      */
     public double getCapitalLeaseObligations() {
-        return doubleFormat(frontend.getCapLO().getText());
+        return doubleFormat(ratioin.getCapLO().getText());
     }
 
     /**
@@ -190,7 +247,7 @@ public class Controller {
      * @return
      */
     public double getTEGMI() {
-        return doubleFormat(frontend.getTEGMI().getText());
+        return doubleFormat(ratioin.getTEGMI().getText());
     }
 
     /**
@@ -198,10 +255,10 @@ public class Controller {
      * @return
      */
     public double getEBIT() {
-        if (frontend.getEBIT().getText() == null) {
+        if (ratioin.getEBIT().getText() == null) {
             return addons.calcEbit();
         } else {
-            return doubleFormat(frontend.getEBIT().getText());
+            return doubleFormat(ratioin.getEBIT().getText());
         }
     }
 
@@ -210,7 +267,7 @@ public class Controller {
      * @return
      */
     public double getEarningsPerShare() {
-        if (frontend.getEPS().getText() == null) {
+        if (grahamin.getEPS().getText() == null) {
             ratios.earningsPerShare();
             if (ratios.earningsPerShare() == 0) {
                 return 0;
@@ -218,7 +275,7 @@ public class Controller {
                 return ratios.earningsPerShare();
             }
         } else {
-            return doubleFormat(frontend.getEPS().getText());
+            return doubleFormat(grahamin.getEPS().getText());
         }
     }
 
@@ -227,7 +284,7 @@ public class Controller {
      * @return
      */
     public double getActualPrice() {
-        return doubleFormat(frontend.getActPrice().getText());
+        return doubleFormat(info.getActPrice().getText());
     }
 
     /**
@@ -235,7 +292,7 @@ public class Controller {
      * @return
      */
     public double getCommonStockDividendPaid() {
-        return doubleFormat(frontend.getComDiv().getText());
+        return doubleFormat(ratioin.getComDiv().getText());
     }
 
     /**
@@ -243,7 +300,7 @@ public class Controller {
      * @return
      */
     public double getTotalAssets() {
-        return doubleFormat(frontend.getTAssets().getText());
+        return doubleFormat(ratioin.getTAssets().getText());
     }
 
     /**
@@ -251,7 +308,7 @@ public class Controller {
      * @return
      */
     public double getTotalLiabilities() {
-        return doubleFormat(frontend.getTLiabilities().getText());
+        return doubleFormat(ratioin.getTLiabilities().getText());
     }
 
     /**
@@ -259,7 +316,7 @@ public class Controller {
      * @return
      */
     public double getShareHoldersEquity() {
-        return doubleFormat(frontend.getSHEquity().getText());
+        return doubleFormat(ratioin.getSHEquity().getText());
     }
 
     /**
@@ -267,7 +324,7 @@ public class Controller {
      * @return
      */
     public double getTangiableBookValue() {
-        return doubleFormat(frontend.getTanBookVal().getText());
+        return doubleFormat(ratioin.getTanBookVal().getText());
     }
 
     /**
@@ -275,7 +332,7 @@ public class Controller {
      * @return
      */
     public double getCurrentLiabilities() {
-        return doubleFormat(frontend.getCurLiabilities().getText());
+        return doubleFormat(ratioin.getCurLiabilities().getText());
     }
 
     /**
@@ -283,7 +340,7 @@ public class Controller {
      * @return
      */
     public double getCurrentAssets() {
-        return doubleFormat(frontend.getCurAssets().getText());
+        return doubleFormat(ratioin.getCurAssets().getText());
     }
 
     /**
@@ -291,7 +348,7 @@ public class Controller {
      * @return
      */
     public double getOrdinarySharesNumber() {
-        return doubleFormat(frontend.getOrShNum().getText());
+        return doubleFormat(ratioin.getOrShNum().getText());
     }
 
     /**
@@ -299,7 +356,7 @@ public class Controller {
      * @return
      */
     public double getNetIncome() {
-        return doubleFormat(frontend.getNIncome().getText());
+        return doubleFormat(ratioin.getNIncome().getText());
     }
 
     /**
@@ -307,7 +364,7 @@ public class Controller {
      * @return
      */
     public double getTaxes() {
-        return doubleFormat(frontend.getTaxes().getText());
+        return doubleFormat(ratioin.getTaxes().getText());
     }
 
     /**
@@ -315,7 +372,7 @@ public class Controller {
      * @return
      */
     public double getInterestExpense() {
-        return doubleFormat(frontend.getIntExp().getText());
+        return doubleFormat(ratioin.getIntExp().getText());
     }
 
     /**
@@ -323,7 +380,7 @@ public class Controller {
      * @return
      */
     public double getTotalRevenue() {
-        return doubleFormat(frontend.getTRevenue().getText());
+        return doubleFormat(ratioin.getTRevenue().getText());
     }
 
     /**
@@ -331,7 +388,7 @@ public class Controller {
      * @return
      */
     public double getOtherIncomeExpense() {
-        return doubleFormat(frontend.getOthIncome().getText());
+        return doubleFormat(ratioin.getOthIncome().getText());
     }
 
     /**
@@ -339,7 +396,7 @@ public class Controller {
      * @return
      */
     public double getCostOfRevenue() {
-        return doubleFormat(frontend.getCofRevenue().getText());
+        return doubleFormat(ratioin.getCofRevenue().getText());
     }
 
     /**
@@ -347,7 +404,7 @@ public class Controller {
      * @return
      */
     public double getOperatingExpense() {
-        return doubleFormat(frontend.getOpExpense().getText());
+        return doubleFormat(ratioin.getOpExpense().getText());
     }
 
     /**
@@ -355,7 +412,7 @@ public class Controller {
      * @return
      */
     public double getAssetsNAV() {
-        return doubleFormat(frontend.getAssets().getText());
+        return doubleFormat(navin.getTotalAssets().getText());
     }
 
     /**
@@ -363,7 +420,7 @@ public class Controller {
      * @return
      */
     public double getLiabilitiesNAV() {
-        return doubleFormat(frontend.getLiabilities().getText());
+        return doubleFormat(navin.getTotalLiab().getText());
     }
 
     /**
@@ -371,7 +428,7 @@ public class Controller {
      * @return
      */
     public double getSharesNAV() {
-        return doubleFormat(frontend.getSharesNAV().getText());
+        return doubleFormat(navin.getSharesOut().getText());
     }
 
     /**
@@ -379,14 +436,13 @@ public class Controller {
      * @return
      */
     public double getStateGrowthRate() {
-        return doubleFormat(frontend.getStateInn().getText());
+        return doubleFormat(dcfin.getState().getText()) / 100;
     }
 
     /**
-     * **************************************Make
-     * Valuation
      *
-     *********************************************
+     *
+     *
      * @param divider
      */
     public void makeValue(int divider) {
@@ -411,149 +467,126 @@ public class Controller {
     }
 
     /**
-     * **************************************Setting answers and
-     * values*********************************************************
-     */
-    public void setRatioAns() {
-        frontend.getGM().setText(String.valueOf(decfor.format(ratios.grossMargin())));
-        frontend.getOM().setText(String.valueOf(decfor.format(ratios.operationMargin())));
-        frontend.getEPSRatio().setText(String.valueOf(decfor.format(ratios.earningsPerShare())));
-        frontend.getPpE().setText(String.valueOf(decfor.format(ratios.pricePerEarnings())));
-        frontend.getCLiq().setText(String.valueOf(decfor.format(ratios.currentLiquidity())));
-        frontend.getPpB().setText(String.valueOf(decfor.format(ratios.pricePerBook())));
-        frontend.getDpE().setText(String.valueOf(decfor.format(ratios.debtPerEquity())));
-        frontend.getPayOut().setText(String.valueOf(decfor.format(ratios.payoutRatio())));
-        frontend.getROA().setText(String.valueOf(decfor.format(ratios.roa())));
-        frontend.getROE().setText(String.valueOf(decfor.format(ratios.roe())));
-        frontend.getROS().setText(String.valueOf(decfor.format(ratios.ros())));
-        frontend.getRN().setText(String.valueOf(decfor.format(ratios.rn())));
-        frontend.getIndebtedness().setText(String.valueOf(decfor.format(ratios.indebtedness())));
-        frontend.getReceivablesTime().setText(String.valueOf(formatter.format(ratios.recTime())));
-        frontend.getLiabilitiesTime().setText(String.valueOf(decfor.format(ratios.liabTime())));
-        frontend.getInventoryTime().setText(String.valueOf(formatter.format(ratios.invTime())));
-    }
-
-    /**
      *
      * @param choices
      */
     public void clean(ArrayList choices) {
         if (choices == null || choices.isEmpty()) {
-            if (choices.contains("CleanAll")) {
-                frontend.getCorpName().setText("");
-                frontend.getSticker().setText("");
-                frontend.getStockExchange().setText("");
-                frontend.getPillow().setText("");
-                frontend.getActPrice().setText("");
-                frontend.getNotes().setText("");
-                frontend.getTaxes().setText("");
-                frontend.getIntExp().setText("");
-                frontend.getEBIT().setText("");
-                frontend.getTRevenue().setText("");
-                frontend.getNIncome().setText("");
-                frontend.getCurAssets().setText("");
-                frontend.getOrShNum().setText("");
-                frontend.getTanBookVal().setText("");
-                frontend.getTLiabilities().setText("");
-                frontend.getComDiv().setText("");
-                frontend.getTAssets().setText("");
-                frontend.getTEGMI().setText("");
-                frontend.getInv().setText("");
-                frontend.getOpExpense().setText("");
-                frontend.getCofRevenue().setText("");
-                frontend.getOthIncome().setText("");
-                frontend.getReceivable().setText("");
-                frontend.getCurLiabilities().setText("");
-                frontend.getCapLO().setText("");
-                frontend.getSHEquity().setText("");
-                frontend.getGRDCF().setText("");
-                frontend.getWACCDCFInn().setText("");
-                frontend.getActFCF().setText("");
-                frontend.getDebt().setText("");
-                frontend.getShares().setText("");
-                frontend.getCandC().setText("");
-                frontend.getStateInn().setText("");
+            if (choices.contains("All")) {
+                info.getCorpName().setText("");
+                info.getSticker().setText("");
+                info.getStockExchange().setText("");
+                info.getPillow().setText("");
+                info.getActPrice().setText("");
+                info.getNotes().setText("");
+                ratioin.getTaxes().setText("");
+                ratioin.getIntExp().setText("");
+                ratioin.getEBIT().setText("");
+                ratioin.getTRevenue().setText("");
+                ratioin.getNIncome().setText("");
+                ratioin.getCurAssets().setText("");
+                ratioin.getOrShNum().setText("");
+                ratioin.getTanBookVal().setText("");
+                ratioin.getTLiabilities().setText("");
+                ratioin.getComDiv().setText("");
+                ratioin.getTAssets().setText("");
+                ratioin.getTEGMI().setText("");
+                ratioin.getInv().setText("");
+                ratioin.getOpExpense().setText("");
+                ratioin.getCofRevenue().setText("");
+                ratioin.getOthIncome().setText("");
+                ratioin.getReceivable().setText("");
+                ratioin.getCurLiabilities().setText("");
+                ratioin.getCapLO().setText("");
+                ratioin.getSHEquity().setText("");
+                dcfin.getGR().setText("");
+                dcfin.getWACCDCFInn().setText("");
+                dcfin.getActFCF().setText("");
+                dcfin.getDebt().setText("");
+                dcfin.getShares().setText("");
+                dcfin.getCandC().setText("");
+                dcfin.getState().setText("");
                 for (int count = 0; count < 8; count++) {
-                    frontend.getFCF().setValueAt(null, 0, count);
+                    dcfin.getFCF().setValueAt(null, 0, count);
                 }
                 fcf.clear();
-                frontend.getWACCDDMInn().setText("");
+                ddmin.getWACCDDM().setText("");
                 divis.clear();
                 for (int count = 0; count < 5; count++) {
-                    frontend.getDividends().setValueAt(null, 0, count);
+                    ddmin.getDividends().setValueAt(null, 0, count);
                 }
-                frontend.getEPS().setText("");
-                frontend.getGR().setText("");
-                frontend.getYInn().setText("");
-                frontend.getAssets().setText("");
-                frontend.getLiabilities().setText("");
-                frontend.getSharesNAV().setText("");
+                grahamin.getEPS().setText("");
+                grahamin.getGRGraham().setText("");
+                grahamin.getYInn().setText("");
+                navin.getTotalAssets().setText("");
+                navin.getTotalLiab().setText("");
+                navin.getSharesOut().setText("");
             }
 
-            if (choices.contains("CleanInfo")) {
-                frontend.getCorpName().setText("");
-                frontend.getSticker().setText("");
-                frontend.getStockExchange().setText("");
-                frontend.getPillow().setText("");
-                frontend.getActPrice().setText("");
-                frontend.getNotes().setText("");
+            if (choices.contains("Informations")) {
+                info.getCorpName().setText("");
+                info.getSticker().setText("");
+                info.getStockExchange().setText("");
+                info.getPillow().setText("");
+                info.getActPrice().setText("");
+                info.getNotes().setText("");
             }
 
-            if (choices.contains("CleanRatio")) {
-                frontend.getTaxes().setText("");
-                frontend.getIntExp().setText("");
-                frontend.getEBIT().setText("");
-                frontend.getTRevenue().setText("");
-                frontend.getNIncome().setText("");
-                frontend.getCurAssets().setText("");
-                frontend.getOrShNum().setText("");
-                frontend.getTanBookVal().setText("");
-                frontend.getTLiabilities().setText("");
-                frontend.getComDiv().setText("");
-                frontend.getTAssets().setText("");
-                frontend.getTEGMI().setText("");
-                frontend.getInv().setText("");
-                frontend.getOpExpense().setText("");
-                frontend.getCofRevenue().setText("");
-                frontend.getOthIncome().setText("");
-                frontend.getReceivable().setText("");
-                frontend.getCurLiabilities().setText("");
-                frontend.getCapLO().setText("");
-                frontend.getSHEquity().setText("");
+            if (choices.contains("Ratios")) {
+                ratioin.getTaxes().setText("");
+                ratioin.getIntExp().setText("");
+                ratioin.getEBIT().setText("");
+                ratioin.getTRevenue().setText("");
+                ratioin.getNIncome().setText("");
+                ratioin.getCurAssets().setText("");
+                ratioin.getOrShNum().setText("");
+                ratioin.getTanBookVal().setText("");
+                ratioin.getTLiabilities().setText("");
+                ratioin.getComDiv().setText("");
+                ratioin.getTAssets().setText("");
+                ratioin.getTEGMI().setText("");
+                ratioin.getInv().setText("");
+                ratioin.getOpExpense().setText("");
+                ratioin.getCofRevenue().setText("");
+                ratioin.getOthIncome().setText("");
+                ratioin.getReceivable().setText("");
+                ratioin.getCurLiabilities().setText("");
+                ratioin.getCapLO().setText("");
+                ratioin.getSHEquity().setText("");
             }
 
-            if (choices.contains("CleanDCF")) {
-                frontend.getGRDCF().setText("");
-                frontend.getWACCDCFInn().setText("");
-                frontend.getActFCF().setText("");
-                frontend.getDebt().setText("");
-                frontend.getShares().setText("");
-                frontend.getCandC().setText("");
-                frontend.getStateInn().setText("");
+            if (choices.contains("DCF")) {
+                dcfin.getGR().setText("");
+                dcfin.getWACCDCFInn().setText("");
+                dcfin.getActFCF().setText("");
+                dcfin.getDebt().setText("");
+                dcfin.getShares().setText("");
+                dcfin.getCandC().setText("");
+                dcfin.getState().setText("");
                 for (int count = 0; count < 8; count++) {
-                    frontend.getFCF().setValueAt(null, 0, count);
+                    dcfin.getFCF().setValueAt(null, 0, count);
                 }
                 fcf.clear();
             }
 
-            if (choices.contains("CleanDDM")) {
-                frontend.getWACCDDMInn().setText("");
+            if (choices.contains("DDM")) {
+                ddmin.getWACCDDM().setText("");
                 divis.clear();
                 for (int count = 0; count < 5; count++) {
-                    frontend.getDividends().setValueAt(null, 0, count);
+                    ddmin.getDividends().setValueAt(null, 0, count);
                 }
             }
 
-            if (choices.contains("CleanGraham")) {
-                frontend.getEPS().setText("");
-                frontend.getGR().setText("");
-                frontend.getYInn().setText("");
+            if (choices.contains("Graham")) {
+                grahamin.getEPS().setText("");
+                grahamin.getGRGraham().setText("");
+                grahamin.getYInn().setText("");
             }
 
-            if (choices.contains("CleanNAV")) {
-                frontend.getAssets().setText("");
-                frontend.getLiabilities().setText("");
-                frontend.getSharesNAV().setText("");
+            if (choices.contains("NAV")) {
+                navin.getTotalAssets().setText("");
+                navin.getTotalLiab().setText("");
+                navin.getSharesOut().setText("");
             }
         }
     }
@@ -563,113 +596,138 @@ public class Controller {
      * @param choices
      */
     public void calculation(ArrayList choices) {
-        if (choices != null) {
-            if (choices.contains("CalcRatio")) {
-                setRatioAns();
+        if (choices != null || choices.isEmpty()) {
+            if (choices.contains("Ratios")) {
+                ratioout.getGM().setText(String.valueOf(decfor.format(ratios.grossMargin())));
+                ratioout.getOM().setText(String.valueOf(decfor.format(ratios.operationMargin())));
+                ratioout.getEPSRatio().setText(String.valueOf(decfor.format(ratios.earningsPerShare())));
+                ratioout.getPpE().setText(String.valueOf(decfor.format(ratios.pricePerEarnings())));
+                ratioout.getCLiq().setText(String.valueOf(decfor.format(ratios.currentLiquidity())));
+                ratioout.getPpB().setText(String.valueOf(decfor.format(ratios.pricePerBook())));
+                ratioout.getDpE().setText(String.valueOf(decfor.format(ratios.debtPerEquity())));
+                ratioout.getPayOut().setText(String.valueOf(decfor.format(ratios.payoutRatio())));
+                ratioout.getROA().setText(String.valueOf(decfor.format(ratios.roa())));
+                ratioout.getROE().setText(String.valueOf(decfor.format(ratios.roe())));
+                ratioout.getROS().setText(String.valueOf(decfor.format(ratios.ros())));
+                ratioout.getRN().setText(String.valueOf(decfor.format(ratios.rn())));
+                ratioout.getIndebtedness().setText(String.valueOf(decfor.format(ratios.indebtedness())));
+                ratioout.getReceivablesTime().setText(String.valueOf(formatter.format(ratios.recTime())));
+                ratioout.getLiabilitiesTime().setText(String.valueOf(decfor.format(ratios.liabTime())));
+                ratioout.getInventoryTime().setText(String.valueOf(formatter.format(ratios.invTime())));
             }
-            if (choices.contains("CalcDCF")) {
-                dcf.price(getSharesOutstanding(), getCash(), getTotalDebt());
+            if (choices.contains("DCF")) {
+                dcf.price(getSharesOutstanding(), getCash(), getTotalDebt(), getStateGrowthRate(), getGrowthRateDCF(), getDiscountRateDCF(), getActualFreeCashFlow());
                 dcf.priceMoS(getMarginOfSafety());
-                frontend.getDCFMoSAns().setText(String.valueOf(decfor.format(dcf.getValueMoS())));
-                frontend.getDCFAns().setText(decfor.format(dcf.getValue()));
+                dcfout.getPriceDCFMoS().setText(decfor.format(dcf.getValueMoS()));
+                dcfout.getPriceDCF().setText(decfor.format(dcf.getValue()));
                 for (int count = 0; count < getFreeCashFlow().size(); count++) {
-                    frontend.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0, count + 1);
+                    if (count + 1 == 10) {
+                        break;
+                    }
+                    dcfout.getLastFCF().setValueAt(getFreeCashFlow().get(count), 0, count + 1);
                 }
                 for (int count = 0; count < dcf.getFCFGR(getFreeCashFlow()).size(); count++) {
-                    frontend.getLastFCF().setValueAt(dcf.getFCFGR(getFreeCashFlow()).get(count), 1, count + 1);
+                    if (count + 1 == 10) {
+                        break;
+                    }
+                    dcfout.getLastFCF().setValueAt(dcf.getFCFGR(getFreeCashFlow()).get(count), 1, count + 1);
                 }
-                frontend.getGRDCF().setText(String.valueOf(decfor.format(getGrowthRate())));
-                frontend.getAvGRDCF().setText(String.valueOf(decfor.format(dcf.aveGR())));
+                dcfout.getGRDCF().setText(decfor.format(getGrowthRateDCF()*100));
+                dcfout.getAvGRDCF().setText(decfor.format(dcf.getAveGr()));
                 for (int count = 0; count < 13; count++) {
-                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getFFCF(getActualPrice(), getGrowthRateDCF()).get(count)), 1, count + 1);
+                    dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getFfcf().get(count)), 1, count + 1);
                 }
                 for (int count = 0; count < 13; count++) {
-                    frontend.getFutureFCF().setValueAt(decfor.format(dcf.getDFFCF(getDiscountRateDCF()).get(count)), 2, count + 1);
+                    dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getDffcf().get(count)), 2, count + 1);
                 }
-                frontend.getStateDCF().setText(String.valueOf(getStateGrowthRate()));
-                frontend.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF() * 100));
-                frontend.getCashDCF().setText(String.valueOf(getCash()));
-                frontend.getDebtDCF().setText(String.valueOf(getTotalDebt()));
-                frontend.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
-                frontend.getSumFCFDCF().setText(decfor.format(dcf.sumOfDFCF()));
-                frontend.getEVDCF().setText(decfor.format(dcf.equityDCF(getCash(), getTotalDebt())));
-                frontend.getPriceDCF().setText(decfor.format(dcf.getValue()));
-                frontend.getPriceDCFMoS().setText(decfor.format(dcf.getValueMoS()));
+                dcfout.getStateDCF().setText(String.valueOf(getStateGrowthRate()*100));
+                dcfout.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF() * 100));
+                dcfout.getCashDCF().setText(String.valueOf(getCash()));
+                dcfout.getDebtDCF().setText(String.valueOf(getTotalDebt()));
+                dcfout.getSharesDCF().setText(String.valueOf(getSharesOutstanding()));
+                dcfout.getSumFCFDCF().setText(decfor.format(dcf.getSodfcf()));
+                dcfout.getEVDCF().setText(decfor.format(dcf.getEquity()));
             }
-            if (choices.contains("CalcDDM")) {
-                DefaultTableModel DivPredModel = (DefaultTableModel) frontend.getDividendsPrediction().getModel();
+            if (choices.contains("DDM")) {
+                DefaultTableModel DivPredModel = (DefaultTableModel) ddmout.getDividendsPrediction().getModel();
                 ddm.getDDMPrice(getDividends());
                 ddm.ddmMoS(getMarginOfSafety());
-                frontend.getDDMMoSAns().setText(decfor.format(ddm.getValueMoS()));
-                frontend.getDDMAns().setText(decfor.format(ddm.getValue()));
+                ddmout.getPriceDDMMoS().setText(decfor.format(ddm.getValueMoS()));
+                ddmout.getPriceDDM().setText(decfor.format(ddm.getValue()));
                 for (int count = 0; count < getDividends().size(); count++) {
-                    frontend.getDividendsPrediction().setValueAt(getDividends().get(count), 0, count + 1);
+                    ddmout.getDividendsPrediction().setValueAt(getDividends().get(count), 0, count + 1);
                 }
                 for (int count = 0; count < ddm.getYDiv().size(); count++) {
-                    frontend.getDividendsPrediction().setValueAt(ddm.getYDiv().get(count), 1, count + 1);
+                    ddmout.getDividendsPrediction().setValueAt(ddm.getYDiv().get(count), 1, count + 1);
                 }
                 for (int count = 0; count < ddm.getGrowthDiv().size(); count++) {
-                    frontend.getDividendsPrediction().setValueAt(ddm.getGrowthDiv().get(count), 2, count + 1);
+                    ddmout.getDividendsPrediction().setValueAt(ddm.getGrowthDiv().get(count), 2, count + 1);
                 }
                 DivPredModel.fireTableDataChanged();
-                frontend.getAvGRDDM().setText(decfor.format(ddm.getAveGrowDDM()));
-                frontend.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
-                frontend.getPriceDDMMoS().setText(decfor.format(ddm.getValueMoS()));
-                frontend.getPriceDDM().setText(decfor.format(ddm.getValue()));
+                ddmout.getAvGRDDM().setText(decfor.format(ddm.getAveGrowDDM()));
+                ddmout.getWACCDDMOut().setText(Double.toString(ddm.getDiscDDM(ddm.getAveGrowDDM())));
             }
-            if (choices.contains("CalcGraham")) {
+            if (choices.contains("Graham")) {
                 graham.graham(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
                 graham.grahamReversed(getEarningsPerShare(), getGrowthRate(), getAAACurrentYield());
                 graham.grahamMoS(getMarginOfSafety());
                 graham.grahamRevMoS(getMarginOfSafety());
-                frontend.getGrahamAns().setText(decfor.format(graham.getValue()));
-                frontend.getGrahamRevAns().setText(decfor.format(graham.getValueRev()));
-                frontend.getGrahamMoSAns().setText(decfor.format(graham.getValueMoS()));
-                frontend.getGrahamRevMoSAns().setText(decfor.format(graham.getValueRevMoS()));
-                frontend.getEPSGraham().setText(decfor.format((Double) getEarningsPerShare()));
-                frontend.getEPSGrahamRev().setText(decfor.format((Double) getEarningsPerShare()));
-                frontend.getGRGraham().setText(decfor.format(getGrowthRate()));
-                frontend.getGRGrahamRev().setText(decfor.format(getGrowthRate()));
-                frontend.getYGraham().setText(decfor.format(getAAACurrentYield()));
-                frontend.getYGrahamRev().setText(decfor.format(getAAACurrentYield()));
-                frontend.getEndGraham().setText(decfor.format(graham.getValue()));
-                frontend.getEndGrahamRev().setText(decfor.format(graham.getValueRev()));
-                frontend.getEndGrahamMoS().setText(decfor.format(graham.getValueMoS()));
-                frontend.getEndGrahamRevMoS().setText(decfor.format(graham.getValueRevMoS()));
+                grahamout.getEndGraham().setText(decfor.format(graham.getValue()));
+                grahamout.getEndGrahamRev().setText(decfor.format(graham.getValueRev()));
+                grahamout.getEndGrahamMoS().setText(decfor.format(graham.getValueMoS()));
+                grahamout.getEndGrahamRevMoS().setText(decfor.format(graham.getValueRevMoS()));
+                grahamout.getEPSGraham().setText(decfor.format(getEarningsPerShare()));
+                grahamout.getEPSGrahamRev().setText(decfor.format(getEarningsPerShare()));
+                grahamout.getGRGraham().setText(decfor.format(getGrowthRate()));
+                grahamout.getGRGrahamRev().setText(decfor.format(getGrowthRate()));
+                grahamout.getYGraham().setText(decfor.format(getAAACurrentYield()));
+                grahamout.getYGrahamRev().setText(decfor.format(getAAACurrentYield()));
             }
-            if (choices.contains("CalcNAV")) {
+            if (choices.contains("NAV")) {
                 nav.valuation(getAssetsNAV(), getLiabilitiesNAV(), getSharesNAV());
                 nav.valuationMoS(getMarginOfSafety());
-                frontend.getNAVAns().setText(String.valueOf(decfor.format(nav.getValue())));
-                frontend.getNAVMoSAns().setText(decfor.format(nav.getValuePillow()));
-                frontend.getAssetsNAVOut().setText(frontend.getAssets().getText());
-                frontend.getLiabilitiesNAVOut().setText(frontend.getLiabilities().getText());
-                frontend.getSharesNAVOut().setText(frontend.getSharesNAV().getText());
-                frontend.getPriceNAV().setText(decfor.format(nav.getValue()));
-                frontend.getPriceNAVMoS().setText(decfor.format(nav.getValuePillow()));
+                navout.getPriceNAV().setText(decfor.format(nav.getValue()));
+                navout.getPriceNAVMoS().setText(decfor.format(nav.getValuePillow()));
+                navout.getTotalAssetsNAV().setText(decfor.format(getAssetsNAV()));
+                navout.getTotalLiabilitiesNAV().setText(decfor.format(getLiabilitiesNAV()));
+                navout.getSharesNAV().setText(decfor.format(getSharesNAV()));
             }
+            //Summary output
             makeValue(choices.size());
             makeValueMoS(choices.size());
-            frontend.getIdealPrice().setText(decfor.format(value));
-            frontend.getIdealPriceMoS().setText(decfor.format(valueMoS));
-            frontend.getDiff().setText(decfor.format(difference(value)));
+            sumout.getIdealPrice().setText(decfor.format(value));
+            sumout.getIdealPriceMoS().setText(decfor.format(valueMoS));
+            sumout.getDiff().setText(decfor.format(difference(value)));
+            sumout.getSumSticker().setText(info.getSticker().getText());
+            sumout.getDCFAns().setText(decfor.format(dcf.getValue()));
+            sumout.getDCFMoSAns().setText(decfor.format(dcf.getValueMoS()));
+            sumout.getDDMAns().setText(decfor.format(ddm.getValue()));
+            sumout.getDDMMoSAns().setText(decfor.format(ddm.getValueMoS()));
+            sumout.getGrahamAns().setText(decfor.format(graham.getValue()));
+            sumout.getGrahamRevAns().setText(decfor.format(graham.getValueRev()));
+            sumout.getGrahamMoSAns().setText(decfor.format(graham.getValueMoS()));
+            sumout.getGrahamRevMoSAns().setText(decfor.format(graham.getValueRevMoS()));
+            sumout.getNAVAns().setText(decfor.format(nav.getValue()));
+            sumout.getNAVMoSAns().setText(decfor.format(nav.getValuePillow()));
             //Actual Prices
-            frontend.getActPriceAns().setText(String.valueOf(getActualPrice()));
-            frontend.getActPriceDDM().setText(String.valueOf(getActualPrice()));
-            frontend.getActPriceGraham().setText(String.valueOf(getActualPrice()));
-            frontend.getActPriceDCF().setText(String.valueOf(getActualPrice()));
+            sumout.getActPriceAns().setText(String.valueOf(getActualPrice()));
+            ddmout.getActPriceDDM().setText(String.valueOf(getActualPrice()));
+            grahamout.getActPriceGraham().setText(String.valueOf(getActualPrice()));
+            dcfout.getActPriceDCF().setText(String.valueOf(getActualPrice()));
+            navout.getActPriceNAV().setText(String.valueOf(getActualPrice()));
             //Pillows
-            frontend.getPillowAns().setText(String.valueOf(getMarginOfSafety() * 100));
-            frontend.getPillowDDM().setText(String.valueOf(getMarginOfSafety() * 100));
-            frontend.getPillowGraham().setText(String.valueOf(getMarginOfSafety() * 100));
-            frontend.getPillowDCF().setText(String.valueOf(getMarginOfSafety() * 100));
+            sumout.getPillowAns().setText(String.valueOf(getMarginOfSafety() * 100));
+            ddmout.getPillowDDM().setText(String.valueOf(getMarginOfSafety() * 100));
+            grahamout.getPillowGraham().setText(String.valueOf(getMarginOfSafety() * 100));
+            dcfout.getPillowDCF().setText(String.valueOf(getMarginOfSafety() * 100));
+            navout.getPillowNAV().setText(String.valueOf(getMarginOfSafety() * 100));
 
             stemp = new SaveTemplate(
                     choices,
-                    frontend.getCorpName().getText(),
-                    frontend.getSticker().getText(),
-                    frontend.getStockExchange().getText(),
-                    frontend.getNotes().getText(),
+                    info.getCorpName().getText(),
+                    info.getSticker().getText(),
+                    info.getStockExchange().getText(),
+                    info.getNotes().getText(),
                     getTotalRevenue(),
                     getCostOfRevenue(),
                     getOperatingExpense(),
@@ -713,47 +771,48 @@ public class Controller {
 
     /**
      *
-     * @param s
      * @return
      */
-    public double doubleFormat(String s) {
-        if (s.contains(".") && s.contains(",")) {
-            if (s.indexOf(",") < s.indexOf(".")) {
-                s = s.replace(",", "");
-            } else {
-                s = s.replace(".", "");
-            }
-            while (s.indexOf(".") != s.lastIndexOf(".")) {
-                s = s.replaceFirst("\\.", "");
-            }
-            s = s.replace(",", "");
-        }
-        if (s.contains(".") && !s.contains(",")) {
-            while (s.indexOf(".") != s.lastIndexOf(".")) {
-                s = s.replaceFirst("\\.", "");
-            }
-        }
-        if (!s.contains(".") && s.contains(",")) {
-            if (s.indexOf(",") == s.lastIndexOf(",")) {
-                s = s.replaceFirst(",", ".");
-            } else {
-                s = s.replace(",", "");
-            }
-        }
-        return Double.parseDouble(s);
+    public SaveTemplate getStemp() {
+        return stemp;
     }
 
     /**
      *
-     * @throws IOException
+     * @param s
+     * @return
      */
-    public void ShowFiles() throws IOException {
-        for (int i = 0; i > saveLoad.load().size(); i++) {
-            for (SaveTemplate st : saveLoad.load()) {
-                frontend.getSavesShowout().setValueAt(st.getName(), i, 0);
-                frontend.getSavesShowout().setValueAt(st.getTicker(), i, 1);
-                frontend.getSavesShowout().setValueAt(st.getNote(), i, 2);
+    public double doubleFormat(String s) {
+        if (!s.isEmpty()) {
+            if (s.contains(".") && s.contains(",")) {
+                if (s.indexOf(",") < s.indexOf(".")) {
+                    s = s.replace(",", "");
+                } else {
+                    s = s.replace(".", "");
+                }
+                while (s.indexOf(".") != s.lastIndexOf(".")) {
+                    s = s.replaceFirst("\\.", "");
+                }
+                s = s.replace(",", "");
             }
+            if (s.contains(".") && !s.contains(",")) {
+                while (s.indexOf(".") != s.lastIndexOf(".")) {
+                    s = s.replaceFirst("\\.", "");
+                }
+            }
+            if (!s.contains(".") && s.contains(",")) {
+                if (s.indexOf(",") == s.lastIndexOf(",")) {
+                    s = s.replaceFirst(",", ".");
+                } else {
+                    int index = s.lastIndexOf(",");
+                    char ch = '.';
+                    s = s.substring(0, index) + ch + s.substring(index + 1);
+                    s = s.replace(",", "");
+                }
+            }
+            return Double.parseDouble(s);
+        } else {
+            return 0;
         }
     }
 
@@ -771,6 +830,28 @@ public class Controller {
      */
     public double getValueMoS() {
         return valueMoS;
+    }
+
+    /**
+     *
+     * @param evt
+     */
+    public void keyCheck(java.awt.event.KeyEvent evt) {
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) && c != ',' && c != '.') {
+            evt.consume();
+        }
+    }
+
+    /**
+     *
+     * @param evt
+     */
+    public void letterCheck(java.awt.event.KeyEvent evt) {
+        char c = evt.getKeyChar();
+        if (!Character.isAlphabetic(c) && !Character.isDigit(c) && c != ' ' && c != ',') {
+            evt.consume();
+        }
     }
 
 }

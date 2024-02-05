@@ -5,17 +5,17 @@
             <url>src/Valuator/ReworkedFrontend.java</url>
             <bookmark id="1">
                 <name/>
-                <line>5440</line>
+                <line>401</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/ReworkedFrontend.java</file>
             <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/SaveLoad.java</file>
-            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/Controller.java</file>
-            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/notes</file>
+            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/Frontend.java</file>
+            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/Valuator/SaveTemplate.java</file>
+            <file>file:/C:/Users/ondre/StockValuator/StockPriceValuator/StockPriceValuator/src/component/Library.java</file>
         </group>
     </open-files>
 </project-private>
