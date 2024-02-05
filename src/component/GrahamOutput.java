@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileSystemView;
 
 /**
  *
@@ -40,7 +41,7 @@ public class GrahamOutput extends javax.swing.JPanel {
         FileInputStream ips;
         try {
             ip = new FileInputStream(fileRoute);
-            ips = new FileInputStream("./src/Valuator/config.properties");
+            ips = new FileInputStream(FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\Valuator\\" + "config.properties");
             p.load(ip);
             conf.load(ips);
         } catch (FileNotFoundException ex) {

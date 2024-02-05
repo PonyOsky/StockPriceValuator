@@ -22,6 +22,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.filechooser.FileSystemView;
 import net.miginfocom.swing.MigLayout;
 
 /**
@@ -76,9 +77,9 @@ public class Menu extends JComponent {
         FileInputStream ip;
         FileInputStream target;
         try {
-            ip = new FileInputStream("./src/Valuator/config.properties");
+            ip = new FileInputStream(FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\Valuator\\config.properties");
             conf.load(ip);
-            target = new FileInputStream(conf.getProperty("lastLangRoute"));
+            target = new FileInputStream(FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\Valuator\\lang\\" + conf.getProperty("lastLang"));
             prop.load(target);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);

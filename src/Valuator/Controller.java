@@ -17,7 +17,6 @@ import component.NAVOutput;
 import component.RatioInput;
 import component.RatioOutput;
 import component.SummaryOutput;
-import java.io.IOException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -632,7 +631,7 @@ public class Controller {
                     }
                     dcfout.getLastFCF().setValueAt(dcf.getFCFGR(getFreeCashFlow()).get(count), 1, count + 1);
                 }
-                dcfout.getGRDCF().setText(decfor.format(getGrowthRateDCF()*100));
+                dcfout.getGRDCF().setText(decfor.format(getGrowthRateDCF() * 100));
                 dcfout.getAvGRDCF().setText(decfor.format(dcf.getAveGr()));
                 for (int count = 0; count < 13; count++) {
                     dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getFfcf().get(count)), 1, count + 1);
@@ -640,7 +639,7 @@ public class Controller {
                 for (int count = 0; count < 13; count++) {
                     dcfout.getFutureFCF().setValueAt(decfor.format(dcf.getDffcf().get(count)), 2, count + 1);
                 }
-                dcfout.getStateDCF().setText(String.valueOf(getStateGrowthRate()*100));
+                dcfout.getStateDCF().setText(String.valueOf(getStateGrowthRate() * 100));
                 dcfout.getWACCDCFOut().setText(String.valueOf(getDiscountRateDCF() * 100));
                 dcfout.getCashDCF().setText(String.valueOf(getCash()));
                 dcfout.getDebtDCF().setText(String.valueOf(getTotalDebt()));
