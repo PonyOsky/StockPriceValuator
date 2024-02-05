@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import java.util.StringTokenizer;
 
 /**
  *
@@ -59,10 +58,30 @@ public class SaveLoad {
         conf.load(i);
     }
 
+    /**
+     *
+     * @param sh
+     * @param i
+     * @param ri
+     * @param dci
+     * @param ddi
+     * @param gi
+     * @param ni
+     */
+    public void setShowout(ShowOut sh, InfoInput i, RatioInput ri, DCFInput dci, DDMInput ddi, GrahamInput gi, NAVInput ni) {
+        info = i;
+        showout = sh;
+        ratioin = ri;
+        dcfin = dci;
+        ddmin = ddi;
+        grahamin = gi;
+        navin = ni;
+    }
+
     public void initSaves() {
         File savesDir = new File(conf.getProperty("savesLib"));
         if (savesDir.exists()) {
-            File[] files = new File(conf.getProperty("savesLib")+"/").listFiles();
+            File[] files = new File(conf.getProperty("savesLib") + "/").listFiles();
             for (File file : files) {
                 if (file.isFile()) {
                     saves.add(file.getName());
@@ -96,7 +115,7 @@ public class SaveLoad {
             showout.getDCFAns().setText(decfor.format(dcf.getValue()));
         }
         if (save.getValMethods().contains("DDM")) {
-            ddm.getDDMPrice(save.getDividends());
+            ddm.getDDMPrice((ArrayList) save.getDividends());
             ddm.ddmMoS(save.getPillow());
             showout.getDDMMoSAns().setText(decfor.format(ddm.getValueMoS()));
             showout.getDDMAns().setText(decfor.format(ddm.getValue()));
@@ -186,22 +205,23 @@ public class SaveLoad {
     /**
      *
      * @throws IOException
-     * @param stemp 
+     * @param stemp
      */
     public void save(SaveTemplate stemp) throws IOException {
         if (stemp != null) {
-            for (int i = 0; i > 1000; i++) {
+            for (int i = 0; i >= 0; i++) {
                 String test = Integer.toString(i) + ".csv";
                 if (!saves.contains(test)) {
                     stemp.setID(i);
                     break;
                 }
             }
-
         }
+
         FileWriter fw;
         BufferedWriter bw;
         File save = new File(conf.getProperty("savesLib") + "/" + stemp.getId() + ".csv");
+        save.createNewFile();
         fw = new FileWriter(save, true);
         bw = new BufferedWriter(fw);
         bw.append(stemp.getValues());
@@ -216,38 +236,38 @@ public class SaveLoad {
      * @throws java.io.FileNotFoundException
      * @throws IOException
      */
-    public ArrayList<SaveTemplate> load() throws FileNotFoundException, IOException {
+    public List<SaveTemplate> load() throws FileNotFoundException, IOException {
         if (!saves.isEmpty()) {
-            ArrayList<SaveTemplate> a = new ArrayList();
+            List<SaveTemplate> a = new ArrayList();
             for (String s : saves) {
-                ArrayList<String> values = new ArrayList();
+                List<String> values = new ArrayList();
                 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(conf.getProperty("savesLib") + "/" + s)));
-                if (br.readLine() != null) {
-                    StringTokenizer tokens = new StringTokenizer(
-                            (String) br.readLine(), ";");// this will read first line and separates values by (,) and stores them in tokens.
-                    values.add(tokens.nextToken()); // this method will read the tokens values on each call.
+                if (br.ready()) {
+                    //StringTokenizer tokens = new StringTokenizer(
+                    //        (String) br.readLine(), ";");// this will read first line and separates values by (,) and stores them in tokens.
+                    //values.add(tokens.nextToken()); // this method will read the tokens values on each call.
+                    values = Arrays.stream(br.readLine().split(";")).toList();
                 }
-                ArrayList<String> calcs = new ArrayList<>(Arrays.asList(values.get(1).split(",")));
-                ArrayList fcf = new ArrayList();
+                List<String> calcs = new ArrayList<>(Arrays.asList(values.get(1).split(",")));
+                List fcf = new ArrayList();
                 if (calcs.contains("CalcDCF")) {
-                    List<String> f = new ArrayList<>(Arrays.asList(values.get(27).split(",")));
+                    String[] f = values.get(28).split(",");
                     for (String t : f) {
                         fcf.add(Double.valueOf(t));
                     }
                 }
-                ArrayList divs = new ArrayList();
+                List<Double> divs = new ArrayList();
                 if (calcs.contains("CalcDDM")) {
-                    List<String> f = new ArrayList<>(Arrays.asList(values.get(38).split(",")));
+                    String[] f = values.get(36).split(",");
                     for (String t : f) {
-                        fcf.add(Double.valueOf(t));
+                        divs.add(Double.valueOf(t));
                     }
                 }
                 SaveTemplate st = new SaveTemplate(calcs,
-                        values.get(1),
                         values.get(2),
                         values.get(3),
                         values.get(4),
-                        Double.parseDouble(values.get(5)),
+                        values.get(5),
                         Double.parseDouble(values.get(6)),
                         Double.parseDouble(values.get(7)),
                         Double.parseDouble(values.get(8)),
@@ -269,27 +289,29 @@ public class SaveLoad {
                         Double.parseDouble(values.get(24)),
                         Double.parseDouble(values.get(25)),
                         Double.parseDouble(values.get(26)),
-                        fcf,
                         Double.parseDouble(values.get(27)),
-                        Double.parseDouble(values.get(28)),
+                        fcf,
                         Double.parseDouble(values.get(29)),
                         Double.parseDouble(values.get(30)),
                         Double.parseDouble(values.get(31)),
                         Double.parseDouble(values.get(32)),
                         Double.parseDouble(values.get(33)),
-                        divs,
+                        Double.parseDouble(values.get(34)),
                         Double.parseDouble(values.get(35)),
-                        Double.parseDouble(values.get(36)),
+                        divs,
                         Double.parseDouble(values.get(37)),
                         Double.parseDouble(values.get(38)),
                         Double.parseDouble(values.get(39)),
                         Double.parseDouble(values.get(40)),
-                        Double.parseDouble(values.get(41)));
+                        Double.parseDouble(values.get(41)),
+                        Double.parseDouble(values.get(42)),
+                        Double.parseDouble(values.get(43)));
                 a.add(st);
+                br.close();
             }
             return a;
         }
-        return null;
+        return new ArrayList();
     }
 
     /**
@@ -297,7 +319,7 @@ public class SaveLoad {
      * @param fileName
      */
     public void deleteSave(String fileName) {
-        File target = new File(conf.getProperty("savesLib") + fileName);
+        File target = new File(conf.getProperty("savesLib") + "/" + fileName);
         target.delete();
     }
 
@@ -305,7 +327,7 @@ public class SaveLoad {
      *
      * @return
      */
-    public ArrayList<String> getSaves() {
+    public List<String> getSaves() {
         return saves;
     }
 

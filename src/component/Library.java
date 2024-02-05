@@ -11,6 +11,7 @@ import Valuator.SaveTemplate;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,16 +29,17 @@ public class Library extends javax.swing.JPanel {
 
     /**
      * Creates new form Library
+     *
      * @param sv
      * @param route
      * @param c
      */
     public Library(SaveLoad sv, String route, Controller c) {
-        
-            initComponents();
-            saveLoad = sv;
-            controller = c;
-            setLabels(route);
+
+        initComponents();
+        saveLoad = sv;
+        controller = c;
+        setLabels(route);
         try {
             ShowFiles();
         } catch (IOException ex) {
@@ -72,19 +74,18 @@ public class Library extends javax.swing.JPanel {
         jLabel9.setText(p.getProperty("jLabel9"));
         jLabel12.setText(p.getProperty("jLabel12"));
     }
-    
-    
+
     /**
      *
      * @throws IOException
      */
     public void ShowFiles() throws IOException {
-        for (int i = 0; i > saveLoad.load().size(); i++) {
-            for (SaveTemplate st : saveLoad.load()) {
-                SavesShowout.setValueAt(st.getName(), i, 0);
-                SavesShowout.setValueAt(st.getTicker(), i, 1);
-                SavesShowout.setValueAt(st.getNote(), i, 2);
-            }
+        List<SaveTemplate> l = saveLoad.load();
+        for (int i = 0; i < l.size(); i++) {
+            SaveTemplate st = l.get(i);
+            SavesShowout.setValueAt(st.getName(), i, 0);
+            SavesShowout.setValueAt(st.getTicker(), i, 1);
+            SavesShowout.setValueAt(st.getNote(), i, 2);
         }
     }
 
@@ -259,10 +260,16 @@ public class Library extends javax.swing.JPanel {
         } catch (IOException ex) {
             Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
         }
+        SavesShowout.repaint();
+        SavesShowout.revalidate();
+        repaint();
+        revalidate();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         saveLoad.deleteSave(saveLoad.getSaves().get(SavesShowout.getSelectedRow()));
+        repaint();
+        revalidate();
     }//GEN-LAST:event_jLabel12MouseClicked
 
 

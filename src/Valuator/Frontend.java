@@ -92,6 +92,7 @@ public final class Frontend extends javax.swing.JFrame {
         initViews(langs.getRoute());
         controller.setConstants(info, ratioin, dcfin, ddmin, grahamin, navin, ratioout, dcfout, ddmout, grahamout, navout, lib, sumout);
         Properties p = new Properties();
+        saveLoad.setShowout(showout, info, ratioin, dcfin, ddmin, grahamin, navin);
         FileInputStream ip;
         try {
             ip = new FileInputStream(langs.getRoute());
