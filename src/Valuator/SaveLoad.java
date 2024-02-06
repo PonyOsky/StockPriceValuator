@@ -43,17 +43,18 @@ public class SaveLoad {
     public InfoInput info;
     public NAVInput navin;
     public RatioInput ratioin;
-    private String path = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\Valuator\\";
+    private String path;
 
     /**
      *
-     * @param cont
+     * @param c
+     * @param p
      * @throws java.io.FileNotFoundException
      */
-    public SaveLoad(Controller cont) throws FileNotFoundException, IOException {
-        this.cont = cont;
+    public SaveLoad(Controller c, String p) throws FileNotFoundException, IOException {
+        cont = c;
+        path = p;
         saves = new ArrayList();
-        FileInputStream i = new FileInputStream(path + "config.properties");
     }
 
     /**

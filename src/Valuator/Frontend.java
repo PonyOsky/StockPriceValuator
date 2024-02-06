@@ -21,8 +21,10 @@ import component.RatioOutput;
 import component.Settings;
 import component.ShowOut;
 import component.SummaryOutput;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -74,18 +76,28 @@ public final class Frontend extends javax.swing.JFrame {
     private String clstr;
     private String castr;
     public Menu menu;
+    private String path;
 
     /**
      *
      * @throws IOException
      */
     public Frontend() throws IOException {
+        File test = new File("");
+        String target = test.getAbsolutePath();
+        Properties conf = new Properties();
+        FileInputStream fi = new FileInputStream(target + "/" + "config.properties");
+        conf.load(fi);
+        FileOutputStream out = new FileOutputStream(target + "/" + "config.properties");
+        conf.setProperty("path", target + "\\");
+        conf.store(out, null);
+        path = conf.getProperty("path");
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
-        langs = new Languages();
+        langs = new Languages(path);
         controller = new Controller();
-        saveLoad = new SaveLoad(controller);
+        saveLoad = new SaveLoad(controller, path);
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
         saveLoad.initSaves();
@@ -288,7 +300,7 @@ public final class Frontend extends javax.swing.JFrame {
         ratioout = new RatioOutput(route);
         dcfout = new DCFOutput(this, route);
         ddmout = new DDMOutput(this, route);
-        grahamout = new GrahamOutput(route);
+        grahamout = new GrahamOutput(route, path);
         navout = new NAVOutput(route);
         help = new Help(route);
         lib = new Library(saveLoad, route, controller);

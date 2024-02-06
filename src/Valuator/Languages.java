@@ -11,7 +11,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
-import javax.swing.filechooser.FileSystemView;
 
 /**
  *
@@ -22,16 +21,18 @@ public class Languages {
     private ArrayList<String> props;
     private Properties conf;
     private ArrayList<String> choices;
-    private String path = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\Valuator\\";
+    private String path;
 
     /**
      *
+     * @param p
      * @throws FileNotFoundException
      * @throws IOException
      */
-    public Languages() throws FileNotFoundException, IOException {
+    public Languages(String p) throws FileNotFoundException, IOException {
         props = new ArrayList();
         props.add(" ");
+        path = p;
         conf = new Properties();
         FileInputStream ip = new FileInputStream(path + "config.properties");
         conf.load(ip);

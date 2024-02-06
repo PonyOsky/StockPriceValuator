@@ -24,24 +24,26 @@ public class GrahamOutput extends javax.swing.JPanel {
      * Creates new form GrahamOutputs
      *
      * @param route
+     * @param confRoute
      */
-    public GrahamOutput(String route) {
+    public GrahamOutput(String route, String confRoute) {
         initComponents();
-        setLabels(route);
+        setLabels(route, confRoute);
     }
 
     /**
      *
      * @param fileRoute
+     * @param confRoute
      */
-    public void setLabels(String fileRoute) {
+    public void setLabels(String fileRoute, String confRoute) {
         Properties p = new Properties();
         Properties conf = new Properties();
         FileInputStream ip;
         FileInputStream ips;
         try {
             ip = new FileInputStream(fileRoute);
-            ips = new FileInputStream(FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\Valuator\\" + "config.properties");
+            ips = new FileInputStream(confRoute + "config.properties");
             p.load(ip);
             conf.load(ips);
         } catch (FileNotFoundException ex) {
