@@ -1,0 +1,5 @@
+Project has been created by student - Ondřej Dudák
+High School of student - Obchodní Akademie Uherské Hradiště (Czech Republic)
+
+This project is high school student project so sometimes can app crash, make bugs or something like this.
+Be careful and if you find some problem, contact developer -> README.txt
