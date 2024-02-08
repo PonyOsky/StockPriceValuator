@@ -24,8 +24,9 @@ import component.SummaryOutput;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
@@ -76,28 +77,20 @@ public final class Frontend extends javax.swing.JFrame {
     private String clstr;
     private String castr;
     public Menu menu;
-    private String path;
+    private String dirPath;
 
     /**
      *
      * @throws IOException
      */
     public Frontend() throws IOException {
-        File test = new File("");
-        String target = test.getAbsolutePath();
-        Properties conf = new Properties();
-        FileInputStream fi = new FileInputStream(target + "/" + "config.properties");
-        conf.load(fi);
-        FileOutputStream out = new FileOutputStream(target + "/" + "config.properties");
-        conf.setProperty("path", target + "\\");
-        conf.store(out, null);
-        path = conf.getProperty("path");
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
-        langs = new Languages(path);
+        dirPath = getDirPath();
+        langs = new Languages();
         controller = new Controller();
-        saveLoad = new SaveLoad(controller, path);
+        saveLoad = new SaveLoad(controller);
         cleaningChoices = new ArrayList();
         calcChoices = new ArrayList();
         saveLoad.initSaves();
@@ -286,6 +279,18 @@ public final class Frontend extends javax.swing.JFrame {
         body.revalidate();
     }
 
+    public static String getDirPath() {
+        try {
+            Class<?> referenceClass = Frontend.class;
+            URL url = referenceClass.getProtectionDomain().getCodeSource().getLocation();
+            String dir = new File(url.toURI()).getParentFile().getParentFile().getPath();  //vyleze o úroveň výš, než je jar
+            return dir;
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Languages.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     /**
      *
      * @param route
@@ -300,7 +305,7 @@ public final class Frontend extends javax.swing.JFrame {
         ratioout = new RatioOutput(route);
         dcfout = new DCFOutput(this, route);
         ddmout = new DDMOutput(this, route);
-        grahamout = new GrahamOutput(route, path);
+        grahamout = new GrahamOutput(route);
         navout = new NAVOutput(route);
         help = new Help(route);
         lib = new Library(saveLoad, route, controller);

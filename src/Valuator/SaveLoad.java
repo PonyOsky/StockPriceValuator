@@ -23,7 +23,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javax.swing.filechooser.FileSystemView;
 
 /**
  *
@@ -43,18 +42,17 @@ public class SaveLoad {
     public InfoInput info;
     public NAVInput navin;
     public RatioInput ratioin;
-    private String path;
+    private String dirPath;
 
     /**
      *
      * @param c
-     * @param p
      * @throws java.io.FileNotFoundException
      */
-    public SaveLoad(Controller c, String p) throws FileNotFoundException, IOException {
+    public SaveLoad(Controller c) throws FileNotFoundException, IOException {
         cont = c;
-        path = p;
         saves = new ArrayList();
+        dirPath = Frontend.getDirPath();
     }
 
     /**
@@ -78,9 +76,9 @@ public class SaveLoad {
     }
 
     public void initSaves() {
-        File savesDir = new File(path + "\\saves");
+        File savesDir = new File(dirPath + "\\saves");
         if (savesDir.exists()) {
-            File[] files = new File(path + "\\saves\\").listFiles();
+            File[] files = new File(dirPath + "\\saves\\").listFiles();
             for (File file : files) {
                 if (file.isFile()) {
                     saves.add(file.getName());
@@ -219,7 +217,7 @@ public class SaveLoad {
 
         FileWriter fw;
         BufferedWriter bw;
-        File save = new File(path + "\\saves\\" + stemp.getId() + ".csv");
+        File save = new File(dirPath + "\\saves\\" + stemp.getId() + ".csv");
         save.createNewFile();
         fw = new FileWriter(save, true);
         bw = new BufferedWriter(fw);
@@ -240,7 +238,7 @@ public class SaveLoad {
             List<SaveTemplate> a = new ArrayList();
             for (String s : saves) {
                 List<String> values = new ArrayList();
-                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path + "\\saves\\" + s)));
+                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("\\saves\\" + s)));
                 if (br.ready()) {
                     //StringTokenizer tokens = new StringTokenizer(
                     //        (String) br.readLine(), ";");// this will read first line and separates values by (,) and stores them in tokens.
@@ -318,7 +316,7 @@ public class SaveLoad {
      * @param fileName
      */
     public void deleteSave(String fileName) {
-        File target = new File(path + "\\saves\\" + fileName);
+        File target = new File(dirPath + "\\saves\\" + fileName);
         target.delete();
     }
 

@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,30 +23,47 @@ public class Languages {
     private ArrayList<String> props;
     private Properties conf;
     private ArrayList<String> choices;
-    private String path;
+    private String dirPath;
 
     /**
      *
-     * @param p
      * @throws FileNotFoundException
      * @throws IOException
      */
-    public Languages(String p) throws FileNotFoundException, IOException {
+    public Languages() {
+        dirPath = Frontend.getDirPath();
+
+        //create Properties
+        try {
+            String filePath = dirPath + "\\config\\config.properties";
+            FileInputStream ip = new FileInputStream(filePath);
+
+            conf = new Properties();
+            conf.load(ip);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Languages.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Languages.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //fill props
         props = new ArrayList();
         props.add(" ");
-        path = p;
-        conf = new Properties();
-        FileInputStream ip = new FileInputStream(path + "config.properties");
-        conf.load(ip);
-        File[] files = new File(path + "lang").listFiles();
+        File[] files = new File(dirPath + "\\lang").listFiles();
         for (File file : files) {
             if (file.isFile()) {
                 props.add(file.getName());
             }
         }
+
+        //fill choices
         choices = new ArrayList();
         choices.add(" ");
-        fillChoices(props);
+        try {
+            fillChoices(props);
+        } catch (IOException ex) {
+            Logger.getLogger(Languages.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -57,7 +76,7 @@ public class Languages {
         if (langs != null) {
             for (var f : langs) {
                 if (f != " ") {
-                    String filePath = path + "lang\\" + f;
+                    String filePath = dirPath + "\\lang\\" + f;
                     Properties p = new Properties();
                     FileInputStream ip = new FileInputStream(filePath);
                     p.load(ip);
@@ -82,9 +101,8 @@ public class Languages {
      * @throws IOException
      */
     public void setLastLang(int choice) throws FileNotFoundException, IOException {
-        FileOutputStream out = new FileOutputStream(path + "config.properties");
+        FileOutputStream out = new FileOutputStream(dirPath + "\\config\\config.properties");
         conf.setProperty("lang", choices.get(choice));
-        conf.setProperty("lastLang", path + "lang\\" + props.get(choice));
         conf.store(out, null);
     }
 
@@ -102,15 +120,15 @@ public class Languages {
      */
     public String getRoute() {
         if (conf.getProperty("lastLang") != null) {
-            File f = new File(path + "lang\\" + conf.getProperty("lastLang"));
+            File f = new File(dirPath + "\\lang\\" + conf.getProperty("lastLang"));
             if (f.exists()) {
-                return path + "lang\\" + conf.getProperty("lastLang");
+                return dirPath + "\\lang\\" + conf.getProperty("lastLang");
             } else {
                 conf.setProperty("lang", conf.getProperty("defLang"));
-                return path + "lang\\" + conf.getProperty("defLang");
+                return dirPath + "\\lang\\" + conf.getProperty("defLang");
             }
         } else {
-            return path + "lang\\" + conf.getProperty("defLang");
+            return dirPath + "\\lang\\" + conf.getProperty("defLang");
         }
     }
 

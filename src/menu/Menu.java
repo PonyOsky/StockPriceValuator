@@ -4,6 +4,7 @@
  */
 package menu;
 
+import Valuator.Frontend;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
@@ -11,10 +12,8 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
@@ -24,7 +23,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.filechooser.FileSystemView;
 import net.miginfocom.swing.MigLayout;
 
 /**
@@ -32,6 +30,8 @@ import net.miginfocom.swing.MigLayout;
  * @author ondre
  */
 public class Menu extends JComponent {
+
+    private String dirPath;
 
     /**
      *
@@ -52,22 +52,19 @@ public class Menu extends JComponent {
     private MenuEvent event;
     private MigLayout layout;
     private String[][] menuItems;
-    private String path;
 
     public Menu() {
-        File test = new File("");
-        String target = test.getAbsolutePath();
+        dirPath = Frontend.getDirPath();
         Properties conf = new Properties();
         FileInputStream fi;
         try {
-            fi = new FileInputStream(target + "/" + "config.properties");
+            fi = new FileInputStream(dirPath + "\\config\\config.properties");
             conf.load(fi);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
-        path = conf.getProperty("path");
         initValues();
         init();
     }
@@ -93,9 +90,9 @@ public class Menu extends JComponent {
         FileInputStream ip;
         FileInputStream target;
         try {
-            ip = new FileInputStream(path + "config.properties");
+            ip = new FileInputStream(dirPath + "\\config\\config.properties");
             conf.load(ip);
-            target = new FileInputStream(path + "lang\\" + conf.getProperty("lastLang"));
+            target = new FileInputStream(dirPath + "\\lang\\" + conf.getProperty("lastLang"));
             prop.load(target);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);

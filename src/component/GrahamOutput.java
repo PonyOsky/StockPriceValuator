@@ -4,6 +4,7 @@
  */
 package component;
 
+import Valuator.Frontend;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,7 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileSystemView;
 
 /**
  *
@@ -20,30 +20,31 @@ import javax.swing.filechooser.FileSystemView;
  */
 public class GrahamOutput extends javax.swing.JPanel {
 
+    private String dirPath;
+
     /**
      * Creates new form GrahamOutputs
      *
      * @param route
-     * @param confRoute
      */
-    public GrahamOutput(String route, String confRoute) {
+    public GrahamOutput(String route) {
+        dirPath = Frontend.getDirPath();
         initComponents();
-        setLabels(route, confRoute);
+        setLabels(route);
     }
 
     /**
      *
      * @param fileRoute
-     * @param confRoute
      */
-    public void setLabels(String fileRoute, String confRoute) {
+    public void setLabels(String fileRoute) {
         Properties p = new Properties();
         Properties conf = new Properties();
         FileInputStream ip;
         FileInputStream ips;
         try {
             ip = new FileInputStream(fileRoute);
-            ips = new FileInputStream(confRoute + "config.properties");
+            ips = new FileInputStream(dirPath + "\\config\\config.properties");
             p.load(ip);
             conf.load(ips);
         } catch (FileNotFoundException ex) {
