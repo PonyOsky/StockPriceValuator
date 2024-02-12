@@ -283,7 +283,7 @@ public final class Frontend extends javax.swing.JFrame {
         try {
             Class<?> referenceClass = Frontend.class;
             URL url = referenceClass.getProtectionDomain().getCodeSource().getLocation();
-            String dir = new File(url.toURI()).getParentFile().getParentFile().getPath();  //vyleze o úroveň výš, než je jar
+            String dir = new File(url.toURI()).getParentFile().getPath();  //for dev: add .getParentFile()
             return dir;
         } catch (URISyntaxException ex) {
             Logger.getLogger(Languages.class.getName()).log(Level.SEVERE, null, ex);

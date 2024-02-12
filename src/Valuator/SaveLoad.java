@@ -240,9 +240,6 @@ public class SaveLoad {
                 List<String> values = new ArrayList();
                 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("\\saves\\" + s)));
                 if (br.ready()) {
-                    //StringTokenizer tokens = new StringTokenizer(
-                    //        (String) br.readLine(), ";");// this will read first line and separates values by (,) and stores them in tokens.
-                    //values.add(tokens.nextToken()); // this method will read the tokens values on each call.
                     values = Arrays.stream(br.readLine().split(";")).toList();
                 }
                 List<String> calcs = new ArrayList<>(Arrays.asList(values.get(1).split(",")));

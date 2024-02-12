@@ -32,7 +32,7 @@ public class Languages {
      */
     public Languages() {
         dirPath = Frontend.getDirPath();
-
+        
         //create Properties
         try {
             String filePath = dirPath + "\\config\\config.properties";
