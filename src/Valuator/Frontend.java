@@ -84,10 +84,10 @@ public final class Frontend extends javax.swing.JFrame {
      * @throws IOException
      */
     public Frontend() throws IOException {
+        dirPath = getDirPath();
         initComponents();
         setIconImage(new ImageIcon(this.getClass().getResource("/Icons/icon.png")).getImage());
         setTitle("Stock price valuator");
-        dirPath = getDirPath();
         langs = new Languages();
         controller = new Controller();
         saveLoad = new SaveLoad(controller);
@@ -283,7 +283,7 @@ public final class Frontend extends javax.swing.JFrame {
         try {
             Class<?> referenceClass = Frontend.class;
             URL url = referenceClass.getProtectionDomain().getCodeSource().getLocation();
-            String dir = new File(url.toURI()).getParentFile().getPath();  //for dev: add .getParentFile()
+            String dir = new File(url.toURI()).getParentFile().getPath();//for dev: add .getParentFile()
             return dir;
         } catch (URISyntaxException ex) {
             Logger.getLogger(Languages.class.getName()).log(Level.SEVERE, null, ex);
@@ -327,8 +327,8 @@ public final class Frontend extends javax.swing.JFrame {
         menu2.setNewLang();
         menu2.repaint();
         menu2.revalidate();
-        scrollPaneWin111.repaint();
-        scrollPaneWin111.revalidate();
+        scrollPaneWin112.repaint();
+        scrollPaneWin112.revalidate();
     }
 
     /**
@@ -384,11 +384,12 @@ public final class Frontend extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         polygonCorner1 = new scroll.PolygonCorner();
+        menu1 = new menu.Menu();
         body = new javax.swing.JPanel();
-        scrollPaneWin111 = new scroll.ScrollPaneWin11();
-        menu2 = new menu.Menu();
         heading2 = new component.Heading();
         selector1 = new component.Selector();
+        scrollPaneWin112 = new scroll.ScrollPaneWin11();
+        menu2 = new menu.Menu();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -411,15 +412,14 @@ public final class Frontend extends javax.swing.JFrame {
         body.setPreferredSize(new java.awt.Dimension(850, 600));
         body.setLayout(new javax.swing.OverlayLayout(body));
 
-        scrollPaneWin111.setBorder(null);
-        scrollPaneWin111.setViewportView(menu2);
+        scrollPaneWin112.setViewportView(menu2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollPaneWin112, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
@@ -431,14 +431,14 @@ public final class Frontend extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(heading2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPaneWin111, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(selector1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(scrollPaneWin112, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -484,9 +484,10 @@ public final class Frontend extends javax.swing.JFrame {
     private component.Heading heading2;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JTable jTable4;
+    private menu.Menu menu1;
     private menu.Menu menu2;
     private scroll.PolygonCorner polygonCorner1;
-    private scroll.ScrollPaneWin11 scrollPaneWin111;
+    private scroll.ScrollPaneWin11 scrollPaneWin112;
     private component.Selector selector1;
     // End of variables declaration//GEN-END:variables
 }
