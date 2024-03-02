@@ -103,6 +103,7 @@ public class Languages {
     public void setLastLang(int choice) throws FileNotFoundException, IOException {
         FileOutputStream out = new FileOutputStream(dirPath + "\\config\\config.properties");
         conf.setProperty("lang", choices.get(choice));
+        conf.setProperty("lastLang", props.get(choice));
         conf.store(out, null);
     }
 
