@@ -1,3 +1,3 @@
 Thanks for installing my prject.
 I hope the application may be useful :)
-Developer: Ondřej Dudák
+Developer: Ondrej Dudak
